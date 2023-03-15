@@ -6,8 +6,8 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 
 class Category(models.Model):
-    # recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
     category_name = models.CharField(max_length=100, unique=True, null=False, blank=False)
+    featured_image = CloudinaryField('image', default='featured-recipe')
 
     class Meta:
         ordering = ['category_name']
@@ -25,6 +25,7 @@ class Recipe(models.Model):
     created_date = models.DateField(auto_now_add=True)
     updated_date = models.DateField(auto_now=True)
     featured_image = CloudinaryField('image', default='recipe')
+    featured_comment = models.TextField(null=False, default="Shemmylicious Food")
     recipe_ingridients = models.TextField()
     recipe_instructions = models.TextField()
     excerpt = models.TextField(blank=True)

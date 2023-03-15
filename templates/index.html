@@ -2,60 +2,62 @@
 
 {% block content %}
 
-<div class="container-fluid">
+<div class="container-fluid col-8 offset-2">
   <div class="row">
-
-      <!-- Blog Entries Column -->
-      <div class="col-12 mt-3 left">
-          <div class="row">
-              {% for post in post_list %}
-                  <div class="col-md-4">
-                      <div class="card mb-4">
-                          <div class="card-body">
-                              <div class="image-container">
-                                  {% if "image" in recipe.featured_image.url %}
-                                  <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg"
-                                      alt="deafult image" class="card-img-top">
-                                  {% else %}
-                                  <img src="{{ recipe.featured_image.url }}" 
-                                      alt="image" class="card-img-top">
-                                  {% endif %}
-                                  <div class="image-flash">
-                                      <p class="author">Author: {{ recipe.author }}</p>
-                                  </div>
-                              </div>
-                              <a href="{% url 'recipe_detail' recipe.slug %}" class="recipe-link">
-                                  <h2 class="card-title">{{ recipe.title }}</h2>
-                                  <p class="card-text">{{ recipe.excerpt }}</p>
-                              </a>
-                              <hr>
-                              <p class="card-text text-muted h6">{{ recipe.created_on}}
-                                  <i class="far fa-heart">{{ recipe.number_of_likes}}</i>
-                              </p>
-                          </div>
-                      </div>
-                  </div>
-              {% if forloop.counter|divisibleby:3 %}
+    {% for recipe in object_list %}
+    <div class="card mb-3" style="max-width: 1040px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <div class="image-container">
+            {% if "recipe" in recipe.featured_image.url %}
+            <img src="https://t3.ftcdn.net/jpg/03/14/99/18/360_F_314991872_21HADtmfKf6V9pgdYgTuN0wGVhv1H0X9.jpg"
+              alt="deafult image" class="img-fluid rounded-start card-img-top img-round">
+            {% else %}
+            <img src="{{ recipe.featured_image.url }}" alt="image" class="img-fluid rounded-start card-img-top">
+            {% endif %}
+            <div class="image-flash">
+              <p class="author image-flash-author">Author: {{ recipe.author }}</p>
+              <p class="category image-flash-category">{{ recipe.category }}</p>
+            </div>
           </div>
-          <div class="row">
-              {% endif %}
-              {% endfor %}
-
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h1 class="card-title">"{{ recipe.recipe_title }}"</h1>
+            <br>
+            <p class="card-featured-comment">Featured Comment</p>
+            <h3 class="card-title">{{ recipe.featured_comment }}</h5>
+              <p class="card-featured-comment-continue">Continue reading</p>
+              <br>
+              <p class="card-text">{{ recipe.excerpt }}</p>
+              <p class="card"><small class="text-muted">{{ recipe.created_date}}
+                  <i class="far fa-heart">{{ recipe.number_of_likes}}</i></small>
+              </p>
           </div>
+        </div>
       </div>
+      <br>
+      {% if forloop.counter|divisibleby:3 %}
+    </div>
+    <div class="row">
+      {% endif %}
+      {% endfor %}
+
+    </div>
   </div>
+</div>
 {% if is_paginated %}
 <nav aria-label="Page naigation">
   <ul class="pagination justify-content-center">
-      {% if page_obj.has_previous %}
-      <li><a href="?page={{ page_obj.previous_page_number}}" class="page-link">&laquo; PREV</a></li>
-      {% endif %}
-      {% if page_obj.has_next %}
-      <li><a href="?page={{ page_obj.nexts_page_number}}" class="page-link">NEXT &raquo;</a></li>
-      {% endif %}
+    {% if page_obj.has_previous %}
+    <li><a href="?page={{ page_obj.previous_page_number}}" class="page-link">&laquo; PREV</a></li>
+    {% endif %}
+    {% if page_obj.has_next %}
+    <li><a href="?page={{ page_obj.nexts_page_number}}" class="page-link">NEXT &raquo;</a></li>
+    {% endif %}
   </ul>
 </nav>
 {% endif %}
 </div>
 
-{%endblock%}
+{% endblock %}
