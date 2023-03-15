@@ -1,0 +1,142 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html class="h-100">
+
+<head>
+    <title>Shemmylicious</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- Fonts -->
+    
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" 
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" 
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+    </script>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/script.js' %}" defer></script>
+
+</head>
+
+<body class="d-flex flex-column h-100 main-bg">
+
+    <!-- Navigation -->
+
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'home' %}"><span class="brand-logo">LOGO</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse nav-s" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item nav-link-s">
+                      <div class="nav-item-s">
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                        <div class="active-nav"></div>
+                      </div>
+                    </li>
+
+                    <!-- NAV LINKS -->
+                    <li class="nav-item nav-link-s">
+                      <div class="nav-item-s">
+                        <a class="nav-link" href="#"> Item 1 </a>
+                      </div>
+                    </li>
+
+                    <li class="nav-item nav-link-s">
+                      <div class="nav-item-s">
+                        <a class="nav-link" href="#">Item 2</a>
+                      </div>
+                    </li>
+
+                    <li class="nav-item nav-link-s dropdown">
+                      <div class="nav-item-s">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                          aria-expanded="false">
+                          Dropdown link
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Action</a></li>
+                          <li><a class="dropdown-item" href="#">Another action</a></li>
+                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                      </div>
+                    </li>
+
+                    <!-- NAV AUTH LINKS -->
+                    {% if user.is_authenticated %}
+                    <li class="nav-item nav-link-s">
+                      <div class="nav-item-s">
+                        <a class="nav-link" href="#">Logout</a>
+                      </div>
+                    </li>
+                    {% else %}
+                    <li class="nav-item nav-link-s">
+                      <div class="nav-item-s">
+                        <a class="nav-link" href="#">Register</a>
+                      </div>
+                    </li>
+                    <li class="nav-item nav-link-s">
+                      <div class="nav-item-s">
+                        <a class="nav-link" href="#">Login</a>
+                      </div>
+                    </li>
+                    {% endif %}
+                </ul>
+                <span class="navbar-text text-muted">
+                    text???
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-shrink-0 main-bg">
+        {% block content %}
+        
+
+        {% endblock content %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 dark-bg">
+      <div id="copyright-container">
+        <p class="m-0 text-center text-black">2023 ShemmyYo - Project developed for Educational purposes</p>
+        <p class="m-0 text-center text-black">
+          <a href="#" target="_blank" rel="noopener" aria-label="Visit my XXXXXXXXX page(opens in a new tab)"
+            id="copyright-text"><i class="fab fa-facebook-square ms-3"></i></a>
+          <a href="#" target="_blank" rel="noopener" aria-label="Visit my XXXXXXXXX page(opens in a new tab)"
+            id="copyright-text"><i class="fab fa-twitter-square ms-3"></i></a>
+          <a href="#" target="_blank" rel="noopener" aria-label="Visit my XXXXXXXXX page(opens in a new tab)"
+            id="copyright-text"><i class="fab fa-instagram-square ms-3"></i></a>
+          <a href="#" target="_blank" rel="noopener" aria-label="Visit my XXXXXXXXX page(opens in a new tab)"
+            id="copyright-text"><i class="fab fa-youtube-square ms-3"></i></a>
+          <a href="https://github.com/ShemmyYo/" target="_blank" rel="noopener"
+            aria-label="Visit my GitHub page(opens in a new tab)" id="copyright-text"><i
+              class="fab fa-github-square ms-3"></i></a>
+        </p>
+      </div>
+    </footer>
+</body>
+
+<!-- GSAP Library: https://cdnjs.com/libraries/gsap -->
+<script 
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" 
+    integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ==" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer">
+</script>
+<script 
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/Flip.min.js" 
+    integrity="sha512-RL2ypMFkOs/iB79bWnNiFrZRCqyExtQ38n/K+t7Xjf09YZcvSzqgSaGVj+fiVYEqVRLf/WjdHmwGImZM3XO5gA==" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer">
+</script>
+
+</html>
