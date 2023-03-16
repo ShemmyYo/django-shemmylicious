@@ -2,10 +2,13 @@
 
 {% block content %}
 
+<br>
+<hr>
+<br>
 <div class="container-fluid col-8 offset-2">
   <div class="row">
     {% for recipe in object_list %}
-    <div class="card mb-3" style="max-width: 1040px;">
+    <div class="card mb-3">
       <div class="row g-0">
         <div class="col-md-4">
           <div class="image-container">
@@ -23,15 +26,17 @@
         </div>
         <div class="col-md-8">
           <div class="card-body">
-            <h1 class="card-title">"{{ recipe.recipe_title }}"</h1>
+            <a href="{% url 'recipe_detail' recipe.slug %}">
+              <h1 class="card-title">"{{ recipe.recipe_title }}"</h1>
+              <p class="card-text">{{ recipe.excerpt }}</p>
+            </a>
             <br>
             <p class="card-featured-comment">Featured Comment</p>
             <h3 class="card-title">{{ recipe.featured_comment }}</h5>
               <p class="card-featured-comment-continue">Continue reading</p>
               <br>
-              <p class="card-text">{{ recipe.excerpt }}</p>
               <p class="card"><small class="text-muted">{{ recipe.created_date}}
-                  <i class="far fa-heart">{{ recipe.number_of_likes}}</i></small>
+                  <i class="far fa-heart"> {{ recipe.number_of_likes}}</i></small>
               </p>
           </div>
         </div>
