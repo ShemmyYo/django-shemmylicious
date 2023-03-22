@@ -93,8 +93,7 @@ footer {
 
 .image-container {
     position: relative;
-    max-height: 300px;
-    max-width: 300px;
+    max-height: 400px;
     background-size: cover;
 }
 
@@ -102,7 +101,7 @@ footer {
     position: absolute;
     top: 10%;
     left: -26px;
-
+    overflow: hidden;
 }
 
 .img-round {
@@ -113,7 +112,7 @@ footer {
 .image-flash-category { 
     background-color: #acbb23;
     border-radius: 4px;
-    opacity: .8;
+  
     margin-top: 3px;
     padding: 0 5px;
 }

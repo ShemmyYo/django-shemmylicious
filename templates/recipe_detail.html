@@ -1,47 +1,49 @@
 {% extends 'base.html' %} {% block content %}
 
+{% load crispy_forms_tags %}
+
 <div class="masthead">
     <div class="container">
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
                 <!-- Recipe title goes in these h1 tags -->
-                <h1 class="recipe-title"> {{ recipe.recipe_title }} </h1>
+                <h1 class="recipe-title"> {{ post.recipe_title }} </h1>
                 <!-- Recipe author goes before the | the recipe's created date goes after -->
-                <p class="recipe-subtitle"> {{ recipe.author }} | {{ recipe.created_date }} </p>
+                <p class="recipe-subtitle"> {{ post.author }} | {{ post.created_date }} </p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
-                {% if "recipe" in recipe.featured_image.url %}
-                <img src="https://t3.ftcdn.net/jpg/03/14/99/18/360_F_314991872_21HADtmfKf6V9pgdYgTuN0wGVhv1H0X9.jpg" width="100%">
+                {% if "recipe" in post.featured_image.url %}
+                <img src="https://img.rasset.ie/000f6d15-800.jpg" width="100%">
                 {% else %}
-                <img src="{{ recipe.featured_image.url }}" width="100%">
+                <img src="{{ post.featured_image.url }}" width="100%">
                 {% endif %}
             </div>
         </div>
     </div>
 </div>
 
-<div class="container">
+<div class="container-sm">
     <div class="row">
         <div class="col card mb-4  mt-3 left  top">
             <div class="card-body">
                 <!-- The recipe content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
-                <p class="card-text ">{{ recipe.recipe_ingridients | safe }}</p>
-                <p class="card-text ">{{ recipe.recipe_instructions | safe }}</p>
-                <p class="card-text ">{{ recipe.featured_comment | safe }}</p>
-                <p class="card-text ">{{ recipe.excerpt | safe }}</p>
+                <p class="card-text ">{{ post.recipe_ingridients | safe }}</p>
+                <p class="card-text ">{{ post.recipe_instructions | safe }}</p>
+                <p class="card-text ">{{ post.featured_comment | safe }}</p>
+                <p class="card-text ">{{ post.excerpt | safe }}</p>
                 <div class="row">
 
                     <div class="col-1">
                         <strong>
                             {% if user.is_authenticated %}
-                            <form class="d-inline" action="{% url 'recipe_like' recipe.slug %}" method="POST">
+                            <form class="d-inline" action="{% url 'recipe_like' post.slug %}" method="POST">
                                 {% csrf_token %}
                                 {% if liked %}
-                                <button type="submit" name="blogpost_id" value="{{recipe.slug}}" class="btn-like"><i class="fas fa-heart"></i></button>
+                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="fas fa-heart"></i></button>
                                 {% else %}
-                                <button type="submit" name="blogpost_id" value="{{recipe.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
+                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
                                 {% endif %}
                             </form>
                             {% else %}

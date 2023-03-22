@@ -1,54 +1,55 @@
 {% extends "base.html" %}
 
 {% block content %}
-
 <br>
 <hr>
 <br>
-<div class="container-fluid col-8 offset-2">
-  <div class="row">
-    {% for recipe in object_list %}
-    <div class="card mb-3">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <div class="image-container">
-            {% if "recipe" in recipe.featured_image.url %}
-            <img src="https://t3.ftcdn.net/jpg/03/14/99/18/360_F_314991872_21HADtmfKf6V9pgdYgTuN0wGVhv1H0X9.jpg"
-              alt="deafult image" class="img-fluid rounded-start card-img-top img-round">
-            {% else %}
-            <img src="{{ recipe.featured_image.url }}" alt="image" class="img-fluid rounded-start card-img-top">
-            {% endif %}
-            <div class="image-flash">
-              <p class="author image-flash-author">Author: {{ recipe.author }}</p>
-              <p class="category image-flash-category">{{ recipe.category }}</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <a href="{% url 'recipe_detail' recipe.slug %}">
-              <h1 class="card-title">"{{ recipe.recipe_title }}"</h1>
-              <p class="card-text">{{ recipe.excerpt }}</p>
-            </a>
-            <br>
-            <p class="card-featured-comment">Featured Comment</p>
-            <h3 class="card-title">{{ recipe.featured_comment }}</h5>
-              <p class="card-featured-comment-continue">Continue reading</p>
-              <br>
-              <p class="card"><small class="text-muted">{{ recipe.created_date}}
-                  <i class="far fa-heart"> {{ recipe.number_of_likes}}</i></small>
-              </p>
+Category Carousele 
+<br>
+<hr>
+<br>
+<div class="container col-lg-8 offset-lg-2 col-10">
+  {% for recipe in object_list %}
+  <div class="card mb-3">
+    <div class="row gy-2">
+      <div class="col-lg-4 col-12">
+        <div class="image-container">
+          {% if "recipe" in recipe.featured_image.url %}
+          <img src="https://t3.ftcdn.net/jpg/03/14/99/18/360_F_314991872_21HADtmfKf6V9pgdYgTuN0wGVhv1H0X9.jpg"
+            alt="deafult image" class="img-fluid rounded-start card-img-top img-round">
+          {% else %}
+          <img src="{{ recipe.featured_image.url }}" alt="image" class="img-fluid rounded-start card-img-top">
+          {% endif %}
+          <div class="image-flash">
+            <p class="author image-flash-author">Author: {{ recipe.author }}</p>
+            <p class="category image-flash-category">{{ recipe.category }}</p>
           </div>
         </div>
       </div>
-      <br>
-      {% if forloop.counter|divisibleby:3 %}
+      <div class="col-lg-8 col-12">
+        <div class="card-body">
+          <a href="{% url 'recipe_detail' recipe.slug %}">
+            <h1 class="card-title">"{{ recipe.recipe_title }}"</h1>
+            <p class="card-text">{{ recipe.excerpt }}</p>
+          </a>
+          <br>
+          <p class="card-featured-comment">Featured Comment</p>
+          <h3 class="card-title">{{ recipe.featured_comment }}</h5>
+            <p class="card-featured-comment-continue">Continue reading</p>
+            <br>
+            <p class="card"><small class="text-muted">{{ recipe.created_date}}
+                <i class="far fa-heart"> {{ recipe.number_of_likes}}</i></small>
+            </p>
+        </div>
+      </div>
     </div>
-    <div class="row">
-      {% endif %}
-      {% endfor %}
+    <br>
+    {% if forloop.counter|divisibleby:3 %}
+  </div>
+  <div class="row">
+    {% endif %}
+    {% endfor %}
 
-    </div>
   </div>
 </div>
 {% if is_paginated %}
