@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from django.template.defaultfilters import slugify
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -18,13 +19,14 @@ class Category(models.Model):
 
 class Recipe(models.Model):
     recipe_title = models.CharField(max_length=100, unique=True)
-    slug = models.SlugField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200, unique=True, null=False)
     status = models.IntegerField(choices=STATUS, default=0)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
     created_date = models.DateField(auto_now_add=True)
     updated_date = models.DateField(auto_now=True)
-    featured_image = CloudinaryField('image', default='recipe')
+    featured_image = models.FileField(null=True, blank=True, upload_to='Shemmylicious/')
+    # CloudinaryField('image', default='recipe')
     featured_comment = models.TextField(null=False, default="Shemmylicious Food")
     recipe_ingridients = models.TextField()
     recipe_instructions = models.TextField()
@@ -38,7 +40,7 @@ class Recipe(models.Model):
         return self.recipe_title
 
     def number_of_likes(self):
-        return self.likes.count()
+        return self.likes.count() 
 
 
 class Comment(models.Model):

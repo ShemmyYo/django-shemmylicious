@@ -93,13 +93,15 @@ footer {
 .card {
     border: none;
     background-color: transparent;
-    max-height: 300px;
 }
 
 .image-container {
     position: relative;
-    max-height: 400px;
     background-size: cover;
+}
+
+img {
+    overflow: hidden;
 }
 
 .image-flash {

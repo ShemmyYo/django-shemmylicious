@@ -1,19 +1,23 @@
 {% extends 'base.html' %} 
 {% block content %}
     <center>
+    <br>
+    <br>
     <h1>Add Recipe</h1>
     <br>
-    {% if submitted %}
-        Your Recipe was Submitted Succesfully!
-    {% else %}
-        <form action="" method="POST">
-            {% csrf_token %}
+    <div class="container col-6">
+        {% if submitted %}
+            Your Recipe was Submitted Succesfully!
+        {% else %}
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.media }}
+                {{ form.as_p }}
 
-            {{ form.as_p }}
-
-            <input type="submit" value="Add Recipe" class="btn btn-outline-secondary">
-        </form>
-    {% endif %}  
+                <input type="submit" value="Add Recipe" class="btn btn-outline-secondary">
+            </form>
+        {% endif %}  
+    </div>
     </center>
     <br>
     <br>

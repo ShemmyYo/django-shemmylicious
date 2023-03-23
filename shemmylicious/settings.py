@@ -14,6 +14,7 @@ from pathlib import Path
 import os
 import dj_database_url
 from django.contrib.messages import constants as messages
+import cloudinary_storage
 if os.path.isfile("env.py"):
     import env
 
@@ -167,6 +168,12 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dteyj4llb',
+    'API_KEY': '498675164737996',
+    'API_SECRET': 'Xu6HF9iEFqEdk0uyXQwD-pMURqY',
+}
 
 STATIC_URL = '/static/'
 
