@@ -6,7 +6,7 @@ const activeNav = document.querySelector(".active-nav");
 
 links.forEach(link => {
     
-    link.addEventListener('click', () => {
+    link.addEventListener('mouseover', () => {
         // iterate over links and change colour
         gsap.to(links, { color: "#ff0000"});
         if(document.activeElement === link){
@@ -21,7 +21,7 @@ links.forEach(link => {
             absolue: true,
             ease: 'elastic.out(1, 0.5)'
         })
-    })
+    });
 })
 
 // Credits: https://www.youtube.com/watch?v=xB27AuRa5h4

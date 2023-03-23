@@ -29,7 +29,7 @@
 
     <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}"><span class="brand-logo">LOGO</span></a>
+            <a class="navbar-brand" href="{% url 'home' %}"><span class="brand-logo">Shemmylicious</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -38,34 +38,36 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item nav-link-s">
                       <div class="nav-item-s">
-                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                         <div class="active-nav"></div>
+                      </div>
+                    </li>
+                    <li class="nav-item nav-link-s">
+                      <div class="nav-item-s">
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                        
                       </div>
                     </li>
 
                     <!-- NAV LINKS -->
-                    <li class="nav-item nav-link-s">
-                      <div class="nav-item-s">
-                        <a class="nav-link" href="#"> Item 1 </a>
-                      </div>
-                    </li>
-
-                    <li class="nav-item nav-link-s">
-                      <div class="nav-item-s">
-                        <a class="nav-link" href="#">Item 2</a>
-                      </div>
-                    </li>
 
                     <li class="nav-item nav-link-s dropdown">
                       <div class="nav-item-s">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                           aria-expanded="false">
-                          Dropdown link
+                          Recipes
                         </a>
                         <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#">Action</a></li>
-                          <li><a class="dropdown-item" href="#">Another action</a></li>
-                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                          <li class="nav-item nav-link-s">
+                            <div class="nav-item-s">
+                              <a class="nav-link" href="{% url 'add-recipe' %}"> Add Recipe </a>
+                            </div>
+                          </li>
+      
+                          <li class="nav-item nav-link-s">
+                            <div class="nav-item-s">
+                              <a class="nav-link" href="{% url 'add-category' %}">Add Category</a>
+                            </div>
+                          </li>
                         </ul>
                       </div>
                     </li>
@@ -97,12 +99,30 @@
         </div>
     </nav>
 
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 offset-2">
+          {% for message in messages %}
+          <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role=""alert>
+          {{ message | safe }}
+          <button type="button" class="btn-close" data-bs-dismiss="lert" aria-label="Close"> 
+          </button>  
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    
     <main class="flex-shrink-0 main-bg">
         {% block content %}
         <!--  Block Receipt Column -->
         {% endblock content %}
     </main>
-
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <footer class="footer mt-auto py-3 dark-bg">
         <p class="m-0 text-center text-black">2023 ShemmyYo - Project developed for Educational purposes</p>
         <p class="m-0 text-center text-black">
@@ -119,7 +139,17 @@
               class="fab fa-github-square ms-3"></i></a>
         </p>
     </footer>
+
 </body>
+
+<!-- Timeout 3s close messages -->
+<script>
+  setTimeout(function(){
+    let messages = document.getElementById("msg");
+    let alert = new bootstrap.Alert(messages);
+    alert.close();
+  }, 3000);
+</script>
 
 <!-- GSAP Library: https://cdnjs.com/libraries/gsap -->
 <script 

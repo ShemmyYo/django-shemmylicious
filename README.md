@@ -1,3 +1,26 @@
+# Portfolio Project 4 - Full-Stack Toolkit
+
+## Shemmylicious - Inspiring yet simple food recipes for delicious, everyday cooking.
+
+Finding the right recipe is more difficult than ever. That's why we've made it simple.
+
+### This is how easy it works!
+1. Simply browse recipes, find the one you get inspired by and prepare shemmylicious food.
+2. Log in....
+3. 
+
+![Image mockup of the website in a computer, tablet and phone](./)
+
+## Live Site
+[Live page](https://) 
+
+## Repository
+[Repository](https://github.com/shemmyyo/shemmylicious)
+
+
+
+
+
 
 Technologies
 HTML, CSS, JavaScript, Python+Django

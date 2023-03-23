@@ -50,7 +50,7 @@
                             <span class="text-secondary"><i class="far fa-heart"></i></span>
                             {% endif %}
                             <!-- The number of likes goes before the closing strong tag -->
-                            <span class="text-secondary">{{ recipe.number_of_likes }} </span>
+                            <span class="text-secondary">{{ post.number_of_likes }} </span>
                         </strong>
                     </div>
                     <div class="col-1">
@@ -91,7 +91,7 @@
                 {% endfor %}
             </div>
         </div>
-        <div class="col-md-4 card mb-4  mt-3 ">
+        <div class="col-md-4 card mb-4  mt-3">
             <div class="card-body">
                 <!-- Comments from forms.py -->
                 <!-- If comment awaiting approval -->
@@ -108,6 +108,7 @@
                         {{ comment_form | crispy }}
                         {% csrf_token%}
                         <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                        <div style="height: 100px;"></div>
                     </form>
                 {% endif %}
                 {% endif %}

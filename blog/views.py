@@ -5,7 +5,30 @@ from django.shortcuts import get_object_or_404, reverse
 from django.contrib import messages
 from django.views.generic import ListView
 from .models import Recipe
-from .forms import CommentForm
+from .forms import CommentForm, CategoryForm
+from .forms import AddRecipeForm
+
+
+def AddRecipeFormView(request):
+    submitted = False
+    if request.method == "POST":
+        form = AddRecipeForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/add_recipe?submitted=True')
+    else:
+        form = AddRecipeForm
+        if 'submitted' in request.GET:
+            submitted = True
+
+    return render(request, "add_recipe.html", {'form': form, 'submitted': submitted, })
+
+
+def AddCategoryFormView(request):
+    form = CategoryForm
+
+    return render(request, "add_category.html", {'form': form})
+
 
 
 class RecipeListView(generic.ListView):
@@ -51,10 +74,10 @@ class RecipeDetailView(View):
             comment_form.instance.email = request.user.email
             comment_form.instance.name = request.user.username
             comment = comment_form.save(commit=False)
-            comment.post = post
+            comment.post = recipe
+            messages.success(request, "Successfully posted. Your comment is awaiting Admin's approval.")
         else:
             comment_form = CommentForm()
-
 
         return render(
             request,
@@ -68,6 +91,7 @@ class RecipeDetailView(View):
 
             },
         )
+
 
 class RecipeLike(View):
     

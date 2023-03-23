@@ -30,8 +30,8 @@ Category Carousele
         <div class="card-body">
           <a href="{% url 'recipe_detail' recipe.slug %}">
             <h1 class="card-title">"{{ recipe.recipe_title }}"</h1>
-            <p class="card-text">{{ recipe.excerpt }}</p>
           </a>
+          <p class="card-text">{{ recipe.excerpt }}</p>
           <br>
           <p class="card-featured-comment">Featured Comment</p>
           <h3 class="card-title">{{ recipe.featured_comment }}</h5>
@@ -49,7 +49,11 @@ Category Carousele
   <div class="row">
     {% endif %}
     {% endfor %}
-
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
   </div>
 </div>
 {% if is_paginated %}
@@ -65,5 +69,4 @@ Category Carousele
 </nav>
 {% endif %}
 </div>
-
 {% endblock %}

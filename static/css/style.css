@@ -53,6 +53,11 @@ body {
     width: 100%;
 }
 
+.inActiveNav {
+    background-color: #fff;
+}
+
+
 /* CI CODE */
 
 
