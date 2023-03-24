@@ -12,10 +12,10 @@ Category Carousele
       <div class="col-lg-4 col-12">
         <div class="image-container">
           {% if "recipe" in recipe.featured_image.url %}
-          <img src="https://t3.ftcdn.net/jpg/03/14/99/18/360_F_314991872_21HADtmfKf6V9pgdYgTuN0wGVhv1H0X9.jpg"
-            alt="deafult image" class="img-fluid rounded-start card-img-top img-round">
+          <img src="https://res.cloudinary.com/dteyj4llb/image/upload/v1679649965/media/Shemmylicious/recipe.png"
+            alt="deafult image" class="img-fluid card-img-top">
           {% else %}
-          <img src="{{ recipe.featured_image.url }}" alt="image" class="img-fluid rounded-start card-img-top">
+          <img src="{{ recipe.featured_image.url }}" alt="image" class="img-fluid card-img-top">
           {% endif %}
           <div class="image-flash">
             <p class="author image-flash-author">Author: {{ recipe.author }}</p>
@@ -28,11 +28,14 @@ Category Carousele
           <a href="{% url 'recipe_detail' recipe.slug %}">
             <h1 class="card-title">"{{ recipe.recipe_title }}"</h1>
           </a>
+          <hr>
           <p class="card-text">{{ recipe.excerpt }}</p>
-          <br>
+          <hr>
           <p class="card-featured-comment">Featured Comment</p>
           <h3 class="card-title">{{ recipe.featured_comment }}</h5>
-            <p class="card-featured-comment-continue">Continue reading</p>
+            <a href="{% url 'recipe_detail' recipe.slug %}">
+              <p class="card-featured-comment-continue">Continue reading...</p>
+            </a>
             <br>
             <p class="card"><small class="text-muted">{{ recipe.created_date}}
                 <i class="far fa-heart"> {{ recipe.number_of_likes}}</i></small>

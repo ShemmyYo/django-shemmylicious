@@ -8,7 +8,9 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <!-- Fonts -->
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Sen:wght@400;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Bootstrap 5 -->
@@ -29,26 +31,38 @@
 
     <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}"><span class="brand-logo">Shemmylicious</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+
+            <a class="navbar-brand" href="{% url 'home' %}">
+              <span class="brand-logo">Shemmylicious</span>
+              <img src="https://res.cloudinary.com/dteyj4llb/image/upload/v1679654869/media/Shemmylicious/food_sjzw1x.png" alt="Shemmylicious Food Sign" height="70">
+            </a>
+            <button class="navbar-toggler btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse nav-s" id="navbarText">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav me-auto me-lg-2 mb-2 mb-lg-0">
+
                     <li class="nav-item nav-link-s">
                       <div class="nav-item-s">
                         <div class="active-nav"></div>
                       </div>
                     </li>
+
                     <li class="nav-item nav-link-s">
                       <div class="nav-item-s">
                         <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
-                        
                       </div>
                     </li>
 
-                    <!-- NAV LINKS -->
+                    <li class="nav-item nav-link-s">
+                      <div class="nav-item-s">
+                        <a class="nav-link active" aria-current="page" href="#">About</a>
+                      </div>
+                    </li>
+                    <!-- NAV AUTH LINKS -->
+                    {% if user.is_authenticated %}
 
                     <li class="nav-item nav-link-s dropdown">
                       <div class="nav-item-s">
@@ -59,34 +73,32 @@
                         <ul class="dropdown-menu">
                           <li class="nav-item nav-link-s">
                             <div class="nav-item-s">
-                              <a class="nav-link" href="{% url 'add-recipe' %}"> Add Recipe </a>
+                              <a class="nav-link nav-link-drop" href="{% url 'add-recipe' %}"> Add Recipe </a>
                             </div>
                           </li>
       
                           <li class="nav-item nav-link-s">
                             <div class="nav-item-s">
-                              <a class="nav-link" href="{% url 'add-category' %}">Add Category</a>
+                              <a class="nav-link nav-link-drop" href="{% url 'add-category' %}">Add Category</a>
                             </div>
                           </li>
 
                           <li class="nav-item nav-link-s">
                             <div class="nav-item-s">
-                              <a class="nav-link" href="/admin">Admin</a>
+                              <a class="nav-link nav-link-drop" href="/admin">Admin</a>
                             </div>
                           </li>
-
                         </ul>
                       </div>
                     </li>
-
-                    <!-- NAV AUTH LINKS -->
-                    {% if user.is_authenticated %}
                     <li class="nav-item nav-link-s">
                       <div class="nav-item-s">
                         <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                       </div>
                     </li>
+
                     {% else %}
+
                     <li class="nav-item nav-link-s">
                       <div class="nav-item-s">
                         <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
@@ -97,13 +109,24 @@
                         <a class="nav-link" href="{% url 'account_login' %}">Login</a>
                       </div>
                     </li>
+
                     {% endif %}
+
+                    <li class="nav-item nav-link-s">
+                      <div class="nav-item-s">
+                        <a class="nav-link active" aria-current="page" href="#">Start here</a>
+                      </div>
+                    </li>
+
                 </ul>
-                <span class="navbar-text text-muted">
-                    text???
-                </span>
             </div>
-        </div>
+            <span class="navbar-text text-muted">
+              <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search Recipe" aria-label="Search Recipe">
+                <button class="btn btn-outline-success btn-sm" type="submit">GO</button>
+              </form>
+            </span>
+            </div>
     </nav>
 
     <div class="container">
@@ -130,22 +153,16 @@
     <br>
     <br>
     <br>
-    <footer class="footer mt-auto py-3 dark-bg">
-        <p class="m-0 text-center text-black">2023 ShemmyYo - Project developed for Educational purposes</p>
-        <p class="m-0 text-center text-black">
-          <a href="#" target="_blank" rel="noopener" aria-label="Visit my XXXXXXXXX page(opens in a new tab)"
-            id="copyright-text"><i class="fab fa-facebook-square ms-3"></i></a>
-          <a href="#" target="_blank" rel="noopener" aria-label="Visit my XXXXXXXXX page(opens in a new tab)"
-            id="copyright-text"><i class="fab fa-twitter-square ms-3"></i></a>
-          <a href="#" target="_blank" rel="noopener" aria-label="Visit my XXXXXXXXX page(opens in a new tab)"
-            id="copyright-text"><i class="fab fa-instagram-square ms-3"></i></a>
-          <a href="#" target="_blank" rel="noopener" aria-label="Visit my XXXXXXXXX page(opens in a new tab)"
-            id="copyright-text"><i class="fab fa-youtube-square ms-3"></i></a>
+    <center>
+    <footer class="footer mt-auto py-2 light-bg">
+        <span class="m-0 text-center text-black">2023 ShemmyYo - Project developed for Educational purposes</span>
+        <span class="m-0 text-center text-black">
           <a href="https://github.com/ShemmyYo/" target="_blank" rel="noopener"
             aria-label="Visit my GitHub page(opens in a new tab)" id="copyright-text"><i
               class="fab fa-github-square ms-3"></i></a>
-        </p>
+        </span>
     </footer>
+    </center>
 
 </body>
 
