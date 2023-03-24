@@ -1,8 +1,11 @@
 # Portfolio Project 4 - Full-Stack Toolkit
 
-## Shemmylicious - Inspiring yet simple food recipes for delicious, everyday cooking.
+![Shemmylicious Logo](media/readme/Shemmylicious-sign.png) 
+## Inspiring yet simple food recipes for delicious, everyday cooking.
 
 Finding the right recipe is more difficult than ever. That's why we've made it simple.
+
+![Alt text](media/readme/shemmylicious-logo.png)
 
 ### This is how easy it works!
 1. Simply browse recipes, find the one you get inspired by and prepare shemmylicious food.
