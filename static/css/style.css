@@ -2,8 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Sacramento&family=Sen:wght@400;700;800&display=swap');
 
 root {
-    --basic-color: #32d347;
-    --active-color: #;
+    --background-col: #45575A;
+    --light-gray-col: #9A99A2;
+    --light-col: #E4E5EA;
+    --accent-col: #8EC63F;
+    --accent-basic-col: #0E9A45;
+
     --hand-font: 'Sacramento', sans-serif;
     --main-font: 'Sen', sans-serif;
     --additional-font: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -16,12 +20,43 @@ root {
 }
 
 body {
-    background-color: #F9FAFC;
+    background-color: #45575A;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 a {
     text-decoration: none;
+}
+.thin {
+    font-weight: 300;
+}
+
+.thic {
+    font-weight: 700;
+}
+
+.light-bg {
+    background-color: #9A99A2;
+}
+
+.dark-bg {
+    background-color: #45575A;
+}
+
+.main-bg {
+    background-color: #fff ;
+}
+
+.navbar-nav .nav-link.active, 
+.navbar-nav .show>.nav-link,
+.dropdown-toggle,
+.nav-link a,
+.nav-link-s a {
+    text-transform:uppercase;
+    font-family: 'Sen', sans-serif;
+    font-weight: bold;
+    font-weight: bold;
+    color: #0E9A45;
 }
 .nav-s {
     padding: 1rem;
@@ -36,21 +71,13 @@ a {
 .brand-logo {  
     font-size: 2.3rem;
     font-weight: 700;
-    color: #4A4A4F;
+    color: #45575A;
 }
 
 .nav-link-s {
     display: flex;
     list-style: none;
     font-size: 1.3rem;
-}
-
-.nav-link-s a {
-    /* text-decoration:none; */
-    text-transform:uppercase;
-    color: var(--basic-color);
-    font-family: 'Sen', sans-serif;
-    font-weight: bold;
 }
 
 .nav-link-drop {
@@ -67,7 +94,7 @@ a {
 
 .active-nav {
     height: 3px;
-    background-color: #383ae0;
+    background-color:#8EC63F;
     border-radius: 25px;
     position: absolute;
     left: 0;
@@ -85,26 +112,12 @@ a {
 
 
 
-/* CI CODE */
 
 
 
 
-.thin {
-    font-weight: 300;
-}
 
-.light-bg {
-    background-color: #fff;
-}
 
-.dark-bg {
-    background-color: #445261;
-}
-
-.main-bg {
-    background-color: #F9FAFC;
-}
 
 footer {
     opacity: .9;
@@ -116,7 +129,7 @@ footer {
 
 footer i {
     font-size: 150%;
-    color: #acbb23;
+    color: #45575A;
 }
 
 /* CARD */
@@ -148,7 +161,7 @@ img {
 
 .image-flash-author,
 .image-flash-category { 
-    background-color: #acbb23;
+    background-color: #0E9A45;
     border-radius: 4px;
   
     margin-top: 3px;
@@ -167,13 +180,17 @@ img {
     text-transform: uppercase;
 }
 
+.card-title {
+    color:#45575A;
+}
+
 .card-featured-comment {
     margin-top: 20px;
-    color: gray;
+    color:#45575A;
 }
 
 .card-featured-comment-continue {
-    color: rgb(29, 138, 38);
+    color:#0E9A45;
     font-weight: 900;
     text-transform: uppercase;
     text-align: end;
@@ -185,7 +202,7 @@ img {
 
 
 
-
+/* CI CODE */
 
 .masthead {
     margin-top: 10px;
@@ -222,13 +239,12 @@ img {
 }
 
 .recipe-link {
-    text-decoration: none;
-    color: #445261;
+    color: #9A99A2;
 }
 
 .recipe-link:hover,
 .page-link {
-    color: #E84610;
+    color: #8EC63F;
 }
 
 .recipe-title {
@@ -238,40 +254,40 @@ img {
 
 .recipe-subtitle {
     margin-left: 5%;
-    color: lightgray;
+    color:#9A99A2;
 }
 
 .btn-signup {
-    background-color: #23BBBB;
+    background-color:#9A99A2;
     color: #fff;
 }
 
 .btn-signup:hover,
 .btn-signup:active {
     background-color: #fff;
-    color: #23BBBB;
+    color:#9A99A2;
 }
 
 .link {
-    color: #23BBBB;
+    color:#9A99A2;
     text-decoration: none;
 }
 
 .link:hover,
 .link:active {
-    color: #445261;
-    text-decoration: underline;
+    color: #8EC63F;
+    text-decoration: none;
 }
 
 .btn-like {
-    color: #E84610;
+    color: #8EC63F;
     border: none;
     background: transparent;
 }
 
 .btn-like:hover,
 .btn-like:active {
-    color: #E84610;
+    color: #8EC63F;
     background: transparent;
     border: none;
 }

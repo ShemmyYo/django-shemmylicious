@@ -7,12 +7,6 @@ const activeNav = document.querySelector(".active-nav");
 links.forEach(link => {
     
     link.addEventListener('mouseover', () => {
-        // iterate over links and change colour
-        gsap.to(links, { color: "#ff0000"});
-        if(document.activeElement === link){
-            gsap.to(link, { color: "#383ae0" });
-        }
-
         // move underline
         const state = Flip.getState(activeNav);
         link.appendChild(activeNav);
