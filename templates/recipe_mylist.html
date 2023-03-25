@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 mt-3 left">
+      <div class="row">
+
+        {% for recipe in object_list %}
+        <div class="col-md-4">
+          <div class="card mb-4">
+
+            {% if "recipe" in recipe.featured_image.url %}
+            <img src="https://res.cloudinary.com/dteyj4llb/image/upload/v1679649965/media/Shemmylicious/recipe.png"
+              alt="deafult image" class="card-img-top" style="width: 18rem;">
+            {% else %}
+            <img src="{{ recipe.featured_image.url }}" alt="image" class="card-img-top" style="width: 18rem;">
+            {% endif %}
+
+            <div class="card-body">
+              <a href="{% url 'recipe_detail' recipe.slug %}">
+                <h5>"{{ recipe.recipe_title }}"</h5>
+              </a>
+              <p>Author: {{ recipe.author }}</p>
+              <p>{{ recipe.category }}</p>
+              <p>{{ recipe.created_date}}
+                <i class="far fa-heart"> {{ recipe.number_of_likes}}</i></small>
+              </p>
+
+              <a href="#" class="btn btn-primary"><span>Edit</span></a>
+              <a href="#" class="btn btn-primary"><span>Delete</span></a>
+            </div>
+          </div>
+        </div>
+
+        {% if forloop.counter|divisibleby:30 %}
+      </div>
+      <div class="row">
+        {% endif %}
+
+        {% endfor %}
+
+      </div>
+    </div>
+  </div>
+</div>
+{% if is_paginated %}
+<nav aria-label="Page naigation">
+  <ul class="pagination justify-content-center">
+    {% if page_obj.has_previous %}
+    <li><a href="?page={{ page_obj.previous_page_number}}" class="page-link">&laquo; PREV</a></li>
+    {% endif %}
+    {% if page_obj.has_next %}
+    <li><a href="?page={{ page_obj.nexts_page_number}}" class="page-link">NEXT &raquo;</a></li>
+    {% endif %}
+  </ul>
+</nav>
+{% endif %}
+</div>
+{% endblock %}

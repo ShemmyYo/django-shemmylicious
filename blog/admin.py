@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
-from .models import Recipe, Category, Comment
+from .models import Recipe, Category, Comment, Profile
 
 
 @admin.register(Recipe)
@@ -20,6 +20,7 @@ class RecipeAdmin(SummernoteModelAdmin):
 
 
 admin.site.register(Category)
+admin.site.register(Profile)
 
 
 @admin.register(Comment)
@@ -27,4 +28,3 @@ class CommentAdmin(admin.ModelAdmin):
     search_fields = ['recipe_name', 'comment_title', 'email']
     list_display = ('recipe_name', 'comment_title', 'email', 'created_date', 'active')
     list_filter = ('active', 'created_date')
-

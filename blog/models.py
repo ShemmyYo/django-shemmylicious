@@ -17,9 +17,17 @@ class Category(models.Model):
         return self.category_name
 
 
+class Profile(models.Model):
+    user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
+    bio = models.TextField(blank=True)
+
+    def __str__(self):
+        return str(self.user)
+
+
 class Recipe(models.Model):
-    recipe_title = models.CharField(max_length=100, unique=True)
-    slug = models.SlugField(max_length=200, unique=True, null=False)
+    recipe_title = models.CharField(max_length=255, unique=True)
+    slug = models.SlugField(max_length=255, unique=True, null=False)
     status = models.IntegerField(choices=STATUS, default=0)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
@@ -28,8 +36,8 @@ class Recipe(models.Model):
     featured_image = CloudinaryField('image', default='recipe')
     # models.FileField(null=True, blank=True, upload_to='Shemmylicious/', default="media/Shemmylicious/shemmylicious-logo_szrask")
     featured_comment = models.TextField(null=False, default="Shemmylicious Food")
-    recipe_ingridients = models.TextField()
-    recipe_instructions = models.TextField()
+    recipe_ingridients = models.TextField(blank=True)
+    recipe_instructions = models.TextField(blank=True)
     excerpt = models.TextField(blank=True)
     likes = models.ManyToManyField(User, related_name="blog_likes", blank=True)
 
