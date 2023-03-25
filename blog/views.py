@@ -3,7 +3,8 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, reverse
 from django.contrib import messages
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
+
 from .models import Recipe
 from .forms import CommentForm, CategoryForm
 from .forms import AddRecipeForm
@@ -43,6 +44,12 @@ class RecipeMyListView(generic.ListView):
     queryset = Recipe.objects.filter(status=1).order_by('-created_date')
     template_name = 'recipe_mylist.html'
     paginate_by = 50
+
+
+class RecipeDetailEdit(generic.DetailView):
+    model = Recipe
+    queryset = Recipe.objects.filter(status=1).order_by('-created_date')
+    template_name = 'recipe_edit.html'
 
 
 class RecipeDetailView(View):
@@ -101,7 +108,6 @@ class RecipeDetailView(View):
 
 
 class RecipeLike(View):
-    
     def post(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Recipe, slug=slug)
         if post.likes.filter(id=request.user.id).exists():

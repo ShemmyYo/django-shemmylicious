@@ -1,0 +1,21 @@
+{% extends 'base.html' %} 
+{% load static %}
+
+
+
+{% block content %}
+
+<h1>Edit Recipe: {{ recipe.recipe_title }} </h1>
+<small>By: {{ recipe.author }}</small><br/>
+<small>Created: {{ recipe.created_date }}, </small> 
+<small>Last Updated: {{ recipe.updated_date }}, </small>
+<hr>
+<p>Categoru: {{ recipe.category }}</p>
+<br>
+<p>{{ recipe.featured_comment }}</p>
+
+<H2>TBC...</H2>
+
+<a href="{% url 'home' %}">Home</a>
+
+{% endblock content %}
