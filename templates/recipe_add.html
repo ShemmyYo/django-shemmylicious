@@ -1,0 +1,29 @@
+{% extends 'base.html' %} 
+{% block title %}Add Recipe{% endblock %}
+{% load static %}
+
+
+
+{% block content %}
+
+<div class="container">
+
+
+    <h4>Add Recipe2</h4>
+
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.media }}
+        
+        {{ form.as_p }}
+
+        <input type="submit" value="Add Recipe" class="btn btn-outline-secondary">
+    </form>
+
+    
+
+    <a href="{% url 'home' %}" class="btn btn-sm btn-outline-success">Home</a>
+
+
+</div>
+{% endblock content %}

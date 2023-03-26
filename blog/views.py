@@ -3,11 +3,17 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, reverse
 from django.contrib import messages
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView
 
 from .models import Recipe
 from .forms import CommentForm, CategoryForm
 from .forms import AddRecipeForm
+
+
+class RecipeAddView(generic.CreateView):
+    model = Recipe
+    template_name = 'recipe_add.html'
+    fields = '__all__'
 
 
 def AddRecipeFormView(request):

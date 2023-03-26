@@ -1,7 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 from cloudinary.models import CloudinaryField
-from django.template.defaultfilters import slugify
+
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -30,11 +31,11 @@ class Recipe(models.Model):
     slug = models.SlugField(max_length=255, unique=True, null=False)
     status = models.IntegerField(choices=STATUS, default=0)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
     created_date = models.DateField(auto_now_add=True)
     updated_date = models.DateField(auto_now=True)
     featured_image = CloudinaryField('image', default='recipe')
-    # models.FileField(null=True, blank=True, upload_to='Shemmylicious/', default="media/Shemmylicious/shemmylicious-logo_szrask")
+# models.FileField(null=True, blank=True, upload_to='Shemmylicious/', default="media/Shemmylicious/shemmylicious-logo_szrask")
     featured_comment = models.TextField(null=False, default="Shemmylicious Food")
     recipe_ingridients = models.TextField(blank=True)
     recipe_instructions = models.TextField(blank=True)
@@ -48,7 +49,10 @@ class Recipe(models.Model):
         return self.recipe_title
 
     def number_of_likes(self):
-        return self.likes.count() 
+        return self.likes.count()
+    
+    def get_absolute_url(self):
+        return reverse('recipe_mylist',)
 
 
 class Comment(models.Model):

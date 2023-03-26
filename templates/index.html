@@ -9,14 +9,14 @@ Category Carousele
   {% for recipe in object_list %}
 
   <div class="card mb-3">
-    <div class="row gy-2">
+    <div class="row gy-1">
       <div class="col-lg-4 col-12">
         <div class="image-container">
           {% if "recipe" in recipe.featured_image.url %}
           <img src="https://res.cloudinary.com/dteyj4llb/image/upload/v1679649965/media/Shemmylicious/recipe.png"
-            alt="deafult image" class="img-fluid card-img-top">
+            alt="deafult image" class="img-thumbnail card-img-top ">
           {% else %}
-          <img src="{{ recipe.featured_image.url }}" alt="image" class="img-fluid card-img-top">
+          <img src="{{ recipe.featured_image.url }}" alt="image" class="img-thumbnail card-img-top">
           {% endif %}
           <div class="image-flash">
             <p class="author image-flash-author">Author: {{ recipe.author }}</p>

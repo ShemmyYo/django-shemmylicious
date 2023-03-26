@@ -4,178 +4,195 @@
 <html class="h-100">
 
 <head>
-    <title>Shemmylicious</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Shemmylicious food{% endblock %}</title>
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Sen:wght@400;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" 
-      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" 
-      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
-    </script>
-
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <script src="{% static 'js/script.js' %}" defer></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Sen:wght@400;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <script src="{% static 'js/script.js' %}" defer></script>
 
 </head>
-
 <body class="d-flex flex-column h-100 main-bg">
-
-    <!-- Navigation -->
-
-    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white">
-        <div class="container-fluid">
-
-            <a class="navbar-brand" href="{% url 'home' %}">
-              <span class="brand-logo">Shemmylicious</span>
-              <img src="https://res.cloudinary.com/dteyj4llb/image/upload/v1679654869/media/Shemmylicious/food_sjzw1x.png" alt="Shemmylicious Food Sign" height="70">
-            </a>
-            <button class="navbar-toggler btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse nav-s" id="navbarText">
-                <ul class="navbar-nav me-auto me-lg-2 mb-2 mb-lg-0">
-
-                    <li class="nav-item nav-link-s">
-                      <div class="nav-item-s">
-                        <div class="active-nav"></div>
-                      </div>
-                    </li>
-
-                    <li class="nav-item nav-link-s">
-                      <div class="nav-item-s">
-                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
-                      </div>
-                    </li>
-
-                    <li class="nav-item nav-link-s">
-                      <div class="nav-item-s">
-                        <a class="nav-link active" aria-current="page" href="#">About</a>
-                      </div>
-                    </li>
-                    <!-- NAV AUTH LINKS -->
-                    {% if user.is_authenticated %}
-
-                    <li class="nav-item nav-link-s dropdown">
-                      <div class="nav-item-s">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                          aria-expanded="false">
-                          Recipes
-                        </a>
-                        <ul class="dropdown-menu">
-
-                          <li class="nav-item nav-link-s">
-                            <div class="nav-item-s">
-                              <a class="nav-link nav-link-drop" href="{% url 'recipe_mylist' %}"> My Recipes </a>
-                            </div>
-                          </li>
-
-                          <li class="nav-item nav-link-s">
-                            <div class="nav-item-s">
-                              <a class="nav-link nav-link-drop" href="{% url 'add-recipe' %}"> Add Recipe </a>
-                            </div>
-                          </li>
-      
-                          <li class="nav-item nav-link-s">
-                            <div class="nav-item-s">
-                              <a class="nav-link nav-link-drop" href="{% url 'add-category' %}">Add Category</a>
-                            </div>
-                          </li>
-
-                          <li class="nav-item nav-link-s">
-                            <div class="nav-item-s">
-                              <a class="nav-link nav-link-drop" href="/admin">Admin</a>
-                            </div>
-                          </li>
-                        </ul>
-                      </div>
-                    </li>
-                    <li class="nav-item nav-link-s">
-                      <div class="nav-item-s">
-                        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
-                      </div>
-                    </li>
-
-                    {% else %}
-
-                    <li class="nav-item nav-link-s">
-                      <div class="nav-item-s">
-                        <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
-                      </div>
-                    </li>
-                    <li class="nav-item nav-link-s">
-                      <div class="nav-item-s">
-                        <a class="nav-link" href="{% url 'account_login' %}">Login</a>
-                      </div>
-                    </li>
-
-                    {% endif %}
-
-                    <li class="nav-item nav-link-s">
-                      <div class="nav-item-s">
-                        <a class="nav-link active" aria-current="page" href="#">Start here</a>
-                      </div>
-                    </li>
-
-                </ul>
+  <!-- Navigation Bar -->
+  <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white">
+    <div class="container-fluid">
+      <!-- Logo -->
+      <a class="navbar-brand" href="{% url 'home' %}">
+        <span class="brand-logo">Shemmylicious</span>
+        <img src="https://res.cloudinary.com/dteyj4llb/image/upload/v1679654869/media/Shemmylicious/food_sjzw1x.png"
+          alt="Shemmylicious Food Sign" height="70">
+      </a>
+      <!-- Hidden Burger Menu -->
+      <button class="navbar-toggler btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Mid Navbar Part with Links  -->
+      <div class="collapse navbar-collapse nav-s .navbar-text" id="navbarText">
+        <ul class="navbar-nav me-auto me-lg-2 mb-2 mb-lg-0">
+          <!-- Menu Underline Active div -->
+          <li class="nav-item nav-link-s">
+            <div class="nav-item-s">
+              <div class="active-nav"></div>
             </div>
-            <span class="navbar-text text-muted">
-              <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search Recipe" aria-label="Search Recipe">
-                <button class="btn btn-outline-success btn-sm" type="submit">GO</button>
-              </form>
-            </span>
-            </div>
-    </nav>
+          </li>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8 offset-2">
-          {% for message in messages %}
-          <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role=""alert>
+          <li class="nav-item nav-link-s">
+            <div class="nav-item-s">
+              <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+            </div>
+          </li>
+
+          <li class="nav-item nav-link-s">
+            <div class="nav-item-s">
+              <a class="nav-link active" aria-current="page" href="#">About</a>
+            </div>
+          </li>
+          <!-- Nav Links visible when User is authenticated -->
+          {% if user.is_authenticated %}
+
+          <li class="nav-item nav-link-s dropdown">
+            <div class="nav-item-s">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Recipes
+              </a>
+              <ul class="dropdown-menu">
+
+                <li class="nav-item nav-link-s">
+                  <div class="nav-item-s">
+                    <a class="nav-link nav-link-drop" href="{% url 'recipe_mylist' %}"> My Recipes </a>
+                  </div>
+                </li>
+
+                <li class="nav-item nav-link-s">
+                  <div class="nav-item-s">
+                    <a class="nav-link nav-link-drop" href="{% url 'add_recipe' %}"> Add Recipe Old</a>
+                  </div>
+                </li>
+
+                <li class="nav-item nav-link-s">
+                  <div class="nav-item-s">
+                    <a class="nav-link nav-link-drop" href="{% url 'recipe-add' %}"> Add Recipe New </a>
+                  </div>
+                </li>
+
+                <li class="nav-item nav-link-s">
+                  <div class="nav-item-s">
+                    <a class="nav-link nav-link-drop" href="{% url 'add-category' %}">Add Category</a>
+                  </div>
+                </li>
+                <!-- TO BE REMOVED -->
+                <li class="nav-item nav-link-s">
+                  <div class="nav-item-s">
+                    <a class="nav-link nav-link-drop" href="/admin">Admin</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item nav-link-s">
+            <div class="nav-item-s">
+              <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+            </div>
+          </li>
+
+          {% else %}
+
+          <li class="nav-item nav-link-s">
+            <div class="nav-item-s">
+              <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+            </div>
+          </li>
+          <li class="nav-item nav-link-s">
+            <div class="nav-item-s">
+              <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+            </div>
+          </li>
+
+          {% endif %}
+
+          <!-- Nav Bar Links continues after Links only visible when User is authenticated -->
+          <li class="nav-item nav-link-s">
+            <div class="nav-item-s">
+              <a class="nav-link active" aria-current="page" href="#">Start here</a>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+      <!-- Search Bar -->
+      <span class="navbar-text text-muted">
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search Recipe" aria-label="Search Recipe">
+          <button class="btn btn-outline-success btn-sm" type="submit">GO</button>
+        </form>
+      </span>
+    </div>
+  </nav>
+  <!-- Bootstrap Messages Container -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-2">
+        {% for message in messages %}
+        <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="" alert>
           {{ message | safe }}
-          <button type="button" class="btn-close" data-bs-dismiss="lert" aria-label="Close"> 
-          </button>  
-          </div>
-          {% endfor %}
+          <button type="button" class="btn-close" data-bs-dismiss="lert" aria-label="Close">
+          </button>
         </div>
+        {% endfor %}
       </div>
     </div>
-    
-    <main class="flex-shrink-0 main-bg">
-        {% block content %}
-        <!--  Block Receipt Column -->
-        {% endblock content %}
-    </main>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <center>
+  </div>
+
+  <main class="flex-shrink-0 main-bg">
+    {% block content %}
+    <!--  Block Recipe Column -->
+    {% endblock content %}
+  </main>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <!-- Footer -->
+  <center>
     <footer class="footer mt-auto py-2 light-bg">
-        <span class="m-0 text-center text-black">2023 ShemmyYo - Project developed for Educational purposes</span>
-        <span class="m-0 text-center text-black">
-          <a href="https://github.com/ShemmyYo/" target="_blank" rel="noopener"
-            aria-label="Visit my GitHub page(opens in a new tab)" id="copyright-text"><i
-              class="fab fa-github-square ms-3"></i></a>
-        </span>
+      <span class="m-0 text-center text-black">2023 ShemmyYo - Project developed for Educational purposes</span>
+      <span class="m-0 text-center text-black">
+        <a href="https://github.com/ShemmyYo/" target="_blank" rel="noopener"
+          aria-label="Visit my GitHub page(opens in a new tab)" id="copyright-text"><i
+            class="fab fa-github-square ms-3"></i></a>
+      </span>
     </footer>
-    </center>
+  </center>
 
 </body>
 
+<!-- Bootstrap  -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+  integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js"
+  integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i" crossorigin="anonymous">
+</script>
+
 <!-- Timeout 3s close messages -->
 <script>
-  setTimeout(function(){
+  setTimeout(function () {
     let messages = document.getElementById("msg");
     let alert = new bootstrap.Alert(messages);
     alert.close();
@@ -183,17 +200,13 @@
 </script>
 
 <!-- GSAP Library: https://cdnjs.com/libraries/gsap -->
-<script 
-    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" 
-    integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ==" 
-    crossorigin="anonymous" 
-    referrerpolicy="no-referrer">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"
+  integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ=="
+  crossorigin="anonymous" referrerpolicy="no-referrer">
 </script>
-<script 
-    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/Flip.min.js" 
-    integrity="sha512-RL2ypMFkOs/iB79bWnNiFrZRCqyExtQ38n/K+t7Xjf09YZcvSzqgSaGVj+fiVYEqVRLf/WjdHmwGImZM3XO5gA==" 
-    crossorigin="anonymous" 
-    referrerpolicy="no-referrer">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/Flip.min.js"
+  integrity="sha512-RL2ypMFkOs/iB79bWnNiFrZRCqyExtQ38n/K+t7Xjf09YZcvSzqgSaGVj+fiVYEqVRLf/WjdHmwGImZM3XO5gA=="
+  crossorigin="anonymous" referrerpolicy="no-referrer">
 </script>
 
 </html>

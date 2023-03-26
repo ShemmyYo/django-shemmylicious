@@ -17,12 +17,20 @@ class CategoryForm(forms.ModelForm):
 
 
 # Create a Recipe Form
-class AddRecipeForm(ModelForm):
+class AddRecipeForm(forms.ModelForm):
     class Meta:
         model = Recipe
-        fields = ('recipe_title', 'slug', 'category', 'featured_image',
-        'featured_comment', 'recipe_ingridients',
-        'recipe_instructions', 'excerpt', 'author',)
+        fields = (
+            'recipe_title',
+            'slug',
+            'category',
+            'featured_image',
+            'featured_comment',
+            'recipe_ingridients',
+            'recipe_instructions',
+            'excerpt',
+            'author',
+            )
 
         labels = {
             'recipe_title': '',
