@@ -2,6 +2,9 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
 from cloudinary.models import CloudinaryField
+from django.utils.text import slugify
+from django.dispatch import receiver
+from django.db.models.signals import pre_save
 
 
 STATUS = ((0, "Draft"), (1, "Published"))
@@ -53,6 +56,11 @@ class Recipe(models.Model):
     
     def get_absolute_url(self):
         return reverse('recipe_mylist',)
+
+@receiver(pre_save, sender=Recipe)
+def store_pre_save(sender, instance, *args, **kwargs):
+    if not instance.slug:
+        instance.slug = slugify(instance.recipe_title)
 
 
 class Comment(models.Model):
