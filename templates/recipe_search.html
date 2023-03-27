@@ -1,0 +1,31 @@
+{% extends 'base.html' %} 
+{% block title %}{% endblock %}
+{% load static %}
+
+
+
+{% block content %}
+
+<div class="container">
+
+    {% if searched %}
+        <h3>Your searched for {{ searched }}</h3>
+        {% for recipe in recipes %}
+        <a href="{% url 'recipe_detail' recipe.slug %}">{{ recipe }}</a>
+        <br>
+        {% endfor %}
+
+    {% else %}
+        <h3>No search results</h3>
+    {% endif %}
+
+
+    
+
+    
+
+    <a href="{% url 'home' %}" class="btn btn-sm btn-outline-success">Home</a>
+
+
+</div>
+{% endblock content %}

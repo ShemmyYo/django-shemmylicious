@@ -135,8 +135,9 @@
       </div>
       <!-- Search Bar -->
       <span class="navbar-text text-muted">
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search Recipe" aria-label="Search Recipe">
+        <form class="d-flex" method="POST" action="{% url 'recipe-search' %}">
+          {% csrf_token %}
+          <input class="form-control me-2" type="search" placeholder="Search Recipe" aria-label="Search Recipe" name="searched">
           <button class="btn btn-outline-success btn-sm" type="submit">GO</button>
         </form>
       </span>

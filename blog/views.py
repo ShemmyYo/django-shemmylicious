@@ -10,6 +10,18 @@ from .forms import CommentForm, CategoryForm
 from .forms import AddRecipeForm
 
 
+def RecipeSearch(request):
+    if request.method == 'POST':
+        searched = request.POST['searched']
+        recipes = Recipe.objects.filter(recipe_title__contains=searched)
+        return render(request,
+        'recipe_search.html',
+        {'searched': searched,
+        'recipes': recipes})
+    else:
+        return render(request, 'recipe_search.html', {})
+
+
 class RecipeAddView(generic.CreateView):
     model = Recipe
     template_name = 'recipe_add.html'
