@@ -45,11 +45,22 @@ class RecipeListView(generic.ListView):
     paginate_by = 10
 
 
-class RecipeMyListView(generic.ListView):
-    model = Recipe
-    queryset = Recipe.objects.filter(status=1).order_by('-created_date')
-    template_name = 'recipe_mylist.html'
-    paginate_by = 50
+def RecipeMyListView(request):
+    if request.user.is_authenticated:
+        recipes = Recipe.objects.filter(author=request.user.id).order_by('-created_date')
+        return render (request, 'recipe_mylist.html', {
+            "recipes": recipes
+        })
+    else:
+        messages.success(request, ("Success!"))
+        return redirect('home')
+
+
+# class RecipeMyListView(generic.ListView):
+#     model = Recipe
+#     queryset = Recipe.objects.filter(status=1).order_by('-created_date')
+#     template_name = 'recipe_mylist.html'
+#     paginate_by = 50
 
 
 class RecipeDetailEdit(generic.DetailView):

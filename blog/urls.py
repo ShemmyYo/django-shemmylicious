@@ -10,7 +10,7 @@ urlpatterns = [
     path('add_recipe/', AddRecipeFormView, name='add_recipe'),
     path('recipe_add/', RecipeAddView.as_view(), name='recipe-add'),
     path('add_category', AddCategoryFormView, name='add-category'),
-    path('recipe_mylist', RecipeMyListView.as_view(), name='recipe_mylist'),
+    path('recipe_mylist', RecipeMyListView, name='recipe_mylist'),
     path('recipe/<int:pk>', RecipeDetailEdit.as_view(), name='recipe-edit'),
     path('<slug:slug>/', RecipeDetailView.as_view(), name='recipe_detail'),
 ]

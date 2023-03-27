@@ -3,48 +3,52 @@
 
 {% block content %}
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-8 offset-md-2 mt-3 left">
-      <div class="row">
-
-        {% for recipe in object_list %}
-        <div class="col-md-4">
-          <div class="card mb-4">
-
-            {% if "recipe" in recipe.featured_image.url %}
-            <img src="https://res.cloudinary.com/dteyj4llb/image/upload/v1679649965/media/Shemmylicious/recipe.png"
-              alt="deafult image" class="card-img-top"">
-            {% else %}
-            <img src="{{ recipe.featured_image.url }}" alt="image" class="card-img-top" style="background-size: cover; overflow: hidden;">
-            {% endif %}
-
-            <div class="card-body">
-              <p>{{ recipe.created_date}}
-                <i class="far fa-heart"> {{ recipe.number_of_likes}}</i></small>
-              </p>
-              <hr>
-              <h5><strong>{{ recipe.recipe_title }}</strong></h5>
-              <p>Category: {{ recipe.category }}</p>
-              <p>Author: {{ recipe.author }}</p>     
-
-              <a href="{% url 'recipe-edit' recipe.pk %}" class="btn btn-sm btn-outline-success"><span>Edit</span></a>
-              <a href="#" class="btn btn-sm btn-outline-danger"><span>Delete</span></a>
+  
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8 offset-md-2 mt-3 left">
+        <div class="row">
+          <h4>{{ user.username }}'s Recipes:</h4>
+ 
+          {% for recipe in recipes %}
+          <div class="col-md-4">
+            <div class="card mb-4">
+  
+              {% if "recipe" in recipe.featured_image.url %}
+              <img src="https://res.cloudinary.com/dteyj4llb/image/upload/v1679649965/media/Shemmylicious/recipe.png"
+                alt="deafult image" class="card-img-top"">
+              {% else %}
+              <img src="{{ recipe.featured_image.url }}" alt="image" class="card-img-top" style="background-size: cover; overflow: hidden;">
+              {% endif %}
+  
+              <div class="card-body">
+                <p>{{ recipe.created_date}}
+                  <i class="far fa-heart"> {{ recipe.number_of_likes}}</i></small>
+                </p>
+                <hr>
+                <h5><strong>{{ recipe.recipe_title }}</strong></h5>
+                <p>Category: {{ recipe.category }}</p>
+                <p>Author: {{ recipe.author }}</p>     
+  
+                <a href="{% url 'recipe-edit' recipe.pk %}" class="btn btn-sm btn-outline-success"><span>Edit</span></a>
+                <a href="#" class="btn btn-sm btn-outline-danger"><span>Delete</span></a>
+              </div>
             </div>
           </div>
+  
+          {% if forloop.counter|divisibleby:30 %}
         </div>
-
-        {% if forloop.counter|divisibleby:30 %}
-      </div>
-      <div class="row">
-        {% endif %}
-
-        {% endfor %}
-
+        <div class="row">
+          {% endif %}
+  
+          {% endfor %}
+  
+        </div>
       </div>
     </div>
   </div>
-</div>
+
+
 {% if is_paginated %}
 <nav aria-label="Page naigation">
   <ul class="pagination justify-content-center">
