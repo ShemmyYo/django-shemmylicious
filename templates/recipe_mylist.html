@@ -31,6 +31,7 @@
                 <p>Author: {{ recipe.author }}</p>     
   
                 <a href="{% url 'recipe-edit' recipe.pk %}" class="btn btn-sm btn-outline-success"><span>Edit</span></a>
+                <a href="{% url 'recipe-update' recipe.pk %}" class="btn btn-sm btn-outline-success"><span>Update</span></a>
                 <a href="#" class="btn btn-sm btn-outline-danger"><span>Delete</span></a>
               </div>
             </div>

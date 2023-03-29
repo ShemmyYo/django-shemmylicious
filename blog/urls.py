@@ -1,18 +1,19 @@
 from django.urls import path
-from .views import RecipeListView, RecipeDetailView, RecipeLike, AddRecipeFormView, RecipeAddView, AddCategoryFormView, RecipeMyListView, RecipeDetailEdit, RecipeSearch
+from . import views
 
 
 urlpatterns = [
-    path('', RecipeListView.as_view(), name='start'),
-    path('home/', RecipeListView.as_view(), name='home'),
-    path('about/', RecipeListView.as_view(), name='about'),
-    path('likes/<slug:slug>/', RecipeLike.as_view(), name='recipe_like'),
-    path('add_recipe/', AddRecipeFormView, name='add_recipe'),
-    path('recipe_add/', RecipeAddView.as_view(), name='recipe-add'),
-    path('add_category', AddCategoryFormView, name='add-category'),
-    path('recipe_mylist', RecipeMyListView, name='recipe_mylist'),
-    path('recipe_search', RecipeSearch, name='recipe-search'),
+    path('', views.RecipeListView.as_view(), name='start'),
+    path('home/', views.RecipeListView.as_view(), name='home'),
+    path('about/', views.RecipeListView.as_view(), name='about'),
+    path('likes/<slug:slug>/', views.RecipeLike.as_view(), name='recipe_like'),
+    path('add_recipe/', views.AddRecipeFormView, name='add_recipe'),
+    path('recipe_add/', views.RecipeAddView.as_view(), name='recipe-add'),
+    path('add_category/', views.AddCategoryFormView, name='add-category'),
+    path('recipe_mylist/', views.RecipeMyListView, name='recipe_mylist'),
+    path('recipe_search', views.RecipeSearch, name='recipe-search'),
+    path('recipe_update/<recipe_id>', views.RecipeUpdate, name='recipe-update'),
 
-    path('recipe/<int:pk>', RecipeDetailEdit.as_view(), name='recipe-edit'),
-    path('<slug:slug>/', RecipeDetailView.as_view(), name='recipe_detail'),
+    path('recipe/<int:pk>', views.RecipeDetailEdit.as_view(), name='recipe-edit'),
+    path('<slug:slug>/', views.RecipeDetailView.as_view(), name='recipe_detail'),
 ]

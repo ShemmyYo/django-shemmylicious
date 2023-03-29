@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, reverse
@@ -6,7 +6,7 @@ from django.contrib import messages
 from django.views.generic import ListView, DetailView, CreateView
 
 from .models import Recipe
-from .forms import CommentForm, CategoryForm
+from .forms import CommentForm, CategoryForm, AddRecipeForm
 from .forms import AddRecipeForm
 
 
@@ -79,6 +79,19 @@ class RecipeDetailEdit(generic.DetailView):
     model = Recipe
     queryset = Recipe.objects.filter(status=1).order_by('-created_date')
     template_name = 'recipe_edit.html'
+
+
+def RecipeUpdate(request, recipe_id):
+    recipe = Recipe.objects.get(pk=recipe_id)
+    form = AddRecipeForm(request.POST or None, instance=recipe)
+    if form.is_valid():
+        form.save()
+        messages.success(request, "Successfully updated.")
+        return redirect('recipe_mylist')
+    
+    return render(request, 'recipe_update.html',
+        {'recipe': recipe,
+        'form': form},)
 
 
 class RecipeDetailView(View):
