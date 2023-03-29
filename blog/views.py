@@ -81,6 +81,12 @@ class RecipeDetailEdit(generic.DetailView):
     template_name = 'recipe_edit.html'
 
 
+def RecipeDelete(request, recipe_id):
+    recipe = Recipe.objects.get(pk=recipe_id)
+    recipe.delete()
+    return redirect('recipe_mylist')
+
+
 def RecipeUpdate(request, recipe_id):
     recipe = Recipe.objects.get(pk=recipe_id)
     form = AddRecipeForm(request.POST or None, instance=recipe)

@@ -45,7 +45,7 @@ class AddRecipeForm(forms.ModelForm):
         widgets = {
             'recipe_title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Recipe Title'}),
             'slug': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'slug'}),
-            'category': forms.Select(attrs={'class': 'form-control', 'placeholder': 'Category'}),
+            'category': forms.Select(attrs={'class': 'form-select', 'placeholder': 'Category'}),
             #'featured_image': forms.URLInput(attrs={'class': 'form-control', 'type': 'file'}),
             'featured_comment': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Featured Comment'}),
             'recipe_ingridients': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Ingridients'}),
