@@ -7,3 +7,8 @@ urlpatterns = [
     path('', include('blog.urls'), name='blog_urls'),
     path('accounts/', include('allauth.urls')),
 ]
+
+# Configure Admin Titles
+admin.site.site_header = "Shemmylicious Admin Area"
+admin.site.site_title = "Shemmylicious"
+admin.site.index_title = "Welcome to the Shemmylicious Page Admin area!"
