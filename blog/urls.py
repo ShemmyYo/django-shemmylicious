@@ -15,6 +15,5 @@ urlpatterns = [
     path('recipe_update/<recipe_id>', views.RecipeUpdate, name='recipe-update'),
     path('recipe_delete/<recipe_id>', views.RecipeDelete, name='recipe-delete'),
 
-    # path('recipe/<int:pk>', views.RecipeDetailEdit.as_view(), name='recipe-edit'),
     path('recipe/<slug:slug>/', views.RecipeDetailView.as_view(), name='recipe_detail'),
 ]

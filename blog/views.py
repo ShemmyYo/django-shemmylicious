@@ -9,15 +9,17 @@ from .models import Recipe
 from .forms import CommentForm, CategoryForm, AddRecipeForm
 from .forms import AddRecipeForm
 
-
+# Start View
 def StartView(request):
     return render(request, "index.html", {})
 
 
+# About View
 def AboutView(request):
     return render(request, "about.html", {})
 
 
+# Search Recipes View
 def RecipeSearch(request):
     if request.method == 'POST':
         searched = request.POST['searched']
@@ -30,12 +32,22 @@ def RecipeSearch(request):
         return render(request, 'recipe_search.html', {})
 
 
-class RecipeAddView(generic.CreateView):
+# Recipe Full List Class View (CI)
+class RecipeListView(generic.ListView):
     model = Recipe
-    template_name = 'recipe_add.html'
-    fields = '__all__'
+    queryset = Recipe.objects.filter(status=1).order_by('-created_date')
+    template_name = 'recipe_list.html'
+    paginate_by = 10
 
 
+# Create Category View when authenticated as Admin?!!!!!!!!!!!!!!!!!!!
+def AddCategoryFormView(request):
+    form = CategoryForm
+
+    return render(request, "add_category.html", {'form': form})
+
+
+# Create My Recipe View when authenticated
 def AddRecipeFormView(request):
     submitted = False
     if request.method == "POST":
@@ -51,20 +63,23 @@ def AddRecipeFormView(request):
     return render(request, "add_recipe.html", {'form': form, 'submitted': submitted, })
 
 
-def AddCategoryFormView(request):
-    form = CategoryForm
-
-    return render(request, "add_category.html", {'form': form})
 
 
-
-class RecipeListView(generic.ListView):
+# Create My Recipe View when authenticated _ TBD
+class RecipeAddView(generic.CreateView):
     model = Recipe
-    queryset = Recipe.objects.filter(status=1).order_by('-created_date')
-    template_name = 'recipe_list.html'
-    paginate_by = 10
+    template_name = 'recipe_add.html'
+    fields = '__all__'
 
 
+
+
+
+
+
+
+
+# View My Recipe List View when authenticated
 def RecipeMyListView(request):
     if request.user.is_authenticated:
         recipes = Recipe.objects.filter(author=request.user.id).order_by('-created_date')
@@ -76,25 +91,7 @@ def RecipeMyListView(request):
         return redirect('home')
 
 
-# class RecipeMyListView(generic.ListView):
-#     model = Recipe
-#     queryset = Recipe.objects.filter(status=1).order_by('-created_date')
-#     template_name = 'recipe_mylist.html'
-#     paginate_by = 50
-
-
-class RecipeDetailEdit(generic.DetailView):
-    model = Recipe
-    queryset = Recipe.objects.filter(status=1).order_by('-created_date')
-    template_name = 'recipe_edit.html'
-
-
-def RecipeDelete(request, recipe_id):
-    recipe = Recipe.objects.get(pk=recipe_id)
-    recipe.delete()
-    return redirect('recipe_mylist')
-
-
+# Update My Recipe when authenticated
 def RecipeUpdate(request, recipe_id):
     recipe = Recipe.objects.get(pk=recipe_id)
     form = AddRecipeForm(request.POST or None, instance=recipe)
@@ -108,6 +105,19 @@ def RecipeUpdate(request, recipe_id):
         'form': form},)
 
 
+# Delete My Recipe when authenticated
+def RecipeDelete(request, recipe_id):
+    recipe = Recipe.objects.get(pk=recipe_id)
+    recipe.delete()
+    return redirect('recipe_mylist')
+
+
+
+
+# CI WALKTHROUGH BELOW
+
+
+# Recipe Details View Class (CI)
 class RecipeDetailView(View):
     def get(self, request, slug, *args, **kwargs):
         queryset = Recipe.objects.filter(status=1)
@@ -116,7 +126,6 @@ class RecipeDetailView(View):
         liked = False
         if recipe.likes.filter(id=self.request.user.id).exists():
             liked = True
-        
         return render(
             request,
             "recipe_detail.html",
@@ -137,9 +146,7 @@ class RecipeDetailView(View):
         liked = False
         if recipe.likes.filter(id=self.request.user.id).exists():
             liked = True
-        
         comment_form = CommentForm(data=request.POST)
-
         if comment_form.is_valid():
             comment_form.instance.email = request.user.email
             comment_form.instance.name = request.user.username
@@ -158,11 +165,11 @@ class RecipeDetailView(View):
                 "commented": True,
                 "liked": liked,
                 "comment_form": CommentForm()
-
             },
         )
 
 
+# Recipe Likes View Class (CI)
 class RecipeLike(View):
     def post(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Recipe, slug=slug)
