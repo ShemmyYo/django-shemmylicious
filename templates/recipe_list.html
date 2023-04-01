@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+Category Carousele 
+
+<div class="container col-lg-8 offset-lg-2 col-10">
+  {% for recipe in object_list %}
+
+  <div class="card mb-3">
+    <div class="row gy-1">
+      <div class="col-lg-4 col-12">
+        <div class="image-container">
+          {% if "recipe" in recipe.featured_image.url %}
+          <img src="https://res.cloudinary.com/dteyj4llb/image/upload/v1679649965/media/Shemmylicious/recipe.png"
+            alt="deafult image" class="img-thumbnail card-img-top ">
+          {% else %}
+          <img src="{{ recipe.featured_image.url }}" alt="image" class="img-thumbnail card-img-top">
+          {% endif %}
+          <div class="image-flash">
+            <p class="author image-flash-author">Author: {{ recipe.author }}</p>
+            <p class="category image-flash-category">{{ recipe.category }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8 col-12">
+        <div class="card-body">
+          <a href="{% url 'recipe_detail' recipe.slug %}">
+            <h1 class="card-title">"{{ recipe.recipe_title }}"</h1>
+          </a>
+          <hr>
+          <p class="card-text">{{ recipe.excerpt }}</p>
+          <hr>
+          <p class="card-featured-comment">Featured Comment</p>
+          <h3 class="card-title">{{ recipe.featured_comment }}</h5>
+            <a href="{% url 'recipe_detail' recipe.slug %}">
+              <p class="card-featured-comment-continue">Continue reading...</p>
+            </a>
+            <br>
+            <p class="card"><small class="text-muted">{{ recipe.created_date}}
+                <i class="far fa-heart"> {{ recipe.number_of_likes}}</i></small>
+            </p>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    {% if forloop.counter|divisibleby:3 %}
+  </div>
+  <div class="row">
+    {% endif %}
+    <br>
+    <br>
+    <br>
+    {% endfor %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  </div>
+</div>
+{% if is_paginated %}
+<nav aria-label="Page naigation">
+  <ul class="pagination justify-content-center">
+    {% if page_obj.has_previous %}
+    <li><a href="?page={{ page_obj.previous_page_number}}" class="page-link">&laquo; PREV</a></li>
+    {% endif %}
+    {% if page_obj.has_next %}
+    <li><a href="?page={{ page_obj.nexts_page_number}}" class="page-link">NEXT &raquo;</a></li>
+    {% endif %}
+  </ul>
+</nav>
+{% endif %}
+</div>
+{% endblock %}

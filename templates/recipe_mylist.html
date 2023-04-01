@@ -8,8 +8,8 @@
     <div class="row">
       <div class="col-md-8 offset-md-2 mt-3 left">
         <div class="row">
-          <h4>{{ user.username }}'s Recipes:</h4>
- 
+          <h2>{{ user.username }}'s Recipes List</h2>
+          <br/><br/><br/>
           {% for recipe in recipes %}
           <div class="col-md-4">
             <div class="card mb-4">
@@ -30,9 +30,8 @@
                 <p>Category: {{ recipe.category }}</p>
                 <p>Author: {{ recipe.author }}</p>     
   
-                <a href="{% url 'recipe-edit' recipe.pk %}" class="btn btn-sm btn-outline-success"><span>Edit</span></a>
                 <a href="{% url 'recipe-update' recipe.pk %}" class="btn btn-sm btn-outline-success"><span>Update</span></a>
-                <a href="{% url 'recipe_delete' recipe.pk %}" class="btn btn-sm btn-outline-danger"><span>Delete</span></a>
+                <a href="{% url 'recipe-delete' recipe.pk %}" class="btn btn-sm btn-outline-danger"><span>Delete</span></a>
               </div>
             </div>
           </div>

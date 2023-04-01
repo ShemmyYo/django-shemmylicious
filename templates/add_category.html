@@ -3,29 +3,33 @@
 
 {% block content %}
 
-<center>
-    <br>
-    <br>
-    <h1>Add Category</h1>
-    <br>
-    <div class="container col-6">
-        {% if submitted %}
-            Your Recipe was Submitted Succesfully!
-        {% else %}
-        <form action="" method="POST" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ form.media }}
+    <div class="container">
+        <h2>{{ user.username }}'s Area</h2>
+        <br/><br/><br/>
+        <center>
+        <br>
+        <br>
+        <h1>Add Category</h1>
+        <br>
+        <div class="container col-6">
+            {% if submitted %}
+                Your Recipe was Submitted Succesfully!
+            {% else %}
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.media }}
 
-            {{ form.as_p }}
+                {{ form.as_p }}
 
-            <input type="submit" value="Add Category" class="btn btn-outline-secondary">
-        </form>
-        {% endif %} 
+                <input type="submit" value="Add Category" class="btn btn-outline-secondary">
+            </form>
+            {% endif %} 
+        </div>
+        </center>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
     </div>
-    </center>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
 {% endblock content %}

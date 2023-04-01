@@ -10,6 +10,14 @@ from .forms import CommentForm, CategoryForm, AddRecipeForm
 from .forms import AddRecipeForm
 
 
+def StartView(request):
+    return render(request, "index.html", {})
+
+
+def AboutView(request):
+    return render(request, "about.html", {})
+
+
 def RecipeSearch(request):
     if request.method == 'POST':
         searched = request.POST['searched']
@@ -53,7 +61,7 @@ def AddCategoryFormView(request):
 class RecipeListView(generic.ListView):
     model = Recipe
     queryset = Recipe.objects.filter(status=1).order_by('-created_date')
-    template_name = 'index.html'
+    template_name = 'recipe_list.html'
     paginate_by = 10
 
 
