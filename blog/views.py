@@ -4,14 +4,15 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, reverse
 from django.contrib import messages
 from django.views.generic import ListView, DetailView, CreateView
-
 from .models import Recipe
 from .forms import CommentForm, CategoryForm, AddRecipeForm
 from .forms import AddRecipeForm
 
+
 # Start View
 def StartView(request):
-    return render(request, "index.html", {})
+    slider = Recipe.objects.all().order_by('?')[:6]
+    return render(request, "index.html",{'slider': slider, })
 
 
 # About View
@@ -40,11 +41,11 @@ class RecipeListView(generic.ListView):
     paginate_by = 10
 
 
-# Create Category View when authenticated as Admin?!!!!!!!!!!!!!!!!!!!
+# Create Category View when authenticated as Superuser
 def AddCategoryFormView(request):
     form = CategoryForm
 
-    return render(request, "add_category.html", {'form': form})
+    return render(request, "recipe_add_category.html", {'form': form})
 
 
 # Create My Recipe View when authenticated
@@ -54,29 +55,13 @@ def AddRecipeFormView(request):
         form = AddRecipeForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/add_recipe?submitted=True')
+            return HttpResponseRedirect('/recipe_add?submitted=True')
     else:
         form = AddRecipeForm
         if 'submitted' in request.GET:
             submitted = True
 
-    return render(request, "add_recipe.html", {'form': form, 'submitted': submitted, })
-
-
-
-
-# Create My Recipe View when authenticated _ TBD
-class RecipeAddView(generic.CreateView):
-    model = Recipe
-    template_name = 'recipe_add.html'
-    fields = '__all__'
-
-
-
-
-
-
-
+    return render(request, "recipe_add.html", {'form': form, 'submitted': submitted, })
 
 
 # View My Recipe List View when authenticated
@@ -98,7 +83,7 @@ def RecipeUpdate(request, recipe_id):
     if form.is_valid():
         form.save()
         messages.success(request, "Successfully updated.")
-        return redirect('recipe_mylist')
+        return redirect('recipe-mylist')
     
     return render(request, 'recipe_update.html',
         {'recipe': recipe,
@@ -109,9 +94,7 @@ def RecipeUpdate(request, recipe_id):
 def RecipeDelete(request, recipe_id):
     recipe = Recipe.objects.get(pk=recipe_id)
     recipe.delete()
-    return redirect('recipe_mylist')
-
-
+    return redirect('recipe-mylist')
 
 
 # CI WALKTHROUGH BELOW

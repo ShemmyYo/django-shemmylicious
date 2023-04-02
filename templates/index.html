@@ -1,8 +1,57 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block content %}
 
-  <h1>Welcome Page</h1>
+<h1>Welcome Page</h1>
+
+<div class="container col-lg-8 offset-lg-2 col-10">
+
+  <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="10000">
+        <img src="{% static '/img1.jpg' %}" class="d-block w-100" alt="carousel random image">
+      </div>
+      {% for slide in slider %}
+            <!-- Slides -->
+            <div class="carousel-item" data-bs-interval="5000">
+              <a href="{% url 'recipe_detail' slide.slug %}">
+                {% if "recipe" in slide.featured_image.url %}
+                <img src="https://res.cloudinary.com/dteyj4llb/image/upload/v1679649965/media/Shemmylicious/recipe.png"
+                  class="d-block w-100" alt="slider random image">
+                {% else %}
+                <img src="{{ slide.featured_image.url }}" class="d-block w-100" alt="slider random image">
+                {% endif %}
+                <div class="carousel-image-flash">
+                  <p class="carousel-image-flash-author">Author: {{ slide.author }}</p>
+                  <p class="carousel-image-flash-category">{{ slide.category }}</p>
+                </div>
+                <div class="carousel-image-comment">
+                  <h4 class="carousel-image-comment-title">{{ slide.recipe_title }}</h4>
+                  <p class="carousel-image-comment-comment">{{ slide.featured_comment }}</p>
+                </div>
+              </a>
+            </div>
+      {% endfor %}
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
 
 {% endblock %}

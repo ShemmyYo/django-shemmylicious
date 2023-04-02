@@ -22,16 +22,24 @@
               {% endif %}
   
               <div class="card-body">
-                <p>{{ recipe.created_date}}
-                  <i class="far fa-heart"> {{ recipe.number_of_likes}}</i></small>
+                <p>{{ recipe.created_date }}
+                  <i class="far fa-heart"> {{ recipe.number_of_likes }}</i></small>
                 </p>
                 <hr>
                 <h5><strong>{{ recipe.recipe_title }}</strong></h5>
                 <p>Category: {{ recipe.category }}</p>
                 <p>Author: {{ recipe.author }}</p>     
-  
+                {% if recipe.status == 0 %}
+                  <hr>
+                  <h5><strong>Not Published</strong></h5>
+                  <p>Awaiting Admin's Authorisation</p>
+                  <hr>
+                {% else %}
+                  <a href="{% url 'recipe_detail' recipe.slug %}" class="btn btn-sm btn-outline-secondary"><span>View</span></a>    
+                {% endif %}  
                 <a href="{% url 'recipe-update' recipe.pk %}" class="btn btn-sm btn-outline-success"><span>Update</span></a>
                 <a href="{% url 'recipe-delete' recipe.pk %}" class="btn btn-sm btn-outline-danger"><span>Delete</span></a>
+                <a href="{% url 'add-recipe' %}" class="btn btn-sm btn-outline-warning"><span>Add</span></a>
               </div>
             </div>
           </div>

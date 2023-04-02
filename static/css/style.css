@@ -109,12 +109,59 @@ a {
 
 
 
+/* Carousel  */
+
+.carousel-inner {
+    max-height: 600px;
+}
+
+.carousel-inner img {
+    background-size: cover ;
+    overflow-y: hidden;
+    height: auto;
+}
+
+.carousel-image-flash {
+    position: absolute;
+    height: 50%;
+    top: 1%;
+    left: 20px;
+    overflow: hidden;
+}
 
 
+.carousel-image-flash-author,
+.carousel-image-flash-category { 
+    background-color: #0e9a46dd;
+    border-radius: 4px;
+    margin-top: 3px;
+    padding: 0 5px;
+    color: white;
+    margin: 4px;
+    text-transform: uppercase;
+    text-align: end;
+}
 
+.carousel-image-comment {
+    position: absolute;
+    max-width: 80% ;
+    height: 50%;
+    bottom: 20%;
+    right: 20px;
+    overflow: hidden;
+}
 
+.carousel-image-comment-title,
+.carousel-image-comment-comment {
+    background-color: #9a99a2d5;
+    text-align: start;
+    color: white;
+    border-radius: 4px;
+    margin-top: 3px;
+    padding: 0 5px;
+    margin: 4px;
 
-
+}
 
 
 
