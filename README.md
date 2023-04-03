@@ -22,7 +22,9 @@ Finding the right recipe is more difficult than ever. That's why we've made it s
 
 
 
-
+## Technologies Used
+[Summernote Web](https://summernote.org/)
+[Summernote Git](https://github.com/summernote/django-summernote)
 
 
 Technologies

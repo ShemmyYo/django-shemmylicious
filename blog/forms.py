@@ -38,9 +38,9 @@ class AddRecipeForm(forms.ModelForm):
             'category': '',
             'featured_image': '',
             'featured_comment': '',
-            'recipe_ingridients': 'Type in ingridients',
-            'recipe_instructions': 'Provide instructions',
-            'excerpt': 'Type in a catchy, featured comment',
+            'recipe_ingridients': '',
+            'recipe_instructions': '',
+            'excerpt': '',
             'author': '',
         }
         widgets = {
@@ -49,8 +49,8 @@ class AddRecipeForm(forms.ModelForm):
             'category': forms.Select(attrs={'class': 'form-select', 'placeholder': 'Category'}),
             #'featured_image': forms.URLInput(attrs={'class': 'form-control', 'type': 'file'}),
             'featured_comment': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Featured Comment'}),
-            'recipe_ingridients': SummernoteWidget(),
-            'recipe_instructions': SummernoteWidget(),
-            'excerpt': SummernoteWidget(),
+            'recipe_ingridients': SummernoteWidget(attrs={'summernote': {'width': '100%', 'height': '400px', 'placeholder': 'Type in ingridients here...'}}),
+            'recipe_instructions': SummernoteWidget(attrs={'summernote': {'width': '100%', 'height': '400px', 'placeholder': 'Provide instructions here...'}}),
+            'excerpt': SummernoteWidget(attrs={'summernote': {'width': '100%', 'height': '200px', 'placeholder': 'Type in a short but catchy comment which will feature your recipe here...' }}),
             'author': forms.Select(attrs={'class': 'form-control', 'placeholder': 'Author'}),
         }
