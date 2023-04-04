@@ -108,9 +108,13 @@ a {
 
 
 
+/* INDEX */
+/* HERO */
+.hero-logo {
+    z-index: 20;
+}
 
 /* Carousel  */
-
 .carousel-inner {
     max-height: 600px;
 }
