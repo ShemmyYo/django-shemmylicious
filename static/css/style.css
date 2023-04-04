@@ -108,13 +108,82 @@ a {
 
 
 
-/* INDEX */
-/* HERO */
-.hero-logo {
-    z-index: 20;
+/*--------------------------------------- 
+-----------------------------------------
+            INDEX 
+-----------------------------------------
+---------------------------------------*/
+/*---------------------------------------
+             HERO 
+---------------------------------------*/
+.index-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    background: linear-gradient(to right, #8EC63F, #0E9A45 );
 }
 
-/* Carousel  */
+section {
+    display: flex;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero {
+    height: 60%;
+    width: 100%;
+    position: relative;
+}
+
+.hero::after {
+    content: "";
+    background: #45575A;
+    opacity: 0.1;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.hero #food-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.headline {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #9a99a2bd;
+    padding: 3%;
+    border-radius: 8px;
+    color: white;
+    z-index: 0;
+}
+
+.headline h1 {
+    font-size: 400%;
+    z-index: 3;
+}
+
+.headline .brand-logo {
+    margin-left: 290px;
+}
+
+.headline i {
+    color: #8EC63F;
+}
+
+/*---------------------------------------
+             Carousel  
+---------------------------------------*/
 .carousel-inner {
     max-height: 600px;
 }
@@ -169,7 +238,9 @@ a {
 
 
 
-
+/*---------------------------------------
+             Footer  
+---------------------------------------*/
 footer {
     opacity: .9;
     width: 100%;
@@ -183,8 +254,9 @@ footer i {
     color: #45575A;
 }
 
-/* CARD */
-
+/*---------------------------------------
+             CARD  
+---------------------------------------*/
 .card {
     border: none;
     background-color: transparent;
@@ -253,7 +325,9 @@ img {
 
 
 
-/* CI CODE */
+/*---------------------------------------
+                 CI CODE 
+---------------------------------------*/
 
 .masthead {
     margin-top: 10px;
@@ -346,3 +420,22 @@ img {
 
 
 
+
+
+
+
+
+/*---------------------------------------
+             MEDIA 
+---------------------------------------*/
+
+@media screen and (max-width: 760px) {
+    .headline h1 {
+        font-size: 200%;
+    }
+    
+    .headline .brand-logo {
+        margin-left: 100px;
+    }
+
+}
