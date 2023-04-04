@@ -2,9 +2,6 @@
 {% load static %}
 {% block content %}
 
-<h1>Welcome Page</h1>
-
-
 <section>
   <div class="hero">
     <img src="{% static '/images/welcome-hero2.jpg' %}" id="food-img" alt="Welcome hero picture">
@@ -18,38 +15,18 @@
     </div>
   </div>
 </section>
-
 <div class="index-slider"></div>
 
+<div class="container container-fluid">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="container col-lg-8 offset-lg-2 col-10">
-
-  <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+  <div class="inner-text col-12 col-md-3 offset-7">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae sequi alias numquam eos, tenetur perspiciatis harum eum nihil provident recusandae cum animi fugit veritatis nobis illo atque quam repellendus quo.
+  </div>
+  
+  <div id="carouselExampleInterval" class="carousel slide col-12 col-md-6 offset-md-1 col-10" data-bs-ride="carousel">
     <div class="carousel-inner">
-      <div class="carousel-item active" data-bs-interval="10000">
-        
-        <div class="hero-logo">
-          <span class="brand-logo">Shemmylicious</span>
-          <img src="https://res.cloudinary.com/dteyj4llb/image/upload/v1679654869/media/Shemmylicious/food_sjzw1x.png"
-            alt="Shemmylicious Food Sign" height="70">
-        </div>
-        <img src="{% static '/images/welcome-hero2.jpg' %}" class="d-block w-100" alt="carousel random image">
+      <div class="carousel-item active" data-bs-interval="10000">        
+        <img src="{% static '/images/welcome-hero.jpg' %}" class="d-block w-100" alt="carousel random image">     
       </div>
       {% for slide in slider %}
             <!-- Slides -->
@@ -82,9 +59,8 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-
+  
 </div>
-
 
 
 
