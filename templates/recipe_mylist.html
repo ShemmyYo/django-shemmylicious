@@ -36,10 +36,11 @@
                   <hr>
                 {% else %}
                   <a href="{% url 'recipe_detail' recipe.slug %}" class="btn btn-sm btn-outline-secondary"><span>View</span></a>    
-                {% endif %}  
+                {% endif %} 
+                <a href="{% url 'add-recipe' %}" class="btn btn-sm btn-outline-warning"><span>New</span></a> 
                 <a href="{% url 'recipe-update' recipe.pk %}" class="btn btn-sm btn-outline-success"><span>Update</span></a>
                 <a href="{% url 'recipe-delete' recipe.pk %}" class="btn btn-sm btn-outline-danger"><span>Delete</span></a>
-                <a href="{% url 'add-recipe' %}" class="btn btn-sm btn-outline-warning"><span>Add</span></a>
+                
               </div>
             </div>
           </div>
