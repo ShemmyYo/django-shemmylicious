@@ -12,13 +12,16 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 class Category(models.Model):
     category_name = models.CharField(max_length=100, unique=True, null=False, blank=False)
-    featured_image = CloudinaryField('image', default='featured-recipe')
+    featured_image = CloudinaryField('image', default='recipe')
 
     class Meta:
         ordering = ['category_name']
 
     def __str__(self):
         return self.category_name
+
+    def get_absolute_url(self):
+        return reverse('recipe-mylist',)
 
 
 class Profile(models.Model):
@@ -38,7 +41,8 @@ class Recipe(models.Model):
     created_date = models.DateField(auto_now_add=True)
     updated_date = models.DateField(auto_now=True)
     featured_image = CloudinaryField('image', default='recipe')
-# models.FileField(null=True, blank=True, upload_to='Shemmylicious/', default="media/Shemmylicious/shemmylicious-logo_szrask")
+    # models.FileField(null=True, blank=True, upload_to='Shemmylicious/', default="recipe")
+    # CloudinaryField('image', default='recipe')
     featured_comment = models.TextField(null=False, default="Shemmylicious Food")
     recipe_ingridients = models.TextField(blank=True)
     recipe_instructions = models.TextField(blank=True)
@@ -55,7 +59,7 @@ class Recipe(models.Model):
         return self.likes.count()
     
     def get_absolute_url(self):
-        return reverse('recipe_mylist',)
+        return reverse('recipe-mylist',)
 
 @receiver(pre_save, sender=Recipe)
 def store_pre_save(sender, instance, *args, **kwargs):

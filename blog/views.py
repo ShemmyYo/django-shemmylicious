@@ -1,17 +1,16 @@
 from django.shortcuts import render, redirect
 from django.views import generic, View
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import get_object_or_404, reverse
 from django.contrib import messages
 from django.views.generic import ListView, DetailView, CreateView
-from .models import Recipe
+from .models import Recipe, Category
 from .forms import CommentForm, CategoryForm, AddRecipeForm
-from .forms import AddRecipeForm
 
 
 # Start View
 def StartView(request):
-    slider = Recipe.objects.all().order_by('?')[:6]
+    slider = Recipe.objects.all().order_by('?')[:12]
     return render(request, "index.html",{'slider': slider, })
 
 
@@ -46,6 +45,13 @@ def AddCategoryFormView(request):
     form = CategoryForm
 
     return render(request, "recipe_add_category.html", {'form': form})
+
+
+# View by Category
+def CategoryView(request, categories):
+    find_category_name = Category.objects.get(category_name=categories)
+    category_recipes = Recipe.objects.filter(category=find_category_name)
+    return render(request, "recipe_list_by_category.html", {'categories': categories, 'category_recipes': category_recipes, })
 
 
 # Create My Recipe View when authenticated
