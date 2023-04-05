@@ -12,8 +12,10 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import django_heroku
 import dj_database_url
 from django.contrib.messages import constants as messages
+from decouple import config
 import cloudinary_storage
 if os.path.isfile("env.py"):
     import env
@@ -96,6 +98,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'shemmylicious.urls'
@@ -193,3 +196,5 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 SUMMERNOTE_THEME = 'bs5'  # Show summernote with Bootstrap4
+
+django_heroku.settings(locals())
