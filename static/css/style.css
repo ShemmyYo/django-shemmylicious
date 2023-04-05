@@ -143,7 +143,7 @@ section {
     align-items: center;
 }
 
-.hero::after {
+.hero::before {
     content: "";
     background: #45575A;
     opacity: 0.1;
@@ -189,7 +189,7 @@ section {
     font-weight: bold;
     text-decoration: none;
     text-transform: uppercase;
-    z-index: 0;
+    z-index: 5;
 }
 
 .headline h1 {
