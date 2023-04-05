@@ -259,6 +259,7 @@ footer {
     position: fixed;
     bottom: 0;
     left: 0;
+    z-index: 5;
 }
 
 footer i {
@@ -460,6 +461,33 @@ img {
         display: inline;
         padding-top: 100px;
     }
+
+    .headline {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+    }
+
+    /*---------------------------------------
+                Footer  
+    ---------------------------------------*/
+    footer {
+        opacity: .9;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 5;
+    }
+
+    footer {    
+        font-size: 50%;
+    }
+
+    footer i {
+        font-size: 120%;
+    }
+
 }
 
 

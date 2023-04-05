@@ -19,7 +19,7 @@ tl.fromTo(indexHero, 2.0, { height: "0%" }, { height:"80%", ease: Power2.easeInO
 .fromTo(indexHeadline, 1.0, { opacity: 0, x: 60 }, { opacity: 1, x: 0 }, "-=1.0")
 .fromTo(indexHero,1.5, { width: "100%" }, { width:"80%", ease: Power2.easeInOut })
 .fromTo(indexSlider, 1.2, { x: "-100%" }, { x:"100%", ease: Power2.easeInOut }, "-=1.5")
-.fromTo(indexSlider, 0.1, { width: "100%" }, { width:"0%" })
+.fromTo(indexSlider, 0.0001, { width: "100%" }, { width:"0%" })
 .fromTo(navbar, 3.5, { opacity: 0, y: -60 }, { opacity: 1, y: 0 })
 .fromTo(footer, 1.5, { opacity: 0, y: 60 }, { opacity: 1, y: 0 }, "-=2.5")
 .fromTo(myCarouselElement, 1.5, { opacity: 0, y: 60 }, { opacity: 1, y: 0 }, "-=2.0")
