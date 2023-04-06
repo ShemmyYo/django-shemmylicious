@@ -2,8 +2,12 @@
 {% load static %}
 {% block content %}
 
+<!-- Blank section -->
+<section class="section-blank">
+  <div></div>
+</section>
 <!-- Hero section with JS Animations -->
-<section>
+<section class="section-hero">
   <div class="hero">
     <img src="{% static '/images/welcome-hero2.jpg' %}" id="food-img" alt="Welcome hero picture">
     <div class="headline">
@@ -28,30 +32,40 @@
       {% endif %}
     </div>
   </div>
+  <!-- Slider used for JS Animations -->
+  <div class="index-slider"></div>
 </section>
 
-<!-- Slider used for JS Animations -->
-<div class="index-slider"></div>
-
-
-
-
-
-
-
-
-
-<div class="container container-carosel container-fluid">
-  <div class="row">
-  
+<!-- Carosel and about Author-->
+<section class="section-about">
+  <div class="container container-carosel container-fluid">
+    <div class="row">
+      <!-- About Author -->
+      <div class="inner-text col-12 col-md-8 offset-md-6">
+        <div class="row">
+          <div class="col-12 col-md-5 offset-md-2">
+            <img src="{% static '/images/welcome-hero-author-head.jpg' %}" alt="round picture of a Chef" id="hero-about-chef-img">
+            <h1>About Autor</h1>
+          </div>
+          <div class="w-100"></div>
+          <div class="col-12 col-md-5 offset-md-2">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae sequi alias numquam eos, tenetur
+              perspiciatis
+              harum eum nihil provident recusandae cum animi fugit veritatis nobis illo atque quam repellendus quo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Carosel -->
     <div id="carouselExampleInterval" class="carousel slide col-12 col-md-6 offset-md-1 col-10" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active" data-bs-interval="10000">
-          <img src="{% static '/images/welcome-hero.jpg' %}" class="d-block w-100" alt="carousel random image">
+          <img src="{% static '/images/welcome-hero-author.jpg' %}" class="d-block w-100" alt="carousel random image">
         </div>
         {% for slide in slider %}
         <!-- Slides -->
-        <div class="carousel-item" data-bs-interval="5000">
+        <div class="carousel-item" data-bs-interval="10000">
           <a href="{% url 'recipe_detail' slide.slug %}">
             {% if "recipe" in slide.featured_image.url %}
             <img src="https://res.cloudinary.com/dteyj4llb/image/upload/v1679649965/media/Shemmylicious/recipe.png"
@@ -71,6 +85,7 @@
         </div>
         {% endfor %}
       </div>
+      <!-- Carousel Bttns -->
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
         data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -82,27 +97,8 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
-
-    <div class="inner-text col-12 col-md-8 offset-md-6">
-      <div class="row">
-
-        <div class="col-12 col-md-5 offset-md-2">
-          <h1>About Autor</h1>
-        </div>
-
-        <div class="w-100"></div>
-
-        <div class="col-12 col-md-5 offset-md-2">
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae sequi alias numquam eos, tenetur perspiciatis
-            harum eum nihil provident recusandae cum animi fugit veritatis nobis illo atque quam repellendus quo.
-          </p>
-        </div>
-
-      </div>
-
-    </div>  
   </div>
-</div>
+</section>
 
 
 

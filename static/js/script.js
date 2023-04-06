@@ -3,8 +3,10 @@ gsap.registerPlugin(Flip);
 const links = document.querySelectorAll(".nav-item a");
 const activeNav = document.querySelector(".active-nav");
 
-const myCarouselElement = document.querySelector('#carouselExampleInterval')
-const carousel = new bootstrap.Carousel(myCarouselElement, {})
+const myCarouselElement = document.querySelector('#carouselExampleInterval');
+const carousel = new bootstrap.Carousel(myCarouselElement, {});
+
+const sectionBlank = document.querySelector('.section-blank');
 
 const indexHero = document.querySelector('.hero');
 const indexSlider = document.querySelector('.index-slider');
@@ -18,7 +20,8 @@ const innerText = document.querySelector('.inner-text');
 
 const tl = new TimelineMax();
 
-tl.fromTo(indexHero, 2.0, { height: "0%" }, { height:"80%", ease: Power2.easeInOut })
+tl.fromTo(sectionBlank, 0.0001, { height: "100%" }, { height:"0%" })
+.fromTo(indexHero, 2.0, { height: "0%" }, { height:"80%", ease: Power2.easeInOut })
 .fromTo(indexHeadline, 1.0, { opacity: 0, x: 60 }, { opacity: 1, x: 0 }, "-=1.0")
 .fromTo(indexHero,1.5, { width: "100%" }, { width:"80%", ease: Power2.easeInOut })
 .fromTo(indexSlider, 1.2, { x: "-100%" }, { x:"100%", ease: Power2.easeInOut }, "-=1.5")
