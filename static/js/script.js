@@ -29,7 +29,7 @@ tl.fromTo(sectionBlank, 0.0001, { height: "100%" }, { height:"0%" })
 .fromTo(indexSlider, 0.0001, { width: "100%" }, { width:"0%" })
 .fromTo(navbar, 3.5, { opacity: 0, y: -60 }, { opacity: 1, y: 0 })
 .fromTo(footer, 1.5, { opacity: 0, y: 60 }, { opacity: 1, y: 0 }, "-=2.5")
-.fromTo(myCarouselElement, 1.5, { opacity: 0, y: 60 }, { opacity: 1, y: 0 }, "-=2.0")
+.fromTo(myCarouselElement, 1.5, { opacity: 0, y: 60 }, { opacity: 1, y: 0 }, "-=2.5")
 .fromTo(innerText, 1.5, { opacity: 0, x: -60 }, { opacity: 1, x: 0 }, "-=2.0")
 
 

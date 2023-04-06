@@ -1,0 +1,77 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html class="h-100">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Shemmylicious food{% endblock %}</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Sen:wght@400;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- GSAP TweenMax & TimelineMax Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
+        integrity="sha512-DkPsH9LzNzZaZjCszwKrooKwgjArJDiEjA5tTgr3YX4E6TYv93ICS8T41yFHJnnSmGpnf0Mvb5NhScYbwvhn2w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"
+        integrity="sha512-0xrMWUXzEAc+VY7k48pWd5YT6ig03p4KARKxs4Bqxb9atrcn2fV41fWs+YXTKb8lD2sbPAmZMjKENiyzM/Gagw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/script.js' %}" defer></script>
+
+</head>
+<body>
+
+    <h1>category list</h1>
+
+    <!-- Categories Large Section -->
+    <section section-categories>
+
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-12 col-md-10 offset-md-1 border">
+                    <div class="row">
+
+                        {% for category in object_list %}
+                            {% if forloop.counter <= 5 %}
+                                <div class="col-6 col-md-2 border">
+
+                                    <img src="{{ category.featured_image.url }}" alt="Category Image"> <br>
+                                    <a href="{% url 'category' category %}"><h1>{{ category.category_name }}</h1></a> <br>
+
+                                </div>
+                            {% elif forloop.counter == 6 %}
+                                <div class="w-100"></div>
+
+                            {% elif forloop.counter >= 6 %}
+                                <div class="col-1 border">
+                                    Sec.{{ category }}
+                                </div>
+                            {% endif %}
+
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+    </section>
+
+</body>

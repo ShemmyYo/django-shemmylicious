@@ -54,6 +54,13 @@ def CategoryView(request, categories):
     return render(request, "recipe_list_by_category.html", {'categories': categories, 'category_recipes': category_recipes, })
 
 
+# List of Categories
+class CategoryListView(generic.ListView):
+    model = Category
+    queryset = Category.objects.all().order_by('?')[:15]
+    template_name = 'category_list.html'
+
+
 # Create My Recipe View when authenticated
 def AddRecipeFormView(request):
     submitted = False

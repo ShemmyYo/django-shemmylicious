@@ -8,7 +8,6 @@ root {
     --accent-col: #8EC63F;
     --accent-basic-col: #0E9A45;
 
-    --hand-font: 'Sacramento', sans-serif;
     --main-font: 'Sen', sans-serif;
     --additional-font: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -54,6 +53,16 @@ a {
 .border {
     border: solid 1px #45575A;
     border-radius: 8px;
+}
+
+.fa-heart {
+    color: #0E9A45;
+}
+
+.top-slogan {
+    font-size: 120%;
+    font-family: 'Sen', sans-serif;
+    text-transform: uppercase;
 }
 
 /*--------------------------------------- 
@@ -138,7 +147,11 @@ a {
     background: linear-gradient(to right, #fff, #8EC63F, #0E9A45 );
 }
 
-section {
+.section-blank {
+    height: 100vh;
+}
+
+.sections-index {
     display: flex;
     height: 80vh;
     justify-content: center;
