@@ -5,74 +5,22 @@
 
 <!-- Top Slogan Section -->
 <section class="top-slogan">
-  <div class="container-fluid text-center">
-      <h4 class="top-slogan">Cooking Time Is My Favorite Time <i class="far fa-heart"></i>
+  <div class="container col-lg-8 offset-lg-2 col-10 text-center top-slogan">
+    <h4 class="">Cooking Time Is My Favorite Time <i class="far fa-heart"></i>
+      <hr>
+      <h5>Shemmylicious Food Blog</h5>
+      <p>Here's where you can find all the latest and Shemmylicious food recipes from my blog. <br>
+        Be sure to sign up to be able to comment and like my posts as well as create your own recipes.</p>
+      <hr>
+      <br>
   </div>
-  <hr>
 </section>
 
-<!-- Categories Secion -->
-<section section-categories>
-
-  <div class="container text-start">
-    <div class="row">
-      <div class="col-2 -2 offset-md-2 border">
-        Column1
-      </div>
-      <div class="col-2 border">
-        Column2
-      </div>
-      <div class="col-2 border">
-        Column3
-      </div>
-      <div class="col-2 border">
-        Column4
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-1 offset-md-1 border">
-        Column1
-      </div>
-      <div class="col-1 border">
-        Column2
-      </div>
-      <div class="col-1 border">
-        Column3
-      </div>
-      <div class="col-1 border">
-        Column4
-      </div>
-      <div class="col-1 border">
-        Column1
-      </div>
-      <div class="col-1 border">
-        Column2
-      </div>
-      <div class="col-1 border">
-        Column3
-      </div>
-      <div class="col-1 border">
-        Column4
-      </div>
-      <div class="col-1 border">
-        Column4
-      </div>
-      <div class="col-1 border">
-        Column4
-      </div>
-    </div>
-  </div>
-
-</section>
 
 
 <!-- Blog -->
 <div class="container col-lg-8 offset-lg-2 col-10">
-  <hr>
-  <br>
-  <h4>Recipes</h4>
-  <br>
+
   {% for recipe in object_list %}
 
   <div class="card mb-3">
@@ -112,8 +60,7 @@
       </div>
     </div>
     <br>
-    <br>
-    <br>
+
     {% if forloop.counter|divisibleby:3 %}
   </div>
   <div class="row">
@@ -122,12 +69,8 @@
     <br>
     <br>
     {% endfor %}
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
   </div>
+  <hr>
 </div>
 {% if is_paginated %}
 <nav aria-label="Page naigation">
@@ -140,6 +83,11 @@
     {% endif %}
   </ul>
 </nav>
+<br>
+<br>
+<br>
+<br>
+<br>
 {% endif %}
 </div>
 {% endblock %}

@@ -72,7 +72,13 @@
               <a class="nav-link active" aria-current="page" href="{% url 'about' %}">About</a>
             </div>
           </li>
-          
+
+          <li class="nav-item nav-link-s">
+            <div class="nav-item-s">
+              <a class="nav-link active" aria-current="page" href="{% url 'categories' %}">Categories</a>
+            </div>
+          </li>
+        
           <!-- Nav Links visible when User is authenticated -->
           {% if user.is_authenticated %}
 

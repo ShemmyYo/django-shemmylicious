@@ -2,6 +2,7 @@
 {% load static %}
 {% block content %}
 
+
 <!-- Blank section -->
 <section class="section-blank">
   <div></div>
@@ -32,18 +33,17 @@
       {% endif %}
     </div>
   </div>
-
 </section>
 <!-- Slider used for JS Animations -->
 <div class="index-slider"></div>
 <!-- Carosel and about Author-->
 <section class="sections-index" id="section-about">
-  <div class="container container-carosel container-fluid">
+  <div class="container container-carosel  g-md-5">
     <div class="row">
       <!-- About Author -->
       <div class="inner-text col-12 col-md-4 offset-md-7">
         <div class="row">
-          <div class="">
+          <div>
             <img src="{% static '/images/welcome-hero-author-head.jpg' %}" alt="round picture of a Chef"
               id="hero-about-chef-img">
             <h1 class="hero-about-chef-title">Hi, my name is Shemmy!</h1>
@@ -56,6 +56,7 @@
               fresh, seasonal, mostly simple, often healthy, and sometimes peppered with a little cheese and butter
               mixed in.</p>
               <p>Feel free to create an account, comment and like mine and share your own resipes.</p>
+              <br>
           </div>
         </div>
       </div>
@@ -102,13 +103,5 @@
     </div>
   </div>
 </section>
-
-
-
-
-
-
-
-
 
 {% endblock %}
