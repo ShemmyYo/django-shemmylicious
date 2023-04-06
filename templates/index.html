@@ -7,8 +7,8 @@
   <div></div>
 </section>
 <!-- Hero section with JS Animations -->
-<section class="section-hero">
-  <div class="hero">
+<section id="section-hero">
+  <div class="container hero">
     <img src="{% static '/images/welcome-hero2.jpg' %}" id="food-img" alt="Welcome hero picture">
     <div class="headline">
       <h1>Cooking Time Is <br> My Favorite Time <i class="far fa-heart"></i></h1>
@@ -32,33 +32,31 @@
       {% endif %}
     </div>
   </div>
+
+</section>
   <!-- Slider used for JS Animations -->
   <div class="index-slider"></div>
-</section>
-
 <!-- Carosel and about Author-->
-<section class="section-about">
+<section id="section-about">
   <div class="container container-carosel container-fluid">
     <div class="row">
       <!-- About Author -->
-      <div class="inner-text col-12 col-md-8 offset-md-6">
+      <div class="inner-text col-12 col-md-4 offset-md-7">
         <div class="row">
-          <div class="col-12 col-md-5 offset-md-2">
+          <div class="">
             <img src="{% static '/images/welcome-hero-author-head.jpg' %}" alt="round picture of a Chef" id="hero-about-chef-img">
-            <h1>About Autor</h1>
+            <h1 class="hero-about-chef-title">Hi, My name is Shemmy!</h1>
           </div>
           <div class="w-100"></div>
-          <div class="col-12 col-md-5 offset-md-2">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae sequi alias numquam eos, tenetur
-              perspiciatis
-              harum eum nihil provident recusandae cum animi fugit veritatis nobis illo atque quam repellendus quo.
-            </p>
+          <div class="hero-about-chef-p">
+            <p>Shemmylicious food is my little corner of the Internet where I share my passion for delicious food with you!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit voluptas in natus esse sequi suscipit dolorum at, corrupti dignissimos quae quo cum explicabo ducimus repellat nostrum. Optio nobis expedita eum.</p>
           </div>
         </div>
       </div>
     </div>
     <!-- Carosel -->
-    <div id="carouselExampleInterval" class="carousel slide col-12 col-md-6 offset-md-1 col-10" data-bs-ride="carousel">
+    <div id="carouselExampleInterval" class="carousel slide col-12 col-md-6 offset-md-1" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active" data-bs-interval="10000">
           <img src="{% static '/images/welcome-hero-author.jpg' %}" class="d-block w-100" alt="carousel random image">
