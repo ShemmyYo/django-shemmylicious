@@ -327,11 +327,12 @@ a {
 }
 
 /*---------------------------------------
-            Category Page 
+            Category Page Top
  ---------------------------------------*/
 .cat-card-img {
     height: 30vh;
     object-fit: cover;
+    margin: 0 auto;
 }
 
 .cat-card-body {
@@ -354,7 +355,35 @@ a {
     padding: 0;
 }
 
+/*---------------------------------------
+            Category Page Bttm
+ ---------------------------------------*/
+ .cat-card-img-bttm {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto;
+}
 
+.cat-card-body-bttm {
+    width: 100%;
+}
+
+.cat-card-title-bttm {
+    height: auto;
+    font-size: 110%;
+    min-width: 100px;
+    background-color: #0E9A45;
+    margin: 0;
+    padding: 1%;
+}
+
+.cat-card-body-bttm a {
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
 
 /*---------------------------------------
              Footer  

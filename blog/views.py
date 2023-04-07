@@ -50,7 +50,7 @@ def AddCategoryFormView(request):
 # List of Categories
 class CategoryListView(generic.ListView):
     model = Category
-    queryset = Category.objects.all().order_by('?')[:12]
+    queryset = Category.objects.all().order_by('?')[:11]
     template_name = 'category_list.html'
     
 
