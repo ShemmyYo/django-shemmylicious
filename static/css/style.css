@@ -241,7 +241,7 @@ a {
 }
 
 /*---------------------------------------
-             About  
+             About Section
 ---------------------------------------*/
 #hero-about-chef-img {
     height: 250px;
@@ -260,7 +260,7 @@ a {
 }
 
 /*---------------------------------------
-             Carousel  
+             Carousel Section
 ---------------------------------------*/
 .container-carosel {
     position: relative;
@@ -326,6 +326,35 @@ a {
     display: flex;
 }
 
+/*---------------------------------------
+            Category Page 
+ ---------------------------------------*/
+.cat-card-img {
+    height: 30vh;
+    object-fit: cover;
+}
+
+.cat-card-body {
+    width: 100%;
+    margin-top: -30px;
+}
+
+.cat-card-title {
+    height: auto;
+    font-size: 120%;
+    min-width: 100px;
+    background-color: #0E9A45;
+    margin: 0;
+    padding: 1%;
+}
+
+.cat-card-body a {
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+
 
 /*---------------------------------------
              Footer  
@@ -350,6 +379,7 @@ footer i {
 .card {
     border: none;
     background-color: transparent;
+    margin: auto;
 }
 
 .image-container {
@@ -393,7 +423,7 @@ img {
     text-transform: uppercase;
 }
 
-.card-title {
+.card-blog-title {
     color:#45575A;
 }
 
@@ -408,6 +438,8 @@ img {
     text-transform: uppercase;
     text-align: end;
 }
+
+
 
 
 
@@ -510,11 +542,6 @@ img {
 
 
 
-
-/* Category Page */
-.category-img {
-    width: 100%;
-}
 
 
 
