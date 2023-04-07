@@ -12,11 +12,11 @@ urlpatterns = [
     path('recipe_add/', views.AddRecipeFormView, name='add-recipe'),
     path('recipe_mylist/', views.RecipeMyListView, name='recipe-mylist'),
     path('recipe_search/', views.RecipeSearch, name='recipe-search'),
-    path('recipe_update/<recipe_id>', views.RecipeUpdate, name='recipe-update'),
-    path('recipe_delete/<recipe_id>', views.RecipeDelete, name='recipe-delete'),
+    path('recipe_update/<recipe_id>/', views.RecipeUpdate, name='recipe-update'),
+    path('recipe_delete/<recipe_id>/', views.RecipeDelete, name='recipe-delete'),
 
     path('categories/', views.CategoryListView.as_view(), name='categories'),
     path('category/<str:categories>/', views.CategoryView, name='category'),
 
-    path('recipe/<slug:slug>/', views.RecipeDetailView, name='recipe_detail'),
+    path('recipe/<slug:slug>/', views.RecipeDetailView.as_view(), name='recipe_detail'),
 ]
