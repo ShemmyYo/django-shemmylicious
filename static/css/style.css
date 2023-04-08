@@ -342,6 +342,9 @@ a {
 
 .cat-card-title {
     height: auto;
+    font-family: 'Sen', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
     font-size: 120%;
     min-width: 100px;
     background-color: #0E9A45;
@@ -372,9 +375,11 @@ a {
 
 .cat-card-title-bttm {
     height: auto;
-    font-size: 110%;
+    font-family: 'Sen', sans-serif;
+    text-transform: uppercase;
+    font-size: 100%;
     min-width: 100px;
-    background-color: #0E9A45;
+    background-color: #0e9a46e5;
     margin: 0;
     padding: 1%;
 }

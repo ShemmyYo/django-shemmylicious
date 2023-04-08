@@ -4,14 +4,16 @@
 {% block content %}
 
 <!-- Top Slogan Section -->
+<br>
 <section class="top-slogan">
-    <div class="container col-lg-8 offset-lg-2 col-10 text-center top-slogan">
+    <div class="container col-lg-8 offset-lg-2 text-center top-slogan">
         <h4 class="">Cooking Time Is My Favorite Time <i class="far fa-heart"></i></h4>
         <hr>
         <h5>Shemmylicious Food by Category</h5>
         <p>Here's where you can find all the latest and Shemmylicious food recipes categorised and grouped. <br>
             Be sure to sign up to be able to comment and like my posts as well as create your own recipes.</p>
         <hr>
+        <br>
         <br>
     </div>
 </section>
@@ -23,7 +25,7 @@
             {% for category in object_list %}
                 {% if forloop.counter <= 4 %}
                 <div class=" card col-6 col-md-2 h-100">
-                    <img src="{{ category.featured_image.url }}" alt="Category Image" class="card-img-top cat-card-img w-100">
+                    <img src="{{ category.featured_image.url }}" alt="Category Image" class="card-img-top cat-card-img w-100 shadow">
                     <div class="card-body cat-card-body">
                         <a href="{% url 'category' category %}" class="btn btn-sm w-100">
                             <h5 class="card-title cat-card-title border text-center">{{ category.category_name }}</h5>
@@ -31,10 +33,10 @@
                     </div>
                 </div>
                 {% elif forloop.counter == 5 %}
-                <div class="w-100"></div><br><br><hr><br><br>
+                <div class="w-100"></div><br><br><hr><br><br><br>
                 {% elif forloop.counter >= 5 %}
-                <div class="card col-3 col-md-1 offset-md-2 col-lg-2 offset-lg-3">
-                    <img src="{{ category.featured_image.url }}" alt="Category Round Image" class="card-img-bttm cat-card-img-bttm">
+                <div class="card col-3 col-lg-1 offset-lg-2">
+                    <img src="{{ category.featured_image.url }}" alt="Category Round Image" class="card-img-bttm cat-card-img-bttm shadow">
                     <div class="card-body cat-card-body-bttm">
                         <a href="{% url 'category' category %}" class="btn btn-sm w-100">
                             <h5 class="card-title cat-card-title-bttm border text-center">{{ category.category_name }}</h5>
