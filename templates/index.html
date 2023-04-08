@@ -13,7 +13,7 @@
     <img src="{% static '/images/welcome-hero2.jpg' %}" id="food-img" alt="Welcome hero picture">
     <div class="headline">
       <h1>Cooking Time Is <br> My Favorite Time <i class="far fa-heart"></i></h1>
-      <a class="navbar-brand" href="{% url 'home' %}">
+      <a class="navbar-brand" href="{% url 'recipes' %}">
         <span class="brand-logo">Shemmylicious</span>
         <img src="https://res.cloudinary.com/dteyj4llb/image/upload/v1679654869/media/Shemmylicious/food_sjzw1x.png"
           alt="Shemmylicious Food Sign" height="90">
@@ -21,7 +21,7 @@
     </div>
     <div class="headline-bttn-container">
       {% if user.is_authenticated %}
-      <a href="{% url 'home' %}" class="btn btn-sm btn-outline-light headline-bttn">Browse Recipes <i
+      <a href="{% url 'recipes' %}" class="btn btn-sm btn-outline-light headline-bttn">Browse Recipes <i
           class="fa-solid fa-bowl-rice fa-beat-fade"></i></a>
       <a href="{% url 'recipe-mylist' %}" class="btn btn-sm btn-outline-light headline-bttn">Your Recipes <i
           class="fa-solid fa-user fa-xs"></i></a>

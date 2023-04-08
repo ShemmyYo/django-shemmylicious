@@ -19,10 +19,10 @@ class RecipestView(generic.ListView):
     model = Recipe
     queryset = Recipe.objects.filter(status=1).order_by('-created_date')
     template_name = 'recipe_all.html'
-    paginate_by = 16
+    paginate_by = 8
 
 
-# Recipe Full List Class View (CI)
+# Recipe Full List Class View - Blog (CI)
 class RecipeListView(generic.ListView):
     model = Recipe
     queryset = Recipe.objects.filter(status=1).order_by('-created_date')
@@ -89,7 +89,7 @@ def RecipeMyListView(request):
         })
     else:
         messages.success(request, ("Success!"))
-        return redirect('home')
+        return redirect('recipes')
 
 
 # Update My Recipe when authenticated

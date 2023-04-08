@@ -413,7 +413,8 @@ footer i {
 .card {
     border: none;
     background-color: transparent;
-    margin: auto;
+    margin: 0 auto;
+    align-content: start;
 }
 
 .image-container {
@@ -473,13 +474,24 @@ img {
     text-align: end;
 }
 
+/*---------------------------------------
+            Recipe List 
+---------------------------------------*/
+.card-list-title {
+    color:#45575A;
+    font-size: 120%;
+}
 
+.card-img-recipe {
+    max-height: 280px;
+    object-fit: cover ;
+    align-self: center;
+}
 
-
-
-
-
-
+.card-body-recipe-list {
+    min-height: 200px;
+    text-align: end;
+}
 
 /*---------------------------------------
                  CI CODE 
