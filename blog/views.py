@@ -14,9 +14,20 @@ def StartView(request):
     return render(request, "index.html",{'slider': slider, })
 
 
-# About View
-def AboutView(request):
-    return render(request, "about.html", {})
+# Recipe Full List Class View
+class RecipestView(generic.ListView):
+    model = Recipe
+    queryset = Recipe.objects.filter(status=1).order_by('-created_date')
+    template_name = 'recipe_all.html'
+    paginate_by = 16
+
+
+# Recipe Full List Class View (CI)
+class RecipeListView(generic.ListView):
+    model = Recipe
+    queryset = Recipe.objects.filter(status=1).order_by('-created_date')
+    template_name = 'recipe_list.html'
+    paginate_by = 10
 
 
 # Search Recipes View
@@ -30,14 +41,6 @@ def RecipeSearch(request):
         'recipes': recipes})
     else:
         return render(request, 'recipe_search.html', {})
-
-
-# Recipe Full List Class View (CI)
-class RecipeListView(generic.ListView):
-    model = Recipe
-    queryset = Recipe.objects.filter(status=1).order_by('-created_date')
-    template_name = 'recipe_list.html'
-    paginate_by = 10
 
 
 # Create Category View when authenticated as Superuser
