@@ -6,23 +6,18 @@
 <!-- Top Slogan Section -->
 <section class="top-slogan">
   <div class="container col-lg-8 offset-lg-2 col-10 text-center top-slogan">
-    <h4 class="">Cooking Time Is My Favorite Time <i class="far fa-heart"></i></h4> 
-      <hr>
-      <h5>Shemmylicious Food Blog</h5>
-      <p>Here's where you can find all the latest and Shemmylicious food recipes comments and likes. <br>
-        Be sure to sign up to be able to comment and like my posts as well as create your own recipes.</p>
-      <hr>
-      <br>
+    <h4 class="">Cooking Time Is My Favorite Time <i class="far fa-heart"></i></h4>
+    <hr>
+    <h5>Shemmylicious Food Blog</h5>
+    <p>Here's where you can find all the latest and Shemmylicious food recipes comments and likes. <br>
+      Be sure to sign up to be able to comment and like my posts as well as create your own recipes.</p>
+    <hr>
+    <br>
   </div>
 </section>
-
-<h1>Recipe List TBD</h1>
-
 <!-- Blog -->
 <div class="container col-lg-8 offset-lg-2 col-10">
-
   {% for recipe in object_list %}
-
   <div class="card mb-3">
     <div class="row gy-1">
       <div class="col-lg-4 col-12">
@@ -48,7 +43,7 @@
           <p class="card-text">{{ recipe.excerpt }}</p>
           <hr>
           <p class="card-featured-comment">Featured Comment</p>
-          <h3 class="card-title card-blog-title">{{ recipe.featured_comment }}</h5>
+          <h3 class="card-title card-blog-comment">{{ recipe.featured_comment }}</h5>
             <a href="{% url 'recipe_detail' recipe.slug %}">
               <p class="card-featured-comment-continue">Continue reading...</p>
             </a>
@@ -60,7 +55,6 @@
       </div>
     </div>
     <br>
-
     {% if forloop.counter|divisibleby:3 %}
   </div>
   <div class="row">

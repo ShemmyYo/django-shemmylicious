@@ -23,7 +23,7 @@
       <div class="image-container card-img-top shadow">
         {% if "recipe" in recipe.featured_image.url %}
         <img src="https://res.cloudinary.com/dteyj4llb/image/upload/v1679649965/media/Shemmylicious/recipe.png"
-          alt="deafult image" class="img-thumbnail card-img-recipe w-100">
+          alt="deafult image" class="img-thumbnail card-img-recipe w-100" style="height: 280px;">
         {% else %}
         <img src="{{ recipe.featured_image.url }}" alt="image" class="img-thumbnail card-img-recipe w-100">
         {% endif %}
@@ -33,19 +33,17 @@
         </div>
       </div>
       <div class="card-body card-body-recipe-list">
-        <a href="{% url 'recipe_detail' recipe.slug %}">
-          <h1 class="card-title card-text card-list-title">"{{ recipe.recipe_title }}"</h1>
-        </a>
-        <br>
         <p class="card"><small class="text-muted">{{ recipe.created_date}} 
             <i class="far fa-heart"> {{ recipe.number_of_likes}}</i></small>
         </p>
         <hr>
+        <a href="{% url 'recipe_detail' recipe.slug %}">
+          <h1 class="card-title card-text card-list-title">"{{ recipe.recipe_title }}"</h1>
+        </a>
       </div>
     </div>
     {% endfor %}
   </div>
-  <hr>
 </div>
 <!-- Pagination by 8 items -->
 {% if is_paginated %}
