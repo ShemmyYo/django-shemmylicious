@@ -71,6 +71,7 @@ class Comment(models.Model):
     recipe_name = models.ForeignKey(Recipe, on_delete=models.CASCADE, related_name='comments')
     comment_title = models.CharField(max_length=80)
     comment_body = models.TextField()
+    post_author = models.TextField()
     email = models.EmailField()
     created_date = models.DateTimeField(auto_now_add=True)
     active = models.BooleanField(default=False)
@@ -79,4 +80,4 @@ class Comment(models.Model):
         ordering = ['created_date']
 
     def __str__(self):
-        return f"Comment {self.comment_body} by {self.comment_title}, posted: {self.created_date}"
+        return f"Comment {self.comment_body} by {self.post_author}, posted: {self.created_date}"
