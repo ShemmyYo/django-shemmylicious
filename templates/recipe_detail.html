@@ -159,7 +159,7 @@
                         </span> wrote:
                     </p>
                     <!-- The body of the comment goes before the | -->
-                    {{ comment.Comment_body | linebreaks }}
+                    {{ comment.comment_body | linebreaks }}
                 </div>
                 <!-- Our for loop ends here -->
                 {% endfor %}
@@ -176,15 +176,15 @@
                 {% else %}
 
                 {% if user.is_authenticated %}
-                <h3>Leave a comment:</h3>
-                <p>Posting as: {{ user.username }}</p>
-                <form method="post" style="margin-top: 1.3em;">
-                    {{ comment_form | crispy }}
-                    {% csrf_token%}
-                    <br>
-                    <button type="submit" class="btn d-grid gap-2 col-6 mx-auto btn-lg btn-outline-success">Submit</button>
-                    <div style="height: 100px;"></div>
-                </form>
+                    <h3>Leave a comment:</h3>
+                    <p>Posting as: {{ user.username }}</p>
+                    <form method="post" style="margin-top: 1.3em;">
+                        {{ comment_form | crispy }}
+                        {% csrf_token%}
+                        <br>
+                        <button type="submit" class="btn d-grid gap-2 col-6 mx-auto btn-lg btn-outline-success">Submit</button>
+                        <div style="height: 100px;"></div>
+                    </form>
                 {% endif %}
                 {% endif %}
             </div>

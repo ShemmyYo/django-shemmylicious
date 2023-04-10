@@ -150,7 +150,8 @@ class RecipeDetailView(View):
             comment_form.instance.email = request.user.email
             comment_form.instance.name = request.user.username
             comment = comment_form.save(commit=False)
-            comment.post = recipe
+            comment.recipe_name = recipe
+            comment.save()
             messages.success(request, "Successfully posted. Your comment is awaiting Admin's approval.")
         else:
             comment_form = CommentForm()
