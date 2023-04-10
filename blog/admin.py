@@ -19,7 +19,19 @@ class RecipeAdmin(SummernoteModelAdmin):
         queryset.update(status=False)
 
 
-admin.site.register(Category)
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    search_fields = ['category_name', 'status', 'featured_image']
+    list_display = ('category_name', 'status', 'featured_image')
+    actions = ['approve_category', 'reject_category']
+
+    def approve_category(self, request, queryset):
+        queryset.update(status=True)
+
+    def reject_category(self, request, queryset):
+        queryset.update(status=False)
+
+
 admin.site.register(Profile)
 
 

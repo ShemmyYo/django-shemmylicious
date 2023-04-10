@@ -6,6 +6,7 @@ from django.contrib import messages
 from django.views.generic import ListView, DetailView, CreateView
 from .models import Recipe, Category
 from .forms import CommentForm, CategoryForm, AddRecipeForm
+from cloudinary.forms import cl_init_js_callbacks 
 
 
 # Start View
@@ -70,6 +71,7 @@ def AddRecipeFormView(request):
     if request.method == "POST":
         form = AddRecipeForm(request.POST)
         if form.is_valid():
+            form.instance.author = request.user
             form.save()
             return HttpResponseRedirect('/recipe_add?submitted=True')
     else:

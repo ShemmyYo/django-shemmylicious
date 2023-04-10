@@ -29,7 +29,6 @@ class AddRecipeForm(forms.ModelForm):
             'recipe_instructions',
             'excerpt',
             'featured_image',
-            'author',
             )
 
         labels = {

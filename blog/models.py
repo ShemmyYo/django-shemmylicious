@@ -12,7 +12,8 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 class Category(models.Model):
     category_name = models.CharField(max_length=100, unique=True, null=False, blank=False)
-    featured_image = CloudinaryField('image', default='recipe')
+    featured_image = CloudinaryField('image', )
+    status = models.IntegerField(choices=STATUS, default=0)
 
     class Meta:
         ordering = ['category_name']
