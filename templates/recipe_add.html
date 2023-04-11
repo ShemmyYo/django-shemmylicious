@@ -1,8 +1,10 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 {% block title %}Add Recipe{% endblock %}
 {% load static %}
 
 {% block content %}
+
+{% if user.is_authenticated %}
 
 <div class="container">
 
@@ -10,33 +12,38 @@
     <br>
     <div class="container col-6">
         {% if submitted %}
-            <center>
-                <br>
-                <br>
-                <h5>Your Recipe was Submitted Succesfully {{ user }}!</h5>
-                <br>
-                <br>
-                <a href="{% url 'recipes' %}" class="btn btn-outline-success"></a>
-                <a href="{% url 'recipe-mylist' %}" class="btn btn-outline-success">My Recipes</a>
-            </center>
-            
-        {% else %}
-        <br/><br/><br/>
-        <h1>Add Recipe</h1>
-            <form action="" method="POST" enctype="multipart/form-data">
-                {% csrf_token %}
-                {{ form.media }}
-                
-                {{ form.as_p }}
-
-                <input type="submit" value="Add Recipe" class="btn btn-outline-warning">
-                <a href="{% url 'recipes' %}" class="btn btn-outline-success"></a>
-            </form>
+        <center>
             <br>
-            
-        {% endif %}  
+            <br>
+            <h5>Your Recipe was Submitted Succesfully {{ user }}!</h5>
+            <br>
+            <br>
+            <a href="{% url 'recipes' %}" class="btn btn-outline-success"></a>
+            <a href="{% url 'recipe-mylist' %}" class="btn btn-outline-success">My Recipes</a>
+        </center>
+
+        {% else %}
+        <br /><br /><br />
+        <h1>Add Recipe</h1>
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.media }}
+
+            {{ form.as_p }}
+
+            <input type="submit" value="Add Recipe" class="btn btn-outline-warning">
+            <a href="{% url 'recipes' %}" class="btn btn-outline-success"></a>
+        </form>
+        <br>
+
+        {% endif %}
     </div>
-
-
 </div>
+
+{% else %}
+<center>
+    <h1>You're not logged in!</h1>
+</center>
+{% endif %}
+
 {% endblock content %}

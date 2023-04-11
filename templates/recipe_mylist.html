@@ -16,9 +16,9 @@
   
               {% if "recipe" in recipe.featured_image.url %}
               <img src="https://res.cloudinary.com/dteyj4llb/image/upload/v1679649965/media/Shemmylicious/recipe.png"
-                alt="deafult image" class="card-img-top"">
+                alt="deafult image" class="card-img-top shadow"">
               {% else %}
-              <img src="{{ recipe.featured_image.url }}" alt="image" class="card-img-top" style="background-size: cover; overflow: hidden;">
+              <img src="{{ recipe.featured_image.url }}" alt="image" class="card-img-top shadow" style="background-size: cover; overflow: hidden;">
               {% endif %}
   
               <div class="card-body">
