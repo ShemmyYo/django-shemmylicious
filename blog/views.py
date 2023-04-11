@@ -5,7 +5,7 @@ from django.shortcuts import get_object_or_404, reverse
 from django.contrib import messages
 from django.views.generic import ListView, DetailView, CreateView
 from .models import Recipe, Category, Comment
-from .forms import CommentForm, CategoryForm, AddRecipeForm
+from .forms import CommentForm, CategoryForm, AddRecipeForm, UpdateRecipeForm
 from cloudinary.forms import cl_init_js_callbacks 
 
 
@@ -97,7 +97,7 @@ def RecipeMyListView(request):
 # Update My Recipe when authenticated
 def RecipeUpdate(request, recipe_id):
     recipe = Recipe.objects.get(pk=recipe_id)
-    form = AddRecipeForm(request.POST or None, instance=recipe)
+    form = UpdateRecipeForm(request.POST or None, instance=recipe)
     if form.is_valid():
         form.save()
         messages.success(request, "Successfully updated.")
