@@ -162,6 +162,11 @@
                     <!-- The body of the comment goes before the | -->
                     {{ comment.comment_title | linebreaks }}
                     {{ comment.comment_body | linebreaks }}
+                    <!-- Additional Options as a Superuser -->
+                    {% if  user.is_superuser %}
+                    
+                    <a href="{% url 'comment-delete' comment.pk %}" class="btn btn-sm btn-outline-danger"><span>Delete Comment</span></a>
+                    {% endif %}
                 </div>
                 <hr>
                 <!-- Our for loop ends here -->

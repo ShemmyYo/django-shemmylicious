@@ -4,7 +4,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import get_object_or_404, reverse
 from django.contrib import messages
 from django.views.generic import ListView, DetailView, CreateView
-from .models import Recipe, Category
+from .models import Recipe, Category, Comment
 from .forms import CommentForm, CategoryForm, AddRecipeForm
 from cloudinary.forms import cl_init_js_callbacks 
 
@@ -113,6 +113,13 @@ def RecipeDelete(request, recipe_id):
     recipe = Recipe.objects.get(pk=recipe_id)
     recipe.delete()
     return redirect('recipe-mylist')
+
+
+# Delete Comment when Superuser
+def CommentDelete(request, comment_id):
+    comment = Comment.objects.get(pk=comment_id)
+    comment.delete()
+    return redirect('recipes')
 
 
 # CI WALKTHROUGH BELOW
