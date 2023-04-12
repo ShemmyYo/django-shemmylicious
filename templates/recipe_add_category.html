@@ -1,33 +1,50 @@
 {% extends 'base.html' %}
+{% block title %}Add Category{% endblock %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 
 {% if user.is_authenticated %}
 
 <div class="container">
-    <h2>{{ user.username }}'s Area</h2>
-    <br /><br /><br />
-    <center>
+    <br>
+    <div class="container col-6">
+        {% if submitted %}
+        <center>
+            <br>
+            <br>
+            <h5>Category was Submitted Succesfully, {{ user }}!</h5>
+            <br>
+            <br>
+            <a href="{% url 'recipes' %}" class="btn btn-outline-success">Back</a>
+            <a href="{% url 'recipe-mylist' %}" class="btn btn-outline-success">My Recipes</a>
+        </center>
+
+        {% else %}
+        <br>
         <br>
         <br>
         <h1>Add Category</h1>
         <br>
-        <div class="container col-6">
-            {% if submitted %}
-            Your Recipe was Submitted Succesfully!
-            {% else %}
-            <form action="" method="POST" enctype="multipart/form-data">
-                {% csrf_token %}
-                {{ form.media }}
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.media }}
 
-                {{ form.as_p }}
+            {{ form | crispy }}
+            <br>
+            <center>
+                <div class="d-grid gap-2 col-12">
+                    <input type="submit" value="Add Category" class="btn btn-outline-success">
+                    <a href="{% url 'recipes' %}" class="btn btn-outline-success">Back</a>
+                </div>
+            </center>
+        </form>
+        <br>
 
-                <input type="submit" value="Add Category" class="btn btn-outline-secondary">
-            </form>
-            {% endif %}
-        </div>
-    </center>
+        {% endif %}
+
+    </div>
     <br>
     <br>
     <br>

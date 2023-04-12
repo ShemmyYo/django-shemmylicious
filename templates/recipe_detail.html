@@ -62,6 +62,7 @@
                 <img src="https://asset.cloudinary.com/dteyj4llb/f6e04f3ac88f266da941b472675fd64c" width="100%">
                 {% else %}
                 <img src="{{ post.featured_image.url }}" width="100%">
+                <br>
                 {% endif %}
             </div>
         </div>
@@ -85,6 +86,11 @@
     <div class="row">
         <div class="col card mb-4  mt-3 left top">
             <div class="card-body">
+
+
+                {{ post.featured_image.url }}
+                
+
                 <!-- The recipe content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
                 <!-- Ingridients -->

@@ -46,9 +46,18 @@ def RecipeSearch(request):
 
 # Create Category View when authenticated as Superuser
 def AddCategoryFormView(request):
-    form = CategoryForm
+    submitted = False
+    if request.method == 'POST':
+        form = CategoryForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/categories?submitted=True')
+    else:
+        form = CategoryForm
+        if 'submitted' is request.GET:
+            submitted=True
 
-    return render(request, "recipe_add_category.html", {'form': form})
+    return render(request, "recipe_add_category.html", {'form': form, 'submitted': submitted, })
 
 
 # List of Categories
@@ -69,7 +78,7 @@ def CategoryView(request, categories):
 def AddRecipeFormView(request):
     submitted = False
     if request.method == "POST":
-        form = AddRecipeForm(request.POST)
+        form = AddRecipeForm(request.POST, request.FILES)
         if form.is_valid():
             form.instance.author = request.user
             form.save()

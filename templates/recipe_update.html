@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}Edit: {{ recipe.recipe_title }}{% endblock %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 
@@ -8,23 +9,21 @@
 
 <div class="container">
     <br>
-    Logged in {{ user }}
-    <br>
-    Autor: {{ recipe.author }}
-    <br><br>
     <h4>Edit Recipe: {{ recipe.recipe_title }} </h4>
-    <br>
-    <p>In Category: {{ recipe.category }}</p>
-    <small>By: {{ recipe.author }}</small><br />
-    <small>Created: {{ recipe.created_date }}, </small>
-    <small>Last Updated: {{ recipe.updated_date }}, </small>
+    <hr>
+    <small>Created: {{ recipe.created_date }}</small><br>
+    <small>In Category: {{ recipe.category }}</small><br>
+    <small>By: {{ recipe.author }}</small><br>
+    <small>Last Updated: {{ recipe.updated_date }}</small>
     <hr>
 
     <br>
-    <form action="" method="POST">
+    <form action="" method="POST" enctype="multipart/form-data">
 
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form.media }}
+
+        {{ form | crispy }}
 
         <br>
         <a href="{% url 'recipe-mylist' %}" class="btn btn-sm btn-outline-success">Back</a>

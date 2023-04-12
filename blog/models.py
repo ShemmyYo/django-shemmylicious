@@ -12,7 +12,7 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 class Category(models.Model):
     category_name = models.CharField(max_length=100, unique=True, null=False, blank=False)
-    featured_image = CloudinaryField('image', )
+    featured_image = CloudinaryField('cat image', default='cat_recipe')
     featured_comment = models.CharField(null=True, blank=True, max_length=255, unique=False)
     status = models.IntegerField(choices=STATUS, default=0)
 
@@ -24,6 +24,14 @@ class Category(models.Model):
 
     def get_absolute_url(self):
         return reverse('recipe-mylist',)
+
+    """ Informative name for model """
+    def __unicode__(self):
+        try:
+            public_id = self.image.public_id
+        except AttributeError:
+            public_id = ''
+        return "Photo <%s:%s>" % (self.title, public_id)
 
 
 class Profile(models.Model):
@@ -43,14 +51,12 @@ class Profile(models.Model):
 class Recipe(models.Model):
     recipe_title = models.CharField(max_length=255, unique=True)
     slug = models.SlugField(max_length=255, unique=True, null=False)
-    status = models.IntegerField(choices=STATUS, default=0)
+    status = models.IntegerField(choices=STATUS, default=1)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     created_date = models.DateField(auto_now_add=True)
     updated_date = models.DateField(auto_now=True)
-    featured_image = CloudinaryField('image', default='recipe')
-    # models.FileField(null=True, blank=True, upload_to='Shemmylicious/', default="recipe")
-    # CloudinaryField('image', default='recipe')
+    featured_image = CloudinaryField('recipe image', default='recipe')
     featured_comment = models.TextField(null=False, default="Shemmylicious Food")
     recipe_ingridients = models.TextField(blank=True)
     recipe_instructions = models.TextField(blank=True)
@@ -68,6 +74,7 @@ class Recipe(models.Model):
     
     def get_absolute_url(self):
         return reverse('recipe-mylist',)
+
 
 @receiver(pre_save, sender=Recipe)
 def store_pre_save(sender, instance, *args, **kwargs):
