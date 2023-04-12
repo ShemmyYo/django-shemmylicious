@@ -25,19 +25,11 @@ class Category(models.Model):
     def get_absolute_url(self):
         return reverse('recipe-mylist',)
 
-    """ Informative name for model """
-    def __unicode__(self):
-        try:
-            public_id = self.image.public_id
-        except AttributeError:
-            public_id = ''
-        return "Photo <%s:%s>" % (self.title, public_id)
-
 
 class Profile(models.Model):
     user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
     bio = models.TextField(blank=True)
-    profile_pic = models.ImageField(null=True, blank=True, upload_to="images/profile/")
+    profile_pic = CloudinaryField('profile image', default='profile_img')
     website_url = models.CharField(null=True, blank=True, max_length=255, unique=True)
     facebook_url = models.CharField(null=True, blank=True, max_length=255, unique=True)
     twitter_url = models.CharField(null=True, blank=True, max_length=255, unique=True)

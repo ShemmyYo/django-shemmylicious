@@ -57,7 +57,6 @@ def AddCategoryFormView(request):
     else:
         form = CategoryForm
         if 'submitted' is request.GET:
-            messages.warning(request, "Category already submitted!")
             submitted=True
 
     return render(request, "recipe_add_category.html", {'form': form, 'submitted': submitted, })
@@ -91,7 +90,6 @@ def AddRecipeFormView(request):
         form = AddRecipeForm
         if 'submitted' in request.GET:
             submitted = True
-            messages.warning(request, "Recipe already submitted!")
 
     return render(request, "recipe_add.html", {'form': form, 'submitted': submitted, })
 

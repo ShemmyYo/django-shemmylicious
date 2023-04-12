@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}{{ User }} Profile{% endblock %}
+{% load static %}
+
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+<div class="container">
+
+    <br>
+    <br>
+    <br>
+    <h1>{{ user }} Profile</h1>
+    <br>
+
+    {{ page_user }}
+
+    <center>
+        <div class="d-grid gap-2 col-12">
+            <input type="submit" value="Add Recipe" class="btn btn-outline-success">
+            <a href="{% url 'recipes' %}" class="btn btn-outline-success">Back</a>
+        </div>
+    </center>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</div>
+
+{% else %}
+<center>
+    <h1>You're not logged in!</h1>
+</center>
+{% endif %}
+
+{% endblock content %}
