@@ -13,6 +13,7 @@ STATUS = ((0, "Draft"), (1, "Published"))
 class Category(models.Model):
     category_name = models.CharField(max_length=100, unique=True, null=False, blank=False)
     featured_image = CloudinaryField('image', )
+    featured_comment = models.CharField(null=True, blank=True, max_length=255, unique=False)
     status = models.IntegerField(choices=STATUS, default=0)
 
     class Meta:
@@ -28,6 +29,12 @@ class Category(models.Model):
 class Profile(models.Model):
     user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
     bio = models.TextField(blank=True)
+    profile_pic = models.ImageField(null=True, blank=True, upload_to="images/profile/")
+    website_url = models.CharField(null=True, blank=True, max_length=255, unique=True)
+    facebook_url = models.CharField(null=True, blank=True, max_length=255, unique=True)
+    twitter_url = models.CharField(null=True, blank=True, max_length=255, unique=True)
+    instagram_url = models.CharField(null=True, blank=True, max_length=255, unique=True)
+    pintrest_url = models.CharField(null=True, blank=True, max_length=255, unique=True)
 
     def __str__(self):
         return str(self.user)
