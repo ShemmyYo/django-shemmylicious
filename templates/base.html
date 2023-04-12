@@ -177,29 +177,24 @@
                           
                 <li class="nav-item nav-link-s">
                   <div class="nav-item-s">
-                    <a class="nav-link" href="{% url 'account_logout' %}">Logout  <i class="fa-solid fa-right-from-bracket fa-beat-fade fa-xs"></i></a>
+                    <a class="nav-link" href="{% url 'logout-user' %}">Logout  <i class="fa-solid fa-right-from-bracket fa-beat-fade fa-xs"></i></a>
                   </div>
                 </li>
                 
               </ul>
             </div>
           </li>
-          <!-- <li class="nav-item nav-link-s">
-            <div class="nav-item-s">
-              <a class="nav-link" href="{% url 'account_logout' %}"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
-            </div>
-          </li> -->
 
           {% else %}
 
           <li class="nav-item nav-link-s">
             <div class="nav-item-s">
-              <a class="nav-link" href="{% url 'account_signup' %}">Register <i class="fa-solid fa-user-plus fa-beat-fade fa-xs"></i></a>
+              <a class="nav-link" href="{% url 'register' %}">Register <i class="fa-solid fa-user-plus fa-beat-fade fa-xs"></i></a>
             </div>
           </li>
           <li class="nav-item nav-link-s">
             <div class="nav-item-s">
-              <a class="nav-link" href="{% url 'account_login' %}">Login <i class="fa-solid fa-arrow-right-to-bracket fa-beat-fade fa-xs"></i></a>
+              <a class="nav-link" href="{% url 'login-user' %}">Login <i class="fa-solid fa-arrow-right-to-bracket fa-beat-fade fa-xs"></i></a>
             </div>
           </li>
 
