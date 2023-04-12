@@ -36,6 +36,7 @@ def RecipeSearch(request):
     if request.method == 'POST':
         searched = request.POST['searched']
         recipes = Recipe.objects.filter(recipe_title__contains=searched)
+        messages.success(request, f"The below are your results for: { searched }!")
         return render(request,
         'recipe_search.html',
         {'searched': searched,
@@ -51,10 +52,12 @@ def AddCategoryFormView(request):
         form = CategoryForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
+            messages.success(request, "Category successfully created!")
             return HttpResponseRedirect('/categories?submitted=True')
     else:
         form = CategoryForm
         if 'submitted' is request.GET:
+            messages.warning(request, "Category already submitted!")
             submitted=True
 
     return render(request, "recipe_add_category.html", {'form': form, 'submitted': submitted, })
@@ -82,11 +85,13 @@ def AddRecipeFormView(request):
         if form.is_valid():
             form.instance.author = request.user
             form.save()
+            messages.success(request, "Recipe successfully created!")
             return HttpResponseRedirect('/recipe_add?submitted=True')
     else:
         form = AddRecipeForm
         if 'submitted' in request.GET:
             submitted = True
+            messages.warning(request, "Recipe already submitted!")
 
     return render(request, "recipe_add.html", {'form': form, 'submitted': submitted, })
 
@@ -99,7 +104,6 @@ def RecipeMyListView(request):
             "recipes": recipes
         })
     else:
-        messages.success(request, ("Success!"))
         return redirect('recipes')
 
 
@@ -121,6 +125,7 @@ def RecipeUpdate(request, recipe_id):
 def RecipeDelete(request, recipe_id):
     recipe = Recipe.objects.get(pk=recipe_id)
     recipe.delete()
+    messages.warning(request, "Recipe deleted!")
     return redirect('recipe-mylist')
 
 
@@ -128,6 +133,7 @@ def RecipeDelete(request, recipe_id):
 def CommentDelete(request, comment_id):
     comment = Comment.objects.get(pk=comment_id)
     comment.delete()
+    messages.warning(request, "Comment deleted!")
     return redirect('recipes')
 
 
@@ -193,7 +199,8 @@ class RecipeLike(View):
         post = get_object_or_404(Recipe, slug=slug)
         if post.likes.filter(id=request.user.id).exists():
             post.likes.remove(request.user)
+            messages.warning(request, "Oh no! I'm sorry you don't like it.")            
         else:
             post.likes.add(request.user)
-
+            messages.success(request, "Thank you! I appriciate your opinion!")
         return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
