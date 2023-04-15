@@ -10,8 +10,8 @@
     <div class="container col-lg-8 offset-lg-2 text-center top-slogan">
         <h4 class="">Cooking Time Is My Favorite Time <i class="far fa-heart"></i></h4>
         <hr>
-        <h5>Shemmylicious Food Recipes</h5>
-        <p>Here's where you can find ingridients, instructions and other details of your Shemmylicious recipe. <br>
+        <h5>Shemmylicious Food Blog</h5>
+        <p>Here's where you can find lates comments and opinions on your Shemmylicious recipe. <br>
             Be sure to sign up to be able to comment and like my posts as well as create your own recipes.</p>
         <hr>
     </div>
@@ -82,67 +82,6 @@
     </div>
 </div>
 <div class="container-sm">
-    <!-- Ingridients & Instructions -->
-    <div class="row">
-        <div class="col card mb-4  mt-3 left top">
-            <div class="card-body">
-                <!-- The recipe content goes inside the card-text. -->
-                <!-- Use the | safe filter inside the template tags -->
-                <!-- Ingridients -->
-                <div class="card col-md-10 offset-md-1">
-                    <div class="card-body">
-                        <h5 class="card-title">Ingredients</h5>
-                        <p class="card-text ">{{ post.recipe_ingridients | safe }}</p>
-                    </div>
-                </div>
-                <!-- Instructions -->
-                <div class="card col-md-10 offset-md-1">
-                    <div class="card-body">
-                        <h5 class="card-title">Instructions</h5>
-                        <p class="card-text ">{{ post.recipe_instructions | safe }}</p>
-                    </div>
-                </div>
-                <!-- Likes & Comments Section -->
-                <div class="row">
-                    <hr>
-                    <!-- Likes icon and count -->
-                    <div class="col-2 offset-4 text-center">
-                        <strong>
-                            {% if user.is_authenticated %}
-                            <form class="d-inline" action="{% url 'recipe_like' post.slug %}" method="POST">
-                                {% csrf_token %}
-                                {% if liked %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
-                                        class="fas fa-heart"></i></button>
-                                {% else %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
-                                        class="far fa-heart"></i></button>
-                                {% endif %}
-                            </form>
-                            {% else %}
-                            <span class="text-secondary"><i class="far fa-heart"></i></span>
-                            {% endif %}
-                            <!-- The number of likes goes before the closing strong tag -->
-                            <span class="text-secondary">{{ post.number_of_likes }} </span>
-                        </strong>
-                    </div>
-                    <!-- Comments icon and count -->
-                    <div class="col-2 text-center">
-                        {% with comments.count as total_comments %}
-                        <strong class="text-secondary"><i class="far fa-comments"></i>
-                            <!-- Our total_comments variable goes before the closing strong tag -->
-                            {{ total_comments }}</strong>
-                        {% endwith %}
-                    </div>
-                </div>
-                <hr>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-        </div>
-    </div>
     <!-- Comments section -->
     <div class="row">
         <div class="col-md-7 offset-1 card mb-4  mt-3 ">

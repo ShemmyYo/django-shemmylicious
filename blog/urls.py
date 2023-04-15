@@ -21,4 +21,5 @@ urlpatterns = [
     path('category/<str:categories>/', views.CategoryView, name='category'),
 
     path('recipe/<slug:slug>/', views.RecipeDetailView.as_view(), name='recipe_detail'),
+    path('recipe_blog/<slug:slug>/', views.RecipeBlogView.as_view(), name='recipe-blog'),
 ]
