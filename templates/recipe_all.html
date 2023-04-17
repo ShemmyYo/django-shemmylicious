@@ -29,9 +29,9 @@
         {% endif %}
         <div class="image-flash">
           <a href="{% url 'show-profile' recipe.author.profile.id %}" 
-          class="author image-flash-author">Author: {{ recipe.author }}</a>
+          class="author image-flash-author"><small>Author: </small>{{ recipe.author }}</a><br>
         <a href="{% url 'category' recipe.category %}" 
-          class="category image-flash-category">Category: {{ recipe.category }}</a>
+          class="category image-flash-category"><small>Category: </small>{{ recipe.category }}</a>
         </div>
       </div>
       <div class="card-body card-body-recipe-list">

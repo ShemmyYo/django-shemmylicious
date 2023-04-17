@@ -1,31 +1,64 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 {% block title %}{% endblock %}
 {% load static %}
 
-
-
 {% block content %}
 
-<div class="container">
-
-    {% if searched %}
-        <h3>Your searched for {{ searched }}</h3>
-        {% for recipe in recipes %}
-        <a href="{% url 'recipe_detail' recipe.slug %}">{{ recipe }}</a>
+<!-- Top Slogan Section -->
+<section class="top-slogan">
+    <div class="container col-lg-8 offset-lg-2 col-10 text-center top-slogan">
+        <h4 class="">Cooking Time Is My Favorite Time <i class="far fa-heart"></i></h4>
+        <hr>
+        <h5>Shemmylicious Food Search</h5>
+        <p>Here's where you can find all the latest and Shemmylicious food recipes by keyword <br>
+            Be sure to sign up to be able to comment and like my posts as well as create your own recipes.</p>
+        <hr>
         <br>
-        {% endfor %}
+    </div>
+</section>
+<!-- Search Results -->
+<div class="card mb-3">
 
-    {% else %}
-        <h3>No search results</h3>
-    {% endif %}
-
-
+    {% for recipe in recipes %}
     
+    <br>
 
-    
+
+    <div class="row g-0">
+        <div class="col-10 offset-1 col-md-2 offset-md-1 image-container ">
+            {% if "recipe" in recipe.featured_image.url %}
+            <img src="https://res.cloudinary.com/dteyj4llb/image/upload/v1679649965/media/Shemmylicious/recipe.png"
+              alt="deafult image" class="img-thumbnail card-img-top shadow">
+            {% else %}
+            <img src="{{ recipe.featured_image.url }}" alt="image" width="100px;" 
+                class="img-thumbnail card-img-top shadow">
+            {% endif %}
+            <div class="image-flash">
+              <a href="{% url 'show-profile' recipe.author.profile.pk %}" 
+                class="author image-flash-author"><small>Author: </small> {{ recipe.author }}</a><br>
+              <a href="{% url 'category' recipe.category %}" 
+                class="category image-flash-category"><small>Category: </small>{{ recipe.category }}</a><br>
+            </div>
+        </div>
+        <div class="col-10 offset-1 col-md-8">
+            <div class="card-body">
+                <h5 class="card-title card-list-title"><a href="{% url 'recipe_detail' recipe.slug %}">{{ recipe }}</a></h5>
+                <hr>
+                <p class="card-text card-title card-blog-comment ">{{ recipe.featured_comment }}</p>
+                <hr>
+                <span class="card-text"><small class="text-body-secondary">Last updated {{ recipe.updated_date }} | </small></span>
+                <span class="card-text text-secondary"><small class="text-body-secondary"><i class="far fa-heart"></i> Loved by {{ recipe.number_of_likes }} users</small></span>
+            </div>
+        </div>
+    </div>
+
+    {% endfor %}
+
+</div>
+
+<div class="container col-lg-8 offset-lg-2 col-10">
 
     <a href="{% url 'recipes' %}" class="btn btn-sm btn-outline-success">Home</a>
-
 
 </div>
 {% endblock content %}

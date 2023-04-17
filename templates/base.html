@@ -84,49 +84,6 @@
             </div>
           </li>
         
-          <!-- TO BE REMOVED -->
-          <li class="nav-item nav-link-s dropdown">
-            <div class="nav-item-s">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">TBD</a>
-
-                <ul class="dropdown-menu">
-                  
-                  <li class="nav-item nav-link-s">
-                    <div class="nav-item-s">
-                      <a class="nav-link nav-link-drop" href="{% url 'add-category' %}">Add Category</a>
-                    </div>
-                  </li>
-    
-                  <li class="nav-item nav-link-s">
-                    <div class="nav-item-s">
-                        <a class="nav-link nav-link-drop" href="/admin"><i class="fa-solid fa-screwdriver-wrench fa-fade fa-xs"></i>  Admin</a>
-                    </div>
-                  </li>
-    
-                  <li class="nav-item nav-link-s">
-                    <div class="nav-item-s">
-                        <a class="nav-link nav-link-drop" href="{% url 'register' %}"><i class="fa-solid fa-screwdriver-wrench fa-fade fa-xs"></i>  Sign Up</a>
-                    </div>
-                  </li>
-    
-                  <li class="nav-item nav-link-s">
-                    <div class="nav-item-s">
-                        <a class="nav-link nav-link-drop" href="{% url 'login' %}"><i class="fa-solid fa-screwdriver-wrench fa-fade fa-xs"></i>  Login</a>
-                    </div>
-                  </li>
-
-                  <li class="nav-item nav-link-s">
-                    <div class="nav-item-s">
-                        <a class="nav-link nav-link-drop" href="{% url 'edit-profile' %}"><i class="fa-solid fa-screwdriver-wrench fa-fade fa-xs"></i>  Update</a>
-                    </div>
-                  </li>
-
-                </ul>
-
-            </div>
-          </li>
-
           <!-- Nav Links visible when User is authenticated -->
           {% if user.is_authenticated %}
 
@@ -134,16 +91,17 @@
             <div class="nav-item-s">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
-                {{ user }}   <i class="fa-solid fa-user fa-xs"></i>
+                {{ user }} <i class="fa-solid fa-user fa-xs"></i>
               </a>
               
               <ul class="dropdown-menu">
 
                 <li class="nav-item nav-link-s">
                   <div class="nav-item-s">
-                    <a class="nav-link nav-link-drop" href="{% url 'edit-profile' %}"> {{ user }} Profile </a>
+                    <a class="nav-link nav-link-drop" href="{% url 'show-profile' user.pk %}"> {{ user }} Profile </a>
                   </div>
                 </li>
+                <hr>
 
                 <li class="nav-item nav-link-s">
                   <div class="nav-item-s">
@@ -159,22 +117,24 @@
 
                 <!-- Visible for Admin only -->
                 {% if user.is_superuser %}
-                <hr>
+                
                 <li class="nav-item nav-link-s">
                   <div class="nav-item-s">
                     <a class="nav-link nav-link-drop" href="{% url 'add-category' %}">Add Category</a>
                   </div>
                 </li>
+                <hr>
 
                 <li class="nav-item nav-link-s">
                   <div class="nav-item-s">
-                      <a class="nav-link nav-link-drop" href="/admin"><i class="fa-solid fa-screwdriver-wrench fa-fade fa-xs"></i>  Admin</a>
+                      <a class="nav-link nav-link-drop" href="/admin">
+                        <i class="fa-solid fa-screwdriver-wrench fa-fade fa-xs"></i> Admin</a>
                   </div>
                 </li>
-                <hr>
 
                 {% endif %}
                           
+                <hr>
                 <li class="nav-item nav-link-s">
                   <div class="nav-item-s">
                     <a class="nav-link" href="{% url 'logout-user' %}">Logout  <i class="fa-solid fa-right-from-bracket fa-beat-fade fa-xs"></i></a>
@@ -189,9 +149,10 @@
 
           <li class="nav-item nav-link-s">
             <div class="nav-item-s">
-              <a class="nav-link" href="{% url 'register' %}">Register <i class="fa-solid fa-user-plus fa-beat-fade fa-xs"></i></a>
+              <a class="nav-link" href="{% url 'register' %}">Sign Up <i class="fa-solid fa-user-plus fa-beat-fade fa-xs"></i></a>
             </div>
           </li>
+
           <li class="nav-item nav-link-s">
             <div class="nav-item-s">
               <a class="nav-link" href="{% url 'login-user' %}">Login <i class="fa-solid fa-arrow-right-to-bracket fa-beat-fade fa-xs"></i></a>

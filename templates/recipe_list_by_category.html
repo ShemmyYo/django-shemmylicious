@@ -20,10 +20,10 @@
           <img src="{{ recipe.featured_image.url }}" alt="image" class="img-thumbnail card-img-top">
           {% endif %}
           <div class="image-flash">
-            <a href="{% url 'show-profile' recipe.author.profile.pk %}" class="author image-flash-author">Author:
-              {{ recipe.author }}</a>
-            <a href="{% url 'category' recipe.category %}" class="category image-flash-category">Category:
-              {{ recipe.category }}</a>
+            <a href="{% url 'show-profile' recipe.author.profile.pk %}" 
+            class="author image-flash-author"><small>Author: </small>{{ recipe.author }}</a><br>
+            <a href="{% url 'category' recipe.category %}" 
+            class="category image-flash-category"><small>Category: </small>{{ recipe.category }}</a><br>
           </div>
         </div>
       </div>
