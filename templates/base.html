@@ -48,7 +48,7 @@
       <!-- Logo -->
       <a class="navbar-brand" href="{% url 'start' %}">
         <span class="brand-logo">Shemmylicious</span>
-        <img src="https://res.cloudinary.com/dteyj4llb/image/upload/v1681539763/media/Shemmylicious/food_logo.png"
+        <img src="{% static 'images/food_trans.png' %}"
           alt="Shemmylicious Food Sign" height="75">
       </a>
       <!-- Hidden Burger Menu -->
@@ -68,19 +68,19 @@
 
           <li class="nav-item nav-link-s">
             <div class="nav-item-s">
-              <a class="nav-link active" aria-current="page" href="{% url 'recipes' %}">Recipes</a>
+              <a class="nav-link" aria-current="page" href="{% url 'recipes' %}">Recipes</a>
             </div>
           </li>
 
           <li class="nav-item nav-link-s">
             <div class="nav-item-s">
-              <a class="nav-link active" aria-current="page" href="{% url 'categories' %}">Categories</a>
+              <a class="nav-link" aria-current="page" href="{% url 'categories' %}">Categories</a>
             </div>
           </li>
 
           <li class="nav-item nav-link-s">
             <div class="nav-item-s">
-              <a class="nav-link active" aria-current="page" href="{% url 'blog' %}">Blog</a>
+              <a class="nav-link" aria-current="page" href="{% url 'blog' %}">Blog</a>
             </div>
           </li>
         
