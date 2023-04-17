@@ -9,9 +9,10 @@
     <br>
     <div class="row">
         <div class="col-md-11 offset-md-1">
-            <!-- The Profile image URL and Bio goes in the src attribute -->
+            <!-- The Profile Card -->
             <div class="card mb-3">
                 <div class="row no-gutters">
+                    <!-- The Profile image URL -->
                     <div class="col-sm-2 offset-sm-2">
                         {% if "profile_img" in page_user.profile_pic.url %}
                         <img src="https://res.cloudinary.com/dteyj4llb/image/upload/v1681317396/profile_img.png"
@@ -19,44 +20,51 @@
                         {% else %}
                         <img src="{{ page_user.profile_pic.url }}"
                             width="100%" class="rounded-circle shadow">
-                        <br>
+
                         {% endif %}
+                        <br>
+                        <br>
+                        <br>
                     </div>
-                    <div class="col-sm-8">
+                    <!-- The Profile URL's and Bio -->
+                    <div class="col-sm-7">
                         <div class="card-body">
-                            <!-- Username, F-Name & L-Name go here -->
                             <h3 class="card-title">{{ page_user }}'s Profile</h3>
+                            <hr>
                             <h4 class="card-title">{{ page_user.user.first_name }} {{ page_user.user.last_name }}</h4>
+                            <!-- Bio goes here -->                            
+                            {% if page_user.bio %}
+                                <p class="card-text">{{ page_user.bio }}</p><hr>
+                            {% endif %}
                             <!-- Social Links go here -->
                             {% if page_user.website_url %}
                                 <a class="card-text" href="{{ page_user.website_url }}">
-                                <small> <i class="fa-solid fa-globe"></i>Website</small></a>
+                                <small><i class="fa-solid fa-globe"></i> Website</small></a>
                             {% endif %}
                             {% if page_user.facebook_url %}
                                 <span> | </span><a class="card-text" href="{{ page_user.facebook_url }}">
-                                <small> <i class="fa-brands fa-facebook"></i>Facebook</small></a>
+                                <small><i class="fa-brands fa-facebook"></i> Facebook</small></a>
                             {% endif %}
                             {% if page_user.twitter_url %}
                                 <span> | </span><a class="card-text" href="{{ page_user.twitter_url }}">
-                                <small> <i class="fa-brands fa-twitter"></i>Twitter</small></a>
+                                <small> <i class="fa-brands fa-twitter"></i> Twitter</small></a>
                             {% endif %}
                             {% if page_user.instagram_url %}
                                 <span> | </span><a class="card-text" href="{{ page_user.instagram_url }}">
-                                <small> <i class="fa-brands fa-instagram"></i>Instagram </small></a> 
+                                <small> <i class="fa-brands fa-instagram"></i> Instagram </small></a> 
                             {% endif %}
                             {% if page_user.pintrest_url %}
                                 <span> | </span><a class="card-text" href="{{ page_user.pintrest_url }}">
-                                <small><i class="fa-brands fa-pinterest"></i>Pinterest</small></a>
-                            {% endif %}
-                            <!-- Bio goes here -->
-                            {% if page_user.bio %}
-                                <p class="card-text">{{ page_user.bio }}</p>
-                            {% endif %}
+                                <small><i class="fa-brands fa-pinterest"></i> Pinterest</small></a>
+                            {% endif %}                            
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    {% if page_user.id == user.id %}
+        <a href="{% url 'edit-profile' %}" class="btn btn-outline-success col-12">Edit Your Profile</a>
+    {% endif %}
 </div>
 {% endblock content %}
