@@ -5,7 +5,6 @@
 
 <div class="container col-lg-8 offset-lg-2 col-10">
   <br>
-  <h4>View by {{ category }} Category</h4>
   <br>
   <br>
   {% for recipe in category_recipes %}
@@ -21,8 +20,10 @@
           <img src="{{ recipe.featured_image.url }}" alt="image" class="img-thumbnail card-img-top">
           {% endif %}
           <div class="image-flash">
-            <p class="author image-flash-author">Author: {{ recipe.author }}</p>
-            <p class="category image-flash-category">{{ recipe.category }}</p>
+            <a href="{% url 'show-profile' recipe.author.profile.pk %}" class="author image-flash-author">Author:
+              {{ recipe.author }}</a>
+            <a href="{% url 'category' recipe.category %}" class="category image-flash-category">Category:
+              {{ recipe.category }}</a>
           </div>
         </div>
       </div>

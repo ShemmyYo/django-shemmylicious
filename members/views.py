@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import redirect, get_object_or_404
 from django.views import generic
 from django.views.generic import DetailView
 from django.contrib.auth import authenticate, login, logout
@@ -15,8 +15,7 @@ class ShowProfilePageView(DetailView):
     template_name = 'profile/user_profile.html'
 
     def get_context_data(self, *args, **kwargs):
-        users = Profile.objects.all()
-        context = super(ShowProfilePageView, self).get_context_data(self, *args, **kwargs)
+        context = super(ShowProfilePageView, self).get_context_data(**kwargs)
         page_user = get_object_or_404(Profile, id=self.kwargs['pk'])
         context["page_user"] = page_user
 
