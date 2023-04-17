@@ -9,7 +9,7 @@
     <h4 class="">Cooking Time Is My Favorite Time <i class="far fa-heart"></i></h4>
     <hr>
     <h5>Shemmylicious Food Blog</h5>
-    <p>Here's where you can find all the latest and Shemmylicious food recipes comments and likes. <br>
+    <p>Here's where you can find all the latest and Shemmylicious food recipes, comments and likes. <br>
       Be sure to sign up to be able to comment and like my posts as well as create your own recipes.</p>
     <hr>
     <br>
@@ -29,8 +29,8 @@
           <img src="{{ recipe.featured_image.url }}" alt="image" class="img-thumbnail card-img-top shadow">
           {% endif %}
           <div class="image-flash">
-            <p class="author image-flash-author">Author: {{ recipe.author }}</p>
-            <p class="category image-flash-category">{{ recipe.category }}</p>
+            <a href="{% url 'show-profile' recipe.author.profile.pk %}" class="author image-flash-author">Author: {{ recipe.author }}</a>
+            <a href="{% url 'category' recipe.category %}" class="category image-flash-category">{{ recipe.category }}</a>
           </div>
         </div>
       </div>

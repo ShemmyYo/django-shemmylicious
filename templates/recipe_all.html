@@ -29,7 +29,7 @@
         {% endif %}
         <div class="image-flash">
           <p class="author image-flash-author">Author: {{ recipe.author }}</p>
-          <p class="category image-flash-category">{{ recipe.category }}</p>
+          <a href="{% url 'category' recipe.category %}" class="category image-flash-category">Category: {{ recipe.category }}</a>
         </div>
       </div>
       <div class="card-body card-body-recipe-list">

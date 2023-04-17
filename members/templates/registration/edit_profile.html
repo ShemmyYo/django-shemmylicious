@@ -13,10 +13,11 @@
                 <div class="row no-gutters">
                     <div class="col-sm-2 offset-sm-2">
                         {% if "profile_img" in user.profile.profile_pic.url %}
-                        <img src="https://res.cloudinary.com/dteyj4llb/image/upload/v1681317396/profile_img.png"
+                        <img src="{% static 'images/profile_img.png' %}"
                             width="100%" class="rounded-circle rounded-sm border-success">
                         {% else %}
-                        <img src="{{ user.profile.profile_pic.url }}" width="100%" class="rounded-circle shadow">
+                        <img src="{{ user.profile.profile_pic.url }}" 
+                            width="100%" class="rounded-circle shadow">
                         <br>
                         {% endif %}
                     </div>
