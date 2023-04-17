@@ -1,28 +1,29 @@
 {% extends "base.html" %}
-
 {% block title %}Edit User Profile{% endblock %}
-
+{% load static %}
 {% block content %}
+
+{% if user.is_authenticated %}
 
 <div class="container">
     <div class="row">
         <div class="col-md-11 offset-md-1">
             <!-- The Profile image URL and Bio goes in the src attribute -->
-            <div class="card mb-3" style="max-width: 540px;">
+            <div class="card mb-3">
                 <div class="row no-gutters">
-                    <div class="col-md-4">
+                    <div class="col-sm-2 offset-sm-2">
                         {% if "profile_img" in user.profile.profile_pic.url %}
                         <img src="https://res.cloudinary.com/dteyj4llb/image/upload/v1681317396/profile_img.png"
-                            width="100%" class="rounded-circle">
+                            width="100%" class="rounded-circle rounded-sm border-success">
                         {% else %}
-                        <img src="{{ user.profile.profile_pic.url }}"
-                            width="100%" class="rounded-circle">
+                        <img src="{{ user.profile.profile_pic.url }}" width="100%" class="rounded-circle shadow">
                         <br>
                         {% endif %}
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-sm-8">
                         <div class="card-body">
                             <h3 class="card-title">{{ user }}'s Profile</h3>
+                            <h3 class="card-title">{{ user.first_name }} {{ user.last_name }}</h3>
                             {% if user.profile.bio %}
                             <p class="card-text">{{ user.profile.bio }}</p>
                             {% endif %}
@@ -74,11 +75,21 @@
                 {{ form.as_p }}
                 <br>
                 <div class="d-grid">
+                    <a class="btn btn-outline-success" href="../password/">Change Password</a>
+                </div>
+                <br>
+                <div class="d-grid">
                     <button class="btn btn-outline-success" type="submit">Update Profile</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+
+{% else %}
+<center>
+    <h1>You're not logged in!</h1>
+</center>
+{% endif %}
 
 {% endblock %}

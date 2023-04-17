@@ -1,39 +1,71 @@
 {% extends "base.html" %}
 {% block title %}{{ User }} Profile{% endblock %}
 {% load static %}
-
-
 {% block content %}
 
-{% if user.is_authenticated %}
-
 <div class="container">
-
-    <br>
-    <br>
-    <br>
-    <h1>{{ user }} Profile</h1>
-    <br>
-
-    {{ page_user }}
-
-    <center>
-        <div class="d-grid gap-2 col-12">
-            <input type="submit" value="Add Recipe" class="btn btn-outline-success">
-            <a href="{% url 'recipes' %}" class="btn btn-outline-success">Back</a>
+    <div class="row">
+        <div class="col-md-11 offset-md-1">
+            <!-- The Profile image URL and Bio goes in the src attribute -->
+            <div class="card mb-3">
+                <div class="row no-gutters">
+                    <div class="col-sm-2 offset-sm-2">
+                        {% if "profile_img" in user.profile.profile_pic.url %}
+                        <img src="https://res.cloudinary.com/dteyj4llb/image/upload/v1681317396/profile_img.png"
+                            width="100%" class="rounded-circle rounded-sm border-success">
+                        {% else %}
+                        <img src="{{ user.profile.profile_pic.url }}"
+                            width="100%" class="rounded-circle shadow">
+                        <br>
+                        {% endif %}
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="card-body">
+                            <h3 class="card-title">{{ user }}'s Profile</h3>
+                            <h3 class="card-title">{{ user.first_name }} {{ user.last_name }}</h3>
+                            {% if user.profile.bio %}
+                            <p class="card-text">{{ user.profile.bio }}</p>
+                            {% endif %}
+                            {% if user.profile.website_url %}
+                            <a class="card-text" href="{{ user.profile.website_url }}">
+                                <small>
+                                    <i class="fa-solid fa-globe"></i>
+                                    {{ user.profile.website_url }}
+                                </small></a><br>
+                            {% endif %}
+                            {% if user.profile.facebook_url %}
+                            <a class="card-text" href="{{ user.profile.facebook_url }}">
+                                <small>
+                                    <i class="fa-brands fa-facebook"></i>
+                                    {{ user.profile.facebook_url }}
+                                </small></a><br>
+                            {% endif %}
+                            {% if user.profile.twitter_url %}
+                            <a class="card-text" href="{{ user.profile.twitter_url }}">
+                                <small>
+                                    <i class="fa-brands fa-twitter"></i>
+                                    {{ user.profile.twitter_url }}
+                                </small></a><br>
+                            {% endif %}
+                            {% if user.profile.instagram_url %}
+                            <a class="card-text" href="{{ user.profile.instagram_url }}">
+                                <small>
+                                    <i class="fa-brands fa-instagram"></i>
+                                    {{ user.profile.instagram_url }}
+                                </small></a><br>
+                            {% endif %}
+                            {% if user.profile.pintrest_url %}
+                            <a class="card-text" href="{{ user.profile.pintrest_url }}">
+                                <small>
+                                    <i class="fa-brands fa-pinterest"></i>
+                                    {{ user.profile.pintrest_url }}
+                                </small></a><br>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </center>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    </div>
 </div>
-
-{% else %}
-<center>
-    <h1>You're not logged in!</h1>
-</center>
-{% endif %}
-
 {% endblock content %}
