@@ -13,56 +13,44 @@
             <div class="card mb-3">
                 <div class="row no-gutters">
                     <div class="col-sm-2 offset-sm-2">
-                        {% if "profile_img" in user.profile.profile_pic.url %}
+                        {% if "profile_img" in page_user.profile_pic.url %}
                         <img src="https://res.cloudinary.com/dteyj4llb/image/upload/v1681317396/profile_img.png"
                             width="100%" class="rounded-circle rounded-sm border-success">
                         {% else %}
-                        <img src="{{ user.profile.profile_pic.url }}"
+                        <img src="{{ page_user.profile_pic.url }}"
                             width="100%" class="rounded-circle shadow">
                         <br>
                         {% endif %}
                     </div>
                     <div class="col-sm-8">
                         <div class="card-body">
-                            <h3 class="card-title">{{ user }}'s Profile</h3>
-                            <h3 class="card-title">{{ user.first_name }} {{ user.last_name }}</h3>
-                            {% if user.profile.bio %}
-                            <p class="card-text">{{ user.profile.bio }}</p>
+                            <!-- Username, F-Name & L-Name go here -->
+                            <h3 class="card-title">{{ page_user }}'s Profile</h3>
+                            <h4 class="card-title">{{ page_user.user.first_name }} {{ page_user.user.last_name }}</h4>
+                            <!-- Social Links go here -->
+                            {% if page_user.website_url %}
+                                <a class="card-text" href="{{ page_user.website_url }}">
+                                <small> <i class="fa-solid fa-globe"></i>Website</small></a>
                             {% endif %}
-                            {% if user.profile.website_url %}
-                            <a class="card-text" href="{{ user.profile.website_url }}">
-                                <small>
-                                    <i class="fa-solid fa-globe"></i>
-                                    {{ user.profile.website_url }}
-                                </small></a><br>
+                            {% if page_user.facebook_url %}
+                                <span> | </span><a class="card-text" href="{{ page_user.facebook_url }}">
+                                <small> <i class="fa-brands fa-facebook"></i>Facebook</small></a>
                             {% endif %}
-                            {% if user.profile.facebook_url %}
-                            <a class="card-text" href="{{ user.profile.facebook_url }}">
-                                <small>
-                                    <i class="fa-brands fa-facebook"></i>
-                                    {{ user.profile.facebook_url }}
-                                </small></a><br>
+                            {% if page_user.twitter_url %}
+                                <span> | </span><a class="card-text" href="{{ page_user.twitter_url }}">
+                                <small> <i class="fa-brands fa-twitter"></i>Twitter</small></a>
                             {% endif %}
-                            {% if user.profile.twitter_url %}
-                            <a class="card-text" href="{{ user.profile.twitter_url }}">
-                                <small>
-                                    <i class="fa-brands fa-twitter"></i>
-                                    {{ user.profile.twitter_url }}
-                                </small></a><br>
+                            {% if page_user.instagram_url %}
+                                <span> | </span><a class="card-text" href="{{ page_user.instagram_url }}">
+                                <small> <i class="fa-brands fa-instagram"></i>Instagram </small></a> 
                             {% endif %}
-                            {% if user.profile.instagram_url %}
-                            <a class="card-text" href="{{ user.profile.instagram_url }}">
-                                <small>
-                                    <i class="fa-brands fa-instagram"></i>
-                                    {{ user.profile.instagram_url }}
-                                </small></a><br>
+                            {% if page_user.pintrest_url %}
+                                <span> | </span><a class="card-text" href="{{ page_user.pintrest_url }}">
+                                <small><i class="fa-brands fa-pinterest"></i>Pinterest</small></a>
                             {% endif %}
-                            {% if user.profile.pintrest_url %}
-                            <a class="card-text" href="{{ user.profile.pintrest_url }}">
-                                <small>
-                                    <i class="fa-brands fa-pinterest"></i>
-                                    {{ user.profile.pintrest_url }}
-                                </small></a><br>
+                            <!-- Bio goes here -->
+                            {% if page_user.bio %}
+                                <p class="card-text">{{ page_user.bio }}</p>
                             {% endif %}
                         </div>
                     </div>

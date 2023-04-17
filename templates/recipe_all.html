@@ -28,7 +28,7 @@
         <img src="{{ recipe.featured_image.url }}" alt="image" class="img-thumbnail card-img-recipe w-100">
         {% endif %}
         <div class="image-flash">
-          <a href="{% url 'show-profile' recipe.author.profile.pk %}" 
+          <a href="{% url 'show-profile' recipe.author.profile.id %}" 
           class="author image-flash-author">Author: {{ recipe.author }}</a>
         <a href="{% url 'category' recipe.category %}" 
           class="category image-flash-category">Category: {{ recipe.category }}</a>
