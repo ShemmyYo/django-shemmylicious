@@ -68,6 +68,16 @@
 
           <li class="nav-item nav-link-s">
             <div class="nav-item-s">
+              <a class="nav-link" aria-current="page" href="#about">About</a>
+            </div>
+          </li>
+
+        
+          <!-- Nav Links visible when User is authenticated -->
+          {% if user.is_authenticated %}
+
+          <li class="nav-item nav-link-s">
+            <div class="nav-item-s">
               <a class="nav-link" aria-current="page" href="{% url 'recipes' %}">Recipes</a>
             </div>
           </li>
@@ -83,9 +93,6 @@
               <a class="nav-link" aria-current="page" href="{% url 'blog' %}">Blog</a>
             </div>
           </li>
-        
-          <!-- Nav Links visible when User is authenticated -->
-          {% if user.is_authenticated %}
 
           <li class="nav-item nav-link-s dropdown">
             <div class="nav-item-s">
@@ -133,9 +140,9 @@
                               <i class="fa-solid fa-screwdriver-wrench fa-fade fa-xs"></i> Admin</a>
                         </div>
                       </li>
-                    {% endif %}
-                            
-                    <hr>
+                      <hr>
+                    {% endif %}                       
+
                     <li class="nav-item nav-link-s">
                       <div class="nav-item-s">
                         <a class="nav-link" href="{% url 'logout-user' %}">Logout  <i class="fa-solid fa-right-from-bracket fa-beat-fade fa-xs"></i></a>
@@ -200,7 +207,7 @@
   <br>
   <br>
   <br>
-
+  <div id="about"></div>
   <!-- Footer -->
   <center>
     <footer class="footer mt-auto py-2 light-bg">
