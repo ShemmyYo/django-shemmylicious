@@ -99,53 +99,50 @@
                 <li class="nav-item nav-link-s">
                   <div class="nav-item-s">
                     {% if user.profile.id %}
-                    <a class="nav-link nav-link-drop" href="{% url 'show-profile' user.pk %}"> {{ user }} Profile </a>
-
-                    <li class="nav-item nav-link-s">
-                      <div class="nav-item-s">
-                        <a class="nav-link nav-link-drop" href="{% url 'recipe-mylist' %}"> My Recipes </a>
-                      </div>
-                    </li>
-    
-                    <li class="nav-item nav-link-s">
-                      <div class="nav-item-s">
-                        <a class="nav-link nav-link-drop" href="{% url 'add-recipe' %}"> Add Recipe</a>
-                      </div>
-                    </li>
-                    <hr>
-
+                      <a class="nav-link nav-link-drop" href="{% url 'show-profile' user.pk %}"> {{ user }} Profile </a>
+                      <li class="nav-item nav-link-s">
+                        <div class="nav-item-s">
+                          <a class="nav-link nav-link-drop" href="{% url 'recipe-mylist' %}"> My Recipes </a>
+                        </div>
+                      </li>    
+                      <li class="nav-item nav-link-s">
+                        <div class="nav-item-s">
+                          <a class="nav-link nav-link-drop" href="{% url 'add-recipe' %}"> Add Recipe</a>
+                        </div>
+                      </li>
+                      <hr>
                     {% else %}
-                    <a class="nav-link nav-link-drop" href="{% url 'create-profile-page' %}"> Create Profile </a>
+                      <li class="nav-item nav-link-s">
+                        <div class="nav-item-s">
+                          <a class="nav-link nav-link-drop" href="{% url 'create-profile-page' %}"> Create Profile </a>
+                        </div>
+                      </li>
                     {% endif %}
-                  </div>
-                </li>
 
-                <!-- Visible for Admin only -->
-                {% if user.is_superuser %}
-                
-                <li class="nav-item nav-link-s">
-                  <div class="nav-item-s">
-                    <a class="nav-link nav-link-drop" href="{% url 'add-category' %}">Add Category</a>
+                    <!-- Visible for Admin only -->
+                    {% if user.is_superuser %}                  
+                      <li class="nav-item nav-link-s">
+                        <div class="nav-item-s">
+                          <a class="nav-link nav-link-drop" href="{% url 'add-category' %}">Add Category</a>
+                        </div>
+                      </li>
+                      <hr>
+                      <li class="nav-item nav-link-s">
+                        <div class="nav-item-s">
+                            <a class="nav-link nav-link-drop" href="/admin">
+                              <i class="fa-solid fa-screwdriver-wrench fa-fade fa-xs"></i> Admin</a>
+                        </div>
+                      </li>
+                    {% endif %}
+                            
+                    <hr>
+                    <li class="nav-item nav-link-s">
+                      <div class="nav-item-s">
+                        <a class="nav-link" href="{% url 'logout-user' %}">Logout  <i class="fa-solid fa-right-from-bracket fa-beat-fade fa-xs"></i></a>
+                      </div>
+                    </li>
                   </div>
                 </li>
-                <hr>
-
-                <li class="nav-item nav-link-s">
-                  <div class="nav-item-s">
-                      <a class="nav-link nav-link-drop" href="/admin">
-                        <i class="fa-solid fa-screwdriver-wrench fa-fade fa-xs"></i> Admin</a>
-                  </div>
-                </li>
-
-                {% endif %}
-                          
-                <hr>
-                <li class="nav-item nav-link-s">
-                  <div class="nav-item-s">
-                    <a class="nav-link" href="{% url 'logout-user' %}">Logout  <i class="fa-solid fa-right-from-bracket fa-beat-fade fa-xs"></i></a>
-                  </div>
-                </li>
-                
               </ul>
             </div>
           </li>
