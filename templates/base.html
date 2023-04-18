@@ -98,7 +98,11 @@
 
                 <li class="nav-item nav-link-s">
                   <div class="nav-item-s">
+                    {% if user.profile.id %}
                     <a class="nav-link nav-link-drop" href="{% url 'show-profile' user.pk %}"> {{ user }} Profile </a>
+                    {% else %}
+                    <a class="nav-link nav-link-drop" href="{% url 'create-profile-page' %}"> Create Profile </a>
+                    {% endif %}
                   </div>
                 </li>
                 <hr>

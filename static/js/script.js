@@ -49,3 +49,12 @@ links.forEach(link => {
 })
 
 // Credits: https://www.youtube.com/watch?v=xB27AuRa5h4
+
+
+const myModal = document.getElementById('myModal')
+const myInput = document.getElementById('myInput')
+
+myModal.addEventListener('shown.bs.modal', () => {
+  myInput.focus()
+})
+

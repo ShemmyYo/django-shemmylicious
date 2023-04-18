@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}Create Profile Page{% endblock %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+    <div class="container">
+        <br>
+        <br>
+        <br>
+        <h3>Create {{ user }}'s Profile</h3>
+        <br>
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.media }}
+
+            {{ form | crispy }}
+            <br>
+            
+            
+            <center>
+                <div class="d-grid gap-2 col-12">
+                    <button class="btn btn-outline-success">Create Profile Page</button>
+                    <a href="{% url 'start' %}" class="btn btn-outline-success">Back</a>
+                </div>
+            </center>
+        </form>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+{% else %}
+<center>
+    <h1>You're not logged in!</h1>
+</center>
+{% endif %}
+
+{% endblock content %}
+

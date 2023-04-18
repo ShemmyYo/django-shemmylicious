@@ -22,8 +22,7 @@
                         {% endif %}
                     </div>
                     <div class="col-sm-8">
-                        <div class="card-body">
-                            <h3 class="card-title">{{ user }}'s Profile</h3>
+                        <div class="card-body">                            
                             <h3 class="card-title">{{ user.first_name }} {{ user.last_name }}</h3>
                             {% if user.profile.bio %}
                             <p class="card-text">{{ user.profile.bio }}</p>
@@ -65,6 +64,11 @@
                             {% endif %}
                         </div>
                     </div>
+                    <br>
+                    <br>
+                    <div class="d-grid gap-2 col-8 col-md-7 offset-2">
+                        <a href="{% url 'edit-profile-page' user.pk %}" class="btn btn-outline-success">Update Picture, Bio & Social Links</a>                      
+                    </div>
                 </div>
             </div>
         </div>
@@ -72,15 +76,16 @@
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
             <form class="form-group">
+                <br>
+                <h3 class="card-title">{{ user }}'s Profile Settings</h3>
+                <br>
                 {% csrf_token %}
                 {{ form.as_p }}
                 <br>
-                <div class="d-grid">
+                <div class="d-grid gap-2 col-8 offset-2">
                     <a class="btn btn-outline-success" href="../password/">Change Password</a>
-                </div>
-                <br>
-                <div class="d-grid">
-                    <button class="btn btn-outline-success" type="submit">Update Profile</button>
+                    <button class="btn btn-outline-success" type="submit">Update Profile Settings</button>
+                    <a href="{% url 'show-profile' user.pk %}" class="btn btn-outline-success">Back to Your Profile</a>
                 </div>
             </form>
         </div>

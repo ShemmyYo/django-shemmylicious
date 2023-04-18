@@ -39,6 +39,9 @@ class Profile(models.Model):
     def __str__(self):
         return str(self.user)
 
+    def get_absolute_url(self):
+        return reverse('recipes',)
+
 
 class Recipe(models.Model):
     recipe_title = models.CharField(max_length=255, unique=True)

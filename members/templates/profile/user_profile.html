@@ -8,12 +8,12 @@
     <br>
     <br>
     <div class="row">
-        <div class="col-md-11 offset-md-1">
+        <div class="col-10 offset-1 col-md-10 offset-md-1">
             <!-- The Profile Card -->
             <div class="card mb-3">
                 <div class="row no-gutters">
                     <!-- The Profile image URL -->
-                    <div class="col-8 offset-2 col-sm-2 offset-sm-2">
+                    <div class="col-12 col-sm-3 offset-sm-0">
                         {% if "profile_img" in page_user.profile_pic.url %}
                         <img src="https://res.cloudinary.com/dteyj4llb/image/upload/v1681317396/profile_img.png"
                             width="100%" class="rounded-circle rounded-sm border-success">
@@ -27,7 +27,7 @@
                         <br>
                     </div>
                     <!-- The Profile URL's and Bio -->
-                    <div class="col-sm-7">
+                    <div class="col-sm-9">
                         <div class="card-body">
                             <h3 class="card-title">{{ page_user }}'s Profile</h3>
                             <hr>
@@ -64,13 +64,14 @@
         </div>
     </div>
     {% if page_user.id == user.id %}
-        <a href="{% url 'edit-profile' %}" class="btn btn-outline-success col-10 offset-1 col-sm-4 offset-sm-4">Edit Your Profile</a>
+        <a href="{% url 'edit-profile-page' user.pk %}" class="btn btn-outline-success col-10 offset-1 col-sm-3 offset-sm-4">Edit Bio & Social Links</a>
+        <a href="{% url 'edit-profile' %}" class="btn btn-outline-success col-10 offset-1 col-sm-3 offset-sm-0 ">Edit Profile Settings</a>
     {% endif %}
     <br>
     <br>
     <div class="gx-2">
-        <a href="{% url 'blog' %}" class="btn col-10 offset-1  col-sm-2 offset-sm-4 btn-outline-success">Back to Blog</a>
-        <a href="{% url 'recipes' %}" class="btn col-10 offset-1 col-sm-2 offset-sm-0 btn-outline-success">Back to Recipes</a>
+        <a href="{% url 'recipe-mylist' %}" class=" btn col-10 offset-1  col-sm-3 offset-sm-4 btn-outline-success ">Back to Your Recipes</a>
+        <a href="{% url 'blog' %}" class="btn col-10 offset-1 col-sm-3 offset-sm-0 btn-outline-success">Back to Blog</a>
     </div>
 </div>
 {% endblock content %}

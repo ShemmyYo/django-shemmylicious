@@ -91,6 +91,7 @@ class UpdateRecipeForm(forms.ModelForm):
             'excerpt': '',
             'author': '',
         }
+        
         widgets = {
             'recipe_title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Type in Recipe Title'}),
             'category': forms.Select(attrs={'class': 'form-select'}),
