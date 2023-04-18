@@ -7,7 +7,7 @@
 
 <!-- Top Slogan Section -->
 <section class="top-slogan">
-    <div class="container col-lg-8 offset-lg-2 text-center top-slogan">
+    <div class="col-10 offset-1 col-lg-8 offset-lg-2 text-center top-slogan">
         <h4 class="">Cooking Time Is My Favorite Time <i class="far fa-heart"></i></h4>
         <hr>
         <h5>Shemmylicious Food Recipes</h5>
@@ -18,9 +18,9 @@
 </section>
 <!-- Recipe Head -->
 <div class="masthead">
-    <div class="container">
+    <div class="col-10 offset-1 col-lg-8 offset-lg-2">
         <div class="row g-0">
-            <div class="col-md-6 masthead-text">
+            <div class="col-md-5 masthead-text">
                 <!-- Recipe title goes in these h1 tags -->
                 <h1 class="recipe-title"> {{ post.recipe_title }} </h1>
                 <!-- Recipe author goes before the | the recipe's created date goes after -->
@@ -56,7 +56,7 @@
                     </div>
                 </div>
             </div>
-            <div class="d-none d-md-block col-md-6 masthead-image">
+            <div class=" d-md-block col-md-7 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
                 {% if "recipe" in post.featured_image.url %}
                 <img src="https://asset.cloudinary.com/dteyj4llb/f6e04f3ac88f266da941b472675fd64c" width="100%">

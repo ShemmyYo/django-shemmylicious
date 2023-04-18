@@ -9,8 +9,8 @@
     <div class="col-10 offset-1 col-lg-8 offset-lg-2  text-center top-slogan">
       <h4 class="">Cooking Time Is My Favorite Time <i class="far fa-heart"></i></h4>
       <hr>
-      <h5>Shemmylicious Food Search</h5>
-      <p>Here's where you can find all latest and Shemmylicious food recipes searched by keyword. <br>
+      <h5>Shemmylicious Food by Category</h5>
+      <p>Here's where you can find all the latest and Shemmylicious food recipes categorised and grouped. <br>
         Be sure to sign up to be able to comment and like my posts as well as create your own recipes.</p>
       <hr>
       <br>
@@ -21,7 +21,7 @@
   {% if forloop.counter is not None %}
   <div class="card mb-3">
     <div class="row gy-1">
-      <div class="col-lg-4 col-12">
+      <div class="col-8 offset-1 col-lg-2 offset-2">
         <div class="image-container">
           {% if "recipe" in recipe.featured_image.url %}
           <img src="https://res.cloudinary.com/dteyj4llb/image/upload/v1681299689/media/Shemmylicious/img3_oclnvl.jpg"
@@ -37,7 +37,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-8 col-12">
+      <div class="col-10 offset-1 col-lg-6 offset-lg-0">
         <div class="card-body">
           <a href="{% url 'recipe_detail' recipe.slug %}" class="card-title">
             <h5>{{ recipe.recipe_title }}</h5>
@@ -59,7 +59,8 @@
     </div>
 
     {% endif %}
-    <hr>
+
+    
     {% if forloop.counter|divisibleby:3 %}
   </div>
   <div class="row">
@@ -92,7 +93,9 @@
       </ul>
     </nav>
     {% endif %}
-
+    <br>
+    <br>
+    <br>
     <div class="gx-2">
       <a href="{% url 'categories' %}" class="btn col-10 offset-1  col-lg-3 offset-lg-3 btn-outline-success">Back to
         Categories</a>

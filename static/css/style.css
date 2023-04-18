@@ -240,7 +240,7 @@ a {
 }
 
 .headline i {
-    color: #8EC63F;
+    color: #198754;
 }
 
 /*---------------------------------------
@@ -515,7 +515,7 @@ img {
     overflow: hidden;
     position: relative;
     display: inline-block;
-    height: 33vh;
+    height: 50vh;
     width: 100%;
 }
 

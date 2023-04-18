@@ -167,16 +167,16 @@
       <span class="navbar-text text-muted">
         <form class="d-flex" method="POST" action="{% url 'recipe-search' %}">
           {% csrf_token %}
-          <input class="form-control me-2" type="search" placeholder="Search Recipe" aria-label="Search Recipe" name="searched">
+          <input class="form-control me-auto" type="search" placeholder="Search Recipe" aria-label="Search Recipe" name="searched">
           <button class="btn btn-outline-success btn-sm" type="submit">GO</button>
         </form>
       </span>
     </div>
   </nav>
   <!-- Bootstrap Messages Container -->
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
-      <div class="col-md-8 offset-2">
+      <div class="col-auto offset-2">
         {% for message in messages %}
         <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="" alert>
           {{ message | safe }}
