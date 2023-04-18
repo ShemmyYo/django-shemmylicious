@@ -3,12 +3,22 @@
 
 {% block content %}
 
-<div class="container col-lg-8 offset-lg-2 col-10">
-  <br>
-  <br>
+<div class="container-fluid">
+  <!-- Top Slogan Section -->
+  <section class="top-slogan">
+    <div class="col-10 offset-1 col-lg-8 offset-lg-2  text-center top-slogan">
+      <h4 class="">Cooking Time Is My Favorite Time <i class="far fa-heart"></i></h4>
+      <hr>
+      <h5>Shemmylicious Food Search</h5>
+      <p>Here's where you can find all latest and Shemmylicious food recipes searched by keyword. <br>
+        Be sure to sign up to be able to comment and like my posts as well as create your own recipes.</p>
+      <hr>
+      <br>
+    </div>
+  </section>
   <br>
   {% for recipe in category_recipes %}
-
+  {% if forloop.counter is not None %}
   <div class="card mb-3">
     <div class="row gy-1">
       <div class="col-lg-4 col-12">
@@ -47,41 +57,48 @@
         </div>
       </div>
     </div>
-    <br>
-    <br>
-    <br>
+
+    {% endif %}
+    <hr>
     {% if forloop.counter|divisibleby:3 %}
   </div>
   <div class="row">
     {% endif %}
-    <br>
-    <br>
-    <br>
-    {% endfor %}
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-  </div>
-</div>
-{% if is_paginated %}
-<nav aria-label="Page naigation">
-  <ul class="pagination justify-content-center">
-    {% if page_obj.has_previous %}
-    <li><a href="?page={{ page_obj.previous_page_number}}" class="page-link">&laquo; PREV</a></li>
-    {% endif %}
-    {% if page_obj.has_next %}
-    <li><a href="?page={{ page_obj.nexts_page_number}}" class="page-link">NEXT &raquo;</a></li>
-    {% endif %}
-  </ul>
-</nav>
-{% endif %}
-</div>
-<hr>
-<div class="gx-2">
-  <a href="{% url 'categories' %}" class="btn col-10 offset-1  col-lg-3 offset-lg-3 btn-outline-success">Back to Categories</a>
-  <a href="{% url 'recipes' %}" class="btn col-10 offset-1 col-lg-3 offset-lg-0 btn-outline-success">Back to Recipes</a>
-</div>
 
-{% endblock %}
+    {% empty %}
+    <center>
+      <br>
+      <br>
+      <h1>No Recipes to display yet!</h1>
+      <p>go on... Create your own Recipe in this Category</p>
+    </center>
+    <br>
+    <br>
+    <br>
+    <br>
+      <a href="{% url 'add-recipe' %}" class="btn col-10 offset-1 col-lg-6 offset-lg-3 btn-outline-success">Add Recipe</a>
+    <hr>
+    {% endfor %}
+
+    {% if is_paginated %}
+    <nav aria-label="Page naigation">
+      <ul class="pagination justify-content-center">
+        {% if page_obj.has_previous %}
+        <li><a href="?page={{ page_obj.previous_page_number}}" class="page-link">&laquo; PREV</a></li>
+        {% endif %}
+        {% if page_obj.has_next %}
+        <li><a href="?page={{ page_obj.nexts_page_number}}" class="page-link">NEXT &raquo;</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+    {% endif %}
+
+    <div class="gx-2">
+      <a href="{% url 'categories' %}" class="btn col-10 offset-1  col-lg-3 offset-lg-3 btn-outline-success">Back to
+        Categories</a>
+      <a href="{% url 'recipes' %}" class="btn col-10 offset-1 col-lg-3 offset-lg-0 btn-outline-success">Back to
+        Recipes</a>
+    </div>
+  </div>
+
+  {% endblock %}
