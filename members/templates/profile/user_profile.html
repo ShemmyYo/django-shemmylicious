@@ -13,7 +13,7 @@
             <div class="card mb-3">
                 <div class="row no-gutters">
                     <!-- The Profile image URL -->
-                    <div class="col-sm-2 offset-sm-2">
+                    <div class="col-8 offset-2 col-sm-2 offset-sm-2">
                         {% if "profile_img" in page_user.profile_pic.url %}
                         <img src="https://res.cloudinary.com/dteyj4llb/image/upload/v1681317396/profile_img.png"
                             width="100%" class="rounded-circle rounded-sm border-success">
@@ -64,7 +64,13 @@
         </div>
     </div>
     {% if page_user.id == user.id %}
-        <a href="{% url 'edit-profile' %}" class="btn btn-outline-success col-12">Edit Your Profile</a>
+        <a href="{% url 'edit-profile' %}" class="btn btn-outline-success col-10 offset-1 col-sm-4 offset-sm-4">Edit Your Profile</a>
     {% endif %}
+    <br>
+    <br>
+    <div class="gx-2">
+        <a href="{% url 'blog' %}" class="btn col-10 offset-1  col-sm-2 offset-sm-4 btn-outline-success">Back to Blog</a>
+        <a href="{% url 'recipes' %}" class="btn col-10 offset-1 col-sm-2 offset-sm-0 btn-outline-success">Back to Recipes</a>
+    </div>
 </div>
 {% endblock content %}

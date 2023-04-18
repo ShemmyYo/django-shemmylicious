@@ -166,7 +166,7 @@
                     <!-- Additional Options as a Superuser -->
                     {% if  user.is_superuser %}
                     
-                    <a href="{% url 'comment-delete' comment.pk %}" class="btn btn-sm btn-outline-danger"><span>Delete Comment</span></a>
+                    <a href="{% url 'comment-delete' comment.pk %}" class="btn btn-sm col-12 btn-outline-danger"><span>Delete Comment</span></a>
                     {% endif %}
                 </div>
                 <hr>
@@ -191,7 +191,7 @@
                         {{ comment_form | crispy }}
                         {% csrf_token%}
                         <br>
-                        <button type="submit" class="btn d-grid gap-2 col-6 mx-auto btn-lg btn-outline-success">Submit</button>
+                        <button type="submit" class="btn d-grid gap-2 col-12 mx-auto btn-sm btn-outline-success">Submit</button>
                         <div style="height: 100px;"></div>
                     </form>
                 {% endif %}
@@ -199,8 +199,10 @@
             </div>
         </div>
     </div>
+    <hr>
     <div class="gap-2">
-        <a href="{% url 'recipes' %}" class="btn btn-outline-success">Back to Recipes</a>
+        <a href="{% url 'blog' %}" class="btn col-10 offset-1 col-lg-2 offset-lg-4 btn-outline-success">Back to Blog</a>
+        <a href="{% url 'recipes' %}" class="btn col-10 offset-1 col-lg-2 offset-lg-0 btn-outline-success">Back to Recipes</a>
     </div>
 </div>
 
