@@ -10,6 +10,7 @@ from .forms import SignUpForm, EditProfileForm, ProfilePageForm
 from blog.models import Profile
 
 
+# Profile Page Edit Pic, Bio & URL's
 class CreateProfilePageView(generic.CreateView):
     model = Profile
     form = ProfilePageForm
@@ -21,6 +22,7 @@ class CreateProfilePageView(generic.CreateView):
         return super().form_valid(form)
 
 
+# Profile Page Edit Settings 
 class EditProfilePageView(generic.UpdateView):
     model = Profile
     template_name = 'profile/user_profile_edit.html'
@@ -29,6 +31,7 @@ class EditProfilePageView(generic.UpdateView):
     fields = ['bio', 'profile_pic', 'website_url', 'facebook_url', 'twitter_url', 'instagram_url', 'pintrest_url'] 
 
 
+# Profile Page View
 class ShowProfilePageView(DetailView):
     model = Profile
     template_name = 'profile/user_profile.html'
@@ -41,6 +44,7 @@ class ShowProfilePageView(DetailView):
         return context
 
 
+# First Login redirects to create a Profile
 def login_user(request):
     if request.method == "POST":
         username = request.POST['username']
@@ -48,30 +52,21 @@ def login_user(request):
         user = authenticate(request, username=username, password=password)
         if user is not None: 
             login(request, user)
-            messages.success(request, (f"Successfully logged in. Welcome to your profile page {{ user }}"))
+            messages.success(request, ("Successfully logged in. Welcome to your profile."))
             return redirect('my-profile')
         else:
             messages.success(request, ("There was an error logging in"))
             return redirect('login')
 
 
-def logout_user(request):
-    logout(request)
-    messages.success(request, ("Successfully logged out"))
-    return redirect('start')
-    
-
-class PasswordsChangeView(PasswordChangeView):
-    form_class = PasswordChangeForm
-    success_url = reverse_lazy('edit-profile')
-
-
+# User Registration
 class UserRegisterView(generic.CreateView):
     form_class = SignUpForm
     template_name = 'registration/registration.html'
     success_url = reverse_lazy('login')
 
 
+# Edit Profile
 class UserEditView(generic.UpdateView):
     form_class = EditProfileForm
     template_name = 'registration/edit_profile.html'
@@ -79,3 +74,17 @@ class UserEditView(generic.UpdateView):
 
     def get_object(self):
         return self.request.user
+
+
+# Logout
+def logout_user(request):
+    logout(request)
+    messages.success(request, ("Successfully logged out"))
+    return redirect('start')
+    
+
+# Password Change
+class PasswordsChangeView(PasswordChangeView):
+    form_class = PasswordChangeForm
+    success_url = reverse_lazy('edit-profile')
+

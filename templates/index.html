@@ -22,8 +22,19 @@
       {% if user.is_authenticated %}
       <a href="{% url 'recipes' %}" class="btn btn-sm btn-outline-light headline-bttn">Browse Recipes <i
           class="fa-solid fa-bowl-rice fa-beat-fade"></i></a>
-      <a href="{% url 'recipe-mylist' %}" class="btn btn-sm btn-outline-light headline-bttn">Your Recipes <i
-          class="fa-solid fa-user fa-xs"></i></a>
+          <!-- Check if Profile is created -->
+          {% if user.profile.id %}
+            <a href="{% url 'recipe-mylist' %}" 
+              class="btn btn-sm btn-outline-light headline-bttn">Your Recipes 
+              <i class="fa-solid fa-user fa-xs"></i>
+            </a>
+          {% else %}
+            <a href="{% url 'show-profile' user.pk %}" 
+              class="btn btn-sm btn-outline-light headline-bttn"> Create Profile 
+              <i class="fa-solid fa-user fa-xs"></i>
+            </a>
+          {% endif %}
+      
       {% else %}
       <a href="{% url 'register' %}" class="btn btn-sm btn-outline-light headline-bttn">Sign-up <i
           class="fa-solid fa-user-plus fa-beat-fade fa-xs"></i></a>
