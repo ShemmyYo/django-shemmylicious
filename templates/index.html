@@ -15,9 +15,8 @@
       <h1>Cooking Time Is <br> My Favorite Time <i class="far fa-heart"></i></h1>
       <a class="navbar-brand" href="{% url 'recipes' %}">
         <span class="brand-logo">Shemmylicious</span>
-        <img src="https://res.cloudinary.com/dteyj4llb/image/upload/v1679654869/media/Shemmylicious/food_sjzw1x.png"
-          alt="Shemmylicious Food Sign" height="90">
-      </a>
+        <img src="{% static 'images/food-trans-dark.png' %}" height="90" alt="Shemmylicious Food Sign">
+       </a>
     </div>
     <div class="headline-bttn-container">
       {% if user.is_authenticated %}
