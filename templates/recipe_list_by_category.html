@@ -29,9 +29,8 @@
       </div>
       <div class="col-lg-8 col-12">
         <div class="card-body">
-          <a href="{% url 'recipe_detail' recipe.slug %}">
-            <h1 class="card-title">"{{ recipe.recipe_title }}"</h1>
-          </a>
+          <a href="{% url 'recipe_detail' recipe.slug %}"  class="card-title">
+            <h5>{{ recipe.recipe_title }}</h5></a>
           <hr>
           <p class="card-text">{{ recipe.excerpt }}</p>
           <hr>

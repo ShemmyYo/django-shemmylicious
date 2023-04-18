@@ -17,48 +17,43 @@
     </div>
 </section>
 <!-- Search Results -->
-<div class="card mb-3">
-
+<div class="card mb-3 col-lg-8 offset-lg-2 col-10 ">
     {% for recipe in recipes %}
-    
     <br>
-
-
     <div class="row g-0">
         <div class="col-10 offset-1 col-md-2 offset-md-1 image-container ">
             {% if "recipe" in recipe.featured_image.url %}
             <img src="https://res.cloudinary.com/dteyj4llb/image/upload/v1679649965/media/Shemmylicious/recipe.png"
-              alt="deafult image" class="img-thumbnail card-img-top shadow">
+                alt="deafult image" class="img-thumbnail card-img-top shadow">
             {% else %}
-            <img src="{{ recipe.featured_image.url }}" alt="image" width="100px;" 
+            <img src="{{ recipe.featured_image.url }}" alt="image"
                 class="img-thumbnail card-img-top shadow">
             {% endif %}
-            <div class="image-flash">
-              <a href="{% url 'show-profile' recipe.author.profile.pk %}" 
-                class="author image-flash-author"><small>Author: </small> {{ recipe.author }}</a><br>
-              <a href="{% url 'category' recipe.category %}" 
-                class="category image-flash-category"><small>Category: </small>{{ recipe.category }}</a><br>
-            </div>
         </div>
         <div class="col-10 offset-1 col-md-8">
             <div class="card-body">
-                <h5 class="card-title card-list-title"><a href="{% url 'recipe_detail' recipe.slug %}">{{ recipe }}</a></h5>
+                <a href="{% url 'recipe_detail' recipe.slug %}" class="card-title card-blog-title">
+                    <h3>{{ recipe }}</h3></a>
+                <a href="{% url 'show-profile' recipe.author.profile.pk %}" class=""><small>Author: </small>
+                    {{ recipe.author }} | </a>
+                <a href="{% url 'category' recipe.category %}" class=""><small>Category:
+                    </small>{{ recipe.category }}</a>
                 <hr>
                 <p class="card-text card-title card-blog-comment ">{{ recipe.featured_comment }}</p>
                 <hr>
-                <span class="card-text"><small class="text-body-secondary">Last updated {{ recipe.updated_date }} | </small></span>
-                <span class="card-text text-secondary"><small class="text-body-secondary"><i class="far fa-heart"></i> Loved by {{ recipe.number_of_likes }} users</small></span>
+                <span class="card-text"><small class="text-body-secondary">Last updated {{ recipe.updated_date }} |
+                    </small></span>
+                <span class="card-text text-secondary"><small class="text-body-secondary"><i class="far fa-heart"></i>
+                        Loved by {{ recipe.number_of_likes }} users</small></span>
             </div>
         </div>
     </div>
-
     {% endfor %}
-
 </div>
-
-<div class="container col-lg-8 offset-lg-2 col-10">
-
-    <a href="{% url 'recipes' %}" class="btn btn-sm btn-outline-success">Home</a>
-
+<br>
+<br>
+<br>
+<div class="container col-lg-8 offset-lg-2 col-10 offset-1 text-right">
+    <a href="{% url 'recipes' %}" class="btn btn-sm col-2 offset-5 btn-outline-success">Home</a>
 </div>
 {% endblock content %}
