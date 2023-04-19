@@ -50,11 +50,11 @@ class ProfilePageForm(forms.ModelForm):
     model = Profile
     fields = ('user', 'bio', 'profile_pic', 'website_url', 'facebook_url', 'twitter_url', 'instagram_url', 'pintrest_url')
     widgets = {
-        'bio': forms.Textarea(attrs={'class': 'form-control'}),
-        'profile_pic': forms.FileInput(attrs={'class': "form-control", 'type': "file"}),
-        'website_url': forms.TextInput(attrs={'class': 'form-control'}),
-        'facebook_url': forms.TextInput(attrs={'class': 'form-control'}),
-        'twitter_url': forms.TextInput(attrs={'class': 'form-control'}),
-        'instagram_url': forms.TextInput(attrs={'class': 'form-control'}),
-        'pintrest_url': forms.TextInput(attrs={'class': 'form-control'}),
+        # 'bio': forms.Textarea(attrs={'class': 'form-control'}),
+        'profile_pic': forms.FileInput(attrs={'class': "fileInput, fileUpload, form-control-file, mb-3", 'type': "file"}),
+        # 'website_url': forms.TextInput(attrs={'class': 'form-control'}),
+        # 'facebook_url': forms.TextInput(attrs={'class': 'form-control'}),
+        # 'twitter_url': forms.TextInput(attrs={'class': 'form-control'}),
+        # 'instagram_url': forms.TextInput(attrs={'class': 'form-control'}),
+        # 'pintrest_url': forms.TextInput(attrs={'class': 'form-control'}),
     }

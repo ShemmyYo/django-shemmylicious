@@ -6,6 +6,7 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm, Password
 from django.contrib.auth.views import PasswordChangeView
 from django.contrib import messages
 from django.urls import reverse_lazy
+from django import forms
 from .forms import SignUpForm, EditProfileForm, ProfilePageForm
 from blog.models import Profile
 
@@ -28,7 +29,14 @@ class EditProfilePageView(generic.UpdateView):
     template_name = 'profile/user_profile_edit.html'
     success_url = reverse_lazy('edit-profile')
 
-    fields = ['bio', 'profile_pic', 'website_url', 'facebook_url', 'twitter_url', 'instagram_url', 'pintrest_url'] 
+    fields = ['bio', 'profile_pic', 'website_url', 'facebook_url', 'twitter_url', 'instagram_url', 'pintrest_url' ]
+
+    widgets = {
+        'profile_pic': forms.FileInput(attrs={
+            'class': "form-control, fileInput, fileUpload, ",
+            'type': "file"
+            }),
+        }
 
 
 # Profile Page View
