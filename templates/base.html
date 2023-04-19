@@ -22,16 +22,17 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!-- GSAP TweenMax & TimelineMax Library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" 
-  integrity="sha512-DkPsH9LzNzZaZjCszwKrooKwgjArJDiEjA5tTgr3YX4E6TYv93ICS8T41yFHJnnSmGpnf0Mvb5NhScYbwvhn2w==" 
-  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js" 
-  integrity="sha512-0xrMWUXzEAc+VY7k48pWd5YT6ig03p4KARKxs4Bqxb9atrcn2fV41fWs+YXTKb8lD2sbPAmZMjKENiyzM/Gagw==" 
-  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
+    integrity="sha512-DkPsH9LzNzZaZjCszwKrooKwgjArJDiEjA5tTgr3YX4E6TYv93ICS8T41yFHJnnSmGpnf0Mvb5NhScYbwvhn2w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"
+    integrity="sha512-0xrMWUXzEAc+VY7k48pWd5YT6ig03p4KARKxs4Bqxb9atrcn2fV41fWs+YXTKb8lD2sbPAmZMjKENiyzM/Gagw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <!-- jQuery -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" 
-  integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-  
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -49,8 +50,7 @@
       <!-- Logo -->
       <a class="navbar-brand" href="{% url 'start' %}">
         <span class="brand-logo">Shemmylicious</span>
-        <img src="{% static 'images/food-trans-dark.png' %}"
-          alt="Shemmylicious Food Sign" height="75">
+        <img src="{% static 'images/food-trans-dark.png' %}" alt="Shemmylicious Food Sign" height="75">
       </a>
       <!-- Hidden Burger Menu -->
       <button class="navbar-toggler btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
@@ -65,7 +65,7 @@
             <div class="nav-item-s">
               <div class="active-nav"></div>
             </div>
-          </li>        
+          </li>
           <!-- Nav Links visible when User is authenticated -->
           {% if user.is_authenticated %}
 
@@ -93,99 +93,103 @@
                 aria-expanded="false">
                 {{ user }} <i class="fa-solid fa-user fa-xs"></i>
               </a>
-              
+
               <ul class="dropdown-menu nav-justified ">
 
                 <li class="nav-item nav-link-s">
-                  
+
                   <div class="nav-item-s">
                     {% if user.profile.id %}
-                      <li class="nav-item nav-link-s">
-                        <div class="nav-item-s">
-                          <a class="nav-link nav-link-drop" href="{% url 'show-profile' user.pk %}"> {{ user }} Profile </a>
-                        </div>
-                      </li>
-                      <li class="nav-item nav-link-s">
-                        <div class="nav-item-s">
-                          <a class="nav-link nav-link-drop" href="{% url 'recipe-mylist' %}"> My Recipes </a>
-                        </div>
-                      </li>    
-                      <li class="nav-item nav-link-s">
-                        <div class="nav-item-s">
-                          <a class="nav-link nav-link-drop" href="{% url 'add-recipe' %}"> Add Recipe</a>
-                        </div>
-                      </li>
-                      <hr>
-                    {% else %}
-                      <li class="nav-item nav-link-s">
-                        <div class="nav-item-s">
-                          <a class="nav-link nav-link-drop" href="{% url 'create-profile-page' %}"> Create Profile </a>
-                        </div>
-                      </li>
-                    {% endif %}
-
-                    <!-- Visible for Admin only -->
-                    {% if user.is_superuser %}                  
-                      <li class="nav-item nav-link-s">
-                        <div class="nav-item-s">
-                          <a class="nav-link nav-link-drop" href="{% url 'add-category' %}">Add Category</a>
-                        </div>
-                      </li>
-                      <hr>
-                      <li class="nav-item nav-link-s">
-                        <div class="nav-item-s">
-                            <a class="nav-link nav-link-drop" href="/admin">
-                              <i class="fa-solid fa-screwdriver-wrench fa-fade fa-xs"></i> Admin</a>
-                        </div>
-                      </li>
-                      <hr>
-                    {% endif %}                       
-
-                    <li class="nav-item nav-link-s">
-                      <div class="nav-item-s">
-                        <a class="nav-link" href="{% url 'logout-user' %}">Logout  <i class="fa-solid fa-right-from-bracket fa-beat-fade fa-xs"></i></a>
-                      </div>
-                    </li>
+                <li class="nav-item nav-link-s">
+                  <div class="nav-item-s">
+                    <a class="nav-link nav-link-drop" href="{% url 'show-profile' user.pk %}"> {{ user }} Profile </a>
                   </div>
                 </li>
-              </ul>
+                <li class="nav-item nav-link-s">
+                  <div class="nav-item-s">
+                    <a class="nav-link nav-link-drop" href="{% url 'recipe-mylist' %}"> My Recipes </a>
+                  </div>
+                </li>
+                <li class="nav-item nav-link-s">
+                  <div class="nav-item-s">
+                    <a class="nav-link nav-link-drop" href="{% url 'add-recipe' %}"> Add Recipe</a>
+                  </div>
+                </li>
+                <hr>
+                {% else %}
+                <li class="nav-item nav-link-s">
+                  <div class="nav-item-s">
+                    <a class="nav-link nav-link-drop" href="{% url 'create-profile-page' %}"> Create Profile </a>
+                  </div>
+                </li>
+                {% endif %}
+
+                <!-- Visible for Admin only -->
+                {% if user.is_superuser %}
+                <li class="nav-item nav-link-s">
+                  <div class="nav-item-s">
+                    <a class="nav-link nav-link-drop" href="{% url 'add-category' %}">Add Category</a>
+                  </div>
+                </li>
+                <hr>
+                <li class="nav-item nav-link-s">
+                  <div class="nav-item-s">
+                    <a class="nav-link nav-link-drop" href="/admin">
+                      <i class="fa-solid fa-screwdriver-wrench fa-fade fa-xs"></i> Admin</a>
+                  </div>
+                </li>
+                <hr>
+                {% endif %}
+
+                <li class="nav-item nav-link-s">
+                  <div class="nav-item-s">
+                    <a class="nav-link" href="{% url 'logout-user' %}">Logout <i
+                        class="fa-solid fa-right-from-bracket fa-beat-fade fa-xs"></i></a>
+                  </div>
+                </li>
             </div>
           </li>
-
-          {% else %}
-
-          <li class="nav-item nav-link-s">
-            <div class="nav-item-s">
-              <a class="nav-link" aria-current="page" href="#about">About</a>
-            </div>
-          </li>
-          
-          <li class="nav-item nav-link-s">
-            <div class="nav-item-s">
-              <a class="nav-link" href="{% url 'register' %}">Sign-up <i class="fa-solid fa-user-plus fa-beat-fade fa-xs"></i></a>
-            </div>
-          </li>
-
-          <li class="nav-item nav-link-s">
-            <div class="nav-item-s">
-              <a class="nav-link" href="{% url 'login-user' %}">Login <i class="fa-solid fa-arrow-right-to-bracket fa-beat-fade fa-xs"></i></a>
-            </div>
-          </li>
-
-          {% endif %}
-
         </ul>
       </div>
-      <!-- Search Bar -->
-      {% if user.is_authenticated %}
-      <span class="navbar-text text-muted me-3">
-        <form class="d-flex" method="POST" action="{% url 'recipe-search' %}">
-          {% csrf_token %}
-          <input class="form-control ms-4" type="search" placeholder="Search Recipe" aria-label="Search Recipe" name="searched">
-          <button class="btn btn-outline-success btn-sm" type="submit">GO</button>
-        </form>
-      </span>
+      </li>
+
+      {% else %}
+
+      <li class="nav-item nav-link-s">
+        <div class="nav-item-s">
+          <a class="nav-link" aria-current="page" href="#about">About</a>
+        </div>
+      </li>
+
+      <li class="nav-item nav-link-s">
+        <div class="nav-item-s">
+          <a class="nav-link" href="{% url 'register' %}">Sign-up <i
+              class="fa-solid fa-user-plus fa-beat-fade fa-xs"></i></a>
+        </div>
+      </li>
+
+      <li class="nav-item nav-link-s">
+        <div class="nav-item-s">
+          <a class="nav-link" href="{% url 'login-user' %}">Login <i
+              class="fa-solid fa-arrow-right-to-bracket fa-beat-fade fa-xs"></i></a>
+        </div>
+      </li>
+
       {% endif %}
+
+      </ul>
+    </div>
+    <!-- Search Bar -->
+    {% if user.is_authenticated %}
+    <span class="navbar-text text-muted me-3">
+      <form class="d-flex" method="POST" action="{% url 'recipe-search' %}">
+        {% csrf_token %}
+        <input class="form-control ms-4" type="search" placeholder="Search Recipe" aria-label="Search Recipe"
+          name="searched">
+        <button class="btn btn-outline-success btn-sm" type="submit">GO</button>
+      </form>
+    </span>
+    {% endif %}
     </div>
   </nav>
   <!-- Bootstrap Messages Container -->
@@ -203,7 +207,7 @@
     </div>
   </div>
 
-  <main class="flex-shrink-0 main-bg scrollable">   
+  <main class="flex-shrink-0 main-bg scrollable">
     {% block content %}
     <!--  Block Recipe Column -->
     {% endblock content %}

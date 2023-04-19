@@ -17,3 +17,6 @@ urlpatterns = [
 admin.site.site_header = "Shemmylicious Admin Area"
 admin.site.site_title = "Shemmylicious"
 admin.site.index_title = "Welcome to the Shemmylicious Page Admin area!"
+
+# Handlers
+handler404 = 'blog.views.handling_404'

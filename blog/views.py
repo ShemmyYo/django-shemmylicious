@@ -1,18 +1,22 @@
-from django.shortcuts import render, redirect
-from django.views import generic, View
+from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.http import HttpResponseRedirect, HttpResponse
-from django.shortcuts import get_object_or_404, reverse
 from django.contrib import messages
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView
+from django.views import generic, View
 from .models import Recipe, Category, Comment
 from .forms import CommentForm, CategoryForm, AddRecipeForm, UpdateRecipeForm
 from cloudinary.forms import cl_init_js_callbacks 
 
 
+# 404 Handler 
+def handling_404(request, exception):
+    return render(request, '404.html', {})
+
+
 # Start View
 def StartView(request):
     slider = Recipe.objects.all().order_by('?')[:12]
-    return render(request, "index.html",{'slider': slider, })
+    return render(request, "index.html", {'slider': slider, })
 
 
 # Recipe Full List Class View
@@ -37,10 +41,13 @@ def RecipeSearch(request):
         searched = str(request.POST['searched']).capitalize()
         recipes = Recipe.objects.filter(recipe_title__contains=searched)
         messages.success(request, f"The below are your results for: { searched }!")
-        return render(request,
-        'recipe_search.html',
-        {'searched': searched,
-        'recipes': recipes})
+        return render(
+            request,
+            'recipe_search.html',
+            {
+                'searched': searched,
+                'recipes': recipes
+            })
     else:
         return render(request, 'recipe_search.html', {})
 
@@ -56,7 +63,7 @@ def AddCategoryFormView(request):
             return HttpResponseRedirect('/categories?submitted=True')
     else:
         form = CategoryForm
-        if 'submitted' is request.GET:
+        if "submitted" is request.GET:
             submitted=True
 
     return render(request, "recipe_add_category.html", {'form': form, 'submitted': submitted, })
@@ -67,13 +74,16 @@ class CategoryListView(generic.ListView):
     model = Category
     queryset = Category.objects.all().order_by('?')[:11]
     template_name = 'category_list.html'
-    
+
 
 # View by Category
 def CategoryView(request, categories):
     find_category_name = Category.objects.get(category_name=categories)
     category_recipes = Recipe.objects.filter(category=find_category_name)
-    return render(request, "recipe_list_by_category.html", {'categories': categories, 'category_recipes': category_recipes, })
+    return render(request, "recipe_list_by_category.html", {
+        'categories': categories,
+        'category_recipes': category_recipes,
+        })
 
 
 # Create My Recipe View when authenticated
@@ -91,14 +101,18 @@ def AddRecipeFormView(request):
         if 'submitted' in request.GET:
             submitted = True
 
-    return render(request, "recipe_add.html", {'form': form, 'submitted': submitted, })
+    return render(request, "recipe_add.html", {
+        'form': form,
+        'submitted': submitted,
+        })
 
 
 # View My Recipe List View when authenticated
 def RecipeMyListView(request):
     if request.user.is_authenticated:
-        recipes = Recipe.objects.filter(author=request.user.id).order_by('-created_date')
-        return render (request, 'recipe_mylist.html', {
+        recipes = Recipe.objects.filter(
+            author=request.user.id).order_by('-created_date')
+        return render(request, 'recipe_mylist.html', {
             "recipes": recipes
         })
     else:
@@ -114,9 +128,10 @@ def RecipeUpdate(request, recipe_id):
         messages.success(request, "Successfully updated.")
         return redirect('recipe-mylist')
     
-    return render(request, 'recipe_update.html',
-        {'recipe': recipe,
-        'form': form},)
+    return render(request, 'recipe_update.html', {
+        'recipe': recipe,
+        'form': form
+        },)
 
 
 # Delete My Recipe when authenticated
@@ -174,7 +189,8 @@ class RecipeDetailView(View):
             comment = comment_form.save(commit=False)
             comment.recipe_name = recipe
             comment.save()
-            messages.success(request, "Successfully posted. Your comment is awaiting Admin's approval.")
+            messages.success(
+                request, "Successfully posted.Your comment is awaiting Admin's approval.")
         else:
             comment_form = CommentForm()
 
@@ -209,9 +225,9 @@ class RecipeBlogView(View):
                 "commented": False,
                 "liked": liked,
                 "comment_form": CommentForm()
-
             },
         )
+
 
     def post(self, request, slug, *args, **kwargs):
         queryset = Recipe.objects.filter(status=1)
@@ -227,7 +243,10 @@ class RecipeBlogView(View):
             comment = comment_form.save(commit=False)
             comment.recipe_name = recipe
             comment.save()
-            messages.success(request, "Successfully posted. Your comment is awaiting Admin's approval.")
+            messages.success(
+                request, 
+                "Successfully posted. Comment is awaiting Admin's approval"
+                )
         else:
             comment_form = CommentForm()
 
@@ -250,7 +269,7 @@ class RecipeLike(View):
         post = get_object_or_404(Recipe, slug=slug)
         if post.likes.filter(id=request.user.id).exists():
             post.likes.remove(request.user)
-            messages.warning(request, "Oh no! I'm sorry you don't like it.")            
+            messages.warning(request, "Oh no! I'm sorry you don't like it.")       
         else:
             post.likes.add(request.user)
             messages.success(request, "Thank you! I appriciate your opinion!")
