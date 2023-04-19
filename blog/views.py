@@ -34,7 +34,7 @@ class RecipeListView(generic.ListView):
 # Search Recipes View
 def RecipeSearch(request):
     if request.method == 'POST':
-        searched = request.POST['searched']
+        searched = str(request.POST['searched']).capitalize()
         recipes = Recipe.objects.filter(recipe_title__contains=searched)
         messages.success(request, f"The below are your results for: { searched }!")
         return render(request,
