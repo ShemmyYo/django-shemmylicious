@@ -7,7 +7,7 @@
 
 {% if user.is_authenticated %}
 
-<div class="container">
+<div class="container col-10 offset-1 col-md-8 offset-md-2">
     <br>
         {% if submitted %}
         <center>
@@ -23,14 +23,34 @@
         {% else %}
         <br>
         <br>
-        <br>
-        <h1>Add Recipe</h1>
+        <h3>Add Recipe</h3>
         <br>
         <form action="" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
-            {{ form.media }}
+
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control textInput" name="recipe_title" id="id_recipe_title" 
+                placeholder="Type in Recipe Title" required>
+                <label for="id_recipe_title">* Type-in your recipe title here...</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control textInput" name="featured_comment" id="id_featured_comment" 
+                placeholder="Type-in a short but catchy comment which will be featured with your recipe..." required>
+                <label for="id_featured_comment">* Type-in a short but catchy comment which will be featured with your recipe...</label>
+            </div>
 
             {{ form | crispy }}
+
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control textInput" name="excerpt" id="id_excerpt" 
+                placeholder="Additional info info (e.g. nutrition facts etc.) as required go here...">
+                <label for="id_excerpt">* Additional info info (e.g. nutrition facts etc.) as required go here...</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="file" class="form-control fileInput fileUpload form-control-file" name="featured_image" 
+                id="id_featured_image" placeholder="Featured image">
+                <label for="id_featured_image">Featured image</label>
+            </div>
             <br>
             <center>
                 <div class="d-grid gap-2 col-12">
