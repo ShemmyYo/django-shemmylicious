@@ -3,14 +3,42 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib import messages
 from django.views.generic import ListView, DetailView
 from django.views import generic, View
+from django.template import RequestContext
 from .models import Recipe, Category, Comment
 from .forms import CommentForm, CategoryForm, AddRecipeForm, UpdateRecipeForm
 from cloudinary.forms import cl_init_js_callbacks 
 
 
 # 404 Handler 
-def handling_404(request, exception):
-    return render(request, '404.html', {})
+def handling_404(request, *args, **argv):
+    response = render_to_response('404.html', {},
+                                  context_instance=RequestContext(request))
+    response.status_code = 404
+    return response
+
+
+# 500 Handler
+def handling_500(request, *args, **argv):
+    response = render_to_response('500.html', {},
+                                  context_instance=RequestContext(request))
+    response.status_code = 500
+    return response
+
+
+# 403 Handler
+def handling_403(request, *args, **argv):
+    response = render_to_response('403.html', {},
+                                  context_instance=RequestContext(request))
+    response.status_code = 403
+    return response
+
+
+# 400 Handler
+def handling_400(request, *args, **argv):
+    response = render_to_response('400.html', {},
+                                  context_instance=RequestContext(request))
+    response.status_code = 400
+    return response
 
 
 # Start View

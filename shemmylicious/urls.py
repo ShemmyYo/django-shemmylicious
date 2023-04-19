@@ -20,3 +20,6 @@ admin.site.index_title = "Welcome to the Shemmylicious Page Admin area!"
 
 # Handlers
 handler404 = 'blog.views.handling_404'
+handler500 = 'blog.views.handling_500'
+handler403 = 'blog.views.handling_403'
+handler400 = 'blog.views.handling_400'
