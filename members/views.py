@@ -52,10 +52,10 @@ def login_user(request):
         user = authenticate(request, username=username, password=password)
         if user is not None: 
             login(request, user)
-            messages.success(request, ("Successfully logged in. Welcome to your profile."))
+            messages.success(request, "Successfully logged in. Welcome to your profile.")
             return redirect('my-profile')
         else:
-            messages.success(request, ("There was an error logging in"))
+            messages.success(request, "There was an error logging in")
             return redirect('login')
 
 
@@ -79,7 +79,7 @@ class UserEditView(generic.UpdateView):
 # Logout
 def logout_user(request):
     logout(request)
-    messages.success(request, ("Successfully logged out"))
+    messages.success(request, "Successfully logged out")
     return redirect('start')
     
 

@@ -41,6 +41,7 @@
   <script src="{% static 'js/script.js' %}" defer></script>
 
 </head>
+
 <body class="d-flex flex-column h-100 main-bg">
   <!-- Navigation Bar -->
   <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white">
@@ -93,12 +94,17 @@
                 {{ user }} <i class="fa-solid fa-user fa-xs"></i>
               </a>
               
-              <ul class="dropdown-menu">
+              <ul class="dropdown-menu nav-justified ">
 
                 <li class="nav-item nav-link-s">
+                  
                   <div class="nav-item-s">
                     {% if user.profile.id %}
-                      <a class="nav-link nav-link-drop" href="{% url 'show-profile' user.pk %}"> {{ user }} Profile </a>
+                      <li class="nav-item nav-link-s">
+                        <div class="nav-item-s">
+                          <a class="nav-link nav-link-drop" href="{% url 'show-profile' user.pk %}"> {{ user }} Profile </a>
+                        </div>
+                      </li>
                       <li class="nav-item nav-link-s">
                         <div class="nav-item-s">
                           <a class="nav-link nav-link-drop" href="{% url 'recipe-mylist' %}"> My Recipes </a>
