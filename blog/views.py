@@ -6,7 +6,7 @@ from django.views import generic, View
 from django.template import RequestContext
 from .models import Recipe, Category, Comment
 from .forms import CommentForm, CategoryForm, AddRecipeForm, UpdateRecipeForm
-from cloudinary.forms import cl_init_js_callbacks 
+from cloudinary.forms import cl_init_js_callbacks
 
 
 # 404 Handler 
