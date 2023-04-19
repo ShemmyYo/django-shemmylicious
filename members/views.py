@@ -44,7 +44,7 @@ class ShowProfilePageView(DetailView):
         return context
 
 
-# First Login redirects to create a Profile
+# User Login
 def login_user(request):
     if request.method == "POST":
         username = request.POST['username']

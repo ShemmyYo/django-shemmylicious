@@ -6,23 +6,33 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-6 mt-3 offset-md-2">
-            <h3>Log in</h3>
-
-            <p>Welcome to the Shemmylicious Food blog. <br><br> To leave a comment, add or like a recipe, please log in.<br>If
-                you have not created an account yet, then <a class="link" href="{% url 'register' %}">sign up</a>
-                first.</p>
+        <div class="col-10 offset-1 col-md-6 mt-3 offset-md-3">
+            <br>
+            <h3>Login</h3>
+            <br>
+            <p>Welcome to the Shemmylicious Food blog. </p> 
+            <p>To leave a comment, add or like a recipe, please log in. <br>
+                If you have not created an account yet, then 
+                <a class="link" href="{% url 'register' %}">sign up</a> first.</p>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-8 mt-3 offset-md-3">
+        <div class="col-10 offset-1 col-md-6 mt-3 offset-md-3">
             <form class="login" method="POST" action="{% url 'login-user' %}">
                 {% csrf_token %}
-                {{ form.as_p }}
  
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" name="username" id="floatingInput" placeholder="Username">
+                    <label for="floatingInput">Username</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" class="form-control" name="password" id="floatingPassword" placeholder="Password">
+                    <label for="floatingPassword">Password</label>
+                </div>
+
                 <br>
-                <div class="d-grid col-6">
-                    <button class="btn btn-outline-success" type="submit">Sign In</button>
+                <div class="d-grid col-12">
+                    <button class="btn btn-outline-success" type="submit">Login</button>
                 </div>
                 
             </form>
