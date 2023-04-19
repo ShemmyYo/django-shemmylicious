@@ -171,13 +171,15 @@
         </ul>
       </div>
       <!-- Search Bar -->
+      {% if user.is_authenticated %}
       <span class="navbar-text text-muted me-3">
         <form class="d-flex" method="POST" action="{% url 'recipe-search' %}">
           {% csrf_token %}
-          <input class="form-control me-1" type="search" placeholder="Search Recipe" aria-label="Search Recipe" name="searched">
+          <input class="form-control ms-4" type="search" placeholder="Search Recipe" aria-label="Search Recipe" name="searched">
           <button class="btn btn-outline-success btn-sm" type="submit">GO</button>
         </form>
       </span>
+      {% endif %}
     </div>
   </nav>
   <!-- Bootstrap Messages Container -->
