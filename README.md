@@ -1,11 +1,48 @@
 # Portfolio Project 4 - Full-Stack Toolkit
 
 ![Shemmylicious Logo](media/readme/Shemmylicious-sign.png) 
-## Inspiring yet simple food recipes for delicious, everyday cooking.
 
+## **Overview**
+
+## Inspiring yet simple food recipes for delicious, everyday cooking.
 Finding the right recipe is more difficult than ever. That's why we've made it simple.
 
-![Alt text](media/readme/shemmylicious-logo.png)
+Shemmylicious Food is a food recipe blog designed to allow a User to find and review recipes as well as join a community of like-minded people gathered around a passion for food and interested in exchanging their ideas and views on food.
+
+The site features a search function that allows the User to search the db of recipes. 
+Users can add recipes, like and comment on the newest recipes as well as view them by category and get in touch with other users. Users (after logging in) will be able to view Recipe details such as ingredients required, instructions, and other information (i.e: nutrition facts etc.) as well as comment and like recipes. 
+
+Users will also be able to create and view customizable Profile pages, where they will be able to enter information about themselves, upload their profile picture as well as share other social media.
+
+You can view the live, deployed to Heroku application here: <a href ='https://shemmylicious.herokuapp.com/' target="_blank">One-Armed Bandit!</a>
+
+
+![Mockup](README/am-i-responsive.png)
+
+
+## __Live Web-Page__
+[Shemmylicious Food](https://shemmylicious.herokuapp.com/)
+
+## __GitHub Repository__
+[https://github.com/ShemmyYo/django-shemmylicious](https://github.com/ShemmyYo/django-shemmylicious)
+
+## __Tech Stack__
+
+<img height="45" src="README/python-django.png"> __Python3__
+<img height="50" src="README/gitpod.png"> __Gitpod__
+<img height="45" src="README/github.png"> __Git__
+
+<img height="42" src="README/html.png"> __HTML5__
+<img height="50" src="README/css-img.png"> __CSS3__
+<img height="50" src="README/bootstrap.png"> __Bootstrap__
+<img height="45" src="README/js.png"> __JavaScript__
+
+***
+
+
+
+
+![Logo](media/readme/shemmylicious-logo.png)
 
 ### This is how easy it works!
 1. Simply browse recipes, find the one you get inspired by and prepare shemmylicious food.
@@ -15,7 +52,7 @@ Finding the right recipe is more difficult than ever. That's why we've made it s
 ![Image mockup of the website in a computer, tablet and phone](./)
 
 ## Live Site
-[Live page](https://) 
+[Live page](https://shemmylicious.herokuapp.com/) 
 
 ## Repository
 [Repository](https://github.com/shemmyyo/shemmylicious)
