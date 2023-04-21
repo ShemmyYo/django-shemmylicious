@@ -31,30 +31,14 @@ You can view the live, deployed to Heroku application here: <a href ='https://sh
 
 ## __Tech Stack__
 
-<img height="45" src="README/python-django.png"> __Python3/Django__
-<img height="50" src="README/elephantsql.png"> __ElephantSQL__
-
-<img height="42" src="README/html.png"> __HTML5__
-<img height="50" src="README/css-img.png"> __CSS3__
-<img height="50" src="README/bootstrap.png"> __Bootstrap__
-<img height="45" src="README/js.png"> __JavaScript__
-
-<img height="50" src="README/gitpod.png"> __Gitpod__
-<img height="45" src="README/github.png"> __Git__
-
-***
-
-# Project Goal
-
-The project goal was to build a Full-Stack site based on business logic and create user friendly, commerially focused project that uses HTML, CSS, JavaScript, Python+Django as well as centrally-owned dataset (ElephantSQL relational database).
-
-In this project I will present my ability to:
-
-- use Agile methodologies (agile tool - Github projects) to track the tasks involved in creating the project relating to identified user stories.
-
-- implement front-end CRUD (Create Read Update Delete) functionality, including front-end UI that allows users to Create, Read, Update, and Delete records in the database, without having to access the admin panel.
-
-- set up an authentication mechanism and provide role-based access to the site's data or other activities based on the dataset.
+<img height="45" src="README/python-django.png"> 
+<img height="50" src="README/elephantsql.png"> 
+<img height="42" src="README/html.png"> 
+<img height="50" src="README/css-img.png"> 
+<img height="50" src="README/bootstrap.png"> 
+<img height="45" src="README/js.png"> 
+<img height="50" src="README/gitpod.png"> 
+<img height="45" src="README/github.png"> 
 
 ***
 
@@ -69,11 +53,11 @@ In this project I will present my ability to:
         - [Imagery](#Imagery)
             - [Logo design]
             - [Favicon]
+    - [Wireframes](#wireframes)
     - [Agile](#agile)
-        - [The Ideal User](#the-ideal-user)
+        - [The Ideal User/Persona](#the-ideal-user)
         - [Epics](#epics)
         - [User Stories](#user-stories)
-    - [Wireframes](#wireframes)
 - [Features](#features)
     - [Existing Features](#existing-features)
         - [Player Info](#player-info)
@@ -117,9 +101,24 @@ In this project I will present my ability to:
 
 ***
 
+# Project Goal
+
+The project goal was to build a Full-Stack site based on business logic and create user friendly, commerially focused project that uses HTML, CSS, JavaScript, Python+Django as well as centrally-owned dataset (ElephantSQL relational database).
+
+In this project I will present my ability to:
+
+- use Agile methodologies (agile tool - Github projects) to track the tasks involved in creating the project relating to identified user stories.
+
+- implement front-end CRUD (Create Read Update Delete) functionality, including front-end UI that allows users to Create, Read, Update, and Delete records in the database, without having to access the admin panel.
+
+- set up an authentication mechanism and provide role-based access to the site's data or other activities based on the dataset.
+
+***
+
 # Design
 
 ## Colour Scheme
+***
 I opted for a very minimalistic aesthetic and only apllied 3 colours (2 with additional shades) to this project.
 
 ```css
@@ -141,17 +140,16 @@ I used <img height="14" src="README/colormind-logo.png"> [Colormind](http://colo
 
 
 ## Typography
-
+***
 The two fonts used were imported into the CSS from [Google Fonts](https://fonts.google.com/)
 
-I used 'Sen' for logo, all headings & any other text.
-
-![Sen Font](https://github.com/ShemmyYo/shemmylicious/blob/main/README/sen-font.png)
+I used 'Sen' for logo, menues and all headings.
 
 ![Sen Font](README/sen-font.png)
 ![Sen Font](README/sen-font2.png)
 
-'Lucida Sans' has been used as additional font for paragraphs and Sans-serif is the nominated fallback font.
+'Lucida Sans' has been used as a additional font for paragraphs any other text.
+'Sans-serif' is the nominated fallback font.
 
 ```CSS 
 root {
@@ -161,6 +159,7 @@ root {
 ```
 
 ## Imaginary
+***
 ### Logo Design with Figma
 
 I designed a Shemmylicious logo with <img height="20" src="README/figma-logo.png"> [Figma](https://www.figma.com/)
@@ -171,6 +170,47 @@ I designed a Shemmylicious logo with <img height="20" src="README/figma-logo.png
 
 same logo has then been used to create [Favicon](https://favicon.io/) icons.
 
+
+## Wireframes
+***
+
+## Agile 
+### The Ideal User/Persona
+***
+Food blog users are passionate about all things culinary and seek to expand their knowledge and skills in the kitchen, while also enjoying the social aspects of sharing their experiences with others.
+
+**Who**: This persona is passionate about food and enjoys exploring new flavors and cuisines. They are likely to prioritize taste over convenience or health benefits. Marketing messages that emphasize the unique and delicious flavors of your products, as well as the high quality ingredients, will appeal to this persona.
+A women aged 25 to 34 are our biggest recipe-browsing demographic group. But that's followed closely by women, ages 55 to 64.
+
+**What**: A food blog user is typically someone who is interested in cooking, eating, and exploring different types of cuisine. They may be a beginner cook looking for recipe inspiration, or a more experienced cook looking to expand their knowledge and skills in the kitchen. 
+
+**Why**: Some common characteristics of a food-blog user include:
+
+- Food Enthusiast: They have a passion for food and enjoy trying new recipes and ingredients.
+- Health Conscious: They may be interested in healthy eating and look for recipes that are nutritious and balanced.
+- Adventurous: They enjoy trying new things and experimenting with different flavors and cuisines.
+- Time-Conscious: They may be looking for recipes that are quick and easy to prepare, or that can be made ahead of time for convenience.
+- Social: They may enjoy sharing their own food experiences with others, and may be active on social media platforms related to food and cooking.
+- Budget-Conscious: They may be looking for recipes that are affordable and that use ingredients that are readily available.
+- Knowledge-Seeking: They may be interested in learning more about different types of cuisine, cooking techniques, and food history.
+- Community-Oriented: They may be interested in connecting with other food enthusiasts and bloggers, and may participate in online forums or groups related to food and cooking.
+
+### Epics
+***
+Epics (milestones) were created which were then further developed into User Stories. 
+
+### User Stories
+
+***
+This project was developed using agile methodologies by delivering small features across the project. 
+User Stories were assigned to Epics, prioritized under the labels, `MUST HAVE`, `SHOULD HAVE` & `COULD HAVE`.
+
+To ensure that all core requirements were completed I worked on the 'MUST HAVE' epics/user stories first.
+
+A few `COULD HAVE` user stories have been implemented before project due date i.e. ...
+
+The Kanban board was created using Github projects and can be located [here](https://github.com/users/ShemmyYo/projects/5/views/1) and can be viewed to see more information on the project cards. 
+
 [Back to top](#contents)
 
 ***
@@ -180,6 +220,18 @@ same logo has then been used to create [Favicon](https://favicon.io/) icons.
 [Summernote Git](https://github.com/summernote/django-summernote)
 
 [Cloudinary](cloudinary.com)
+
+
+
+
+
+
+500 Page
+
+As a Developer I can implement a 500 error page so that I can alert users when an internal server error occurs
+
+A 500 error page has been displayed to alert users when an internal server error occurs. The message relays to users that the problem is on our end, not theirs.
+
 
 
 Technologies
