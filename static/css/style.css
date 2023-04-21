@@ -4,9 +4,8 @@ root {
     --background-col: #45575A;
     --light-gray-col: #9A99A2;
     --light-col: #E4E5EA;
-    --accent-col: #8EC63F;
-    --accent-basic-col: #0E9A45;
-    --bootstrap-green: #198754;
+    --accent-col: #3DC073;
+    --basic-col: #198754;
 
     --main-font: 'Sen', sans-serif;
     --additional-font: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
