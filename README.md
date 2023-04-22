@@ -244,6 +244,19 @@ A few `COULD HAVE` user stories have been implemented before project due date i.
 
 
 ***
+### Development Process
+ - GitHub Projects
+ - GitHub Issued
+
+
+
+
+
+
+
+
+
+***
 ## Wireframes
 ***
 
@@ -256,6 +269,14 @@ A few `COULD HAVE` user stories have been implemented before project due date i.
 </details>
 
 [Back to top](#contents)
+
+
+500 Page
+
+As a Developer I can implement a 500 error page so that I can alert users when an internal server error occurs
+
+A 500 error page has been displayed to alert users when an internal server error occurs. The message relays to users that the problem is on our end, not theirs.
+
 
 
 
@@ -304,30 +325,19 @@ A few `COULD HAVE` user stories have been implemented before project due date i.
 
 ### Data Model
 
-### Development Process
- - GitHub Projects
- - GitHub Issued
+- Table: **Product**
 
-
-
-
-
-[Summernote Web](https://summernote.org/)
-
-[Summernote Git](https://github.com/summernote/django-summernote)
-
-[Cloudinary](cloudinary.com)
-
-
-
-- [x] Write the press release :joy:
-- [ ] Update the website ~~The world is flat.~~
-- [ ] Contact the media
-
-term
-: definition
-> blockquote
-*italicized text*
+    | **PK** | **id** (unique) | Type | Notes |
+    | --- | --- | --- | --- |
+    | **FK** | category | ForeignKey | FK to **Category** model |
+    | | sku | CharField | |
+    | | name | CharField | |
+    | | description | TextField | |
+    | | has_sizes | BooleanField | |
+    | | price | DecimalField | |
+    | | rating | DecimalField | |
+    | | image_url | URLField | |
+    | | image | ImageField | |
 
 
 
@@ -339,7 +349,6 @@ For all testing, please refer to the [TESTING.md](TESTING.md) file.
 
 
 ***
-
 ### __Browser Compatibility__
 
 After publishing to Heroku, the site was tested on Google Chrome, Microsoft Edge, Safari and Mozilla Firefox, with no visible issues for the user. 
@@ -348,56 +357,6 @@ The site has loaded perfectly and had no issues across all browsers.
 [Back to Content](<#contents>)
 
 ***
-
-
-
-
-
-
-## Data Model
-***
-
-500 Page
-
-As a Developer I can implement a 500 error page so that I can alert users when an internal server error occurs
-
-A 500 error page has been displayed to alert users when an internal server error occurs. The message relays to users that the problem is on our end, not theirs.
-
-
-
-Technologies
-
-
-
-Reddit style news site
-External user’s goal:
-
-Users want to post, read and comment on news stories.
-Site owner's goal:
-
-The site owner would like to create a discussion community.
-Potential features to include:
-
-Posts can be up/downvoted
-Comments can be left on a post
-Time/Date of posting
-Topic groupings/categories
-
-
-
-Learning Outcomes
-LO1	Use an Agile methodology to plan and design a Full-Stack Web application using an MVC framework and related contemporary technologies.
-LO2	Implement a data model, application features and business logic to manage, query and manipulate data to meet given needs in a particular real-world domain.
-LO3	Identify and apply authorisation, authentication and permission features in a Full-Stack web application solution.
-LO4	Create manual and/or automated tests for a Full-Stack Web application using an MVC framework and related contemporary technologies
-LO5	Use a distributed version control system and a repository hosting service to document, develop and maintain a Full-Stack Web application using an MVC framework and related contemporary technologies.
-LO6	Deploy a Full-Stack Web application using an MVC framework and related contemporary technologies to a cloud-based platform
-LO7	Understand and use object-based software concepts
-
-
-
-
-
 ## Deployment
 
 The live deployed application can be found deployed on [Heroku](https://shemmylicious.herokuapp.com).
@@ -441,37 +400,41 @@ This project uses [Heroku](https://www.heroku.com), a platform as a service (Paa
 
 Deployment steps are as follows, after account setup:
 
-1. Select **New** in the top-right corner of your Heroku Dashboard, and select **Create new app** from the dropdown menu.
-2. Your app name must be unique, and then choose a region closest to you (EU or USA), and finally, select **Create App**.
-3. From the new app **Settings**, click **Reveal Config Vars**, and set your environment variables.
+1. Select *New* in the top-right corner of your Heroku Dashboard, and select *Create new app* from the dropdown menu.
+1. Your app name must be unique, and then choose a region closest to you (EU or USA), and finally, select *Create App*.
+1. Further down, to support dependencies, select *Add Buildpack*.
+1. The order of the buildpacks is important, select `Python` first, then `Node.js` second. (if they are not in this order, you can drag them to rearrange them)
+1. From the new app *Settings*, click *Reveal Config Vars*, and set your environment variables.
 
-    - SECRET_KEY: (Enter your secret key)
-    - DATABASE_URL: (Enter the database URL from ElephantSQL)
+    
     - CLOUNDINARY_URL: (Enter Cloudinary API URL)
+    - DATABASE_URL: (Enter the database URL from ElephantSQL)
     - PORT: 8000
+    - DISABLE_COLLECTSTATIC: 1 (must be removed before final deployment)
+    - SECRET_KEY: (Enter your secret key)
 
 Heroku needs two additional files in order to deploy properly.
 - requirements.txt
 - Procfile
 
-You can install this project's **requirements** (where applicable) using:
+You can install this project's *requirements* (where applicable) using:
 - `pip3 install -r requirements.txt`
 
 If you have your own packages that have been installed, then the requirements file needs updated using:
 - `pip3 freeze --local > requirements.txt`
 
-The **Procfile** can be created with the following command:
+The *Procfile* can be created with the following command:
 - `echo web: gunicorn app_name.wsgi > Procfile`
-- *replace **app_name** with the name of your primary Django app name; the folder where settings.py is located*
+- *replace *app_name* with the name of your primary Django app name; the folder where settings.py is located*
 
 For Heroku deployment, follow these steps to connect your own GitHub repository to the newly created app:
 
 Either:
-- Select **Automatic Deployment** from the Heroku app.
+- Select *Automatic Deployment* from the Heroku app.
 
 Or:
 - In the Terminal/CLI, connect to Heroku using this command: `heroku login -i`
-- Set the remote for Heroku: `heroku git:remote -a app_name` (replace *app_name* with your app name)
+- Set the remote for Heroku: `heroku git:remote -a <app_name>` (replace app_name with your app, without the angle-brackets)
 - After performing the standard Git `add`, `commit`, and `push` to GitHub, you can now type:
 	- `git push heroku main`
 
@@ -541,11 +504,12 @@ A tutorial on how to do that can be found [here](https://www.gitpod.io/docs/conf
 #### Forking
 
 By forking the GitHub Repository, we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original owner's repository.
-You can fork this repository by using the following steps:
+To make a copy or ‘fork’ the repository - 
 
-1. Log in to GitHub and locate the [GitHub Repository](https://github.com/ShemmyYo/django-shemmylicious)
-2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
-3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
+1. Log into GitHub and locate the repository  
+2. On the right-hand side of the page select the ‘fork’ option to create and copy the original
+
+Alternatively, if using Gitpod, you can click below to create your workspace using this repository
 
 [Back to top &uarr;](#content)
 
@@ -557,14 +521,15 @@ I sometimes applied principles within them to the site, after fully understandin
 
 1. [Code Institute Template](https://github.com/Code-Institute-Org/python-essentials-template) - This repository was created using the template provided by Code Institute.
 1. [Django Documentation](https://docs.djangoproject.com/en/4.0/) - Django step-by-step document to ensure everything is set up correctly.
-1. [Allauth Documentation](https://django-allauth.readthedocs.io/en/latest/faq.html) - Thanks to the Alluath documentation which was referenced during development.
-1. [Crispy Forms Documentation](https://django-crispy-forms.readthedocs.io/en/latest/) - Thanks to the Crispy Forms documentation which was referenced during development.
+1. [Setting up basic Django Project and Deploying to Heroku](https://docs.google.com/document/d/1P5CWvS5cYalkQOLeQiijpSViDPogtKM7ZGyqK-yehhQ/edit) - Documentation on how to create django project provided by [Code Institute](https://codeinstitute.net/ie/) 
+1. [Allauth Documentation](https://django-allauth.readthedocs.io/en/latest/faq.html) - referenced during development.
+1. [Cloudinary Documentation](https://cloudinary.com) - referenced during development.
+1. [Summernote Documentation](https://summernote.org/) and [Git](https://github.com/summernote/django-summernote) - referenced during development.
+1. [Crispy Forms Documentation](https://django-crispy-forms.readthedocs.io/en/latest/) - referenced during development.
 1. [John Elder - Django Wednesdays](https://www.youtube.com/playlist?list=PLCC34OHNcOtqW9BJmgQPPzUpJ8hl49AGy) - YouTube series that has inpired me to create a blog-like application. 
-1. [Setting up basic Django Project and Deploying to Heroku](https://docs.google.com/document/d/1P5CWvS5cYalkQOLeQiijpSViDPogtKM7ZGyqK-yehhQ/edit) - Documentation on how to create django project provided by [Code Institute](https://codeinstitute.net/ie/)
+1. [Building a Social Media App With Python 3 & Django Beginners Tutorial](https://www.youtube.com/playlist?list=PLPSM8rIid1a3TkwEmHyDALNuHhqiUiU5A) - YouTube series that has helped me to create a blog-like application. 
 1. [Stackoverflow](https://stackoverflow.com/) - I found myself on Stackoverflow so many times researching issues. This a fantastic place to learn and troubleshoot code.
 1. [Slack](https://slack.com/intl/en-ie/) - The slack community is great and I reached out to fellow students who had already completed their P4 for their advice and got some nice tips and feedback. I attending some webinars by CI staff which I found very beneficial.
-1. [Youtube](https://www.youtube.com/) - Various videos were watched for further learning and Django project ideas. Some playlists I have reviewed are [Django Project: Movie App](https://www.youtube.com/watch?v=tm9Yps3IkmQ&list=PLBQzvdjNG8c-g_mVYUNiVDwwO5YgcbNwT), [Django IMDB clone](https://www.youtube.com/watch?v=FawGmAas4h0&list=PL9tgJISrBWc6ktmvTSLGrn055XzVb0OwZ&index=1)
-
 
 [Back to top &uarr;](#content)
 
