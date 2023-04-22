@@ -2,7 +2,8 @@
 
 ![Shemmylicious Logo](media/readme/Shemmylicious-sign.png)
 # Cooking Time is My favorite Time ♡
-## Inspiring yet simple food recipes for delicious, everyday cooking.
+
+## __Inspiring yet simple food recipes for delicious, everyday cooking__
 Finding the right recipe is more difficult than ever. That's why we've made it simple.
 
 Shemmylicious Food is a food recipe blog designed to allow the User to find and review recipes as well as join a community of like-minded people gathered around a passion for food and interested in exchanging their ideas and views on food.
@@ -31,7 +32,8 @@ You can view the live, deployed to Heroku application here: <a href ='https://sh
 
 ## __Tech Stack__
 
-<img height="45" src="README/python-django.png">  <img height="50" src="README/elephantsql.png">  <img height="42" src="README/html.png">  <img height="50" src="README/css-img.png">  <img height="50" src="README/bootstrap.png">  <img height="45" src="README/js.png">  <img height="50" src="README/gitpod.png">  <img height="45" src="README/github.png"> 
+<img height="50" src="README/python-django.png">  <img height="50" src="README/elephantsql.png">  <img height="50" src="README/cloudinary.png"> <img height="50" src="README/html.png">  <img height="50" src="README/css.png">  <img height="50" src="README/bootstrap.png">  <img height="50" src="README/js.png">  <img height="50" src="README/gitpod.png">  <img height="50" src="README/github.png"> 
+
 
 ***
 
@@ -301,6 +303,7 @@ A few `COULD HAVE` user stories have been implemented before project due date i.
 
 
 ### Data Model
+
 ### Development Process
  - GitHub Projects
  - GitHub Issued
@@ -393,25 +396,15 @@ LO7	Understand and use object-based software concepts
 
 
 
-[__Setting up basic Django Project and Deploying to Heroku__](https://docs.google.com/document/d/1P5CWvS5cYalkQOLeQiijpSViDPogtKM7ZGyqK-yehhQ/edit)
-
-Install librieries:
-pip3 install 'django<4' gunicorn
-pip3 install dj_database_url==0.5.0 psycopg2
-pip3 install dj3-cloudinary-storage
-
-Create requirements.txt
-pip3 freeze --local > requirements.txt
-
-START NEW PROJECT 
-django-admin startproject PROJECT_NAME .
-
 
 
 ## Deployment
 
-The live deployed application can be found deployed on [Heroku](https://tribe.herokuapp.com).
+The live deployed application can be found deployed on [Heroku](https://shemmylicious.herokuapp.com).
 
+![Shemmylicious webpage pic](README/shemmylicious-page.png)
+
+***
 ### ElephantSQL Database
 
 This project uses [ElephantSQL](https://www.elephantsql.com) for the PostgreSQL Database.
@@ -424,6 +417,9 @@ To obtain your own Postgres Database, sign-up with your GitHub account, then fol
 - Select the **Region** and **Data Center** closest to you.
 - Once created, click on the new database name, where you can view the database URL and Password.
 
+[Back to top &uarr;](#content)
+
+***
 ### Cloudinary API
 
 This project uses the [Cloudinary API](https://cloudinary.com) to store media assets online, due to the fact that Heroku doesn't persist this type of data.
@@ -434,22 +430,25 @@ To obtain your own Cloudinary API key, create an account and log in.
 - On your Cloudinary Dashboard, you can copy your **API Environment Variable**.
 - Be sure to remove the `CLOUDINARY_URL=` as part of the API **value**; this is the **key**.
 
+[Back to top &uarr;](#content)
+
+***
 ### Heroku Deployment
+
+[Setting up basic Django Project and Deploying to Heroku CI Doc](https://docs.google.com/document/d/1P5CWvS5cYalkQOLeQiijpSViDPogtKM7ZGyqK-yehhQ/edit)
 
 This project uses [Heroku](https://www.heroku.com), a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
 
 Deployment steps are as follows, after account setup:
 
-- Select **New** in the top-right corner of your Heroku Dashboard, and select **Create new app** from the dropdown menu.
-- Your app name must be unique, and then choose a region closest to you (EU or USA), and finally, select **Create App**.
-- From the new app **Settings**, click **Reveal Config Vars**, and set your environment variables.
+1. Select **New** in the top-right corner of your Heroku Dashboard, and select **Create new app** from the dropdown menu.
+2. Your app name must be unique, and then choose a region closest to you (EU or USA), and finally, select **Create App**.
+3. From the new app **Settings**, click **Reveal Config Vars**, and set your environment variables.
 
-| Key | Value |
-| --- | --- |
-| `CLOUDINARY_URL` | insert your own Cloudinary API key here |
-| `DATABASE_URL` | insert your own ElephantSQL database URL here |
-| `DISABLE_COLLECTSTATIC` | 1 (*this is temporary, and can be removed for the final deployment*) |
-| `SECRET_KEY` | this can be any random secret key |
+    - SECRET_KEY: (Enter your secret key)
+    - DATABASE_URL: (Enter the database URL from ElephantSQL)
+    - CLOUNDINARY_URL: (Enter Cloudinary API URL)
+    - PORT: 8000
 
 Heroku needs two additional files in order to deploy properly.
 - requirements.txt
@@ -478,6 +477,9 @@ Or:
 
 The project should now be connected and deployed to Heroku!
 
+[Back to top &uarr;](#content)
+
+***
 ### Local Deployment
 
 This project can be cloned or forked in order to make a local copy on your own system.
@@ -510,35 +512,67 @@ Once the project is cloned or forked, in order to run it locally, you'll need to
 - Load fixtures (if applicable): `python3 manage.py loaddata file-name.json` (repeat for each file)
 - Everything should be ready now, so run the Django app again: `python3 manage.py runserver`
 
+[Back to top &uarr;](#content)
+
+***
 #### Cloning
 
 You can clone the repository by following these steps:
 
-1. Go to the [GitHub repository](https://github.com/adamgilroy22/tribe) 
+1. Go to the [GitHub repository](https://github.com/ShemmyYo/django-shemmylicious) 
 2. Locate the Code button above the list of files and click it 
 3. Select if you prefer to clone using HTTPS, SSH, or GitHub CLI and click the copy button to copy the URL to your clipboard
 4. Open Git Bash or Terminal
 5. Change the current working directory to the one where you want the cloned directory
 6. In your IDE Terminal, type the following command to clone my repository:
-	- `git clone https://github.com/adamgilroy22/tribe.git`
+	- `git clone https://github.com/ShemmyYo/django-shemmylicious.git`
 7. Press Enter to create your local clone.
 
 Alternatively, if using Gitpod, you can click below to create your own workspace using this repository.
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/adamgilroy22/tribe)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/ShemmyYo/django-shemmylicious)
 
 Please note that in order to directly open the project in Gitpod, you need to have the browser extension installed.
 A tutorial on how to do that can be found [here](https://www.gitpod.io/docs/configure/user-settings/browser-extension).
 
+[Back to top &uarr;](#content)
+
+***
 #### Forking
 
 By forking the GitHub Repository, we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original owner's repository.
 You can fork this repository by using the following steps:
 
-1. Log in to GitHub and locate the [GitHub Repository](https://github.com/adamgilroy22/tribe)
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/ShemmyYo/django-shemmylicious)
 2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
 3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
 
+[Back to top &uarr;](#content)
+
+***
 ## Credits
 
-### Content
+Throughout the building process I found many helpful tutorials online.
+I sometimes applied principles within them to the site, after fully understanding their code and modifying to fit the site's needs.
+
+1. [Code Institute Template](https://github.com/Code-Institute-Org/python-essentials-template) - This repository was created using the template provided by Code Institute.
+1. [Django Documentation](https://docs.djangoproject.com/en/4.0/) - Django step-by-step document to ensure everything is set up correctly.
+1. [Allauth Documentation](https://django-allauth.readthedocs.io/en/latest/faq.html) - Thanks to the Alluath documentation which was referenced during development.
+1. [Crispy Forms Documentation](https://django-crispy-forms.readthedocs.io/en/latest/) - Thanks to the Crispy Forms documentation which was referenced during development.
+1. [John Elder - Django Wednesdays](https://www.youtube.com/playlist?list=PLCC34OHNcOtqW9BJmgQPPzUpJ8hl49AGy) - YouTube series that has inpired me to create a blog-like application. 
+1. [Setting up basic Django Project and Deploying to Heroku](https://docs.google.com/document/d/1P5CWvS5cYalkQOLeQiijpSViDPogtKM7ZGyqK-yehhQ/edit) - Documentation on how to create django project provided by [Code Institute](https://codeinstitute.net/ie/)
+1. [Stackoverflow](https://stackoverflow.com/) - I found myself on Stackoverflow so many times researching issues. This a fantastic place to learn and troubleshoot code.
+1. [Slack](https://slack.com/intl/en-ie/) - The slack community is great and I reached out to fellow students who had already completed their P4 for their advice and got some nice tips and feedback. I attending some webinars by CI staff which I found very beneficial.
+1. [Youtube](https://www.youtube.com/) - Various videos were watched for further learning and Django project ideas. Some playlists I have reviewed are [Django Project: Movie App](https://www.youtube.com/watch?v=tm9Yps3IkmQ&list=PLBQzvdjNG8c-g_mVYUNiVDwwO5YgcbNwT), [Django IMDB clone](https://www.youtube.com/watch?v=FawGmAas4h0&list=PL9tgJISrBWc6ktmvTSLGrn055XzVb0OwZ&index=1)
+
+
+[Back to top &uarr;](#content)
+
+***
+## Acknowledgements
+
+As always, big thank you to [Harry Dhillon](https://github.com/Harry-Leepz), my mentor who provided me with guide and excellent feedback throughout the project
+
+Shemmylicious Food was developed for educational purpouses and as part of my Diploma in Software Development with [Code Institute](https://codeinstitute.net/). 
+
+[Back to top &uarr;](#content)
