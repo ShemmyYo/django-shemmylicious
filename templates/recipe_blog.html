@@ -90,21 +90,38 @@
             <div class="card-body">
                 <!-- We want a for loop inside the tags to iterate through each comment in comments -->
                 {% for comment in comments %}
-                <div class="comments" style="padding: 10px;">
-                    <p class="font-weight-bold">
-                        <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
-                        <strong>{{ comment.post_author }}</strong>
-                        <span class=" text-muted font-weight-normal">, on</span>
-                        <!-- The comment's created date goes here -->
-                        {{ comment.created_date }}
-                        <span class=" text-muted font-weight-normal">wrote:</span>
-                    </p>
-                    <!-- The body of the comment goes before the | -->
-                    {{ comment.comment_title | linebreaks }}
-                    {{ comment.comment_body | linebreaks }}
+
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="comments" style="padding: 10px;">
+                        <div class="row g-0">
+                            <div class="col-md-2">
+                                {% if post.author.profile.profile_pic %}
+                                <img src="{{ post.author.profile.profile_pic.url }}" 
+                                    class="img-fluid rounded-start" alt="Profiel picture">
+                                {% else %}
+                                <img src="https://res.cloudinary.com/dteyj4llb/image/upload/v1681317396/profile_img.png" 
+                                    class="img-fluid rounded-start" alt="Default profiel picture">
+                                {% endif %}
+                            </div>
+                            <div class="col-md-10">
+                                <!-- The body of the comment goes before the | -->
+                                <div class="card-body">
+                                    <h3><strong>{{ comment.post_author }}</strong></h3>
+                                    <!-- The comment's created date goes here -->
+                                    <span class=" text-muted font-weight-normal">
+                                        <small> | commented on: </small>{{ comment.created_date }}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
+                                <h5>{{ comment.comment_title | linebreaks }}</h5>
+                                <p class="card-text">{{ comment.comment_body | linebreaks }}</p>
+                            </div>
+                        </div>
+                    </div>
                     <!-- Additional Options as a Superuser -->
                     {% if  user.is_superuser %}
-                    
                     <a href="{% url 'comment-delete' comment.pk %}" class="btn btn-sm col-12 btn-outline-danger"><span>Delete Comment</span></a>
                     {% endif %}
                 </div>

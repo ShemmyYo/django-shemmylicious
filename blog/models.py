@@ -82,7 +82,6 @@ class Comment(models.Model):
     comment_title = models.CharField(max_length=80)
     comment_body = models.TextField()
     post_author = models.TextField()
-    email = models.EmailField()
     created_date = models.DateTimeField(auto_now_add=True)
     active = models.BooleanField(default=False)
 

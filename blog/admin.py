@@ -37,8 +37,8 @@ admin.site.register(Profile)
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    search_fields = ['recipe_name', 'comment_title', 'email']
-    list_display = ('recipe_name', 'comment_title', 'email', 'created_date', 'active')
+    search_fields = ['recipe_name', 'comment_title', 'email', 'active']
+    list_display = ('recipe_name', 'created_date', 'active')
     list_filter = ('active', 'created_date')
 
     def approve_comment(self, request, queryset):
