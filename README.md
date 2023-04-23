@@ -51,8 +51,7 @@ You can view the live, deployed to Heroku application here: <a href ='https://sh
     - [Wireframes](#wireframes)
     - [Agile](#agile)
         - [The Ideal User/Persona](#the-ideal-user)
-        - [Epics](#epics)
-        - [User Stories](#user-stories)
+        - [Epics & Admin/User Stories](#user-stories)
 - [Features](#features)
     - [Existing Features](#existing-features)
         - []()
@@ -183,19 +182,39 @@ A women aged 25 to 34 are our biggest recipe-browsing demographic group. But tha
 - Community-Oriented: They may be interested in connecting with other food enthusiasts and bloggers, and may participate in online forums or groups related to food and cooking.
 
 ***
-### Epics
+### Epics & Admin/User Stories
 
 Epics (milestones) were created which were then further developed into User Stories. 
 
-TBC
+__EPIC: Initial Django Setup__
+
+- ADMIN STORY: As an Admin I will set up Django and install the supporting libraries predicted to be needed so that I am ready to start development `MUST HAVE`
+- ADMIN STORY: As an Admin I need to create the env.py and add to .gitignore so that I can securely deploy the site without exposing the developer `MUST HAVE`
+- ADMIN STORY: As an Admin I can deploy site to Heroku early so that I can confirm everything works before the development of the site and to enable continuous testing within the production environment `MUST HAVE`
 
 
+__EPIC: Base Html/Homepage__
+
+- USER STORY: As a User I would like to view the site on my different devices so that I can view the site on the go `MUST HAVE`
+- USER STORY: As a User I want to see a clear way of navigating the site so that I can find the information relative to my needs `MUST HAVE`
+- USER STORY: As a User I want to be able to get in touch with the Developer so that I can enquire about issues/suggestions I may have `MUST HAVE`
 
 
+__EPIC: User Authorisation Signup/Login/Logout__
+
+- ADMIN STORY: As an Admin I want to install and import AllAuth library to the project so that I can use it to manage users `MUST HAVE`
+- ADMIN STORY: As a Devn Admin I want to add functionality to verify email and reset password so that the user has better security over their email being used and can reset password if they forget it `COUNLD HAVE`
+- USER STORY: As a User I want to be able to signup/login/logout securely so that I can view/edit my own profile `COULD HAVE`
+- USER Story: As a User I would like to access my profile so that I can upload an image or alter my bio, social media links etc. `COULD HAVE`
 
 
-***
-### User Stories
+__EPIC: Recipe Search__
+
+- USER STORY: As a User I want to have a section where I can search for a Recipe so that I can easily find it access it and comment/like it
+- ADMIN STORY: As an Admin I can create the recipe search url, view & template so that the User can search db
+- ADMIN STORY: As an Admin I can create the recipe search results template so that the User has a clear display of the results from their search
+
+
 
 __New Site Users__
 
