@@ -678,7 +678,7 @@ img {
 
 @media screen and (max-width: 460px) {
     .headline h1 {
-        font-size: 150%;
+        font-size: 140%;
     }
 
     .headline .brand-logo {
@@ -698,6 +698,10 @@ img {
 
     .navbar-brand img {
         height: 50px;
+    }
+
+    .headline-bttn-container .btn {
+        align-content: center;
     }
 
     input,

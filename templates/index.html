@@ -36,10 +36,12 @@
           {% endif %}
       
       {% else %}
-      <a href="{% url 'register' %}" class="btn btn-sm btn-outline-light headline-bttn">Sign-up <i
-          class="fa-solid fa-user-plus fa-beat-fade fa-xs"></i></a>
-      <a href="{% url 'login-user' %}" class="btn btn-sm btn-outline-light headline-bttn">Login <i
-          class="fa-solid fa-arrow-right-to-bracket fa-beat-fade fa-xs"></i></a>
+      <center>
+        <a href="{% url 'register' %}" class="btn btn-sm btn-outline-light headline-bttn">Sign-up <i
+            class="fa-solid fa-user-plus fa-beat-fade fa-xs"></i></a>
+        <a href="{% url 'login-user' %}" class="btn btn-sm btn-outline-light headline-bttn">Login <i
+            class="fa-solid fa-arrow-right-to-bracket fa-beat-fade fa-xs"></i></a>
+      </center>
       {% endif %}
     </div>
   </div>
