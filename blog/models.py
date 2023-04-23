@@ -81,7 +81,8 @@ class Comment(models.Model):
     recipe_name = models.ForeignKey(Recipe, on_delete=models.CASCADE, related_name='comments')
     comment_title = models.CharField(max_length=80)
     comment_body = models.TextField()
-    post_author = models.TextField()
+    post_user_id = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
+    post_author = models.CharField(max_length=255)
     created_date = models.DateTimeField(auto_now_add=True)
     active = models.BooleanField(default=False)
 

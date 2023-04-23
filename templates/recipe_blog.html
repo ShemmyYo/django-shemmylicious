@@ -95,8 +95,8 @@
                     <div class="comments" style="padding: 10px;">
                         <div class="row g-0">
                             <div class="col-md-2">
-                                {% if post.author.profile.profile_pic %}
-                                <img src="{{ post.author.profile.profile_pic.url }}" 
+                                {% if comment.post_user_id.profile.profile_pic %}                                
+                                <img src="{{ comment.post_user_id.profile.profile_pic.url }}" 
                                     class="img-fluid rounded-start" alt="Profiel picture">
                                 {% else %}
                                 <img src="https://res.cloudinary.com/dteyj4llb/image/upload/v1681317396/profile_img.png" 
