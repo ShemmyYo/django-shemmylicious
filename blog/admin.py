@@ -40,3 +40,9 @@ class CommentAdmin(admin.ModelAdmin):
     search_fields = ['recipe_name', 'comment_title', 'email']
     list_display = ('recipe_name', 'comment_title', 'email', 'created_date', 'active')
     list_filter = ('active', 'created_date')
+
+    def approve_comment(self, request, queryset):
+        queryset.update(active=True)
+
+    def reject_comment(self, request, queryset):
+        queryset.update(active=False)

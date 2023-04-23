@@ -642,10 +642,9 @@ img {
 
     .headline-bttn {
         min-width: 200px;
-        height: 35px;
         padding: 5% auto;
         font-size: 100%;
-        margin-top: 5px;
+        margin: 5px 0;
     }
 
     /*---------------------------------------
@@ -706,7 +705,7 @@ img {
 
     input,
     button {
-        height: 35px;
+        height: 32px;
     }
 
 }

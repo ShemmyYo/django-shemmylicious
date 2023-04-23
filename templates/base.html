@@ -105,6 +105,7 @@
                     <a class="nav-link nav-link-drop" href="{% url 'show-profile' user.pk %}"> {{ user }} Profile </a>
                   </div>
                 </li>
+                <hr>
                 <li class="nav-item nav-link-s">
                   <div class="nav-item-s">
                     <a class="nav-link nav-link-drop" href="{% url 'recipe-mylist' %}"> My Recipes </a>
@@ -195,7 +196,7 @@
   <!-- Bootstrap Messages Container -->
   <div class="container-fluid">
     <div class="row">
-      <div class="col-auto offset-2">
+      <div class="col-8 offset-2">
         {% for message in messages %}
         <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="" alert>
           {{ message | safe }}
@@ -247,15 +248,6 @@
   integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i" crossorigin="anonymous">
 </script>
 
-<!-- Timeout 3s close messages -->
-<script>
-  setTimeout(function () {
-    let messages = document.getElementById("msg");
-    let alert = new bootstrap.Alert(messages);
-    alert.close();
-  }, 3000);
-</script>
-
 <!-- Font Awsome -->
 <script src="https://kit.fontawesome.com/d1f1e1791a.js" crossorigin="anonymous"></script>
 
@@ -267,6 +259,15 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/Flip.min.js"
   integrity="sha512-RL2ypMFkOs/iB79bWnNiFrZRCqyExtQ38n/K+t7Xjf09YZcvSzqgSaGVj+fiVYEqVRLf/WjdHmwGImZM3XO5gA=="
   crossorigin="anonymous" referrerpolicy="no-referrer">
+</script>
+
+<!-- Timeout 3s close messages -->
+<script>
+  setTimeout(function () {
+    let messages = document.getElementById("msg");
+    let alert = new bootstrap.Alert(messages);
+    alert.close();
+  }, 5000);
 </script>
 
 </html>
