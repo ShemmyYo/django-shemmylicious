@@ -1,3 +1,16 @@
+    - [Validation]
+        - [HTML]
+        - [CSS]
+        - [Lighthouse]
+        - [PEP8 CI Validation](#pep8-ci-validation)
+    - [Tests based on user stories](#tests-based-on-user-stories)
+    - [Manual tests](#manual-tests)
+    - 
+    - [Bugs](#bugs)
+    - [Browser Compatibility](#browser-compatibility)
+
+    
+
 ## __Testing__
 ### __PEP8 CI Validation__
 

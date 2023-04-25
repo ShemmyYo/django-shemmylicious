@@ -49,46 +49,31 @@ You can view the live, deployed to Heroku application here: <a href ='https://sh
         - [Colour Scheme](#colour-scheme)
         - [Typography](#typography)
         - [Imagery](#imaginary)
-            - [Logo design](#logo-design-with-figma)
-            - [Favicon](#icons-with-favicon)
-    - [Wireframes](#wireframes)
     - [Agile](#agile)
         - [The Ideal User/Persona](#the-ideal-user)
         - [Epics & Admin/User Stories](#user-stories)
+        - [MoSCoW Prioritization](#moscow-prioritization)
+    - [Wireframes](#wireframes)
 - [Features](#features)
     - [Existing Features](#existing-features)
         - []()
-
+    
     - [Future Features]()
-- [Technologies Used](#technologies-used)
-    - [Tools & technologies used]()
+- [Tools & Technologies Used](#technologies-used)
+    - [Languages Used](#languages-used)
+    - [Frameworks & Tools](#frameworks--tools)
     - [Imported Libraries and Packages](#libraries-imported)
     - [Data Model](#data-model)
-    - [Development Process]
-        - [GitHub Projects]
-        - [GitHub Issued]
 - [Testing](#testing)
-    - [Validation]
-        - [HTML]
-        - [CSS]
-        - [Lighthouse]
-        - [PEP8 CI Validation](#pep8-ci-validation)
-    - [Tests based on user stories](#tests-based-on-user-stories)
-    - [Manual tests](#manual-tests)
-    - 
-    - [Bugs](#bugs)
-    - [Browser Compatibility](#browser-compatibility)
 - [Deployment](#deployment)
-    - [ElephantSQL]
-    - [Cloudinary API]
-    - [Deploy to Heroku](#deploy-to-heroku)
+    - [ElephantSQL](#elephantsql-database)
+    - [Cloudinary API](#cloudinary-api)
+    - [Heroku Deployment](#heroku-deployment)
     - [Local Deployment](#local-deployment)
-    - [To Fork the Repository](#to-fork-the-repository)
+    - [Cloning](#cloning)
+    - [Forking](#forking)
 - [Credits](#credits)
-    - [Code](#code)
-    - [Design](#design)
-    - [Media]
-    - [Acknowledgements](#acknowledgements)
+- [Acknowledgements](#acknowledgements)
 
 ***
 
@@ -103,6 +88,8 @@ In this project I will present my ability to:
 - implement front-end CRUD (Create Read Update Delete) functionality, including front-end UI that allows users to Create, Read, Update, and Delete records in the database, without having to access the admin panel.
 
 - set up an authentication mechanism and provide role-based access to the site's data or other activities based on the dataset.
+
+[Back to top &uarr;](#content)
 
 ***
 
@@ -131,6 +118,7 @@ I used <img height="14" src="README/colormind-logo.png"> [Colormind](http://colo
 
 ![Colormind](README/colormind.png)
 
+[Back to top &uarr;](#content)
 
 ### Typography
 ***
@@ -152,6 +140,8 @@ root {
 }
 ```
 
+[Back to top &uarr;](#content)
+
 ### Imaginary
 ***
 
@@ -160,6 +150,8 @@ I designed a Shemmylicious logo with <img height="20" src="README/figma-logo.png
 same logo has then been used to create [Favicon](https://favicon.io/) icons.
 
 <img height="150" src="README/shemmylicious-dareker.png">
+
+[Back to top &uarr;](#content)
 
 ***
 ## Agile 
@@ -184,39 +176,41 @@ A women aged 25 to 34 are our biggest recipe-browsing demographic group. But tha
 - Knowledge-Seeking: They may be interested in learning more about different types of cuisine, cooking techniques, and food history.
 - Community-Oriented: They may be interested in connecting with other food enthusiasts and bloggers, and may participate in online forums or groups related to food and cooking.
 
+[Back to top &uarr;](#content)
+
 ***
 ### Epics & Admin/User Stories
 
-Epics (milestones) were created which were then further developed into User Stories. 
+10 Epics (milestones) were created which were then further developed into 39 User Stories. 
 
 __EPIC: [Initial Django Setup](https://github.com/ShemmyYo/django-shemmylicious/milestone/1)__
 
 - ADMIN STORY: As an Admin I will set up Django and install the supporting libraries predicted to be needed so that I am ready to start development `MUST HAVE`
 - ADMIN STORY: As an Admin I need to create the env.py and add to .gitignore so that I can securely deploy the site without exposing the developer `MUST HAVE`
-- ADMIN STORY: As an Admin I can deploy site to Heroku early so that I can confirm everything works before the development of the site and to enable continuous testing within the production environment `MUST HAVE`
+- ADMIN STORY: As an Admin I can deploy the site to Heroku early so that I can confirm everything works before the development of the site and to enable continuous testing within the production environment `MUST HAVE`
 
 
 __EPIC: [Base Html/Homepage/index](https://github.com/ShemmyYo/django-shemmylicious/milestone/9)__
 
-- USER STORY: As a User I would like to view the site on my different devices so that I can view the site on the go `MUST HAVE`
+- USER STORY: As a User, I would like to view the site on my different devices so that I can view the site on the go `MUST HAVE`
 - USER STORY: As a User I want to see a clear way of navigating the site so that I can find the information relative to my needs `MUST HAVE`
-- USER STORY: As a User I want to be shown interesting, inviting index page so that I know exactly what is the page about and it gives me enhanced exparience `MUST HAVE`
-- USER STORY: As a User I want to be able to get in touch with the Developer so that I can enquire about issues/suggestions I may have `MUST HAVE`
+- USER STORY: As a User, I want to be shown an interesting, inviting index page so that I know exactly what is the page about and it gives me an enhanced experience `MUST HAVE`
+- USER STORY: As a User, I want to be able to get in touch with the Developer so that I can enquire about issues/suggestions I may have `MUST HAVE`
 
 
 __EPIC: [User Authorisation Signup/Login/Logout](https://github.com/ShemmyYo/django-shemmylicious/milestone/3)__
 
-- ADMIN STORY: As an Admin I want to install and import AllAuth library to the project so that I can use it to manage users `MUST HAVE`
-- ADMIN STORY: As an Admin I want to add functionality to verify email and reset password so that the user has better security over their email being used and can reset password if they forget it `COUNLD HAVE`
-- USER STORY: As a User I want to be able to signup/login/logout securely so that I can view/edit my own profile `COULD HAVE`
-- USER Story: As a User I would like to access my profile so that I can upload an image or alter my bio, social media links etc. `COULD HAVE`
-- USER STORY: As a User I would like to access my profile with single sign login so that I can  login quicker and more secure `WONT HAVE`
+- ADMIN STORY: As an Admin I want to install and import the AllAuth library to the project so that I can use it to manage users `MUST HAVE`
+- ADMIN STORY: As an Admin I want to add functionality to verify email and reset the password so that the user has better security over their email being used and can reset the password if they forget it `COUNLD HAVE`
+- USER STORY: As a User, I want to be able to signup/login/logout securely so that I can view/edit my profile `COULD HAVE`
+- USER Story: As a User, I would like to access my profile so that I can upload an image or alter my bio, social media links etc. `SHOULD HAVE`
+- USER STORY: As a User, I would like to access my profile with single sign login so that I can  login quicker and more securely `WONT HAVE`
 
 __EPIC: [View Recipe Details](https://github.com/ShemmyYo/django-shemmylicious/milestone/5)__
 
-- USER STORY: As a User I want to view the recipe details so that I can read ingredients, instructions etc. `MUST HAVE`
-- ADMIN STORY: As an Admin I want to build a page to display recipes for the users so that they have a clear overview and can find information they look for `MUST HAVE`
-- USER STORY: As a User I want to view my recipes listed on my page so that I can edit recipe details (e.g.ingredients, instructions etc.) or delete my recipe `MUST HAVE` 
+- USER STORY: As a User, I want to view the recipe details so that I can read the ingredients, instructions etc. `MUST HAVE`
+- ADMIN STORY: As an Admin I want to build a page to display recipes for the users so that they have a clear overview and can find the information they look for `MUST HAVE`
+- USER STORY: As a User, I want to view my recipes listed on my page so that I can edit recipe details (e.g.ingredients, instructions etc.) or delete my recipe `MUST HAVE` 
 - ADMIN STORY: As an Admin I want to create a Recipe model so that the recipe details can be viewed/edited and added to the database `MUST HAVE`
 
 __EPIC: [CRUD Functionality](https://github.com/ShemmyYo/django-shemmylicious/milestone/8)__
@@ -227,39 +221,41 @@ __EPIC: [CRUD Functionality](https://github.com/ShemmyYo/django-shemmylicious/mi
 
 __EPIC: [Recipe Search](https://github.com/ShemmyYo/django-shemmylicious/milestone/5)__
 
-- USER STORY: As a User I want to have a section where I can search for a Recipe so that I can easily find it access it and comment/like it `MUST HAVE`
-- ADMIN STORY: As an Admin I want to create the recipe search url, view & template so that the User can search db `MUST HAVE`
+- USER STORY: As a User, I want to have a section where I can search for a Recipe so that I can easily find it access it and comment/like it `SHOULD HAVE`
+- ADMIN STORY: As an Admin I want to create the recipe search url, view & template so that the User can search db `SHOULD HAVE`
 
 __EPIC: [View Recipe List by Category](https://github.com/ShemmyYo/django-shemmylicious/milestone/4)__
 
-- USER STORY: As a User I want to be ablr to view the recipes by category so that I can easily find what Im interested in `MUST HAVE`
-- ADMIN STORY: As an Admin I want to build a page to display recipes by category for the users so that they have a clear overview and can find information they look for `MUST HAVE`
+- USER STORY: As a User, I want to be able to view the recipes by category so that I can easily find what I'm interested in `SHOULD HAVE`
+- ADMIN STORY: As an Admin I want to build a page to display recipes by category for the users so that they have a clear overview and can find the information they look for `SHOULD HAVE`
 
 
 __EPIC: [User Account/Profile](https://github.com/ShemmyYo/django-shemmylicious/milestone/2)__
 
-- USER STORY: As a User I want to have access to my Profile so that I can upload an image or change bio or social media urls `MUST HAVE`
-- ADMIN STORY: As an Admin I will create a User Profile page so that they can update their details and setting `MUST HAVE`
+- USER STORY: As a User, I want to have access to my Profile so that I can upload an image or change my bio or social media urls `SHOULD HAVE`
+- ADMIN STORY: As an Admin I will create a User Profile page so that they can update their details and setting `SHOULD HAVE`
 
 __EPIC: [Recipe Comments & Likes](https://github.com/ShemmyYo/django-shemmylicious/milestone/6)__
 
-- USER STORY: As a User I want the ability to like or comment recipes that I can share my thoughts and feel included in the community `MUST HAVE`
-- USER STORY: As a User I want the ability to view all comments fror the recipe so that I can see what my fellow commenters think of a recipe `MUST HAVE`
-- USER STORY: As a User I would like the ability to edit my review so that I can fix any spelling or format issues `COULD HAVE`
-- ADMIN STORY: As an Admin I will provide commenting/like functionality for the User so that they have an enjoyable experience reviewing/likeing recipes `MUST HAVE`
-- ADMIN STORY: As an Admin I want to have the ability to delete any comment so that I can manage comments effectvely `MUST HAVE`
+- USER STORY: As a User, I want the ability to like or comment on recipes so that I can share my thoughts and feel included in the community `MUST HAVE`
+- USER STORY: As a User, I want the ability to view all comments for the recipe so that I can see what my fellow commenters think of a recipe `MUST HAVE`
+- USER STORY: As a User, I would like the ability to edit my review so that I can fix any spelling or format issues `COULD HAVE`
+- ADMIN STORY: As an Admin I will provide commenting/like functionality for the User so that they have an enjoyable experience reviewing/liking recipes `MUST HAVE`
+- ADMIN STORY: As an Admin I want to have the ability to delete any comment so that I can manage comments effectively `MUST HAVE`
 
 __EPIC: [Status Error Templates](https://github.com/ShemmyYo/django-shemmylicious/milestone/10)__
 
-- ADMIN STORY: As an Admin I will implement a 400 bad request page to redirect the user to home page `COULD HAVE`
-- ADMIN STORY: As an Admin I will implement a 403 error page to redirect the user to home page `COULD HAVE`
-- ADMIN STORY: As an Admin I will implement a 404 error page so that I can alert users when they have accessed a page that doesn't exist and redirect the user to home page `COULD HAVE`
-- ADMIN STORY: As an Admin I will implement a 500 error page so that I can alert users when an internal server error occurs and redirect the user to home page `COULD HAVE`
+- ADMIN STORY: As an Admin I will implement a 400 bad request page to redirect the user to the home page `COULD HAVE`
+- ADMIN STORY: As an Admin I will implement a 403 error page to redirect the user to the home page `COULD HAVE`
+- ADMIN STORY: As an Admin I will implement a 404 error page so that I can alert users when they have accessed a page that doesn't exist and redirect the user to the home page `COULD HAVE`
+- ADMIN STORY: As an Admin I will implement a 500 error page so that I can alert users when an internal server error occurs and redirect the user to the home page `COULD HAVE`
 
 __EPIC: [Complete Documentation](https://github.com/ShemmyYo/django-shemmylicious/milestone/7)__
 
 - ADMIN STORY: Create/Write README.md
 - ADMIN STORY: Create/Write TESTING.md
+
+[Back to top &uarr;](#content)
 
 ***
 ### MoSCoW Prioritization
@@ -280,19 +276,7 @@ To ensure that all core requirements were completed I worked on the 'MUST HAVE' 
 
 A few `COULD HAVE` user stories have been implemented before project due date i.e. ...
 
-
-***
-### Development Process
- - GitHub Projects
- - GitHub Issued
-
-
-
-
-
-
-
-
+[Back to top &uarr;](#content)
 
 ***
 ## Wireframes
@@ -306,8 +290,6 @@ A few `COULD HAVE` user stories have been implemented before project due date i.
 
 </details>
 
-[Back to top](#contents)
-
 
 500 Page
 
@@ -315,10 +297,18 @@ As a Developer I can implement a 500 error page so that I can alert users when a
 
 A 500 error page has been displayed to alert users when an internal server error occurs. The message relays to users that the problem is on our end, not theirs.
 
+[Back to top &uarr;](#content)
+
+***
+## Features
+***
+
+### Existing Features
+
+### Future Features
 
 
-
-
+[Back to top &uarr;](#content)
 
 ## Tools & technologies used
 
@@ -360,6 +350,7 @@ A 500 error page has been displayed to alert users when an internal server error
 - [django-crispy-forms]() - - Django package that provides tags and filters to control the rendering behaviour of Django forms
 - [django-richtextfield]() - - Model field for rich text editing
 
+[Back to top &uarr;](#content)
 
 ### Data Model
 
@@ -379,7 +370,7 @@ A 500 error page has been displayed to alert users when an internal server error
 
 
 
-
+[Back to top &uarr;](#content)
 
 ## Testing
 
@@ -392,7 +383,7 @@ For all testing, please refer to the [TESTING.md](TESTING.md) file.
 After publishing to Heroku, the site was tested on Google Chrome, Microsoft Edge, Safari and Mozilla Firefox, with no visible issues for the user. 
 The site has loaded perfectly and had no issues across all browsers.
 
-[Back to Content](<#contents>)
+[Back to top &uarr;](#content)
 
 ***
 ## Deployment
