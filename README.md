@@ -1,7 +1,10 @@
 # Portfolio Project 4 - Full-Stack Toolkit
 
-![Shemmylicious Logo](media/readme/Shemmylicious-sign.png)
-# Cooking Time is My favorite Time ♡
+<video width="640" height="480" autoplay>
+  <source src="README/p-hero-animation.mp4" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+Your browser does not support the video tag
+</video>
 
 ## __Inspiring yet simple food recipes for delicious, everyday cooking__
 Finding the right recipe is more difficult than ever. That's why we've made it simple.
@@ -193,54 +196,65 @@ __EPIC: Initial Django Setup__
 - ADMIN STORY: As an Admin I can deploy site to Heroku early so that I can confirm everything works before the development of the site and to enable continuous testing within the production environment `MUST HAVE`
 
 
-__EPIC: Base Html/Homepage__
+__EPIC: Base Html/Homepage/index__
 
 - USER STORY: As a User I would like to view the site on my different devices so that I can view the site on the go `MUST HAVE`
 - USER STORY: As a User I want to see a clear way of navigating the site so that I can find the information relative to my needs `MUST HAVE`
+- USER STORY: As a User I want to be shown interesting, inviting index page so that I know exactly what is the page about and it gives me enhanced exparience `MUST HAVE`
 - USER STORY: As a User I want to be able to get in touch with the Developer so that I can enquire about issues/suggestions I may have `MUST HAVE`
 
 
 __EPIC: User Authorisation Signup/Login/Logout__
 
 - ADMIN STORY: As an Admin I want to install and import AllAuth library to the project so that I can use it to manage users `MUST HAVE`
-- ADMIN STORY: As a Devn Admin I want to add functionality to verify email and reset password so that the user has better security over their email being used and can reset password if they forget it `COUNLD HAVE`
+- ADMIN STORY: As an Admin I want to add functionality to verify email and reset password so that the user has better security over their email being used and can reset password if they forget it `COUNLD HAVE`
 - USER STORY: As a User I want to be able to signup/login/logout securely so that I can view/edit my own profile `COULD HAVE`
 - USER Story: As a User I would like to access my profile so that I can upload an image or alter my bio, social media links etc. `COULD HAVE`
 
 
+__EPIC: View Recipe Details__
+
+- USER STORY: As a User I want to view the recipe details so that I can read ingredients, instructions etc. `MUST HAVE`
+- ADMIN STORY: As an Admin I want to build a page to display recipes for the users so that they have a clear overview and can find information they look for `MUST HAVE`
+- USER STORY: As a User I want to view my recipes listed on my page so that I can edit recipe details (e.g.ingredients, instructions etc.) or delete my recipe `MUST HAVE` 
+- ADMIN STORY: As an Admin I want to create a Recipe model so that the recipe details can be viewed/edited and added to the database `MUST HAVE`
+
+
 __EPIC: Recipe Search__
 
-- USER STORY: As a User I want to have a section where I can search for a Recipe so that I can easily find it access it and comment/like it
-- ADMIN STORY: As an Admin I can create the recipe search url, view & template so that the User can search db
-- ADMIN STORY: As an Admin I can create the recipe search results template so that the User has a clear display of the results from their search
+- USER STORY: As a User I want to have a section where I can search for a Recipe so that I can easily find it access it and comment/like it `MUST HAVE`
+- ADMIN STORY: As an Admin I want to create the recipe search url, view & template so that the User can search db `MUST HAVE`
+
+__EPIC: View Recipe List by Category__
+
+- USER STORY: As a User I want to be ablr to view the recipes by category so that I can easily find what Im interested in `MUST HAVE`
+- ADMIN STORY: As an Admin I want to build a page to display recipes by category for the users so that they have a clear overview and can find information they look for `MUST HAVE`
 
 
+__EPIC: User Account/Profile__
 
-__New Site Users__
+- USER STORY: As a User I want to have access to my Profile so that I can upload an image or change bio or social media urls `MUST HAVE`
+- ADMIN STORY: As an Admin I will create a User Profile page so that they can update their details and setting `MUST HAVE`
 
-- As a new site user, I would like to ____________, so that I can ____________.
-- As a new site user, I would like to ____________, so that I can ____________.
-- As a new site user, I would like to ____________, so that I can ____________.
-- As a new site user, I would like to ____________, so that I can ____________.
-- As a new site user, I would like to ____________, so that I can ____________.
+__EPIC: Recipe Comments & Likes__
 
+- USER STORY: As a User I want the ability to like or comment recipes that I can share my thoughts and feel included in the community `MUST HAVE`
+- USER STORY: As a User I want the ability to view all comments fror the recipe so that I can see what my fellow commenters think of a recipe `MUST HAVE`
+- USER STORY: As a User I would like the ability to edit my review so that I can fix any spelling or format issues `COULD HAVE`
+- ADMIN STORY: As an Admin I will provide commenting/like functionality for the User so that they have an enjoyable experience reviewing/likeing recipes `MUST HAVE`
+- ADMIN STORY: As an Admin I want to have the ability to delete any comment so that I can manage comments effectvely `MUST HAVE`
 
-__Returning Site Users__
+__EPIC: Status Error Templates__
 
-- As a returning site user, I would like to ____________, so that I can ____________.
-- As a returning site user, I would like to ____________, so that I can ____________.
-- As a returning site user, I would like to ____________, so that I can ____________.
-- As a returning site user, I would like to ____________, so that I can ____________.
-- As a returning site user, I would like to ____________, so that I can ____________.
+- ADMIN STORY: As an Admin I will implement a 400 bad request page to redirect the user to home page `COULD HAVE`
+- ADMIN STORY: As an Admin I will implement a 403 error page to redirect the user to home page `COULD HAVE`
+- ADMIN STORY: As an Admin I will implement a 404 error page so that I can alert users when they have accessed a page that doesn't exist and redirect the user to home page `COULD HAVE`
+- ADMIN STORY: As an Admin I will implement a 500 error page so that I can alert users when an internal server error occurs and redirect the user to home page `COULD HAVE`
 
+__EPIC: Complete Documentation__
 
-__Site Admin__
-
-- As a site administrator, I should be able to ____________, so that I can ____________.
-- As a site administrator, I should be able to ____________, so that I can ____________.
-- As a site administrator, I should be able to ____________, so that I can ____________.
-- As a site administrator, I should be able to ____________, so that I can ____________.
-- As a site administrator, I should be able to ____________, so that I can ____________.
+- ADMIN STORY: Create/Write README.md
+- ADMIN STORY: Create/Write TESTING.md
 
 ***
 ### MoSCoW Prioritization
@@ -379,8 +393,6 @@ The site has loaded perfectly and had no issues across all browsers.
 ## Deployment
 
 The live deployed application can be found deployed on [Heroku](https://shemmylicious.herokuapp.com).
-
-![Shemmylicious webpage pic](README/shemmylicious-page.png)
 
 ***
 ### ElephantSQL Database
