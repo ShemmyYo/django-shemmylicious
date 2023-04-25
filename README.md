@@ -1,9 +1,9 @@
 # Portfolio Project 4 - Full-Stack Toolkit
 
-<iframe src="README/p-hero-animation.mp4" width="100%" height="300" style="border:1px solid black;">
+<iframe src="" width="100%" height="300" style="border:1px solid black;">
 </iframe>
 
-![Shemmylicious logo](README/Shemmylicious-sign.png)
+[![Watch the video](README/Shemmylicious-sign.png)](README/p-hero-animation.mp4)
 ## __Inspiring yet simple food recipes for delicious, everyday cooking__
 Finding the right recipe is more difficult than ever. That's why we've made it simple.
 
