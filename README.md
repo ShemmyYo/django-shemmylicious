@@ -6,6 +6,7 @@
 Your browser does not support the video tag
 </video>
 
+![Shemmylicious logo](README/Shemmylicious-sign.png)
 ## __Inspiring yet simple food recipes for delicious, everyday cooking__
 Finding the right recipe is more difficult than ever. That's why we've made it simple.
 
