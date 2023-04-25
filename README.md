@@ -189,14 +189,14 @@ A women aged 25 to 34 are our biggest recipe-browsing demographic group. But tha
 
 Epics (milestones) were created which were then further developed into User Stories. 
 
-__EPIC: Initial Django Setup__
+__EPIC: [Initial Django Setup](https://github.com/ShemmyYo/django-shemmylicious/milestone/1)__
 
 - ADMIN STORY: As an Admin I will set up Django and install the supporting libraries predicted to be needed so that I am ready to start development `MUST HAVE`
 - ADMIN STORY: As an Admin I need to create the env.py and add to .gitignore so that I can securely deploy the site without exposing the developer `MUST HAVE`
 - ADMIN STORY: As an Admin I can deploy site to Heroku early so that I can confirm everything works before the development of the site and to enable continuous testing within the production environment `MUST HAVE`
 
 
-__EPIC: Base Html/Homepage/index__
+__EPIC: [Base Html/Homepage/index](https://github.com/ShemmyYo/django-shemmylicious/milestone/9)__
 
 - USER STORY: As a User I would like to view the site on my different devices so that I can view the site on the go `MUST HAVE`
 - USER STORY: As a User I want to see a clear way of navigating the site so that I can find the information relative to my needs `MUST HAVE`
@@ -204,39 +204,44 @@ __EPIC: Base Html/Homepage/index__
 - USER STORY: As a User I want to be able to get in touch with the Developer so that I can enquire about issues/suggestions I may have `MUST HAVE`
 
 
-__EPIC: User Authorisation Signup/Login/Logout__
+__EPIC: [User Authorisation Signup/Login/Logout](https://github.com/ShemmyYo/django-shemmylicious/milestone/3)__
 
 - ADMIN STORY: As an Admin I want to install and import AllAuth library to the project so that I can use it to manage users `MUST HAVE`
 - ADMIN STORY: As an Admin I want to add functionality to verify email and reset password so that the user has better security over their email being used and can reset password if they forget it `COUNLD HAVE`
 - USER STORY: As a User I want to be able to signup/login/logout securely so that I can view/edit my own profile `COULD HAVE`
 - USER Story: As a User I would like to access my profile so that I can upload an image or alter my bio, social media links etc. `COULD HAVE`
+- USER STORY: As a User I would like to access my profile with single sign login so that I can  login quicker and more secure `WONT HAVE`
 
-
-__EPIC: View Recipe Details__
+__EPIC: [View Recipe Details](https://github.com/ShemmyYo/django-shemmylicious/milestone/5)__
 
 - USER STORY: As a User I want to view the recipe details so that I can read ingredients, instructions etc. `MUST HAVE`
 - ADMIN STORY: As an Admin I want to build a page to display recipes for the users so that they have a clear overview and can find information they look for `MUST HAVE`
 - USER STORY: As a User I want to view my recipes listed on my page so that I can edit recipe details (e.g.ingredients, instructions etc.) or delete my recipe `MUST HAVE` 
 - ADMIN STORY: As an Admin I want to create a Recipe model so that the recipe details can be viewed/edited and added to the database `MUST HAVE`
 
+__EPIC: [CRUD Functionality](https://github.com/ShemmyYo/django-shemmylicious/milestone/8)__
 
-__EPIC: Recipe Search__
+- USER STORY: As a user, I want to be able to click on a recipe so that I can read the full-text `MUST HAVE`
+- USER STORY: As a User, I want to be able to view my recipes so that I can edit or delete them `MUST HAVE`
+- ADMIN STORY: As an Admin, I want to be able to login to Admin Panel so that I can CRUD manage data `MUST HAVE`
+
+__EPIC: [Recipe Search](https://github.com/ShemmyYo/django-shemmylicious/milestone/5)__
 
 - USER STORY: As a User I want to have a section where I can search for a Recipe so that I can easily find it access it and comment/like it `MUST HAVE`
 - ADMIN STORY: As an Admin I want to create the recipe search url, view & template so that the User can search db `MUST HAVE`
 
-__EPIC: View Recipe List by Category__
+__EPIC: [View Recipe List by Category](https://github.com/ShemmyYo/django-shemmylicious/milestone/4)__
 
 - USER STORY: As a User I want to be ablr to view the recipes by category so that I can easily find what Im interested in `MUST HAVE`
 - ADMIN STORY: As an Admin I want to build a page to display recipes by category for the users so that they have a clear overview and can find information they look for `MUST HAVE`
 
 
-__EPIC: User Account/Profile__
+__EPIC: [User Account/Profile](https://github.com/ShemmyYo/django-shemmylicious/milestone/2)__
 
 - USER STORY: As a User I want to have access to my Profile so that I can upload an image or change bio or social media urls `MUST HAVE`
 - ADMIN STORY: As an Admin I will create a User Profile page so that they can update their details and setting `MUST HAVE`
 
-__EPIC: Recipe Comments & Likes__
+__EPIC: [Recipe Comments & Likes](https://github.com/ShemmyYo/django-shemmylicious/milestone/6)__
 
 - USER STORY: As a User I want the ability to like or comment recipes that I can share my thoughts and feel included in the community `MUST HAVE`
 - USER STORY: As a User I want the ability to view all comments fror the recipe so that I can see what my fellow commenters think of a recipe `MUST HAVE`
@@ -244,14 +249,14 @@ __EPIC: Recipe Comments & Likes__
 - ADMIN STORY: As an Admin I will provide commenting/like functionality for the User so that they have an enjoyable experience reviewing/likeing recipes `MUST HAVE`
 - ADMIN STORY: As an Admin I want to have the ability to delete any comment so that I can manage comments effectvely `MUST HAVE`
 
-__EPIC: Status Error Templates__
+__EPIC: [Status Error Templates](https://github.com/ShemmyYo/django-shemmylicious/milestone/10)__
 
 - ADMIN STORY: As an Admin I will implement a 400 bad request page to redirect the user to home page `COULD HAVE`
 - ADMIN STORY: As an Admin I will implement a 403 error page to redirect the user to home page `COULD HAVE`
 - ADMIN STORY: As an Admin I will implement a 404 error page so that I can alert users when they have accessed a page that doesn't exist and redirect the user to home page `COULD HAVE`
 - ADMIN STORY: As an Admin I will implement a 500 error page so that I can alert users when an internal server error occurs and redirect the user to home page `COULD HAVE`
 
-__EPIC: Complete Documentation__
+__EPIC: [Complete Documentation](https://github.com/ShemmyYo/django-shemmylicious/milestone/7)__
 
 - ADMIN STORY: Create/Write README.md
 - ADMIN STORY: Create/Write TESTING.md
