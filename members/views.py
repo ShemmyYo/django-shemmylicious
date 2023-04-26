@@ -23,7 +23,8 @@ class CreateProfilePageView(generic.CreateView):
         'facebook_url',
         'twitter_url',
         'instagram_url',
-        'pintrest_url']
+        'pintrest_url',
+        ]
 
     def form_valid(self, form):
         form.instance.user = self.request.user
@@ -37,13 +38,13 @@ class EditProfilePageView(generic.UpdateView):
     success_url = reverse_lazy('edit-profile')
 
     fields = [
-        'bio', 
+        'bio',
         'profile_pic',
         'website_url',
         'facebook_url',
         'twitter_url',
         'instagram_url',
-        'pintrest_url' 
+        'pintrest_url',
         ]
 
     widgets = {
@@ -104,7 +105,7 @@ def logout_user(request):
     logout(request)
     messages.success(request, "Successfully logged out")
     return redirect('start')
-    
+
 
 # Password Change
 class PasswordsChangeView(PasswordChangeView):

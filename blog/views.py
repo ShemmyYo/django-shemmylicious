@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404, reverse
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponseRedirect, HttpResponse, ttpResponseNotFound
 from django.contrib import messages
 from django.views.generic import ListView, DetailView
 from django.views import generic, View
@@ -10,23 +10,21 @@ from cloudinary.forms import cl_init_js_callbacks
 
 
 # 404 Handler 
-def handling_404(request, *args, **argv):
-    response = render_to_response('404.html', {},
-                                  context_instance=RequestContext(request))
+def handler_404(request, exception, template_name='404.html'):
+    response = render(request, template_name)
     response.status_code = 404
     return response
 
 
 # 500 Handler
-def handling_500(request, *args, **argv):
-    response = render_to_response('500.html', {},
-                                  context_instance=RequestContext(request))
+def handler_500(request, exception, template_name='500.html'):
+    response = render(request, template_name)
     response.status_code = 500
     return response
 
 
 # 403 Handler
-def handling_403(request, *args, **argv):
+def handler_403(request, *args, **argv):
     response = render_to_response('403.html', {},
                                   context_instance=RequestContext(request))
     response.status_code = 403
@@ -34,7 +32,7 @@ def handling_403(request, *args, **argv):
 
 
 # 400 Handler
-def handling_400(request, *args, **argv):
+def handler_400(request, *args, **argv):
     response = render_to_response('400.html', {},
                                   context_instance=RequestContext(request))
     response.status_code = 400

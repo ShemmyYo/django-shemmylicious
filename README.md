@@ -1,8 +1,5 @@
 # Portfolio Project 4 - Full-Stack Toolkit
 
-<video src="README/p-hero-animation.mp4" controls="controls" style="max-width: 730px;">
-</video>
-
 <!-- [![Watch the video](README/shemmylicious-page.png)](README/p-hero-animation.mp4) -->
 
 ![Shemmylicious Sign](README/Shemmylicious-sign.png)
@@ -280,22 +277,100 @@ A few `COULD HAVE` user stories have been implemented before project due date i.
 
 ***
 ## Wireframes
-***
 
+I've used [Balsamiq](https://balsamiq.com/wireframes) to create my site wireframes.
 
-<details><summary>Desktop</summary>
+### Home Page Wireframes
 
-![1](/README/wireframes/)
-
-
+<details>
+<summary>Click to View Wireframes</summary>
+#### Mobile
+#### Tablet
+#### Desktop
 </details>
 
+### Recipes Page Wireframes
 
-500 Page
+<details>
+<summary>Click to View Wireframes</summary>
+#### Mobile
+#### Tablet
+#### Desktop
+</details>
 
-As a Developer I can implement a 500 error page so that I can alert users when an internal server error occurs
+### Category Page Wireframes
 
-A 500 error page has been displayed to alert users when an internal server error occurs. The message relays to users that the problem is on our end, not theirs.
+<details>
+<summary>Click to View Wireframes</summary>
+#### Mobile
+#### Tablet
+#### Desktop
+</details>
+
+### User Page Wireframes
+
+<details>
+<summary>Click to View Wireframes</summary>
+#### Mobile
+#### Tablet
+#### Desktop
+</details>
+
+### Sign Up Page Wireframes
+<details>
+<summary>Click to View Wireframes</summary>
+#### Mobile
+#### Tablet
+#### Desktop
+</details>
+
+### Sign In Page Wireframes
+<details>
+<summary>Click to View Wireframes</summary>
+#### Mobile
+#### Tablet
+#### Desktop
+</details>
+
+### User Profile Wireframes
+<details>
+<summary>Click to View Wireframes</summary>
+#### Mobile
+#### Tablet
+#### Desktop
+</details>
+
+### Create Recipe Wireframes
+<details>
+<summary>Click to View Wireframes</summary>
+#### Mobile
+#### Tablet
+#### Desktop
+</details>
+
+### Add Category Wireframes
+<details>
+<summary>Click to View Wireframes</summary>
+#### Mobile
+#### Tablet
+#### Desktop
+</details>
+
+### Search Page Wireframes
+<details>
+<summary>Click to View Wireframes</summary>
+#### Mobile
+#### Tablet
+#### Desktop
+</details>
+
+### Sign Out Page Wireframes
+<details>
+<summary>Click to View Wireframes</summary>
+#### Mobile
+#### Tablet
+#### Desktop
+</details>
 
 [Back to top &uarr;](#content)
 
@@ -347,8 +422,9 @@ A 500 error page has been displayed to alert users when an internal server error
 - [dj3-cloudinary-storage]() - Django package that facilitates integration with Cloudinary storage
 - [Django]() - Python package for the Django framework
 - [django-allauth]() - Django user authentication, registration and account management
-- [django-crispy-forms]() - - Django package that provides tags and filters to control the rendering behaviour of Django forms
-- [django-richtextfield]() - - Model field for rich text editing
+- [django-crispy-forms]() - Django package that provides tags and filters to control the rendering behaviour of Django forms
+- [django-richtextfield]() - Model field for rich text editing
+- [GSAP]() - 
 
 [Back to top &uarr;](#content)
 

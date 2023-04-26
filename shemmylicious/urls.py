@@ -2,6 +2,8 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from blog.views import handler404, handler500, handler403, handler400
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -19,7 +21,7 @@ admin.site.site_title = "Shemmylicious"
 admin.site.index_title = "Welcome to the Shemmylicious Page Admin area!"
 
 # Handlers
-handler404 = 'blog.views.handling_404'
-handler500 = 'blog.views.handling_500'
-handler403 = 'blog.views.handling_403'
-handler400 = 'blog.views.handling_400'
+handler404 = 'blog.views.handler_404'
+handler500 = 'blog.views.handler_500'
+handler403 = 'blog.views.handler_403'
+handler400 = 'blog.views.handler_400'
