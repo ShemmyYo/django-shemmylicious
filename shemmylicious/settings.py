@@ -15,8 +15,8 @@ import os
 import django_heroku
 import dj_database_url
 from django.contrib.messages import constants as messages
-from decouple import config
-import cloudinary_storage
+# from decouple import config
+# import cloudinary_storage
 if os.path.isfile("env.py"):
     import env
 
@@ -35,7 +35,8 @@ ACCOUNT_EMAIL_VERIFICATION = 'none'
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+# DEBUG = False
+DEBUG = os.environ.get('DEBUG', False)
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
@@ -51,10 +52,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.sites',
-    # 'allauth',
-    # 'allauth.account',
-    # 'allauth.socialaccount',
-    # 'allauth.socialaccount.providers.google',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
@@ -101,7 +102,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    # 'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'shemmylicious.urls'
@@ -192,4 +193,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 SUMMERNOTE_THEME = 'bs5'  # Show summernote with Bootstrap4
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
