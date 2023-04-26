@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404, reverse
-from django.http import HttpResponseRedirect, HttpResponse, ttpResponseNotFound
+from django.http import HttpResponseRedirect, HttpResponse, HttpResponseNotFound
 from django.contrib import messages
 from django.views.generic import ListView, DetailView
 from django.views import generic, View
@@ -17,8 +17,8 @@ def handler_404(request, exception, template_name='404.html'):
 
 
 # 500 Handler
-def handler_500(request, exception, template_name='500.html'):
-    response = render(request, template_name)
+def handler_500(request):
+    response = render(request, '500.html')
     response.status_code = 500
     return response
 
