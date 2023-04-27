@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.http import HttpResponseRedirect, HttpResponse, HttpResponseNotFound
 from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
 from django.views.generic import ListView, DetailView
 from django.views import generic, View
 from django.template import RequestContext
@@ -66,7 +67,7 @@ def RecipeSearch(request):
     if request.method == 'POST':
         searched = str(request.POST['searched']).capitalize()
         recipes = Recipe.objects.filter(recipe_title__contains=searched)
-        messages.success(request, f"The below are your results for: { searched }!")
+        success_message = f"The below are your results for: { searched }!"
         return render(
             request,
             'recipe_search.html',
