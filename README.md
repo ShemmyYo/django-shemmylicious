@@ -281,34 +281,42 @@ A few `COULD HAVE` user stories have been implemented before project due date i.
 I've used [Balsamiq](https://balsamiq.com/wireframes) to create my site wireframes.
 
 ### Home Page Wireframes
-
 <details>
 <summary>Click to View Wireframes</summary>
-#### Mobile
-#### Tablet
-#### Desktop
+
+![Home Page](README/wireframes/home.png)
 </details>
 
+
+***
 ### Recipes Page Wireframes
-
 <details>
 <summary>Click to View Wireframes</summary>
-#### Mobile
-#### Tablet
-#### Desktop
+
+![Recipes Page](README/wireframes/recipes.png)
 </details>
 
+
+***
 ### Category Page Wireframes
-
 <details>
 <summary>Click to View Wireframes</summary>
-#### Mobile
-#### Tablet
-#### Desktop
+
+![Category Page](README/wireframes/category.png)
 </details>
 
+
+***
+### Blog Page Wireframes
+<details>
+<summary>Click to View Wireframes</summary>
+
+![Blog](README/wireframes/blog.png)
+</details>
+
+
+***
 ### User Page Wireframes
-
 <details>
 <summary>Click to View Wireframes</summary>
 #### Mobile
@@ -316,6 +324,8 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to create my site wirefram
 #### Desktop
 </details>
 
+
+***
 ### Sign Up Page Wireframes
 <details>
 <summary>Click to View Wireframes</summary>
@@ -324,6 +334,8 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to create my site wirefram
 #### Desktop
 </details>
 
+
+***
 ### Sign In Page Wireframes
 <details>
 <summary>Click to View Wireframes</summary>
