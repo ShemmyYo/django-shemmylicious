@@ -33,6 +33,7 @@ class CategoryForm(forms.ModelForm):
                 }),
         }
 
+
 # Create a Recipe Form
 class AddRecipeForm(forms.ModelForm):
     class Meta:
@@ -61,13 +62,13 @@ class AddRecipeForm(forms.ModelForm):
             'recipe_ingridients': SummernoteWidget(attrs={
                 'summernote': {
                     'toolbar': [
-                        ['undo', ['undo',]],
-                        ['redo', ['redo',]],
-                        ['style', ['bold', 'italic', 'underline',]],
-                        ['font', ['strikethrough',]],
-                        ['fontsize', ['fontsize',]],
-                        ['color', ['color']],
-                        ['para', ['ul', 'ol', 'paragraph']],
+                        ['undo', ['undo', ]],
+                        ['redo', ['redo', ]],
+                        ['style', ['bold', 'italic', 'underline', ]],
+                        ['font', ['strikethrough', ]],
+                        ['fontsize', ['fontsize', ]],
+                        ['color', ['color', ]],
+                        ['para', ['ul', 'ol', 'paragraph', ]],
                         ],
                     'width': '100%',
                     'height': '300px',
@@ -77,13 +78,13 @@ class AddRecipeForm(forms.ModelForm):
             'recipe_instructions': SummernoteWidget(attrs={
                 'summernote': {
                     'toolbar': [
-                        ['undo', ['undo',]],
-                        ['redo', ['redo',]],
-                        ['style', ['bold', 'italic', 'underline',]],
-                        ['font', ['strikethrough',]],
-                        ['fontsize', ['fontsize',]],
-                        ['color', ['color']],
-                        ['para', ['ul', 'ol', 'paragraph']],
+                        ['undo', ['undo', ]],
+                        ['redo', ['redo', ]],
+                        ['style', ['bold', 'italic', 'underline', ]],
+                        ['font', ['strikethrough', ]],
+                        ['fontsize', ['fontsize', ]],
+                        ['color', ['color', ]],
+                        ['para', ['ul', 'ol', 'paragraph', ]],
                         ],
                     'width': '100%',
                     'height': '300px',
@@ -92,7 +93,8 @@ class AddRecipeForm(forms.ModelForm):
                 }),
             'excerpt': forms.TextInput(attrs={
                 'class': 'form-control, mb-3',
-                'placeholder': 'Additional info info (e.g. nutrition facts etc.) as required go here...'
+                'placeholder': 'Additional info info \
+                    (e.g. nutrition facts etc.) as required go here...'
                 }),
             'author': forms.Select(attrs={'class': 'form-select, mb-3'}),
             'featured_image': forms.FileInput(attrs={
@@ -115,7 +117,7 @@ class UpdateRecipeForm(forms.ModelForm):
             'excerpt',
             'featured_image',
             )
-        
+
         widgets = {
             'recipe_title': forms.TextInput(attrs={
                 'class': 'form-control, mb-3',
@@ -130,13 +132,13 @@ class UpdateRecipeForm(forms.ModelForm):
             'recipe_ingridients': SummernoteWidget(attrs={
                 'summernote': {
                     'toolbar': [
-                        ['undo', ['undo',]],
-                        ['redo', ['redo',]],
-                        ['style', ['bold', 'italic', 'underline',]],
-                        ['font', ['strikethrough',]],
-                        ['fontsize', ['fontsize',]],
-                        ['color', ['color']],
-                        ['para', ['ul', 'ol', 'paragraph']],
+                        ['undo', ['undo', ]],
+                        ['redo', ['redo', ]],
+                        ['style', ['bold', 'italic', 'underline', ]],
+                        ['font', ['strikethrough', ]],
+                        ['fontsize', ['fontsize', ]],
+                        ['color', ['color', ]],
+                        ['para', ['ul', 'ol', 'paragraph', ]],
                         ],
                     'width': '100%',
                     'height': '300px',
@@ -146,13 +148,13 @@ class UpdateRecipeForm(forms.ModelForm):
             'recipe_instructions': SummernoteWidget(attrs={
                 'summernote': {
                     'toolbar': [
-                        ['undo', ['undo',]],
-                        ['redo', ['redo',]],
-                        ['style', ['bold', 'italic', 'underline',]],
-                        ['font', ['strikethrough',]],
-                        ['fontsize', ['fontsize',]],
-                        ['color', ['color']],
-                        ['para', ['ul', 'ol', 'paragraph']],
+                        ['undo', ['undo', ]],
+                        ['redo', ['redo', ]],
+                        ['style', ['bold', 'italic', 'underline', ]],
+                        ['font', ['strikethrough', ]],
+                        ['fontsize', ['fontsize', ]],
+                        ['color', ['color', ]],
+                        ['para', ['ul', 'ol', 'paragraph', ]],
                         ],
                     'width': '100%',
                     'height': '300px',
@@ -161,7 +163,8 @@ class UpdateRecipeForm(forms.ModelForm):
                 }),
             'excerpt': forms.TextInput(attrs={
                 'class': 'form-control, mb-3',
-                'placeholder': 'Additional info info (e.g. nutrition facts etc.) as required go here...'
+                'placeholder': 'Additional info info \
+                    (e.g. nutrition facts etc.) as required go here...'
                 }),
             'author': forms.Select(attrs={'class': 'form-select, mb-3'}),
             'featured_image': forms.FileInput(attrs={
