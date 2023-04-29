@@ -10,7 +10,7 @@
 <!-- Hero section with JS Animations -->
 <section class="sections-index"  id="section-hero">
   <div class="container hero">
-    <img src="{% static '/images/welcome-hero2.jpg' %}" id="food-img" alt="Welcome hero picture">
+    <img src="{% static 'images/welcome-hero2.jpg' %}" id="food-img" alt="Welcome hero picture">
     <div class="headline">
       <h1>Cooking Time Is <br> My Favorite Time <i class="far fa-heart"></i></h1>
       <a class="navbar-brand" href="{% url 'recipes' %}">
@@ -56,7 +56,7 @@
       <div class="inner-text col-12 col-md-4 offset-md-7">
         <div class="row">
           <div>
-            <img src="{% static '/images/welcome-hero-author-head.jpg' %}" alt="round picture of a Chef"
+            <img src="{% static 'images/welcome-hero-author-head.jpg' %}" alt="round picture of a Chef"
               id="hero-about-chef-img">
             <h1 class="hero-about-chef-title">Hi, my name is Shemmy!</h1>
           </div>
@@ -77,7 +77,7 @@
     <div id="carouselExampleInterval" class="carousel slide col-12 col-md-6 offset-md-1" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active" data-bs-interval="10000">
-          <img src="{% static '/images/welcome-hero-author.jpg' %}" class="d-block w-100" alt="carousel random image">
+          <img src="{% static 'images/welcome-hero-author.jpg' %}" class="d-block w-100" alt="carousel random image">
         </div>
         {% for slide in slider %}
         <!-- Slides -->

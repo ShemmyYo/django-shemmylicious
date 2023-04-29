@@ -1,8 +1,9 @@
-from django.shortcuts import render, redirect, get_object_or_404, reverse
+from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, reverse
 from django.http import HttpResponseRedirect, HttpResponse, HttpResponseNotFound
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView
 from django.views import generic, View
 from django.template import RequestContext
 from .models import Recipe, Category, Comment

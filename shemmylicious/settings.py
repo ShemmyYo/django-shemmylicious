@@ -17,6 +17,7 @@ import dj_database_url
 from django.contrib.messages import constants as messages
 # from decouple import config
 # import cloudinary_storage
+
 if os.path.isfile("env.py"):
     import env
 
@@ -57,8 +58,8 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
-    'cloudinary_storage',
     'django.contrib.staticfiles',
+    # 'cloudinary_storage',
     'cloudinary',
     'django_summernote',
     'crispy_forms',
@@ -192,6 +193,6 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-SUMMERNOTE_THEME = 'bs5'  # Show summernote with Bootstrap4
+SUMMERNOTE_THEME = 'bs4'  # Show summernote with Bootstrap4
 
 # django_heroku.settings(locals())
