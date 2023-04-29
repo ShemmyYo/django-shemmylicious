@@ -315,6 +315,16 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to create my site wirefram
 </details>
 
 
+
+***
+### User Recipes Page Wireframes
+<details>
+<summary>Click to View Wireframes</summary>
+
+![User Recipes](README/wireframes/my-recipes.png)
+</details>
+
+
 ***
 ### Category Page Wireframes
 <details>
@@ -347,33 +357,29 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to create my site wirefram
 <details>
 <summary>Click to View Wireframes</summary>
 
-
+![Profile Settings](README/wireframes/profile-settings.png)
 </details>
 
+
+***
 ### Create Recipe Wireframes
 <details>
 <summary>Click to View Wireframes</summary>
-#### Mobile
-#### Tablet
-#### Desktop
+
+![Add Recipe](README/wireframes/add-recipe.png)
 </details>
 
+
+***
 ### Add Category Wireframes
 <details>
 <summary>Click to View Wireframes</summary>
-#### Mobile
-#### Tablet
-#### Desktop
+
+![Add Category](README/wireframes/add-category.png)
 </details>
 
-### Search Page Wireframes
-<details>
-<summary>Click to View Wireframes</summary>
-#### Mobile
-#### Tablet
-#### Desktop
-</details>
 
+***
 ### Sign Out Page Wireframes
 <details>
 <summary>Click to View Wireframes</summary>
