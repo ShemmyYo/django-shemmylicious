@@ -289,6 +289,24 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to create my site wirefram
 
 
 ***
+### Sign Up Page Wireframes
+<details>
+<summary>Click to View Wireframes</summary>
+
+![Signup Page](README/wireframes/signup.png)
+</details>
+
+
+***
+### Login Page Wireframes
+<details>
+<summary>Click to View Wireframes</summary>
+
+![Login](README/wireframes/login.png)
+</details>
+
+
+***
 ### Recipes Page Wireframes
 <details>
 <summary>Click to View Wireframes</summary>
@@ -319,37 +337,17 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to create my site wirefram
 ### User Page Wireframes
 <details>
 <summary>Click to View Wireframes</summary>
-#### Mobile
-#### Tablet
-#### Desktop
+
+![Profile Page](README/wireframes/profile.png)
 </details>
 
 
 ***
-### Sign Up Page Wireframes
-<details>
-<summary>Click to View Wireframes</summary>
-#### Mobile
-#### Tablet
-#### Desktop
-</details>
-
-
-***
-### Sign In Page Wireframes
-<details>
-<summary>Click to View Wireframes</summary>
-#### Mobile
-#### Tablet
-#### Desktop
-</details>
-
 ### User Profile Wireframes
 <details>
 <summary>Click to View Wireframes</summary>
-#### Mobile
-#### Tablet
-#### Desktop
+
+
 </details>
 
 ### Create Recipe Wireframes
@@ -379,9 +377,8 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to create my site wirefram
 ### Sign Out Page Wireframes
 <details>
 <summary>Click to View Wireframes</summary>
-#### Mobile
-#### Tablet
-#### Desktop
+
+![Logout Page](README/wireframes/logout.png)
 </details>
 
 [Back to top &uarr;](#content)
