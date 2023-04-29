@@ -60,6 +60,15 @@ class AddRecipeForm(forms.ModelForm):
                 }),
             'recipe_ingridients': SummernoteWidget(attrs={
                 'summernote': {
+                    'toolbar': [
+                        ['undo', ['undo',]],
+                        ['redo', ['redo',]],
+                        ['style', ['bold', 'italic', 'underline',]],
+                        ['font', ['strikethrough',]],
+                        ['fontsize', ['fontsize',]],
+                        ['color', ['color']],
+                        ['para', ['ul', 'ol', 'paragraph']],
+                        ],
                     'width': '100%',
                     'height': '300px',
                     'placeholder': 'Type in ingridients here...'
@@ -67,6 +76,15 @@ class AddRecipeForm(forms.ModelForm):
                 }),
             'recipe_instructions': SummernoteWidget(attrs={
                 'summernote': {
+                    'toolbar': [
+                        ['undo', ['undo',]],
+                        ['redo', ['redo',]],
+                        ['style', ['bold', 'italic', 'underline',]],
+                        ['font', ['strikethrough',]],
+                        ['fontsize', ['fontsize',]],
+                        ['color', ['color']],
+                        ['para', ['ul', 'ol', 'paragraph']],
+                        ],
                     'width': '100%',
                     'height': '300px',
                     'placeholder': 'Provide instructions here...'
@@ -111,6 +129,15 @@ class UpdateRecipeForm(forms.ModelForm):
                 }),
             'recipe_ingridients': SummernoteWidget(attrs={
                 'summernote': {
+                    'toolbar': [
+                        ['undo', ['undo',]],
+                        ['redo', ['redo',]],
+                        ['style', ['bold', 'italic', 'underline',]],
+                        ['font', ['strikethrough',]],
+                        ['fontsize', ['fontsize',]],
+                        ['color', ['color']],
+                        ['para', ['ul', 'ol', 'paragraph']],
+                        ],
                     'width': '100%',
                     'height': '300px',
                     'placeholder': 'Type in ingridients here...'
@@ -118,6 +145,15 @@ class UpdateRecipeForm(forms.ModelForm):
                 }),
             'recipe_instructions': SummernoteWidget(attrs={
                 'summernote': {
+                    'toolbar': [
+                        ['undo', ['undo',]],
+                        ['redo', ['redo',]],
+                        ['style', ['bold', 'italic', 'underline',]],
+                        ['font', ['strikethrough',]],
+                        ['fontsize', ['fontsize',]],
+                        ['color', ['color']],
+                        ['para', ['ul', 'ol', 'paragraph']],
+                        ],
                     'width': '100%',
                     'height': '300px',
                     'placeholder': 'Provide instructions here...'
