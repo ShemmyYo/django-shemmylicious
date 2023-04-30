@@ -478,7 +478,12 @@ Users that have registered and logged in will be met with a similar layout but t
 <details>
 <summary>Click to View Features</summary>
 
-![Animation](README/features/p-hero-animation.mp4)
+<video width="320" height="240" controls>
+  <source src="README/features/p-hero-animation.mp4" type="video/mp4" loop>
+  <source src="movie.ogg" type="video/ogg">
+  Your browser does not support the video tag.
+</video>
+
 ![Home](README/features/p-welcome.png)
 ![About](README/features/p-about.png)
 </details>
@@ -496,8 +501,7 @@ If results are not found, the User is shown a message and link to create their r
 <summary>Click to View Features</summary>
 
 ![Search](README/features/p-search.png)
-
-search no-results pic TBC
+![Search No Results](README/features/p-search-no-results.png)
 </details>
 
 
@@ -595,8 +599,8 @@ Users can visit the recipe owner profile page at the click of an Author banner.
 <summary>Click to View Features</summary>
 
 ![Blog View ](README/features/p-blog.png)
-BLOG DETAIL VIEW TBA
-
+![Blog Detail View 1](README/features/p-blog-detail-1.png)
+![Blog Detail View 2](README/features/p-blog-detail-2.png)
 </details>
 
 Future blog functionality could let the comment owner edit or delete their comment.
@@ -610,7 +614,7 @@ __Error Pages__
 - 404 Page not found
 A 404 page has been implemented and will display if a user navigates to a broken link.
 
-404 pic
+![Error 404](README/features/404.png)
 
 - 403 Action Forbidden
 A 403 error page has been implemented to provide feedback to the user when they try to access unauthorized content. 
@@ -618,7 +622,7 @@ A 403 error page has been implemented to provide feedback to the user when they 
 - 500 Internal Server Error
 A 500 error page has been displayed to alert users when an internal server error occurs. 
 
-500 pic
+![Error 500](README/features/500.png)
 
 [Back to top &uarr;](#content)
 
