@@ -560,7 +560,7 @@ If a given category has no recipes in the database, the User is shown an appropr
 <summary>Click to View Features</summary>
 
 ![Category View](README/features/p-category.png)
-CATEGORY LIST TBA
+![Category List](README/features/p-category-list.png)
 ![Category No Results](README/features/p-category-empty.png)
 </details>
 
@@ -577,7 +577,7 @@ Only Superusers can access this functionality. Functionality is available from t
 <details>
 <summary>Click to View Features</summary>
 
-category pic TBA
+![Category Add](README/features/p-category-add.png)
 </details>
 
 
