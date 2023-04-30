@@ -411,8 +411,8 @@ It is easily noticeable, intuitive, and easy to use.
 <details>
 <summary>Click to View Features</summary>
 
-![authenticated](README/features/nav-after-user-login.png)
 ![not authenticated](README/features/nav-before-user-login.png)
+![authenticated](README/features/nav-after-user-login.png)
 ***
 ![Menu User](README/features/menu-user.png)
 ![Menu Admin](README/features/menu-admin.png)
@@ -438,6 +438,7 @@ All links open new tabs.
 __User (AllAuth) & User Profile__ 
 
 `USER STORY` As a User, I want to be able to signup/login/logout securely so that I can view/edit my profile `COULD HAVE`
+
 `USER Story` As a User, I would like to access my profile so that I can upload an image or alter my bio, social media links etc. `SHOULD HAVE`
 
 The User & Profile model is linked directly to the built-in UserModel in conjunction with Djano Allauth with the user Profile setup to be created upon user registration.
@@ -494,7 +495,7 @@ If results are not found, the User is shown a message and link to create their r
 <details>
 <summary>Click to View Features</summary>
 
-[Search](README/features/p-search.png)
+![Search](README/features/p-search.png)
 
 search no-results pic TBC
 </details>
@@ -555,6 +556,7 @@ If a given category has no recipes in the database, the User is shown an appropr
 <summary>Click to View Features</summary>
 
 ![Category View](README/features/p-category.png)
+CATEGORY LIST TBA
 ![Category No Results](README/features/p-category-empty.png)
 </details>
 
@@ -571,14 +573,16 @@ Only Superusers can access this functionality. Functionality is available from t
 <details>
 <summary>Click to View Features</summary>
 
-category pic
+category pic TBA
 </details>
 
 
 __Blog__
 
 `USER STORY` As a User, I want the ability to like or comment on recipes so that I can share my thoughts and feel included in the community `MUST HAVE`
+
 `USER STORY` As a User, I want the ability to view all comments for the recipe so that I can see what my fellow commenters think of a recipe `MUST HAVE`
+
 `USER STORY` As a User, I would like the full CRUD functionality to create, delete, view and edit my comment so that I can fix any spelling or format issues `MUST HAVE`
 
 In this view, the User is presented with a simplified recipe view which does not include recipe ingredients or instructions.
@@ -591,12 +595,16 @@ Users can visit the recipe owner profile page at the click of an Author banner.
 <summary>Click to View Features</summary>
 
 ![Blog View ](README/features/p-blog.png)
+BLOG DETAIL VIEW TBA
+
 </details>
 
 Future blog functionality could let the comment owner edit or delete their comment.
 Future comment functionality could let the user go to the commenter's profile page at the click of a comment owner user name.
 
+[Back to top &uarr;](#content)
 
+***
 __Error Pages__
 
 - 404 Page not found
@@ -612,7 +620,9 @@ A 500 error page has been displayed to alert users when an internal server error
 
 500 pic
 
+[Back to top &uarr;](#content)
 
+***
 ### Future Features
 
 User Profile View:
