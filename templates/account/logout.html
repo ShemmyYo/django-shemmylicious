@@ -8,20 +8,31 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4 mt-3 offset-md-4">
+            <br>
+            <br>
             <h3>{% trans "Sign Out" %}</h3>
-
-            <p>{% trans 'Are you sure you want to sign out?' %}</p>
+            <br>
+            <br>
+            <center>
+                <img src="{{ user.profile.profile_pic.url }}" 
+                    alt="Profile Picture" width="200px" height="200px" class="rounded-circle shadow">
+                <br>
+                <br>
+                <p><strong>{{ user }}</strong>, {% trans 'are you sure you want to sign out?' %}</p>
+            </center>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-4  mt-3 offset-md-4">
+        <div class="col-md-4 mt-3 offset-md-4">
 
             <form method="post" action="{% url 'account_logout' %}">
                 {% csrf_token %}
                 {% if redirect_field_value %}
                 <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                 {% endif %}
-                <button class="btn btn-signup right" type="submit">{% trans 'Sign Out' %}</button>
+                <button class="btn btn-outline-success col-12 mb-5" type="submit">{% trans 'Sign Out' %}</button>
+                <a href="{% url 'blog' %}" class="btn btn-outline-success col-12 mb-2">Back to Blog</a>
+                <a href="{% url 'recipes' %}" class="btn btn-outline-success col-12 mb-2">Back to Recipes</a>
             </form>
         </div>
     </div>

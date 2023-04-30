@@ -278,7 +278,7 @@ A few `COULD HAVE` user stories have been implemented before project due date i.
 ***
 ## Wireframes
 
-I've used [Balsamiq](https://balsamiq.com/wireframes) to create my site wireframes.
+I've used [Balsamiq](https://balsamiq.com/wireframes) to create my page wireframes.
 
 ### Home Page Wireframes
 <details>
@@ -387,6 +387,8 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to create my site wirefram
 ![Logout Page](README/wireframes/logout.png)
 </details>
 
+
+
 [Back to top &uarr;](#content)
 
 ***
@@ -396,6 +398,7 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to create my site wirefram
 ### Existing Features
 
 ### Future Features
+
 
 
 [Back to top &uarr;](#content)
