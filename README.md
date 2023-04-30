@@ -393,15 +393,247 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to create my page wirefram
 
 ***
 ## Features
-***
 
 ### Existing Features
 
+__Features__
+`USER STORY` As a User, I want to view the page on my different devices - responsive layout, so it is viewable on a number of devices `MUST HAVE`
+
+__Navbar__
+
+`USER STORY` As a User I want to be able to navigate the page clearly so that I can find the information relative to my needs
+
+The Navbar contains links for Home, Recipes, Categories, Blog and User dropdown containing User Profile and allauth options as well as the search bar.
+The navigation menu is displayed on all pages and drops down into a hamburger menu on smaller devices. 
+This will allow users to view the site from any device and not take up too much space on mobile devices. 
+It is easily noticeable, intuitive, and easy to use.
+
+<details>
+<summary>Click to View Features</summary>
+
+![authenticated](README/features/nav-after-user-login.png)
+![not authenticated](README/features/nav-before-user-login.png)
+***
+![Menu User](README/features/menu-user.png)
+![Menu Admin](README/features/menu-admin.png)
+</details>
+
+
+__Footer__
+
+`USER STORY` As a User I want to be able to see links containing social links to the developer so that I can enquire about issues/suggestions I may have.
+
+The footer is placed at the bottom of the page. The social media links are displayed with icons provided by Font Awesome. 
+A link to the developer's Github repository is provided and displayed. 
+These icons have aria labels added to ensure users with assistive screen reading technology know the purpose of the links. 
+All links open new tabs.
+
+<details>
+<summary>Click to View Features</summary>
+
+![Footer](README/features/footer.png)
+</details>
+
+
+__User (AllAuth) & User Profile__ 
+
+`USER STORY` As a User, I want to be able to signup/login/logout securely so that I can view/edit my profile `COULD HAVE`
+`USER Story` As a User, I would like to access my profile so that I can upload an image or alter my bio, social media links etc. `SHOULD HAVE`
+
+The User & Profile model is linked directly to the built-in UserModel in conjunction with Djano Allauth with the user Profile setup to be created upon user registration.
+
+Profile features are only available to registered users.
+
+When a user signs up to the site a Profile will also be created for them. They can access their Profile page from the User Navbar link. On the Profile page, the user can add/change information like their username, first name, surname, bio, social links and more. 
+Users can also upload their Profile image and if they do not want to a default image is provided. 
+
+<details>
+<summary>Click to View Features</summary>
+
+![Profile](README/features/p-profile.png)
+![Profile setting](README/features/p-profile-settings.png)
+![Profile settings password](README/features/p-profile-settings-password.png)
+![Profile Bio](README/features/p-profile-bio.png)
+***
+![Signup](README/features/aa-signup.png)
+![Login](README/features/aa-login.png)
+![Log out](README/features/aa-logout.png)
+</details>
+
+Future features include the possibility to manage their favourite recipes/users.
+Future features may include SSO login so that Users can log in quicker and more securely.
+
+
+__Homepage__
+
+`USER STORY` As a User I want to be presented with an index page containing enticing hero animation and a clear message as well as about me section.
+
+There are two variations of the Home page which change based on whether the User is or is not authenticated.
+Users that have not signed up will be met with a welcome message, javascript animation and some information about the site author.
+Users will also be shown a Sign-Up or Login button.
+
+Users that have registered and logged in will be met with a similar layout but this time navbar will show links to Recipes, Categories, Blog & User Options.
+
+<details>
+<summary>Click to View Features</summary>
+
+![Animation](README/features/p-hero-animation.mp4)
+![Home](README/features/p-welcome.png)
+![About](README/features/p-about.png)
+</details>
+
+
+__Recipe Search__
+
+`USER STORY` As a user I want to be able to search recipes so that filter exactly what I'm looking for `SHOULD HAVE`
+
+The Recipe Search results page has a similar layout to the Blog page and provides an option to search the database for required keywords.
+I have included .uppercase functionality to search to ensure the User gets the correct results regardless of whether they typed in the keyword starting with upper or lower case.
+If results are not found, the User is shown a message and link to create their recipe.  
+
+<details>
+<summary>Click to View Features</summary>
+
+[Search](README/features/p-search.png)
+
+search no-results pic TBC
+</details>
+
+
+__Recipes__
+
+`USER STORY` As a User, I want to view the recipe list and be able to view its details so that I can read the ingredients, instructions etc. `MUST HAVE`
+ 
+Only registered users can access this page.
+
+To display Recipes registered in the database, a layout of boostrap cards is used. 
+Users can either click on the title and display Recipe Details page or click the Author (brings the user to Author's Profile) or Category link (brings the User to Category page showing all recipes in this category). Users are also presented with information on the number of likes and comments for each recipe.
+
+The Recipe Details page contains the following recipe selected by the user:
+Recipe title, image, featured comment, ingredients, cooking instructions, additional info (e.g.: servings), link to Autor's page, number of likes, number of comments as well as comments list (including commenter's name, profile picture and date added) and a form to add a comment. 
+Users are provided with functionality to like or unlike the recipe as well as submit their comment (which is moderated and approved by Admin). 
+Superusers can also delete comments in this view.
+
+<details>
+<summary>Click to View Features</summary>
+
+![Recipe List](README/features/p-recipes.png)
+![Recipe Details](README/features/p-my-recipes-view-1.png)
+![Recipe Details](README/features/p-my-recipes-view-2.png)
+</details>
+
+Future recipe functionality may include an additional "Add to Favorites" button so that the User can view a list of their favourite Recipes. 
+Future comment functionality may include "Reply" and "Flag" buttons in the comments section so that the user can reply to a comment or flag it as inappropriate.
+
+
+__User Recipes__
+
+`USER STORY` As a User, I want to view my recipes listed on my page so that I can view, create new, and edit recipe details (e.g.ingredients, instructions etc.) or delete my recipe `MUST HAVE`
+
+To display My Recipes registered in the database (link available from User menu), a horizontal layout of boostrap cards is used. 
+User can manage their recipes from here where they click one of four options: View, Add New, Update or Delete.
+Additionally, the Delete functionality is secured by the bootstrap modal to confirm that the chosen recipe is to be deleted permanently.
+
+<details>
+<summary>Click to View Features</summary>
+
+![My Recipes](README/features/p-my-recipes.png)
+![My Recipe Update](README/features/p-my-recipes-update-1.png)
+![My Recipe Delete](README/features/p-my-recipes-delete.png)
+</details>
+
+
+__Categories__
+
+`USER STORY` As a User, I want to be able to view the recipes by category so that I can easily find what I'm interested in `SHOULD HAVE`
+
+The user has been provided with the functionality to view recipes by category. 
+Categories are randomly generated by the system and shown grouped in the top four followed by additional (up to 6) categories listed below.
+If a given category has no recipes in the database, the User is shown an appropriate message and provided with a button to add their recipe to this category. 
+
+<details>
+<summary>Click to View Features</summary>
+
+![Category View](README/features/p-category.png)
+![Category No Results](README/features/p-category-empty.png)
+</details>
+
+Future functionality could consider top ranking rather than random selection.
+Future functionality could let Users suggest new categories to be reviewed by Admin.
+
+__Add Category__
+
+`USER STORY` As a Superuser I want to be able to add category so that the User can categorise their recipes accordingly `SHOULD HAVE`
+
+Add category functionality has been provided to Superusers so that they can manage the content effectively. 
+Only Superusers can access this functionality. Functionality is available from the User menu.
+
+<details>
+<summary>Click to View Features</summary>
+
+category pic
+</details>
+
+
+__Blog__
+
+`USER STORY` As a User, I want the ability to like or comment on recipes so that I can share my thoughts and feel included in the community `MUST HAVE`
+`USER STORY` As a User, I want the ability to view all comments for the recipe so that I can see what my fellow commenters think of a recipe `MUST HAVE`
+`USER STORY` As a User, I would like the full CRUD functionality to create, delete, view and edit my comment so that I can fix any spelling or format issues `MUST HAVE`
+
+In this view, the User is presented with a simplified recipe view which does not include recipe ingredients or instructions.
+This view has been created to give the community a tool to comment and share their passion for food.  
+Users are provided with functionality to like or unlike the blog as well as submit their comment (which is moderated and approved by Admin). 
+Both comment title and body are required fields.
+Users can visit the recipe owner profile page at the click of an Author banner.
+
+<details>
+<summary>Click to View Features</summary>
+
+![Blog View ](README/features/p-blog.png)
+</details>
+
+Future blog functionality could let the comment owner edit or delete their comment.
+Future comment functionality could let the user go to the commenter's profile page at the click of a comment owner user name.
+
+
+__Error Pages__
+
+- 404 Page not found
+A 404 page has been implemented and will display if a user navigates to a broken link.
+
+404 pic
+
+- 403 Action Forbidden
+A 403 error page has been implemented to provide feedback to the user when they try to access unauthorized content. 
+
+- 500 Internal Server Error
+A 500 error page has been displayed to alert users when an internal server error occurs. 
+
+500 pic
+
+
 ### Future Features
 
+User Profile View:
+- Future features may include SSO login so that Users can log in quicker and more securely.
+- Future features to include the possibility to manage their favourite recipes/users.
 
+Recipe View:
+- Future recipe functionality may include an additional "Add to Favorites" button so that the User can view a list of their favourite Recipes. 
+- Future comment functionality may include "Reply" and "Flag" buttons in the comments section so that the user can reply to a comment or flag it as inappropriate.
+
+Category View: 
+- Future category view functionality could consider top ranking rather than random selection.
+- Future category view functionality could let the User suggest new categories to be reviewed by Admin.
+
+Blog View:
+- Future blog functionality could let the comment owner edit or delete their comment.
+- Future comment functionality could let the User go to the commenter's profile page at the click of a comment owner user name.
 
 [Back to top &uarr;](#content)
+
+***
 
 ## Tools & technologies used
 
