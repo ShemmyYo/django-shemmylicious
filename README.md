@@ -1,7 +1,5 @@
 # Portfolio Project 4 - Full-Stack Toolkit
 
-<!-- [![Watch the video](README/shemmylicious-page.png)](README/p-hero-animation.mp4) -->
-
 ![Shemmylicious Sign](README/Shemmylicious-sign.png)
 ## __Inspiring yet simple food recipes for delicious, everyday cooking__
 Finding the right recipe is more difficult than ever. That's why we've made it simple.
@@ -39,7 +37,7 @@ You can view the live, deployed to Heroku application here: <a href ='https://sh
 
 # Contents
 
-- [Overview](#shemmylicious-logo)
+- [Overview](#portfolio-project-4---full-stack-toolkit)
 - [Project Goal](#project-goal)
 - [UX User Experience](#ux-user-experiance)
     - [Design](#design)
@@ -86,7 +84,7 @@ In this project I will present my ability to:
 
 - set up an authentication mechanism and provide role-based access to the site's data or other activities based on the dataset.
 
-[Back to top &uarr;](#content)
+[Back to top &uarr;](#contents)
 
 ***
 
@@ -115,7 +113,7 @@ I used <img height="14" src="README/colormind-logo.png"> [Colormind](http://colo
 
 ![Colormind](README/colormind.png)
 
-[Back to top &uarr;](#content)
+[Back to top &uarr;](#contents)
 
 ### Typography
 ***
@@ -137,7 +135,7 @@ root {
 }
 ```
 
-[Back to top &uarr;](#content)
+[Back to top &uarr;](#contents)
 
 ### Imaginary
 ***
@@ -148,7 +146,7 @@ same logo has then been used to create [Favicon](https://favicon.io/) icons.
 
 <img height="150" src="README/shemmylicious-dareker.png">
 
-[Back to top &uarr;](#content)
+[Back to top &uarr;](#contents)
 
 ***
 ## Agile 
@@ -173,7 +171,7 @@ A women aged 25 to 34 are our biggest recipe-browsing demographic group. But tha
 - Knowledge-Seeking: They may be interested in learning more about different types of cuisine, cooking techniques, and food history.
 - Community-Oriented: They may be interested in connecting with other food enthusiasts and bloggers, and may participate in online forums or groups related to food and cooking.
 
-[Back to top &uarr;](#content)
+[Back to top &uarr;](#contents)
 
 ***
 ### Epics & Admin/User Stories
@@ -252,7 +250,7 @@ __EPIC: [Complete Documentation](https://github.com/ShemmyYo/django-shemmyliciou
 - ADMIN STORY: Create/Write README.md
 - ADMIN STORY: Create/Write TESTING.md
 
-[Back to top &uarr;](#content)
+[Back to top &uarr;](#contents)
 
 ***
 ### MoSCoW Prioritization
@@ -273,7 +271,7 @@ To ensure that all core requirements were completed I worked on the 'MUST HAVE' 
 
 A few `COULD HAVE` user stories have been implemented before project due date i.e. ...
 
-[Back to top &uarr;](#content)
+[Back to top &uarr;](#contents)
 
 ***
 ## Wireframes
@@ -389,7 +387,7 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to create my page wirefram
 
 
 
-[Back to top &uarr;](#content)
+[Back to top &uarr;](#contents)
 
 ***
 ## Features
@@ -606,7 +604,7 @@ Users can visit the recipe owner profile page at the click of an Author banner.
 Future blog functionality could let the comment owner edit or delete their comment.
 Future comment functionality could let the user go to the commenter's profile page at the click of a comment owner user name.
 
-[Back to top &uarr;](#content)
+[Back to top &uarr;](#contents)
 
 ***
 __Error Pages__
@@ -624,7 +622,7 @@ A 500 error page has been displayed to alert users when an internal server error
 
 ![Error 500](README/features/500.png)
 
-[Back to top &uarr;](#content)
+[Back to top &uarr;](#contents)
 
 ***
 ### Future Features
@@ -645,7 +643,7 @@ Blog View:
 - Future blog functionality could let the comment owner edit or delete their comment.
 - Future comment functionality could let the User go to the commenter's profile page at the click of a comment owner user name.
 
-[Back to top &uarr;](#content)
+[Back to top &uarr;](#contents)
 
 ***
 
@@ -690,7 +688,7 @@ Blog View:
 - [django-richtextfield]() - Model field for rich text editing
 - [GSAP]() - 
 
-[Back to top &uarr;](#content)
+[Back to top &uarr;](#contents)
 
 ### Data Model
 
@@ -710,7 +708,7 @@ Blog View:
 
 
 
-[Back to top &uarr;](#content)
+[Back to top &uarr;](#contents)
 
 ## Testing
 
@@ -723,7 +721,7 @@ For all testing, please refer to the [TESTING.md](TESTING.md) file.
 After publishing to Heroku, the site was tested on Google Chrome, Microsoft Edge, Safari and Mozilla Firefox, with no visible issues for the user. 
 The site has loaded perfectly and had no issues across all browsers.
 
-[Back to top &uarr;](#content)
+[Back to top &uarr;](#contents)
 
 ***
 ## Deployment
@@ -743,7 +741,7 @@ To obtain your own Postgres Database, sign-up with your GitHub account, then fol
 - Select the **Region** and **Data Center** closest to you.
 - Once created, click on the new database name, where you can view the database URL and Password.
 
-[Back to top &uarr;](#content)
+[Back to top &uarr;](#contents)
 
 ***
 ### Cloudinary API
@@ -756,7 +754,7 @@ To obtain your own Cloudinary API key, create an account and log in.
 - On your Cloudinary Dashboard, you can copy your **API Environment Variable**.
 - Be sure to remove the `CLOUDINARY_URL=` as part of the API **value**; this is the **key**.
 
-[Back to top &uarr;](#content)
+[Back to top &uarr;](#contents)
 
 ***
 ### Heroku Deployment
@@ -807,7 +805,7 @@ Or:
 
 The project should now be connected and deployed to Heroku!
 
-[Back to top &uarr;](#content)
+[Back to top &uarr;](#contents)
 
 ***
 ### Local Deployment
@@ -842,7 +840,7 @@ Once the project is cloned or forked, in order to run it locally, you'll need to
 - Load fixtures (if applicable): `python3 manage.py loaddata file-name.json` (repeat for each file)
 - Everything should be ready now, so run the Django app again: `python3 manage.py runserver`
 
-[Back to top &uarr;](#content)
+[Back to top &uarr;](#contents)
 
 ***
 #### Cloning
@@ -865,7 +863,7 @@ Alternatively, if using Gitpod, you can click below to create your own workspace
 Please note that in order to directly open the project in Gitpod, you need to have the browser extension installed.
 A tutorial on how to do that can be found [here](https://www.gitpod.io/docs/configure/user-settings/browser-extension).
 
-[Back to top &uarr;](#content)
+[Back to top &uarr;](#contents)
 
 ***
 #### Forking
@@ -878,7 +876,7 @@ To make a copy or ‘fork’ the repository -
 
 Alternatively, if using Gitpod, you can click below to create your workspace using this repository
 
-[Back to top &uarr;](#content)
+[Back to top &uarr;](#contents)
 
 ***
 ## Credits
@@ -898,7 +896,7 @@ I sometimes applied principles within them to the site, after fully understandin
 1. [Stackoverflow](https://stackoverflow.com/) - I found myself on Stackoverflow so many times researching issues. This a fantastic place to learn and troubleshoot code.
 1. [Slack](https://slack.com/intl/en-ie/) - The slack community is great and I reached out to fellow students who had already completed their P4 for their advice and got some nice tips and feedback. I attending some webinars by CI staff which I found very beneficial.
 
-[Back to top &uarr;](#content)
+[Back to top &uarr;](#contents)
 
 ***
 ## Acknowledgements
@@ -907,4 +905,4 @@ As always, big thank you to [Harry Dhillon](https://github.com/Harry-Leepz), my 
 
 Shemmylicious Food was developed for educational purpouses and as part of my Diploma in Software Development with [Code Institute](https://codeinstitute.net/). 
 
-[Back to top &uarr;](#content)
+[Back to top &uarr;](#contents)
