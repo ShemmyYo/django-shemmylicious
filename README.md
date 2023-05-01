@@ -45,19 +45,17 @@ You can view the live, deployed to Heroku application here: <a href ='https://sh
         - [Typography](#typography)
         - [Imagery](#imaginary)
     - [Agile](#agile)
-        - [The Ideal User/Persona](#the-ideal-user)
-        - [Epics & Admin/User Stories](#user-stories)
+        - [The Ideal User/Persona](#the-ideal-userpersona)
+        - [Epics & Admin/User Stories](#epics--adminuser-stories)
         - [MoSCoW Prioritization](#moscow-prioritization)
     - [Wireframes](#wireframes)
 - [Features](#features)
-    - [Existing Features](#existing-features)
-        - []()
-    
-    - [Future Features]()
-- [Tools & Technologies Used](#technologies-used)
+    - [Existing Features](#existing-features)   
+    - [Future Features](#future-features)
+- [Tools & Technologies Used](#tools--technologies-used)
     - [Languages Used](#languages-used)
     - [Frameworks & Tools](#frameworks--tools)
-    - [Imported Libraries and Packages](#libraries-imported)
+    - [Imported Libraries and Packages](#imported-libraries-and-packages)
     - [Data Model](#data-model)
 - [Testing](#testing)
 - [Deployment](#deployment)
@@ -397,6 +395,8 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to create my page wirefram
 __Features__
 `USER STORY` As a User, I want to view the page on my different devices - responsive layout, so it is viewable on a number of devices `MUST HAVE`
 
+
+***
 __Navbar__
 
 `USER STORY` As a User I want to be able to navigate the page clearly so that I can find the information relative to my needs
@@ -416,7 +416,7 @@ It is easily noticeable, intuitive, and easy to use.
 ![Menu Admin](README/features/menu-admin.png)
 </details>
 
-
+***
 __Footer__
 
 `USER STORY` As a User I want to be able to see links containing social links to the developer so that I can enquire about issues/suggestions I may have.
@@ -432,7 +432,7 @@ All links open new tabs.
 ![Footer](README/features/footer.png)
 </details>
 
-
+***
 __User (AllAuth) & User Profile__ 
 
 `USER STORY` As a User, I want to be able to signup/login/logout securely so that I can view/edit my profile `COULD HAVE`
@@ -462,7 +462,7 @@ Users can also upload their Profile image and if they do not want to a default i
 Future features include the possibility to manage their favourite recipes/users.
 Future features may include SSO login so that Users can log in quicker and more securely.
 
-
+***
 __Homepage__
 
 `USER STORY` As a User I want to be presented with an index page containing enticing hero animation and a clear message as well as about me section.
@@ -486,7 +486,7 @@ Users that have registered and logged in will be met with a similar layout but t
 ![About](README/features/p-about.png)
 </details>
 
-
+***
 __Recipe Search__
 
 `USER STORY` As a user I want to be able to search recipes so that filter exactly what I'm looking for `SHOULD HAVE`
@@ -502,7 +502,7 @@ If results are not found, the User is shown a message and link to create their r
 ![Search No Results](README/features/p-search-no-results.png)
 </details>
 
-
+***
 __Recipes__
 
 `USER STORY` As a User, I want to view the recipe list and be able to view its details so that I can read the ingredients, instructions etc. `MUST HAVE`
@@ -528,7 +528,7 @@ Superusers can also delete comments in this view.
 Future recipe functionality may include an additional "Add to Favorites" button so that the User can view a list of their favourite Recipes. 
 Future comment functionality may include "Reply" and "Flag" buttons in the comments section so that the user can reply to a comment or flag it as inappropriate.
 
-
+***
 __User Recipes__
 
 `USER STORY` As a User, I want to view my recipes listed on my page so that I can view, create new, and edit recipe details (e.g.ingredients, instructions etc.) or delete my recipe `MUST HAVE`
@@ -545,7 +545,7 @@ Additionally, the Delete functionality is secured by the bootstrap modal to conf
 ![My Recipe Delete](README/features/p-my-recipes-delete.png)
 </details>
 
-
+***
 __Categories__
 
 `USER STORY` As a User, I want to be able to view the recipes by category so that I can easily find what I'm interested in `SHOULD HAVE`
@@ -565,6 +565,7 @@ If a given category has no recipes in the database, the User is shown an appropr
 Future functionality could consider top ranking rather than random selection.
 Future functionality could let Users suggest new categories to be reviewed by Admin.
 
+***
 __Add Category__
 
 `USER STORY` As a Superuser I want to be able to add category so that the User can categorise their recipes accordingly `SHOULD HAVE`
@@ -578,7 +579,7 @@ Only Superusers can access this functionality. Functionality is available from t
 ![Category Add](README/features/p-category-add.png)
 </details>
 
-
+***
 __Blog__
 
 `USER STORY` As a User, I want the ability to like or comment on recipes so that I can share my thoughts and feel included in the community `MUST HAVE`
@@ -612,7 +613,11 @@ __Error Pages__
 - 404 Page not found
 A 404 page has been implemented and will display if a user navigates to a broken link.
 
+<details>
+<summary>Click to View Error Page</summary>
+
 ![Error 404](README/features/404.png)
+</details>
 
 - 403 Action Forbidden
 A 403 error page has been implemented to provide feedback to the user when they try to access unauthorized content. 
@@ -620,7 +625,12 @@ A 403 error page has been implemented to provide feedback to the user when they 
 - 500 Internal Server Error
 A 500 error page has been displayed to alert users when an internal server error occurs. 
 
+<details>
+<summary>Click to View Error Page</summary>
+
 ![Error 500](README/features/500.png)
+</details>
+
 
 [Back to top &uarr;](#contents)
 
@@ -714,14 +724,6 @@ Blog View:
 
 For all testing, please refer to the [TESTING.md](TESTING.md) file.
 
-
-***
-### __Browser Compatibility__
-
-After publishing to Heroku, the site was tested on Google Chrome, Microsoft Edge, Safari and Mozilla Firefox, with no visible issues for the user. 
-The site has loaded perfectly and had no issues across all browsers.
-
-[Back to top &uarr;](#contents)
 
 ***
 ## Deployment

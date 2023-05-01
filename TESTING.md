@@ -9,7 +9,15 @@
     - [Bugs](#bugs)
     - [Browser Compatibility](#browser-compatibility)
 
-    
+
+### __Browser Compatibility__
+
+After publishing to Heroku, the site was tested on Google Chrome, Microsoft Edge, Safari and Mozilla Firefox, with no visible issues for the user. 
+The site has loaded perfectly and had no issues across all browsers.
+
+[Back to top &uarr;](#contents)
+
+***    
 
 ## __Testing__
 ### __PEP8 CI Validation__
