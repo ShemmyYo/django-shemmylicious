@@ -702,19 +702,68 @@ Blog View:
 
 ### Data Model
 
-- Table: **Product**
 
-    | **PK** | **id** (unique) | Type | Notes |
-    | --- | --- | --- | --- |
-    | **FK** | category | ForeignKey | FK to **Category** model |
-    | | sku | CharField | |
-    | | name | CharField | |
-    | | description | TextField | |
-    | | has_sizes | BooleanField | |
-    | | price | DecimalField | |
-    | | rating | DecimalField | |
-    | | image_url | URLField | |
-    | | image | ImageField | |
+
+Table: **Recipe**
+
+| **PK** | **id** (unique) | Type | Notes |
+| --- | --- | --- | --- |
+| | recipe_title | CharField(255) | |
+| | slug | SlugField(255, null=False) | |
+| | status | IntegerField(choices=STATUS, default=1) | |
+| FK | category | ForeignKey | Category, on_delete=models.CASCADE) |
+| FK | author | ForeignKey | User, on_delete=models.CASCADE) |
+| | created_date | DateField(auto_now_add=True) | |
+| | updated_date | DateField(auto_now=True) | |
+| | featured_image | CloudinaryField('recipe image', default='recipe') | |
+| | featured_comment | TextField(null=False) | |
+| | recipe_ingridients | TextField(blank=True) | |
+| | recipe_instructions | TextField(blank=True) | |
+| | excerpt | TextField(blank=True) | |
+| FK | likes | ManyToManyField | User, related_name="blog_likes", blank=True) |
+***
+
+
+
+Table: **Comment**
+
+| **PK** | **id** (unique) | Type | Notes |
+| --- | --- | --- | --- |
+| FK | recipe_name | ForeignKey | Recipe, on_delete=models.CASCADE, related_name='comments' |
+| | comment_title | CharField(80) | |
+| | comment_body | TextField() | |
+| FK | post_user_id | ForeignKey | User, on_delete=models.CASCADE |
+| | post_author | CharField(255) | |
+| | created_date | DateTimeField(auto_now_add=True) | |
+| | active | BooleanField(default=False) | |
+***
+
+
+
+Table: **Category**
+
+| **PK** | **id** (unique) | Type | Notes |
+| --- | --- | --- | --- |
+| | category_name | CharField(100) | null=False, blank=False | 
+| | featured_image | CloudinaryField | 'cat image', default='cat_recipe' |
+| | featured_comment | CharField(255) | null=True, blank=True |
+| | status | IntegerField | choices=STATUS, default=0 |
+***
+
+
+
+Table: **Profile**
+
+| **PK** | **id** (unique) | Type | Notes |
+| --- | --- | --- | --- |
+| FK | user | OneToOne | User, null=True, on_delete=models.CASCADE |
+| | bio | TextField | (blank=True) |
+| | profile_pic | CloudinaryField | 'profile image', default='profile_img' |
+| | website_url | CharField(255) | null=True, blank=True |
+| | facebook_url | CharField(255) | null=True, blank=True |
+| | twitter_url | CharField(255) | null=True, blank=True |
+| | instagram_url  | CharField(255) | null=True, blank=True |
+| | pintrest_url | CharField(255) | null=True, blank=True |
 
 
 
