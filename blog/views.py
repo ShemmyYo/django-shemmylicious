@@ -1,17 +1,16 @@
 from django.shortcuts import render, redirect
 from django.shortcuts import get_object_or_404, reverse
-from django.http import HttpResponseRedirect, HttpResponse, HttpResponseNotFound
+from django.http import HttpResponseRedirect
 from django.contrib import messages
-from django.contrib.messages.views import SuccessMessageMixin
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView
 from django.views import generic, View
 from django.template import RequestContext
 from .models import Recipe, Category, Comment
 from .forms import CommentForm, CategoryForm, AddRecipeForm, UpdateRecipeForm
-from cloudinary.forms import cl_init_js_callbacks
 
 
-# 404 Handler 
+
+# 404 Handler
 def handler_404(request, exception, template_name='404.html'):
     response = render(request, template_name)
     response.status_code = 404
@@ -92,9 +91,12 @@ def AddCategoryFormView(request):
     else:
         form = CategoryForm
         if "submitted" is request.GET:
-            submitted=True
+            submitted = True
 
-    return render(request, "recipe_add_category.html", {'form': form, 'submitted': submitted, })
+    return render(request, "recipe_add_category.html", {
+        'form': form,
+        'submitted': submitted,
+    })
 
 
 # List of Categories
@@ -155,7 +157,6 @@ def RecipeUpdate(request, recipe_id):
         form.save()
         messages.success(request, "Successfully updated.")
         return redirect('recipe-mylist')
-    
     return render(request, 'recipe_update.html', {
         'recipe': recipe,
         'form': form
@@ -218,7 +219,8 @@ class RecipeDetailView(View):
             comment.recipe_name = recipe
             comment.save()
             messages.success(
-                request, "Successfully posted.Your comment is awaiting Admin's approval.")
+                request, "Successfully posted.Your comment is awaiting \
+                Admin's approval.")
         else:
             comment_form = CommentForm()
 
@@ -256,7 +258,6 @@ class RecipeBlogView(View):
             },
         )
 
-
     def post(self, request, slug, *args, **kwargs):
         queryset = Recipe.objects.filter(status=1)
         recipe = get_object_or_404(queryset, slug=slug)
@@ -267,13 +268,13 @@ class RecipeBlogView(View):
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
             comment_form.instance.email = request.user.email
-            comment_form.instance.post_user= request.user
+            comment_form.instance.post_user = request.user
             comment_form.instance.post_author = request.user.username
             comment = comment_form.save(commit=False)
             comment.recipe_name = recipe
             comment.save()
             messages.success(
-                request, 
+                request,
                 "Successfully posted. Comment is awaiting Admin's approval"
                 )
         else:
@@ -298,7 +299,7 @@ class RecipeLike(View):
         post = get_object_or_404(Recipe, slug=slug)
         if post.likes.filter(id=request.user.id).exists():
             post.likes.remove(request.user)
-            messages.warning(request, "Oh no! I'm sorry you don't like it.")       
+            messages.warning(request, "Oh no! I'm sorry you don't like it.")
         else:
             post.likes.add(request.user)
             messages.success(request, "Thank you! I appriciate your opinion!")

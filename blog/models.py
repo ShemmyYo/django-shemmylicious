@@ -101,7 +101,7 @@ class Recipe(models.Model):
 
     def number_of_likes(self):
         return self.likes.count()
-    
+
     def get_absolute_url(self):
         return reverse('recipe-mylist',)
 
@@ -127,4 +127,5 @@ class Comment(models.Model):
         ordering = ['created_date']
 
     def __str__(self):
-        return f"Comment {self.comment_body} by {self.post_author}, posted: {self.created_date}"
+        return f"Comment {self.comment_body} by {self.post_author}, \
+        posted: {self.created_date}"

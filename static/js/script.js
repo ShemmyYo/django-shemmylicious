@@ -28,6 +28,7 @@ tl.fromTo(sectionBlank, 0.0001, { height: "100%" }, { height:"0%" })
 .fromTo(innerText, 1.5, { opacity: 0, x: -60 }, { opacity: 1, x: 0 }, "-=2.0")
 
 // Underline Manu
+import carousel from 'bootstrap/js/dist/carousel'
 const carousel = new bootstrap.Carousel(myCarouselElement, {});
 
 links.forEach(link => {
