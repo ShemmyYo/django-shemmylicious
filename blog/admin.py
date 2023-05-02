@@ -7,7 +7,13 @@ from .models import Recipe, Category, Comment, Profile
 class RecipeAdmin(SummernoteModelAdmin):
     prepopulated_fields = {'slug': ('recipe_title',)}
     search_fields = ['recipe_title', 'email']
-    list_display = ('recipe_title', 'category', 'author', 'status', 'updated_date')
+    list_display = (
+        'recipe_title',
+        'category',
+        'author',
+        'status',
+        'updated_date'
+        )
     list_filter = ('status', 'created_date')
     actions = ['approve_comments', 'reject_comments']
     summernote_fields = ('recipe_ingridients', 'recipe_instructions')

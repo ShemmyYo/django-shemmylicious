@@ -7,8 +7,8 @@ from django.contrib.auth.views import PasswordChangeView
 from django.contrib import messages
 from django.urls import reverse_lazy
 from django import forms
-from .forms import SignUpForm, EditProfileForm, ProfilePageForm
 from blog.models import Profile
+from .forms import SignUpForm, EditProfileForm, ProfilePageForm
 
 
 # Profile Page Edit Pic, Bio & URL's
@@ -31,7 +31,7 @@ class CreateProfilePageView(generic.CreateView):
         return super().form_valid(form)
 
 
-# Profile Page Edit Settings 
+# Profile Page Edit Settings
 class EditProfilePageView(generic.UpdateView):
     model = Profile
     template_name = 'profile/user_profile_edit.html'
@@ -61,7 +61,8 @@ class ShowProfilePageView(DetailView):
     template_name = 'profile/user_profile.html'
 
     def get_context_data(self, *args, **kwargs):
-        context = super(ShowProfilePageView, self).get_context_data(*args, **kwargs)
+        context = super(
+            ShowProfilePageView, self).get_context_data(*args, **kwargs)
         page_user = get_object_or_404(Profile, id=self.kwargs['pk'])
         context["page_user"] = page_user
 
@@ -74,7 +75,7 @@ def login_user(request):
         username = request.POST['username']
         password = request.POST['password']
         user = authenticate(request, username=username, password=password)
-        if user is not None: 
+        if user is not None:
             login(request, user)
             messages.success(request, "Successfully logged in.")
             return redirect('my-profile')
