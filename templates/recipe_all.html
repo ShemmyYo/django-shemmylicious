@@ -30,18 +30,17 @@
         <div class="image-flash">
           <!-- Logic to check if Profile exists -->
           {% if recipe.author.profile.id %}
-            <a href="{% url 'show-profile' recipe.author.profile.id %}" alt="No Profile" 
-            class="author image-flash-author"><small>Author: </small>{{ recipe.author }}</a><br>
+          <a href="{% url 'show-profile' recipe.author.profile.id %}" class="author image-flash-author"><small>Author:
+            </small>{{ recipe.author }}</a><br>
           {% else %}
-            <a href="#" 
-            class="author image-flash-author"><small>Author: </small>{{ recipe.author }}</a><br>
+          <a href="#" class="author image-flash-author"><small>Author: </small>{{ recipe.author }}</a><br>
           {% endif %}
-        <a href="{% url 'category' recipe.category %}" 
-          class="category image-flash-category"><small>Category: </small>{{ recipe.category }}</a>
+          <a href="{% url 'category' recipe.category %}" class="category image-flash-category"><small>Category:
+            </small>{{ recipe.category }}</a>
         </div>
       </div>
       <div class="card-body card-body-recipe-list">
-        <p class="card"><small class="text-muted">{{ recipe.created_date}} 
+        <p class="card"><small class="text-muted">{{ recipe.created_date}}
             <i class="far fa-heart"> {{ recipe.number_of_likes}}</i></small>
         </p>
         <hr>
@@ -71,5 +70,5 @@
 <br>
 <br>
 {% endif %}
-</div>
+
 {% endblock %}

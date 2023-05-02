@@ -60,7 +60,7 @@
 
     {% endif %}
 
-    
+
     {% if forloop.counter|divisibleby:3 %}
   </div>
   <div class="row">
@@ -73,7 +73,7 @@
       <h1>No Recipes to display yet!</h1>
       <p>go on... Create your own Recipe in this Category</p>
     </center>
-      <a href="{% url 'add-recipe' %}" class="btn col-10 offset-1 col-lg-6 offset-lg-3 btn-outline-success">Add Recipe</a>
+    <a href="{% url 'add-recipe' %}" class="btn col-10 offset-1 col-lg-6 offset-lg-3 btn-outline-success">Add Recipe</a>
     <hr>
     {% endfor %}
 

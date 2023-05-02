@@ -22,32 +22,34 @@
     <div class="container col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-center">
         <div class="row row-cols-1 row-md-3 g-1">
             {% for category in object_list %}
-                {% if forloop.counter <= 4 %}
-                <div class=" card col-6 col-md-2 h-100">
-                    <img src="{{ category.featured_image.url }}" alt="Category Image" class="card-img-top cat-card-img w-100 shadow">
-                    <div class="card-body cat-card-body">
-                        <a href="{% url 'category' category %}" class="btn btn-sm w-100">
-                            <h5 class="card-title cat-card-title border text-center">{{ category.category_name }}</h5>
-                        </a> <br>
-                    </div>
+            {% if forloop.counter <= 4 %}
+            <div class=" card col-6 col-md-2 h-100">
+                <img src="{{ category.featured_image.url }}" alt="Category Image"
+                    class="card-img-top cat-card-img w-100 shadow">
+                <div class="card-body cat-card-body">
+                    <a href="{% url 'category' category %}" class="btn btn-sm w-100">
+                        <h5 class="card-title cat-card-title border text-center">{{ category.category_name }}</h5>
+                    </a> <br>
                 </div>
-                {% elif forloop.counter == 5 %}
-                <div class="w-100"></div><br><br><hr><br><br><br>
-                {% elif forloop.counter >= 5 %}
-                <div class="card col-3 col-lg-1 offset-lg-2">
-                    <img src="{{ category.featured_image.url }}" alt="Category Round Image" class="card-img-bttm cat-card-img-bttm shadow">
-                    <div class="card-body cat-card-body-bttm">
-                        <a href="{% url 'category' category %}" class="btn btn-sm w-100">
-                            <h5 class="card-title cat-card-title-bttm border text-center">{{ category.category_name }}</h5>
-                        </a> <br>
-                    </div>
+            </div>
+            {% elif forloop.counter == 5 %}
+            <div class="w-100"></div><br><br>
+            <hr><br><br><br>
+            {% elif forloop.counter >= 5 %}
+            <div class="card col-3 col-lg-1 offset-lg-2">
+                <img src="{{ category.featured_image.url }}" alt="Category Round Image"
+                    class="card-img-bttm cat-card-img-bttm shadow">
+                <div class="card-body cat-card-body-bttm">
+                    <a href="{% url 'category' category %}" class="btn btn-sm w-100">
+                        <h5 class="card-title cat-card-title-bttm border text-center">{{ category.category_name }}</h5>
+                    </a> <br>
                 </div>
-                {% endif %}
+            </div>
+            {% endif %}
 
             {% endfor %}
         </div>
-
-
+    </div>
 </section>
 
 {% endblock %}
