@@ -9,7 +9,6 @@ from .models import Recipe, Category, Comment
 from .forms import CommentForm, CategoryForm, AddRecipeForm, UpdateRecipeForm
 
 
-
 # 404 Handler
 def handler_404(request, exception, template_name='404.html'):
     response = render(request, template_name)

@@ -1,8 +1,7 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Comment, Recipe, Category
-from cloudinary.models import CloudinaryField
 from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
+from .models import Comment, Recipe, Category
 
 
 # Create a Comment Form
