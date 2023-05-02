@@ -9,49 +9,40 @@
 
 <div class="container col-10 offset-1 col-md-8 offset-md-2">
     <br>
-        {% if submitted %}
-        <center>
-            <br>
-            <br>
-            <h5>Your Recipe was Submitted Succesfully, {{ user }}!</h5>
-            <br>
-            <br>
+    {% if submitted %}
+    <br>
+    <br>
+    <h5 class="text-center">Your Recipe was Submitted Succesfully, {{ user }}!</h5>
+    <br>
+    <br>
+    <a href="{% url 'recipes' %}" class="btn btn-outline-success">Back</a>
+    <a href="{% url 'recipe-mylist' %}" class="btn btn-outline-success">My Recipes</a>
+    {% else %}
+    <br>
+    <br>
+    <h3>Add Recipe</h3>
+    <br>
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        {{ form | crispy }}
+
+        <br>
+        <div class="d-grid gap-2 col-12 text-center">
+            <input type="submit" value="Add Recipe" class="btn btn-outline-success">
             <a href="{% url 'recipes' %}" class="btn btn-outline-success">Back</a>
-            <a href="{% url 'recipe-mylist' %}" class="btn btn-outline-success">My Recipes</a>
-        </center>
-
-        {% else %}
-        <br>
-        <br>
-        <h3>Add Recipe</h3>
-        <br>
-        <form action="" method="POST" enctype="multipart/form-data">
-            {% csrf_token %}
-
-            {{ form | crispy }}
-
-            <br>
-            <center>
-                <div class="d-grid gap-2 col-12">
-                    <input type="submit" value="Add Recipe" class="btn btn-outline-success">
-                    <a href="{% url 'recipes' %}" class="btn btn-outline-success">Back</a>
-                </div>
-            </center>
-        </form>
-        <br>
-
-        {% endif %}
+        </div>
+    </form>
+    <br>
+    {% endif %}
     <br>
     <br>
     <br>
     <br>
     <br>
 </div>
-
 {% else %}
-<center>
-    <h1>You're not logged in!</h1>
-</center>
+<h1 class="text-center">You're not logged in!</h1>
 {% endif %}
 
 {% endblock content %}

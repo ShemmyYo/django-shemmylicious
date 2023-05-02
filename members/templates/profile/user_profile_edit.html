@@ -6,42 +6,35 @@
 {% block content %}
 
 {% if user.is_authenticated %}
-    {% if user.id == profile.user.id %}
-    <div class="container col-10 offset-1 col-md-8 offset-md-2">
-        <br>
-        <br>
-        <br>
-        <h3>Edit {{ user }}'s Bio & Social Links</h3>
-        <br>
-        <form action="" method="POST" enctype="multipart/form-data">
-            {% csrf_token %}          
+{% if user.id == profile.user.id %}
+<div class="container col-10 offset-1 col-md-8 offset-md-2">
+    <br>
+    <br>
+    <br>
+    <h3>Edit {{ user }}'s Bio & Social Links</h3>
+    <br>
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
 
-            {{ form | crispy }}
-    
-            <center>
-                <div class="d-grid gap-2 col-12">
-                    <button class="btn btn-outline-success" type="submit">Update Bio & Social Links</button>
-                    <a href="{% url 'show-profile' user.pk %}" class="btn btn-outline-success">Back to Your Profile</a>
-                </div>
-            </center>
-        </form>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-    </div>
-    {% else %}
-    <center>
-        <h1>Not authorised! Please refresh page!</h1>
-    </center>
-    {% endif %}
+        {{ form | crispy }}
+
+        <div class="d-grid gap-2 col-12 text-center">
+            <button class="btn btn-outline-success" type="submit">Update Bio & Social Links</button>
+            <a href="{% url 'show-profile' user.pk %}" class="btn btn-outline-success">Back to Your Profile</a>
+        </div>
+    </form>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</div>
 {% else %}
-<center>
-    <h1>You're not logged in!</h1>
-</center>
+<h1 class="text-center">Not authorised! Please refresh page!</h1>
+{% endif %}
+{% else %}
+<h1 class="text-center">You're not logged in!</h1>
 {% endif %}
 
 {% endblock content %}
-
