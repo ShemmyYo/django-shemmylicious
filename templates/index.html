@@ -4,11 +4,11 @@
 {% block content %}
 
 <!-- Blank section -->
-<section class="section-blank">
+<div class="section-blank">
   <div></div>
-</section>
+</div>
 <!-- Hero section with JS Animations -->
-<section class="sections-index"  id="section-hero">
+<section class="sections-index" id="section-hero">
   <div class="container hero">
     <img src="{% static 'images/welcome-hero2.jpg' %}" id="food-img" alt="Welcome hero picture">
     <div class="headline">
@@ -16,30 +16,28 @@
       <a class="navbar-brand" href="{% url 'recipes' %}">
         <span class="brand-logo">Shemmylicious</span>
         <img src="{% static 'images/food-trans-dark.png' %}" height="90" alt="Shemmylicious Food Sign">
-       </a>
+      </a>
     </div>
     <div class="headline-bttn-container">
       {% if user.is_authenticated %}
       <a href="{% url 'recipes' %}" class="btn btn-sm btn-outline-light headline-bttn">Browse Recipes <i
           class="fa-solid fa-bowl-rice fa-beat-fade"></i></a>
-          <!-- Check if Profile is created -->
-          {% if user.profile.id %}
-            <a href="{% url 'recipe-mylist' %}" 
-              class="btn btn-sm btn-outline-light headline-bttn">Your Recipes 
-              <i class="fa-solid fa-user fa-xs"></i>
-            </a>
-          {% else %}
-            <a href="{% url 'create-profile-page' %}" 
-              class="btn btn-sm btn-outline-light headline-bttn"> Create Profile 
-              <i class="fa-solid fa-user fa-xs"></i>
-            </a>
-          {% endif %}
-      
+      <!-- Check if Profile is created -->
+      {% if user.profile.id %}
+      <a href="{% url 'recipe-mylist' %}" class="btn btn-sm btn-outline-light headline-bttn">Your Recipes
+        <i class="fa-solid fa-user fa-xs"></i>
+      </a>
       {% else %}
-        <a href="{% url 'register' %}" class="btn btn-sm btn-outline-light headline-bttn">Sign-up <i
-            class="fa-solid fa-user-plus fa-beat-fade fa-xs"></i></a>
-        <a href="{% url 'login-user' %}" class="btn btn-sm btn-outline-light headline-bttn">Login <i
-            class="fa-solid fa-arrow-right-to-bracket fa-beat-fade fa-xs"></i></a>
+      <a href="{% url 'create-profile-page' %}" class="btn btn-sm btn-outline-light headline-bttn"> Create Profile
+        <i class="fa-solid fa-user fa-xs"></i>
+      </a>
+      {% endif %}
+
+      {% else %}
+      <a href="{% url 'register' %}" class="btn btn-sm btn-outline-light headline-bttn">Sign-up <i
+          class="fa-solid fa-user-plus fa-beat-fade fa-xs"></i></a>
+      <a href="{% url 'login-user' %}" class="btn btn-sm btn-outline-light headline-bttn">Login <i
+          class="fa-solid fa-arrow-right-to-bracket fa-beat-fade fa-xs"></i></a>
       {% endif %}
     </div>
   </div>
@@ -62,11 +60,12 @@
           <div class="hero-about-chef-p">
             <p>Shemmylicious food is my little corner of the Internet where I share my passion for delicious food with
               you!</p>
-            <p>I like to create and share recipes that feature delicious, real food made for everyday! <br> My recipes are
+            <p>I like to create and share recipes that feature delicious, real food made for everyday! <br> My recipes
+              are
               fresh, seasonal, mostly simple, often healthy, and sometimes peppered with a little cheese and butter
               mixed in.</p>
-              <p>Feel free to create an account, comment and like mine and share your own resipes.</p>
-              <br>
+            <p>Feel free to create an account, comment and like mine and share your own resipes.</p>
+            <br>
           </div>
         </div>
       </div>

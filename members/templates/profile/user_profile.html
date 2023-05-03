@@ -16,9 +16,10 @@
                     <div class="col-12 col-sm-3 offset-sm-0 text-center">
                         {% if "profile_img" in page_user.profile_pic.url %}
                         <img src="https://res.cloudinary.com/dteyj4llb/image/upload/v1681317396/profile_img.png"
-                            width="120" class="rounded-circle rounded-sm border-success">
+                            width="120" alt="profile image" class="rounded-circle rounded-sm border-success">
                         {% else %}
-                        <img src="{{ page_user.profile_pic.url }}" width="120" class="rounded-circle shadow">
+                        <img src="{{ page_user.profile_pic.url }}" width="120" 
+                            class="rounded-circle shadow" alt="profile picture">
 
                         {% endif %}
                         <br>

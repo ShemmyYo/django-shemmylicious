@@ -10,7 +10,7 @@
     <div class="col-10 offset-1 col-lg-8 offset-lg-2 text-center top-slogan">
         <h4 class="">Cooking Time Is My Favorite Time <i class="far fa-heart"></i></h4>
         <hr>
-        <h5>Shemmylicious Food Recipes</h5>
+        <h5>Shemmylicious Food Recipesxxxxx</h5>
         <p>Here's where you can find ingridients, instructions and other details of your Shemmylicious recipe. <br>
             Be sure to sign up to be able to comment and like my posts as well as create your own recipes.</p>
         <hr>
@@ -59,9 +59,11 @@
             <div class=" d-md-block col-md-7 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
                 {% if "recipe" in post.featured_image.url %}
-                <img src="https://asset.cloudinary.com/dteyj4llb/f6e04f3ac88f266da941b472675fd64c" width="100%">
+                <img src="https://asset.cloudinary.com/dteyj4llb/f6e04f3ac88f266da941b472675fd64c" 
+                    alt="recipe picture" width="100">
                 {% else %}
-                <img src="{{ post.featured_image.url }}" width="100%">
+                <img src="{{ post.featured_image.url }}" 
+                    alt="recipe picture" width="100">
                 <br>
                 {% endif %}
             </div>
@@ -154,8 +156,7 @@
                 <div class="comments" style="padding: 10px;">
                     <div class="card mb-3" style="max-width: 540px;">
                         <div class="row g-0">
-                            <div class="col-md-2">
-                                <center>
+                            <div class="col-md-2 text-center">
                                     {% if comment.post_user_id.profile.profile_pic %}                                
                                     <img src="{{ comment.post_user_id.profile.profile_pic.url }}" 
                                         class="img-fluid rounded-start" alt="Profiel picture">
@@ -163,7 +164,6 @@
                                     <img src="https://res.cloudinary.com/dteyj4llb/image/upload/v1681317396/profile_img.png" 
                                         class="img-fluid rounded-start" alt="Default profiel picture">
                                     {% endif %}
-                                </center>
                             </div>
                             <div class="col-md-10">
                                 <!-- The body of the comment goes before the | -->      

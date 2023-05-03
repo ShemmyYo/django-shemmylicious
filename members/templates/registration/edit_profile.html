@@ -15,10 +15,10 @@
                     <div class="col-10 offset-1 col-sm-4 offset-sm-0">
                         {% if "profile_img" in user.profile.profile_pic.url %}
                         <img src="{% static 'images/profile_img.png' %}"
-                            width="100%" class="rounded-circle rounded-sm border-success">
+                            width="100" class="rounded-circle rounded-sm border-success">
                         {% else %}
                         <img src="{{ user.profile.profile_pic.url }}" 
-                            width="100%" class="rounded-circle shadow">
+                            width="100" class="rounded-circle shadow">
                         {% endif %}
                     </div>
                     <div class="col-sm-8">
