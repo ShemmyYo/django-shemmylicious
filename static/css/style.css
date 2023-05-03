@@ -6,7 +6,6 @@ root {
     --light-col: #E4E5EA;
     --accent-col: #3DC073;
     --basic-col: #198754;
-
     --main-font: 'Sen', sans-serif;
     --additional-font: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -118,7 +117,6 @@ a {
     padding: 20px;
 }
 
-
 .active-nav {
     height: 3px;
     background-color: #198754;
@@ -227,7 +225,7 @@ a {
     min-width: 200px;
     height: 40px;
     background-color: #9a99a2bd;
-    padding: 10% auto;
+    padding: 10% 0;
     color: white;
     font-size: 120%;
     font-weight: bold;
@@ -292,7 +290,6 @@ a {
     left: 20px;
     overflow: hidden;
 }
-
 
 .carousel-image-flash-author,
 .carousel-image-flash-category {
@@ -450,7 +447,6 @@ img {
 .image-flash-category {
     background-color: #0E9A45;
     border-radius: 4px;
-
     margin-top: 3px;
     padding: 0 5px;
 }
@@ -604,16 +600,9 @@ img {
     border: none;
 }
 
-
-
-
-
-
-
 /*---------------------------------------
              MEDIA max-width: 760px
 ---------------------------------------*/
-
 @media screen and (max-width: 760px) {
     .headline h1 {
         font-size: 200%;
@@ -642,7 +631,7 @@ img {
 
     .headline-bttn {
         min-width: 200px;
-        padding: 5% auto;
+        padding: 5% 0;
         font-size: 100%;
         margin: 5px 0;
     }
@@ -666,10 +655,7 @@ img {
     footer i {
         font-size: 120%;
     }
-
 }
-
-
 
 /*---------------------------------------
              MEDIA (max-width: 360px
@@ -707,5 +693,4 @@ img {
     button {
         height: 32px;
     }
-
 }
