@@ -1,58 +1,145 @@
-    - [Validation]
-        - [HTML]
-        - [CSS]
-        - [Lighthouse]
-        - [PEP8 CI Validation](#pep8-ci-validation)
-    - [Tests based on user stories](#tests-based-on-user-stories)
+# Browser Compatibility
+
+After publishing to Heroku, the site was tested on Google Chrome, Microsoft Edge, Safari and Mozilla Firefox, with no visible issues for the user. 
+The site has loaded perfectly and had no issues across all browsers.
+
+# __Validation__
+
+## __HTML__
+
+<details><summary> >>> Click for Recipe validation img</summary>
+
+![Recipe](README/validators/recipe.png)
+</details>
+
+
+<details><summary> >>> Click for Add Recipe validation img</summary>
+
+![Add Recipe](README/validators/add-recipe.png)
+</details>
+
+
+<details><summary> >>> Click for Categories validation img</summary>
+
+![Categories](README/validators/categories.png)
+</details>
+
+
+<details><summary> >>> Click for My Recipes validation img</summary>
+
+![My Recipes](README/validators/my-recipes.png)
+</details>
+
+
+<details><summary> >>> Click for Profile Edit validation img</summary>
+
+![Profile Edit](README/validators/profile-edit.png)
+</details>
+
+
+
+<details><summary> >>> Click XXX validation img</summary>
+</details>
+
+[Back to top &uarr;](#validation)
+***
+## __CSS__
+<details><summary> >>> Click for CSS validation img</summary>
+
+![CSS Validator 1](README/validators/w3ccss.png)
+![CSS Validator 2](README/validators/w3ccss-warnings.png)
+</details>
+
+[Back to top &uarr;](#validation)
+***
+## __Lighthouse__
+
+
+## __PEP8 CI Validation__
+
+***
+app: __shemmylicious__
+
+<details><summary> >>> Click for urls.py validation img</summary>
+
+![urls](README/pip8/shemmylicious/urls.png)
+</details>
+
+[Back to top &uarr;](#validation)
+***
+app: __members__
+
+<details><summary> >>> Click for urls.py validation img</summary>
+
+![urls](README/pip8/members/urls.png)
+</details>
+
+<details><summary> >>> Click for views.py validation img</summary>
+
+![views](README/pip8/members/views.png)
+</details>
+
+<details><summary> >>> Click for forms.py validation img</summary>
+
+![Forms](README/pip8/members/forms.png)
+</details>
+
+[Back to top &uarr;](#validation)
+***
+app: __blog__
+
+<details><summary> >>> Click for urls.py validation img</summary>
+
+![urls](README/pip8/blog/urls.png)
+</details>
+
+<details><summary> >>> Click for views.py validation img</summary>
+
+![views](README/pip8/blog/views.png)
+</details>
+
+<details><summary> >>> Click for forms.py validation img</summary>
+
+![forms](README/pip8/blog/forms.png)
+</details>
+
+<details><summary> >>> Click for models.py validation img</summary>
+
+![models](README/pip8/blog/models.png)
+</details>
+
+<details><summary> >>> Click for admin.py validation img</summary>
+
+![admin](README/pip8/blog/admin.png)
+</details>
+
+[Back to top &uarr;](#validation)
+***
+
+
+
     - [Manual tests](#manual-tests)
     - 
     - [Bugs](#bugs)
     - [Browser Compatibility](#browser-compatibility)
 
 
-### __Browser Compatibility__
-
-After publishing to Heroku, the site was tested on Google Chrome, Microsoft Edge, Safari and Mozilla Firefox, with no visible issues for the user. 
-The site has loaded perfectly and had no issues across all browsers.
-
-[Back to top &uarr;](#contents)
-
-***    
-
-## __Testing__
-### __PEP8 CI Validation__
-
-An online validation tool (provided by CI) was used to check that the code is up to standard.
-
-Firstly, I have had a lot of: ``lines too long (81 > 79 characters)`` errors which I have rectified by moving long lines into the second line of code or by shoring code where possible.
-
-Finally, validated with no errors.
-
-[PEP8CI](https://pep8ci.herokuapp.com/) 
-
-![PEP8 CI Validation](assets/images/pep8.png)
-
-### __Tests based on user stories__
+   
+## Tests based on user stories
 
 
-|     |                                   ACTION                     | Requirement met |
+|     |                                   Story                     | Result |
 | --- | :----------------------------------------------------------: | :-------------: |
-| 1   | to play a simple and fun but still challenging game.         | Yes             |
-| 2   | to be able to see instructions before the start of the game. | Yes             |
-| 3   | to play a game that navigates easily.                        | Yes             |
-| 4   | to be able to set bet amount.                                | Yes             |
-| 5   | to be able to change the game difficulty by changing the number of lines I bet on.   | Yes             |
-| 6   | to be able to set difficulty level by setting deposit level  | Yes             |
-| 7   | to be given feedback if I entered invalid data.              | Yes             |
-| 8   | to be able to go reset the game.                             | Yes             |
-| 9   | to be able to see the current balance.                       | Yes             |
-| 10  | to be encouraged to replay and increase scores.              | Yes             |
-| 11  | to check if the user made the top 10 high-scores.            | Yes             |
+| 1   |        | Yes             |
+
 
 ***
 
-### __Manual tests:__
-#### __Welcome Screen__
+## Manual tests:
+
+
+
+### __Welcome Screen__
 
 
 <details><summary> >>> Click for details</summary>
@@ -60,9 +147,6 @@ Finally, validated with no errors.
 - Welcome screen has loaded correctly and as intended.
 - Verified that the user can submit the Player name and city.
 - Input is verified and only letters are accepted.
-
-![Player name validation](assets/images/error-player-name.png)
-![Player city validation](assets/images/error-player-city.png)
 
 
 </details>
