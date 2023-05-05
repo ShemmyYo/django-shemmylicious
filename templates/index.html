@@ -79,7 +79,6 @@
         {% for slide in slider %}
         <!-- Slides -->
         <div class="carousel-item" data-bs-interval="10000">
-          <a href="{% url 'recipe_detail' slide.slug %}">
             {% if "recipe" in slide.featured_image.url %}
             <img src="https://res.cloudinary.com/dteyj4llb/image/upload/v1679649965/media/Shemmylicious/recipe.png"
               class="d-block w-100" alt="slider random image">
@@ -94,7 +93,6 @@
               <h4 class="carousel-image-comment-title">{{ slide.recipe_title }}</h4>
               <p class="carousel-image-comment-comment">{{ slide.featured_comment }}</p>
             </div>
-          </a>
         </div>
         {% endfor %}
       </div>
