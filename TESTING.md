@@ -62,7 +62,7 @@ app: __shemmylicious__
 
 <details><summary> >>> Click for urls.py validation img</summary>
 
-![urls](README/pip8/shemmylicious/urls.png)
+![urls](README/pep8/shemmylicious/urls.png)
 </details>
 
 [Back to top &uarr;](#validation)
@@ -71,17 +71,17 @@ app: __members__
 
 <details><summary> >>> Click for urls.py validation img</summary>
 
-![urls](README/pip8/members/urls.png)
+![urls](README/pep8/members/urls.png)
 </details>
 
 <details><summary> >>> Click for views.py validation img</summary>
 
-![views](README/pip8/members/views.png)
+![views](README/pep8/members/views.png)
 </details>
 
 <details><summary> >>> Click for forms.py validation img</summary>
 
-![Forms](README/pip8/members/forms.png)
+![Forms](README/pep8/members/forms.png)
 </details>
 
 [Back to top &uarr;](#validation)
@@ -90,27 +90,27 @@ app: __blog__
 
 <details><summary> >>> Click for urls.py validation img</summary>
 
-![urls](README/pip8/blog/urls.png)
+![urls](README/pep8/blog/urls.png)
 </details>
 
 <details><summary> >>> Click for views.py validation img</summary>
 
-![views](README/pip8/blog/views.png)
+![views](README/pep8/blog/views.png)
 </details>
 
 <details><summary> >>> Click for forms.py validation img</summary>
 
-![forms](README/pip8/blog/forms.png)
+![forms](README/pep8/blog/forms.png)
 </details>
 
 <details><summary> >>> Click for models.py validation img</summary>
 
-![models](README/pip8/blog/models.png)
+![models](README/pep8/blog/models.png)
 </details>
 
 <details><summary> >>> Click for admin.py validation img</summary>
 
-![admin](README/pip8/blog/admin.png)
+![admin](README/pep8/blog/admin.png)
 </details>
 
 [Back to top &uarr;](#validation)
