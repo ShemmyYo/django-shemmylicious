@@ -224,9 +224,9 @@ a {
 
 .headline-bttn {
     min-width: 200px;
-    height: 30px;
+    height: 50px;
     background-color: #9a99a2bd;
-    padding: 10%;
+    padding: 10px 0;
     color: white;
     font-size: 120%;
     font-weight: bold;
