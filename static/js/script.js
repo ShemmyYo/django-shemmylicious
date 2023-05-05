@@ -12,7 +12,18 @@ const navbar = document.querySelector('.navbar');
 const footer = document.querySelector('.footer');
 const innerText = document.querySelector('.inner-text');
 
+// Index automations
+const tl = new TimelineMax();
 
+tl.fromTo(sectionBlank, 0.0001, { height: "100%" }, { height:"0%" })
+.fromTo(footer, 1, { opacity: 0, y: 60 }, { opacity: 1, y: 0 }, "-=1.0")
+.fromTo(indexHeadline, 1.0, { opacity: 0, x: 60 }, { opacity: 1, x: 0 }, "-=1.0")
+.fromTo(indexHero, 0, { width: "100%" }, { width:"80%", ease: Power2.easeInOut })
+.fromTo(indexSlider, 1.2, { x: "-100%" }, { x:"100%", ease: Power2.easeInOut }, "-=1.5")
+.fromTo(indexSlider, 0.0001, { width: "100%" }, { width:"0%" }, "-=0.5")
+.fromTo(indexHeadlineBttn, 1.0, { opacity: 0, x: 120 }, { opacity: 1, x: 0 })
+.fromTo(myCarouselElement, 1.5, { opacity: 0, y: 60 }, { opacity: 1, y: 0 }, "-=2.5")
+.fromTo(innerText, 1.5, { opacity: 0, x: -60 }, { opacity: 1, x: 0 }, "-=2.0")
 
 // Underline Manu
 links.forEach(link => {
