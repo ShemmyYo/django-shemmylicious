@@ -9,7 +9,6 @@ const indexHero = document.querySelector('.hero');
 const indexSlider = document.querySelector('.index-slider');
 const indexHeadline = document.querySelector('.headline');
 const indexHeadlineBttn = document.querySelectorAll('.headline-bttn');
-const navbar = document.querySelector('.navbar');
 const footer = document.querySelector('.footer');
 const innerText = document.querySelector('.inner-text');
 
@@ -25,7 +24,7 @@ tl.fromTo(sectionBlank, 0.0001, { height: "100%" }, { height:"0%" })
 .fromTo(indexSlider, 0.0001, { width: "100%" }, { width:"0%" }, "-=0.5")
 .fromTo(indexHeadlineBttn, 1.0, { opacity: 0, x: 120 }, { opacity: 1, x: 0 })
 .fromTo(myCarouselElement, 1.5, { opacity: 0, y: 60 }, { opacity: 1, y: 0 }, "-=2.5")
-.fromTo(innerText, 1.5, { opacity: 0, x: -60 }, { opacity: 1, x: 0 }, "-=2.0")
+.fromTo(innerText, 1.5, { opacity: 0, x: -60 }, { opacity: 1, x: 0 }, "-=2.0");
 
 // Underline Manu
 
@@ -38,7 +37,7 @@ links.forEach(link => {
             duration: 1.4,
             absolue: true,
             ease: 'elastic.out(1, 0.5)'
-        })
+        });
     });
-})
+});
 // Credits: https://www.youtube.com/watch?v=xB27AuRa5h4
