@@ -452,16 +452,12 @@ img {
     padding: 0 5px;
 }
 
-.author {
-    color: white;
-    margin: 4px;
-    text-transform: uppercase;
-}
-
+.author,
 .category {
     color: white;
     margin: 4px;
     text-transform: uppercase;
+    font-weight: bold;
 }
 
 .card-blog-title {

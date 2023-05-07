@@ -69,7 +69,7 @@
 
 <details><summary> >>> Click for details</summary>
 
-- Category screen has loaded correctly and as intended.
+- Blog screen has loaded correctly and as intended.
 - Verified that the categories load randomly each time page is reloaded
 - Verified that the user can click category name to open a list of recipes in chosen category
 - Verified that the list of categoriesed recipes is loading correctly
@@ -78,18 +78,12 @@
 - Verified that the back to category & back to recipes buttons work as intended
 </details>
 
----
-
-
 ***
-
-
-
 
 # Browser Compatibility
 
 After publishing to Heroku, the site was tested on Google Chrome, Microsoft Edge, Safari and Mozilla Firefox, with no visible issues for the user. 
-The site has loaded perfectly and had no issues across all browsers.
+The site has loaded correctly and had no issues across all browsers.
 
 # __Validation__
 
@@ -136,6 +130,14 @@ The site has loaded perfectly and had no issues across all browsers.
 
 ![CSS Validator 1](README/validators/w3ccss.png)
 ![CSS Validator 2](README/validators/w3ccss-warnings.png)
+</details>
+
+[Back to top &uarr;](#validation)
+***
+## __JS__
+<details><summary> >>> Click for JSHint validation img</summary>
+
+
 </details>
 
 [Back to top &uarr;](#validation)
@@ -336,6 +338,7 @@ app: __blog__
 #### __Known Bugs__
 
 
+GSAP Warnings
 
 
 
