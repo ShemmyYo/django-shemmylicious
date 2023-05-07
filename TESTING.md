@@ -352,7 +352,7 @@ Desktop
 Mobile
 
 ![Recipe](README/lighthouse/recipe-mobile.png)
-![Recipe details](README/lighthouse/recipe-mobile-pref.png)
+
 </details>
 
 ***
@@ -384,10 +384,11 @@ Mobile
 <details><summary> >>> Click for Category List Page Lighthouse Report</summary>
 Desktop 
 
-
+![Category List Desktop](README/lighthouse/categories-list-desktop.png)
 
 Mobile
 
+![Category List Mobile](README/lighthouse/categories-list-mobile.png)
 
 </details>
 
