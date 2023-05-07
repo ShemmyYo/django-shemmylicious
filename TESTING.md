@@ -185,6 +185,22 @@
 | Super user can user a quick link from User manu to open Admin Panel | Pass |
 </details>
 
+### __Logout__
+
+<details><summary> >>> Click for details</summary>
+
+| Verification | Result |
+| :----------------------------------------------------------: | :-------------: |
+| Varified that the User can logout by clicking Logout in User manu quick link | Pass |
+| Varified that the User is shown confirmation page before logout | Pass |
+| Varified that the User is logout after confirmation | Pass |
+| Varified that the User logout page shows user profile pin and username | Pass |
+| Verified that 'Back to Blog' button brings user to blog page | Pass |
+| Verified that 'Back to Recipes' button brings user to recipes page | Pass |
+</details>
+
+[Back to top &uarr;](#validation)
+
 ***
 
 # Browser Compatibility
@@ -192,9 +208,17 @@
 After publishing to Heroku, the site was tested on Google Chrome, Microsoft Edge, Safari and Mozilla Firefox, with no visible issues for the user. 
 The site has loaded correctly and had no issues across all browsers.
 
+[Back to top &uarr;](#validation)
+
 # __Validation__
 
 ## __HTML__
+
+<details><summary> >>> Click for Home validation img</summary>
+
+![Home](README/validators/home.png)
+</details>
+
 
 <details><summary> >>> Click for Recipe validation img</summary>
 
@@ -202,15 +226,9 @@ The site has loaded correctly and had no issues across all browsers.
 </details>
 
 
-<details><summary> >>> Click for Add Recipe validation img</summary>
+<details><summary> >>> Click for Recipe Details validation img</summary>
 
-![Add Recipe](README/validators/add-recipe.png)
-</details>
-
-
-<details><summary> >>> Click for Categories validation img</summary>
-
-![Categories](README/validators/categories.png)
+![Recipe Details](README/validators/recipe-details.png)
 </details>
 
 
@@ -220,18 +238,81 @@ The site has loaded correctly and had no issues across all browsers.
 </details>
 
 
+<details><summary> >>> Click for Add Recipe validation img</summary>
+
+![Add Recipe](README/validators/add-recipe.png)
+</details>
+
+
+<details><summary> >>> Click for Edit Recipe validation img</summary>
+
+![Update Recipe](README/validators/recipe-update.png)
+</details>
+
+
+<details><summary> >>> Click for Categories validation img</summary>
+
+![Categories](README/validators/categories.png)
+</details>
+
+
+<details><summary> >>> Click for Categories Details validation img</summary>
+
+![Category Details](README/validators/categories-details.png)
+</details>
+
+
+<details><summary> >>> Click for Add Category (Superuser) validation img</summary>
+
+![Add Category](README/validators/add-category.png)
+</details>
+
+
+<details><summary> >>> Click for Blog Details validation img</summary>
+
+![Blog Details](README/validators/blog-details.png)
+</details>
+
+
+<details><summary> >>> Click for Profile validation img</summary>
+
+![Profile](README/validators/profile.png)
+</details>
+
+
 <details><summary> >>> Click for Profile Edit validation img</summary>
 
 ![Profile Edit](README/validators/profile-edit.png)
 </details>
 
 
+<details><summary> >>> Click for Edit Profile Bio validation img</summary>
 
-<details><summary> >>> Click XXX validation img</summary>
+![Profile Bio](README/validators/profile-bio.png)
+</details>
+
+
+<details><summary> >>> Click for Profile Logout validation img</summary>
+
+![Logout](README/validators/profile-logout.png)
+</details>
+
+
+<details><summary> >>> Click for Profile Login validation img</summary>
+
+![Login](README/validators/profile-login.png)
+</details>
+
+
+<details><summary> >>> Click for Register Profile validation img</summary>
+
+![Register](README/validators/profile-register.png)
 </details>
 
 [Back to top &uarr;](#validation)
+
 ***
+
 ## __CSS__
 <details><summary> >>> Click for CSS validation img</summary>
 
@@ -244,7 +325,7 @@ The site has loaded correctly and had no issues across all browsers.
 ## __JS__
 <details><summary> >>> Click for JSHint validation img</summary>
 
-
+![JSHint](README/validators/jshint.png)
 </details>
 
 [Back to top &uarr;](#validation)
