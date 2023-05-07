@@ -169,6 +169,18 @@ Mobile
 
 ***
 
+<details><summary> >>> Click for Recipe Details Page Lighthouse Report</summary>
+Desktop 
+
+
+
+Mobile
+
+
+</details>
+
+***
+
 <details><summary> >>> Click for Category Page Lighthouse Report</summary>
 Desktop 
 
@@ -181,6 +193,18 @@ Mobile
 
 ***
 
+<details><summary> >>> Click for Category List Page Lighthouse Report</summary>
+Desktop 
+
+
+
+Mobile
+
+
+</details>
+
+***
+
 <details><summary> >>> Click for Blog Page Lighthouse Report</summary>
 Desktop 
 
@@ -189,6 +213,18 @@ Desktop
 Mobile
 
 ![Blog](README/lighthouse/blog-mobile.png)
+</details>
+
+***
+
+<details><summary> >>> Click for Blog Details Lighthouse Report</summary>
+Desktop 
+
+
+
+Mobile
+
+
 </details>
 
 ***

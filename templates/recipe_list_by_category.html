@@ -46,7 +46,7 @@
           <p class="card-text">{{ recipe.excerpt }}</p>
           <hr>
           <p class="card-featured-comment">Featured Comment</p>
-          <h3 class="card-title">{{ recipe.featured_comment }}</h5>
+          <h3 class="card-title">{{ recipe.featured_comment }}</h3>
             <a href="{% url 'recipe_detail' recipe.slug %}">
               <p class="card-featured-comment-continue">Continue reading...</p>
             </a>
@@ -63,12 +63,10 @@
   <div class="row">
     {% endif %}
     {% empty %}
-    <center>
       <br>
       <br>
-      <h1>No Recipes to display yet!</h1>
-      <p>go on... Create your own Recipe in this Category</p>
-    </center>
+      <h1 class="text-center">No Recipes to display yet!</h1>
+      <p class="text-center">go on... Create your own Recipe in this Category</p>
     <a href="{% url 'add-recipe' %}" class="btn col-10 offset-1 col-lg-6 offset-lg-3 btn-outline-success">Add Recipe</a>
     <hr>
     {% endfor %}
@@ -91,4 +89,6 @@
         Recipes</a>
     </div>
   </div>
-  {% endblock %}
+</div>
+
+{% endblock %}

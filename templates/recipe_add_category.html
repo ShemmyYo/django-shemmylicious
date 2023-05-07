@@ -24,7 +24,7 @@
         <br>
         <h3>Add Category</h3>
         <br>
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="form-floating mb-3">
                 <input type="text" class="form-control textInput" name="category_name" id="div_id_category_name"
@@ -38,7 +38,7 @@
             </div>
             <div class="form-floating mb-3">
                 <input type="file" class="form-control fileInput fileUpload form-control-file" name="featured_image"
-                    id="div_id_featured_image" placeholder=" * Category image">
+                    id="div_id_featured_image">
                 <label for="div_id_featured_image"></label>
             </div>
             <br>

@@ -13,9 +13,10 @@
   
               {% if "recipe" in recipe.featured_image.url %}
               <img src="https://res.cloudinary.com/dteyj4llb/image/upload/v1679649965/media/Shemmylicious/recipe.png"
-                alt="deafult image" class="card-img-top shadow"">
+                alt="deafult image" class="card-img-top shadow">
               {% else %}
-              <img src="{{ recipe.featured_image.url }}" alt="image" class="card-img-top shadow" style="background-size: cover; overflow: hidden;">
+              <img src="{{ recipe.featured_image.url }}" alt="image" class="card-img-top shadow" 
+                style="background-size: cover; overflow: hidden;">
               {% endif %}
               <div class="card-body">
                 <p>{{ recipe.created_date }}
@@ -31,12 +32,16 @@
                   <p>Awaiting Admin's Authorisation</p>
                   <hr>
                 {% else %}
-                  <a href="{% url 'recipe_detail' recipe.slug %}" class="btn btn-sm col-5 btn-outline-secondary"><span>View</span></a>   
+                  <a href="{% url 'recipe_detail' recipe.slug %}" class="btn btn-sm col-5 btn-outline-secondary">
+                    <span>View</span></a>   
                 {% endif %} 
-                <a href="{% url 'recipe-update' recipe.pk %}" class="btn btn-sm col-6 btn-outline-success"><span>Update</span></a><br><br>
-                <a href="{% url 'add-recipe' %}" class="btn btn-sm col-5 btn-outline-warning"><span>New</span></a> 
+                <a href="{% url 'recipe-update' recipe.pk %}" class="btn btn-sm col-6 btn-outline-success">
+                  <span>Update</span></a><br><br>
+                <a href="{% url 'add-recipe' %}" class="btn btn-sm col-5 btn-outline-warning">
+                  <span>New</span></a> 
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-sm col-6 btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                <button type="button" class="btn btn-sm col-6 btn-outline-danger" data-bs-toggle="modal" 
+                  data-bs-target="#deleteModal">
                   Delete
                 </button>
                 <!-- Modal for Delete Recipe -->
@@ -52,7 +57,8 @@
                         <p>Are you sure you want to continue?</p>
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-sm col-2 btn-outline-success" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-sm col-2 btn-outline-success" 
+                          data-bs-dismiss="modal">Close</button>
                         <button type="button" class="btn btn-sm col-2 btn-outline-danger">
                           <a href="{% url 'recipe-delete' recipe.pk %}" class="">Delete</a>
                         </button>

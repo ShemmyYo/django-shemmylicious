@@ -28,24 +28,22 @@
                 <div class="row">
                     <!-- Duplicated like and comment section -->
                     <div class="col-2 offset-1 text-center">
-                        <strong>
-                            {% if user.is_authenticated %}
-                            <form class="d-inline" action="{% url 'recipe_like' post.slug %}" method="POST">
-                                {% csrf_token %}
-                                {% if liked %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"
-                                    aria-label="like button"><i class="fas fa-heart"></i></button>
-                                {% else %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"
-                                    aria-label="like button"><i class="far fa-heart"></i></button>
-                                {% endif %}
-                            </form>
+                        {% if user.is_authenticated %}
+                        <form class="d-inline" action="{% url 'recipe_like' post.slug %}" method="POST">
+                            {% csrf_token %}
+                            {% if liked %}
+                            <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"
+                                aria-label="like button"><i class="fas fa-heart"></i></button>
                             {% else %}
-                            <span class="text-secondary"><i class="far fa-heart"></i></span>
+                            <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"
+                                aria-label="like button"><i class="far fa-heart"></i></button>
                             {% endif %}
-                            <!-- The number of likes goes before the closing strong tag -->
-                            <span class="text-secondary">{{ post.number_of_likes }} </span>
-                        </strong>
+                        </form>
+                        {% else %}
+                        <span class="text-secondary"><i class="far fa-heart"></i></span>
+                        {% endif %}
+                        <!-- The number of likes goes before the closing strong tag -->
+                        <span class="text-secondary">{{ post.number_of_likes }} </span>
                     </div>
                     <div class="col-2 text-center">
                         {% with comments.count as total_comments %}
@@ -59,11 +57,10 @@
             <div class=" d-md-block col-md-7 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
                 {% if "recipe" in post.featured_image.url %}
-                <img src="https://asset.cloudinary.com/dteyj4llb/f6e04f3ac88f266da941b472675fd64c" 
-                    alt="recipe picture" width="100">
+                <img src="https://asset.cloudinary.com/dteyj4llb/f6e04f3ac88f266da941b472675fd64c" alt="recipe picture"
+                    width="100">
                 {% else %}
-                <img src="{{ post.featured_image.url }}" 
-                    alt="recipe picture" width="100">
+                <img src="{{ post.featured_image.url }}" alt="recipe picture" width="100">
                 <br>
                 {% endif %}
             </div>
@@ -149,7 +146,7 @@
     <div class="row">
         <div class="col-md-7 offset-1 card mb-4  mt-3 ">
             <h3>Comments:</h3>
-            <hr>            
+            <hr>
             <div class="card-body">
                 <!-- We want a for loop inside the tags to iterate through each comment in comments -->
                 {% for comment in comments %}
@@ -157,16 +154,16 @@
                     <div class="card mb-3" style="max-width: 540px;">
                         <div class="row g-0">
                             <div class="col-md-2 text-center">
-                                    {% if comment.post_user_id.profile.profile_pic %}                                
-                                    <img src="{{ comment.post_user_id.profile.profile_pic.url }}" 
-                                        class="img-fluid rounded-start" alt="Profiel picture">
-                                    {% else %}
-                                    <img src="https://res.cloudinary.com/dteyj4llb/image/upload/v1681317396/profile_img.png" 
-                                        class="img-fluid rounded-start" alt="Default profiel picture">
-                                    {% endif %}
+                                {% if comment.post_user_id.profile.profile_pic %}
+                                <img src="{{ comment.post_user_id.profile.profile_pic.url }}"
+                                    class="img-fluid rounded-start" alt="Profiel picture">
+                                {% else %}
+                                <img src="https://res.cloudinary.com/dteyj4llb/image/upload/v1681317396/profile_img.png"
+                                    class="img-fluid rounded-start" alt="Default profiel picture">
+                                {% endif %}
                             </div>
                             <div class="col-md-10">
-                                <!-- The body of the comment goes before the | -->      
+                                <!-- The body of the comment goes before the | -->
                                 <div class="card-body">
                                     <h3><strong>{{ comment.post_author }}</strong></h3>
                                     <!-- The comment's created date goes here -->
@@ -175,17 +172,19 @@
                                     </span>
                                 </div>
                             </div>
-                            <div class="card-body">                                        
+                            <div class="card-body">
                                 <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
                                 <h5>{{ comment.comment_title | linebreaks }}</h5>
                                 <p class="card-text">{{ comment.comment_body | linebreaks }}</p>
                             </div>
                         </div>
-                      </div>
+                    </div>
                     <!-- Additional Options as a Superuser -->
                     {% if  user.is_superuser %}
-                    
-                    <a href="{% url 'comment-delete' comment.pk %}" class="btn btn-sm col-10 offset-1 col-sm-5 offset-sm-1 btn-outline-danger"><span>Delete Comment</span></a>
+
+                    <a href="{% url 'comment-delete' comment.pk %}"
+                        class="btn btn-sm col-10 offset-1 col-sm-5 offset-sm-1 btn-outline-danger"><span>Delete
+                            Comment</span></a>
                     {% endif %}
                 </div>
                 <hr>
@@ -204,15 +203,16 @@
                 {% else %}
 
                 {% if user.is_authenticated %}
-                    <h3>Leave a comment:</h3>
-                    <p>Posting as: {{ user.username }}</p>
-                    <form method="post" style="margin-top: 1.3em;">
-                        {{ comment_form | crispy }}
-                        {% csrf_token%}
-                        <br>
-                        <button type="submit" class="btn d-grid gap-2 col-12 mx-auto btn-sm btn-outline-success">Submit</button>
-                        <div style="height: 100px;"></div>
-                    </form>
+                <h3>Leave a comment:</h3>
+                <p>Posting as: {{ user.username }}</p>
+                <form method="post" style="margin-top: 1.3em;">
+                    {{ comment_form | crispy }}
+                    {% csrf_token%}
+                    <br>
+                    <button type="submit"
+                        class="btn d-grid gap-2 col-12 mx-auto btn-sm btn-outline-success">Submit</button>
+                    <div style="height: 100px;"></div>
+                </form>
                 {% endif %}
                 {% endif %}
             </div>
@@ -221,7 +221,8 @@
     <hr>
     <div class="gap-2">
         <a href="{% url 'blog' %}" class="btn col-10 offset-1 col-lg-2 offset-lg-4 btn-outline-success">Back to Blog</a>
-        <a href="{% url 'recipes' %}" class="btn col-10 offset-1 col-lg-2 offset-lg-0 btn-outline-success">Back to Recipes</a>
+        <a href="{% url 'recipes' %}" class="btn col-10 offset-1 col-lg-2 offset-lg-0 btn-outline-success">Back to
+            Recipes</a>
     </div>
 </div>
 

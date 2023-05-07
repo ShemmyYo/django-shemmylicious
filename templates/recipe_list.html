@@ -29,10 +29,10 @@
           <img src="{{ recipe.featured_image.url }}" alt="image" class="img-thumbnail card-img-top shadow">
           {% endif %}
           <div class="image-flash">
-            <a href="{% url 'show-profile' recipe.author.profile.pk %}" 
-              class="author image-flash-author"><small>Author: </small> {{ recipe.author }}</a><br>
-            <a href="{% url 'category' recipe.category %}" 
-              class="category image-flash-category"><small>Category: </small>{{ recipe.category }}</a><br>
+            <a href="{% url 'show-profile' recipe.author.profile.pk %}" class="author image-flash-author"><small>Author:
+              </small> {{ recipe.author }}</a><br>
+            <a href="{% url 'category' recipe.category %}" class="category image-flash-category"><small>Category:
+              </small>{{ recipe.category }}</a><br>
           </div>
         </div>
       </div>
@@ -45,14 +45,14 @@
           <p class="card-text">{{ recipe.excerpt }}</p>
           <hr>
           <p class="card-featured-comment">Featured Comment</p>
-          <h3 class="card-title card-blog-comment">{{ recipe.featured_comment }}</h5>
-            <a href="{% url 'recipe-blog' recipe.slug %}">
-              <p class="card-featured-comment-continue">Continue reading...</p>
-            </a>
-            <br>
-            <p class="card"><small class="text-muted">{{ recipe.created_date}}
-                <i class="far fa-heart"> {{ recipe.number_of_likes}}</i></small>
-            </p>
+          <h3 class="card-title card-blog-comment">{{ recipe.featured_comment }}</h3>
+          <a href="{% url 'recipe-blog' recipe.slug %}">
+            <p class="card-featured-comment-continue">Continue reading...</p>
+          </a>
+          <br>
+          <p class="card"><small class="text-muted">{{ recipe.created_date}}
+              <i class="far fa-heart"> {{ recipe.number_of_likes}}</i></small>
+          </p>
         </div>
       </div>
     </div>
@@ -85,5 +85,5 @@
 <br>
 <br>
 {% endif %}
-</div>
+
 {% endblock %}
