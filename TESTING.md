@@ -158,11 +158,13 @@ Performance issued are due mainly to image sizing however, some pages have shown
 <details><summary> >>> Click for Home Page Lighthouse Report</summary>
 Desktop 
 
-![Home](README/lighthouse/home.png)
+![Home Dektop ](README/lighthouse/home-desktop.png)
+![Home Dektop Perf](README/lighthouse/home-desktop-perf.png)
 
 Mobile
 
-
+![Home Mobile](README/lighthouse/home-mobile.png)
+![Home Mobile Perf](README/lighthouse/home-mobile-perf.png)
 </details>
 
 ***
@@ -183,11 +185,11 @@ Mobile
 <details><summary> >>> Click for Recipe Details Page Lighthouse Report</summary>
 Desktop 
 
-
+![Recipe details](README/lighthouse/recipe-details-mobile.png)
 
 Mobile
 
-
+![Recipe details mobile](README/lighthouse/recipe-details-mobile.png)
 </details>
 
 ***
@@ -232,11 +234,11 @@ Mobile
 <details><summary> >>> Click for Blog Details Lighthouse Report</summary>
 Desktop 
 
-
+![Blog details desktop](README/lighthouse/blog-details-desktop.png)
 
 Mobile
 
-
+![Blog details mobile](README/lighthouse/blog-details-mobile.png)
 </details>
 
 ***
