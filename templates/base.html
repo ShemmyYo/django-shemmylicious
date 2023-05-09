@@ -76,7 +76,7 @@
                     {% if user.profile.id %}
                 <li class="nav-item nav-link-s">
                   <div class="nav-item-s">
-                    <a class="nav-link nav-link-drop" href="{% url 'show-profile' user.pk %}"> {{ user }} Profile </a>
+                    <a class="nav-link nav-link-drop" href="{% url 'show-profile' user.profile.pk %}"> {{ user }} Profile </a>
                   </div>
                 </li>
                 <hr>
