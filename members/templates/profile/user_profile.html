@@ -64,7 +64,7 @@
             </div>
         </div>
     </div>
-    {% if page_user.id == user.id %}
+    {% if page_user.id == user.profile.id %}
     <a href="{% url 'edit-profile-page' user.pk %}"
         class="btn btn-outline-success col-10 offset-1 col-sm-3 offset-sm-4 mb-2">Edit Bio & Social Links</a>
     <a href="{% url 'edit-profile' %}" class="btn btn-outline-success col-10 offset-1 col-sm-3 offset-sm-0 mb-2">Edit

@@ -232,7 +232,6 @@ __EPIC: [Recipe Comments & Likes](https://github.com/ShemmyYo/django-shemmylicio
 
 - USER STORY: As a User, I want the ability to like or comment on recipes so that I can share my thoughts and feel included in the community `MUST HAVE`
 - USER STORY: As a User, I want the ability to view all comments for the recipe so that I can see what my fellow commenters think of a recipe `MUST HAVE`
-- USER STORY: As a User, I would like the ability to edit my review so that I can fix any spelling or format issues `COULD HAVE`
 - ADMIN STORY: As an Admin I will provide commenting/like functionality for the User so that they have an enjoyable experience reviewing/liking recipes `MUST HAVE`
 - ADMIN STORY: As an Admin I want to have the ability to delete any comment so that I can manage comments effectively `MUST HAVE`
 
@@ -680,9 +679,7 @@ Blog View:
 - [Stackoverflow](https://stackoverflow.com/) used to troubleshoot code issues
 - [CI Python Linter](https://pep8ci.herokuapp.com/) used as Python code validator
 - [Chrome Dev Tools](https://developer.chrome.com/docs/devtools/)
-- [MindManager](https://app.mindmanager.com/) - for Flowcharts
 - [Grammarly](https://www.grammarly.com/) used to check typography
-- []() used to generate the Database diagram
 - [Technisini](https://techsini.com/multi-mockup/index.php) mockup image of the home page on various devices 
 
 ### Imported Libraries and Packages
@@ -696,7 +693,7 @@ Blog View:
 - [django-allauth]() - Django user authentication, registration and account management
 - [django-crispy-forms]() - Django package that provides tags and filters to control the rendering behaviour of Django forms
 - [django-richtextfield]() - Model field for rich text editing
-- [GSAP]() - 
+- [GSAP](https://www.youtube.com/watch?v=xB27AuRa5h4) - GSAP animation used in home page
 
 [Back to top &uarr;](#contents)
 
@@ -946,8 +943,11 @@ I sometimes applied principles within them to the site, after fully understandin
 1. [Building a Social Media App With Python 3 & Django Beginners Tutorial](https://www.youtube.com/playlist?list=PLPSM8rIid1a3TkwEmHyDALNuHhqiUiU5A) - YouTube series that has helped me to create a blog-like application. 
 1. [Stackoverflow](https://stackoverflow.com/) - I found myself on Stackoverflow so many times researching issues. This a fantastic place to learn and troubleshoot code.
 1. [Slack](https://slack.com/intl/en-ie/) - The slack community is great and I reached out to fellow students who had already completed their P4 for their advice and got some nice tips and feedback. I attending some webinars by CI staff which I found very beneficial.
-
+1. [Pinchofyum](https://pinchofyum.com/detox-rainbow-roll-ups-peanut-sauce) - I have used recipes and pictures used in recipes on page.
+1. [foodiecrush](https://www.foodiecrush.com/category/recipes/) - inspiration for the page
 [Back to top &uarr;](#contents)
+1. [unsplash](https://unsplash.com/s/photos/Sauce) - Graphics used on the page
+1. [Markdown Builder by Tim Nelson](https://traveltimn.github.io/markdown-builder/) - tool to help generating some parts of the Markdown files
 
 ***
 ## Acknowledgements

@@ -144,9 +144,8 @@ No other issues to report.
 
 
 [Back to top &uarr;](#browser-compatibility)
+
 ***
-
-
 
 
 ## __Lighthouse__
@@ -296,10 +295,6 @@ Mobile
 ***
 
 
-
-
-
-
 ## __PEP8 CI Validation__
 
 The [CI Python Linter](https://pep8ci.herokuapp.com/) was used to validate the python code used throughout the project. The results are outlined in below:
@@ -369,15 +364,9 @@ app: __blog__
 
 ***
 
+# Manual tests:
 
-
-
-
-## Manual tests:
-
-
-
-### __Welcome Screen__
+## __Welcome Screen__
 
 <details><summary> >>> Click for details</summary>
 
@@ -407,40 +396,51 @@ Most features of the Shemmylicious Blog page are restricted to registered users.
 | Verified that the superuser can go to django admin site from user dropdown when authenticated | Pass |
 </details>
 
-### __Sign Up__
+## __Sign Up__
 
 <details><summary> >>> Click for details</summary>
 
 | Verification | Result |
 | :----------------------------------------------------------: | :-------------: |
 | Sign Up screen has loaded correctly and as intended | Pass |
-| Varified that the User ... | Pass |
-
+| Varified that the User must type in correct characters in username, email and passwrods fields | Pass |
+| Varified that the when all required info is provided, User account is created after pressing sign up button | Pass |
+| Varified that after account is created, User menu shows only create profile link | Pass |
 </details>
 
-### __Login__
+## __Login__
 
 <details><summary> >>> Click for details</summary>
 
 | Verification | Result |
 | :----------------------------------------------------------: | :-------------: |
 | Login screen has loaded correctly and as intended | Pass |
-| Varified that the User .... | Pass |
-
+| Varified that the User must type in username and passwrod to login | Pass |
+| Varified that after login User is redirected to main screen | Pass |
+| Varified that after login User is presented with correct nav links | Pass |
+| Varified that after login User given all user rights | Pass |
+| Varified that after login Superuser is redirected to main screen | Pass |
+| Varified that after login Superuser is presented with correct nav links | Pass |
+| Varified that after login Superuser given all superuser rights | Pass |
 </details>
 
-### __Search Recipe__
+## __Search Recipe__
 
 <details><summary> >>> Click for details</summary>
 
 | Verification | Result |
 | :----------------------------------------------------------: | :-------------: |
 | Search recipe screen has loaded correctly and as intended | Pass |
-| Varified that the User ... | Pass |
-
+| Varified that the User is allowed to search recipe db when authenticated | Pass |
+| Varified that the User is presented with search result page regardles of whether capital or lowercase characters are typed in | Pass |
+| Varified that the User is redirected to search results screen once clicked 'Go'| Pass |
+| Verified that the user can open recipes loaded from search results | Pass |
+| Verified that the user can open author profile by clicking its name | Pass |
+| Verified that the user can open category page by clicking category name | Pass |
+| Verified that the user can go back to recipes page when clicking 'Home' | Pass |
 </details>
 
-### __Recipes Screen__
+## __Recipes Screen__
 
 <details><summary> >>> Click for details</summary>
 
@@ -453,7 +453,7 @@ Most features of the Shemmylicious Blog page are restricted to registered users.
 | Verified that pagination is working as intended | Pass |
 </details>
 
-### __Recipe Details Screen__ (after clicking recipe title)
+## __Recipe Details Screen__ (after clicking recipe title)
 
 <details><summary> >>> Click for details</summary>
 
@@ -467,7 +467,7 @@ Most features of the Shemmylicious Blog page are restricted to registered users.
 | Verified that the back to blog & back to recipes buttons work as intended | Pass |
 </details>
 
-### __Category Screen__ 
+## __Category Screen__ 
 
 <details><summary> >>> Click for details</summary>
 
@@ -482,18 +482,24 @@ Most features of the Shemmylicious Blog page are restricted to registered users.
 | Verified that the back to category & back to recipes buttons work as intended | Pass |
 </details>
 
-### __Category details__ (after clicking one of the Categories)
+## __Category details__ (after clicking one of the Categories)
 
 <details><summary> >>> Click for details</summary>
 
 | Verification | Result |
 | :----------------------------------------------------------: | :-------------: |
 | Category detail screen has loaded correctly and as intended | Pass |
-| Varified that the User ... | Pass |
+| Varified that the User is presented with all recipes in chosen category | Pass |
+| Varified that the User is presented with a msg if no recipes in chosen category | Pass |
+| Verified that the user can open recipes loaded when authenticated | Pass |
+| Verified that the user can open author profile by clicking its name | Pass |
+| Verified that the user can open category page by clicking category name | Pass |
+| Varified that the User can create a new recipe is no recipes in category | Pass |
+| Verified that the back to blog & back to recipes buttons work as intended | Pass |
 
 </details>
 
-### __Blog Screen__ 
+## __Blog Screen__ 
 
 <details><summary> >>> Click for details</summary>
 
@@ -507,7 +513,7 @@ Most features of the Shemmylicious Blog page are restricted to registered users.
 | Verified that pagination is working as intended | Pass |
 </details>
 
-### __Blog Details Screen__ (after clicking blog title)
+## __Blog Details Screen__ (after clicking blog title)
 
 <details><summary> >>> Click for details</summary>
 
@@ -524,7 +530,7 @@ Most features of the Shemmylicious Blog page are restricted to registered users.
 | Verified that the back to blog & back to recipes buttons work as intended | Pass |
 </details>
 
-### __(Create) Profile Screen__
+## __(Create) Profile Screen__
 
 <details><summary> >>> Click for details</summary>
 
@@ -538,7 +544,7 @@ Most features of the Shemmylicious Blog page are restricted to registered users.
 | Verified that each social media links open correctly | Pass |
 </details>
 
-### __Edit Profile Bio & Social Links Screen__
+## __Edit Profile Bio & Social Links Screen__
 
 <details><summary> >>> Click for details</summary>
 
@@ -551,18 +557,27 @@ Most features of the Shemmylicious Blog page are restricted to registered users.
 | Verified that 'Back to Your Profile' button brings user to profile page | Pass |
 </details>
 
-### __Edit Profile Settings Screen__
+## __Edit Profile Settings Screen__
 
 <details><summary> >>> Click for details</summary>
 
 | Verification | Result |
 | :----------------------------------------------------------: | :-------------: |
 | Edit Profile Settings screen has loaded correctly and as intended | Pass |
-|  | Pass |
-
+| Verified that the User can update username, first or last name, or email address | Fail |
 </details>
 
-### __Add Recipe Screen__ 
+## __Change Password Screen__
+
+<details><summary> >>> Click for details</summary>
+
+| Verification | Result |
+| :----------------------------------------------------------: | :-------------: |
+| Change password screen has loaded correctly and as intended | Pass |
+| Verified that the User can update their password | Fail |
+</details>
+
+## __Add Recipe Screen__ 
 
 <details><summary> >>> Click for details</summary>
 
@@ -581,7 +596,7 @@ Most features of the Shemmylicious Blog page are restricted to registered users.
 | Verified that 'Back' button brings user to recipes page | Pass |
 </details>
 
-### __Add Category Screen__ (Superuser only)
+## __Add Category Screen__ (Superuser only)
 
 <details><summary> >>> Click for details</summary>
 
@@ -596,16 +611,16 @@ Most features of the Shemmylicious Blog page are restricted to registered users.
 | Verified that 'Back' button brings user to recipes page | Pass |
 </details>
 
-### __Admin__ (Superuser only)
+## __Admin__ (Superuser only)
 
 <details><summary> >>> Click for details</summary>
 
 | Verification | Result |
 | :----------------------------------------------------------: | :-------------: |
-| Super user can user a quick link from User manu to open Admin Panel | Pass |
+| Superuser can use a quick link from User manu to open Admin Panel | Pass |
 </details>
 
-### __Logout__
+## __Logout__
 
 <details><summary> >>> Click for details</summary>
 
@@ -623,13 +638,7 @@ Most features of the Shemmylicious Blog page are restricted to registered users.
 
 ***
 
-
-
-
-
-
-## Tests based on user stories
-
+# Tests based on user stories
 
 |     |                                   Story                      | Result |
 | --- | :----------------------------------------------------------: | :-------------: |
@@ -660,7 +669,6 @@ Most features of the Shemmylicious Blog page are restricted to registered users.
 | ADMIN STORY | As an Admin I will create a User Profile page so that they can update their details and setting SHOULD HAVE | Pass |
 | USER STORY | As a User, I want the ability to like or comment on recipes so that I can share my thoughts and feel included in the community MUST HAVE | Pass |
 | USER STORY | As a User, I want the ability to view all comments for the recipe so that I can see what my fellow commenters think of a recipe MUST HAVE | Pass |
-| USER STORY | As a User, I would like the ability to edit my review so that I can fix any spelling or format issues COULD HAVE | Pass |
 | ADMIN STORY | As an Admin I will provide commenting/like functionality for the User so that they have an enjoyable experience reviewing/liking recipes MUST HAVE | Pass |
 | ADMIN STORY | As an Admin I want to have the ability to delete any comment so that I can manage comments effectively MUST HAVE | Pass |
 | ADMIN STORY | As an Admin I will implement a 400 bad request page to redirect the user to the home page COULD HAVE | Pass |
@@ -668,25 +676,106 @@ Most features of the Shemmylicious Blog page are restricted to registered users.
 | ADMIN STORY | As an Admin I will implement a 404 error page so that I can alert users when they have accessed a page that doesn't exist and redirect the user to the home page COULD HAVE | Pass |
 | ADMIN STORY | As an Admin I will implement a 500 error page so that I can alert users when an internal server error occurs and redirect the user to the home page COULD HAVE | Pass |
 
-
-
-
+[Back to top &uarr;](#browser-compatibility)
 
 ***
 
+# __Bugs:__
 
-### __Bugs:__
-#### __get_lines function__
 
+The below Type Error has showed up as I have forgotten to add .as_view() in urls - RESOLVED
+![Type Error](README/errors/type_error.png)
+
+---
+
+Heroku deloyment failed: JS (GSAP) animation in home screen started acting up as soon as I moved to production and deployed to Heroku.
+
+    -----> Building on the Heroku-22 stack
+    -----> Using buildpack: heroku/python
+    -----> Python app detected
+    -----> No Python version was specified. Using the same version as the last build: python-3.11.2
+    To use a different version, see: https://devcenter.heroku.com/articles/python-runtimes
+    !
+    ! A Python security update is available! Upgrade as soon as possible to: python-3.11.3
+    ! See: https://devcenter.heroku.com/articles/python-runtimes
+    !
+    -----> No change in requirements detected, installing from cache
+    -----> Using cached install of python-3.11.2
+    -----> Installing pip 23.1.2, setuptools 67.7.2 and wheel 0.40.0
+    -----> Installing SQLite3
+    -----> Installing requirements with pip
+    -----> $ python manage.py collectstatic --noinput
+    Traceback (most recent call last):
+    File "/tmp/build_bfd91198/manage.py", line 22, in <module>
+    main()
+    File "/tmp/build_bfd91198/manage.py", line 18, in main
+    execute_from_command_line(sys.argv)
+    File "/app/.heroku/python/lib/python3.11/site-packages/django/core/management/__init__.py", line 419, in execute_from_command_line
+    utility.execute()
+    File "/app/.heroku/python/lib/python3.11/site-packages/django/core/management/__init__.py", line 413, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+    File "/app/.heroku/python/lib/python3.11/site-packages/django/core/management/base.py", line 354, in run_from_argv
+    self.execute(*args, **cmd_options)
+    File "/app/.heroku/python/lib/python3.11/site-packages/django/core/management/base.py", line 398, in execute
+    output = self.handle(*args, **options)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/app/.heroku/python/lib/python3.11/site-packages/django/contrib/staticfiles/management/commands/collectstatic.py", line 187, in handle
+    collected = self.collect()
+    ^^^^^^^^^^^^^^
+    File "/app/.heroku/python/lib/python3.11/site-packages/django/contrib/staticfiles/management/commands/collectstatic.py", line 114, in collect
+    handler(path, prefixed_path, storage)
+    File "/app/.heroku/python/lib/python3.11/site-packages/django/contrib/staticfiles/management/commands/collectstatic.py", line 348, in copy_file
+    self.storage.save(prefixed_path, source_file)
+    File "/app/.heroku/python/lib/python3.11/site-packages/django/core/files/storage.py", line 54, in save
+    name = self._save(name, content)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/app/.heroku/python/lib/python3.11/site-packages/cloudinary_storage/storage.py", line 252, in _save
+    if not self._exists_with_etag(name, content):
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/app/.heroku/python/lib/python3.11/site-packages/cloudinary_storage/storage.py", line 241, in _exists_with_etag
+    etag = response.headers["ETAG"].split('"')[1]
+    ~~~~~~~~~~~~~~~~^^^^^^^^
+    File "/app/.heroku/python/lib/python3.11/site-packages/requests/structures.py", line 52, in __getitem__
+    return self._store[key.lower()][1]
+    ~~~~~~~~~~~^^^^^^^^^^^^^
+    KeyError: 'etag'
+    ! Error while running '$ python manage.py collectstatic --noinput'.
+    See traceback above for details.
+    You may need to update application code to resolve this error.
+    Or, you can disable collectstatic for this application:
+    $ heroku config:set DISABLE_COLLECTSTATIC=1
+    https://devcenter.heroku.com/articles/django-assets
+    ! Push rejected, failed to compile Python app.
+    ! Push failed
+
+I have used a tutor seesion to resolve this issue:
+the 'etag' error pops up sometimes when using cloudinary and can be a tricky one to troubleshoot as there doesn't seem to be a consistent solution. Can you try creating a copy of one of your static files, with a different name? You can just select the file here, and use Ctrl+C, then Ctrl+V - RESOLVED 
+
+---
+
+After DEBUG=FALSE and Heroku deployment, index page could not load.
+I discovered that that I have typed in incorrect {%%} url in the body of index.html - RESOLVED
+![Error on load](README/errors/error-server.png)
+
+[Back to top &uarr;](#browser-compatibility)
 
 ***
 
-#### __Known Bugs__
-
+# __Known Bugs__
 
 GSAP Warnings
 
+![GSAP Warnings](README/validators/warnings.png)
 
+---
+
+Profile Edit does not update username, first or last name or email address.
+
+---
+
+Password change does not update user password
+
+[Back to top &uarr;](#browser-compatibility)
 
 ***
 Back to [README.md](README.md) file.
